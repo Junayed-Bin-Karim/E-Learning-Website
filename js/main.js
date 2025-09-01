@@ -111,3 +111,15 @@
 
 
 
+function setCarouselHeight() {
+    const vh = window.innerHeight; // actual visible height
+    document.querySelectorAll('.owl-carousel-item').forEach(function(slide) {
+        slide.style.height = vh + 'px';
+    });
+}
+
+// Set height on load
+window.addEventListener('load', setCarouselHeight);
+
+// Update height on resize/orientation change
+window.addEventListener('resize', setCarouselHeight);
