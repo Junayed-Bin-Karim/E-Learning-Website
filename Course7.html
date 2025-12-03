@@ -1,1 +1,1340 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+
+    <title>Junayed Academy : SSC ICT Mastery Program</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+<style>
+    .tabs ul li {
+        list-style-type: none;
+    }
+
+    .tabs ul li a {
+        font-size: 25px;
+        color: #4e4e4e !important;
+        font-weight: 500;
+    }
+
+    .tabs ul li a.active {
+        color: #f69050 !important;
+    }
+
+    .tabs ul li a:hover {
+        color: #f69050 !important;
+    }
+
+    #more {
+        display: none;
+    }
+
+    button {
+        border: none;
+        color: #f69050;
+    }
+    
+    .payment-plan-card {
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+        position: relative;
+        height: 100%;
+    }
+    
+    .payment-plan-card:hover {
+        border-color: #fb873f;
+        box-shadow: 0 5px 15px rgba(251, 135, 63, 0.1);
+    }
+    
+    .payment-plan-card.recommended {
+        border-color: #fb873f;
+        background-color: #fff9f5;
+    }
+    
+    .recommended-badge {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fb873f;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .price-highlight {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fb873f;
+    }
+    
+    .payment-feature {
+        margin: 5px 0;
+    }
+    
+    .payment-feature i {
+        color: #28a745;
+        margin-right: 8px;
+    }
+    
+    .emi-calculator {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .pricing-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(10%, -30%);
+    }
+    
+    .price-tag {
+        background-color: #ffc107;
+        color: #333;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    
+    .course-badge {
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    
+    .benefit-card {
+        border-radius: 10px;
+        padding: 20px;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .curriculum-week {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .curriculum-week:hover {
+        background-color: #e9ecef;
+    }
+    
+    .week-content {
+        display: none;
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        border-left: 3px solid #fb873f;
+    }
+    
+    .highlight-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+    
+    .chapter-list {
+        margin-top: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 5px solid #fb873f;
+    }
+    
+    .chapter-item {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+    
+    .chapter-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    .chapter-number {
+        display: inline-block;
+        background: #fb873f;
+        color: white;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    
+    .chapter-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .chapter-topics {
+        padding-left: 40px;
+        margin-top: 10px;
+    }
+    
+    .chapter-topics li {
+        margin-bottom: 8px;
+        color: #555;
+    }
+    
+    .chapter-topics i {
+        color: #28a745;
+        margin-right: 8px;
+    }
+    
+    .ssc-badge {
+        background: linear-gradient(45deg, #ff6b6b, #ffa726);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
+                    style="color: #fb873f;">Academy</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+
+                <div id="google_translate_element">
+                </div>
+
+
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="courses.html">Course</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">SSC ICT Mastery Program</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Header End -->
+
+<!-- Course Detail Start -->
+<div class="container-xxl py-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 wow fadeInUp">
+
+                <div class="container">
+                    <div class="row g-5 justify-content-center">
+
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <h2>SSC ICT Mastery Program <span class="ssc-badge">Best for SSC Students</span></h2>
+                            <p>SSC ICT বিষয়ে A+ নিশ্চিত করতে সম্পূর্ণ কম্প্রিহেন্সিভ প্রোগ্রাম। বাংলা ও ইংরেজি ভার্সনের সম্পূর্ণ সিলেবাস কভার করে প্র্যাকটিক্যাল এবং থিওরিটিক্যাল ক্লাসের মাধ্যমে গ্যারান্টি দেয়া হবে A+ গ্রেড।</p>
+                            <div class="d-flex">
+                                <small><i class="fa fa-star text-warning"></i>
+                                    4.9</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 3,800+ শিক্ষার্থী
+                                </small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user"></i> SSC/দাখিল শিক্ষার্থীদের জন্য</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> ২.৫ মাস</small>
+                            </div>
+                            <div class="highlight-box">
+                                <h4><i class="fa fa-award me-2"></i> গ্যারান্টি: A+ গ্রেড অথবা পরবর্তী ব্যাচ ফ্রি!</h4>
+                                <p class="mb-0">আমরা বিশ্বাস করি আমাদের ট্রেনিং মেথডোলজি এতই কার্যকর যে আমরা গ্যারান্টি দিচ্ছি আপনি যদি নিয়মিত ক্লাস করেন এবং অ্যাসাইনমেন্ট জমা দেন, তাহলে আপনি A+ পাবেন। না পেলে পরের ব্যাচে ফ্রি এডমিশন!</p>
+                            </div>
+                            <div class="image-div text-left mt-3">
+                                <img src="img/testimonial-2.png" alt=""
+                                    style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px;"><b>Instructor Name</b> - Junayed Bin Karim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid wow fadeInUp mt-5 tabs">
+                    <!-- Tab panes -->
+                    <div class="tab-content mt-4">
+
+                        <div class="tab-pane container active" id="Overview">
+                            <h2>প্রোগ্রাম সম্পর্কে</h2>
+                            <p>SSC ICT Mastery Program হল SSC/দাখিল শিক্ষার্থীদের জন্য বিশেষভাবে ডিজাইন করা একটি কম্প্রিহেন্সিভ ট্রেনিং প্রোগ্রাম যা বাংলা ও ইংরেজি উভয় ভার্সনের সিলেবাস সম্পূর্ণ কভার করে। এই প্রোগ্রামে থিওরি, প্র্যাকটিক্যাল, মডেল টেস্ট এবং কুইজের মাধ্যমে সম্পূর্ণ প্রস্তুতি নিশ্চিত করা হয়।</p>
+
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-calendar-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>সময়কাল</h5>
+                                            <p>২.৫ মাস (১০ সপ্তাহ)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>শিডিউল</h5>
+                                            <p>সপ্তাহে ৩ দিন, ১.৫ ঘন্টা/সেশন</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-laptop text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>ফরম্যাট</h5>
+                                            <p>লাইভ অনলাইন ক্লাস + রেকর্ডেড</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="mt-5">কেন এই প্রোগ্রামটি নির্বাচন করবেন?</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><i class="fa fa-check-circle text-primary"></i> বাংলা ও ইংরেজি উভয় ভার্সনের জন্য</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> A+ গ্রেড গ্যারান্টি</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> NCTB সিলেবাস অনুযায়ী সম্পূর্ণ কভারেজ</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><i class="fa fa-check-circle text-primary"></i> ৮০০+ MCQ প্র্যাকটিস</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> ৩০+ প্র্যাকটিক্যাল প্রজেক্ট</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> প্রাইভেট মেন্টরিং সাপোর্ট</p>
+                                </div>
+                            </div>
+
+                            <h2 class="mt-4">আপনি যা শিখবেন</h2>
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Introduction to ICT</span>
+
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Word Processing</span>
+
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Spreadsheet</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Database Management System</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Presentation</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Internet and Social Media</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">ICT Ethics and Security</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Programming Basics</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Algorithm & Flowchart</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Model Test & Viva Preparation</span>
+                        </div>
+
+                        <!-- Complete Chapter List Section -->
+                        <div class="container" id="ChapterList">
+                            <h2 class="mt-4">SSC ICT সম্পূর্ণ চ্যাপ্টার লিস্ট (2025)</h2>
+                            <p>NCTB সিলেবাস অনুযায়ী বাংলা ও ইংরেজি উভয় ভার্সনের সম্পূর্ণ চ্যাপ্টার</p>
+                            
+                            <div class="chapter-list">
+                                <!-- Chapter 1 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">১</div>
+                                    <div class="chapter-title">Introduction to ICT (তথ্য ও যোগাযোগ প্রযুক্তির পরিচিতি)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> ICT এর মৌলিক ধারণা ও সংজ্ঞা</li>
+                                        <li><i class="fa fa-check"></i> কম্পিউটারের প্রকারভেদ ও ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> হার্ডওয়্যার ও সফটওয়্যার</li>
+                                        <li><i class="fa fa-check"></i> ইনপুট-আউটপুট ডিভাইস</li>
+                                        <li><i class="fa fa-check"></i> কম্পিউটার জেনারেশন</li>
+                                        <li><i class="fa fa-check"></i> তথ্য ও যোগাযোগ প্রযুক্তির গুরুত্ব</li>
+                                        <li><i class="fa fa-check"></i> ডিজিটাল বাংলাদেশ ও আইসিটি</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 2 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">২</div>
+                                    <div class="chapter-title">Word Processing (ওয়ার্ড প্রসেসিং)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> MS Word/Writer পরিচিতি</li>
+                                        <li><i class="fa fa-check"></i> Document তৈরি ও ফরম্যাটিং</li>
+                                        <li><i class="fa fa-check"></i> Paragraph formatting (Alignment, Indent, Spacing)</li>
+                                        <li><i class="fa fa-check"></i> Font formatting (Style, Size, Color)</li>
+                                        <li><i class="fa fa-check"></i> Table তৈরি ও এডিট</li>
+                                        <li><i class="fa fa-check"></i> Header, Footer, Page Number</li>
+                                        <li><i class="fa fa-check"></i> Mail Merge (লেটার ও লেবেল তৈরি)</li>
+                                        <li><i class="fa fa-check"></i> Document Print & Save</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 3 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৩</div>
+                                    <div class="chapter-title">Spreadsheet (স্প্রেডশিট)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> MS Excel/Calc পরিচিতি</li>
+                                        <li><i class="fa fa-check"></i> Workbook & Worksheet পরিচালনা</li>
+                                        <li><i class="fa fa-check"></i> Cell formatting (Number, Date, Currency)</li>
+                                        <li><i class="fa fa-check"></i> Basic Formulas (Sum, Average, Max, Min)</li>
+                                        <li><i class="fa fa-check"></i> IF Function ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Chart তৈরি (Bar, Pie, Line)</li>
+                                        <li><i class="fa fa-check"></i> Data Sorting & Filtering</li>
+                                        <li><i class="fa fa-check"></i> Conditional Formatting</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 4 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৪</div>
+                                    <div class="chapter-title">Database Management System (ডেটাবেজ ম্যানেজমেন্ট সিস্টেম)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> ডেটাবেজের মৌলিক ধারণা</li>
+                                        <li><i class="fa fa-check"></i> MS Access/Base পরিচিতি</li>
+                                        <li><i class="fa fa-check"></i> Table তৈরি ও ফরম্যাটিং</li>
+                                        <li><i class="fa fa-check"></i> Field & Record পরিচালনা</li>
+                                        <li><i class="fa fa-check"></i> Query তৈরি (Simple Select Query)</li>
+                                        <li><i class="fa fa-check"></i> Form তৈরি ও ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Report তৈরি ও প্রিন্ট</li>
+                                        <li><i class="fa fa-check"></i> Primary Key ধারণা</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 5 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৫</div>
+                                    <div class="chapter-title">Presentation (প্রেজেন্টেশন)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> MS PowerPoint/Impress পরিচিতি</li>
+                                        <li><i class="fa fa-check"></i> Slide তৈরি ও ডিজাইন</li>
+                                        <li><i class="fa fa-check"></i> Text, Image, Shape যোগ করা</li>
+                                        <li><i class="fa fa-check"></i> Animation যোগ করা</li>
+                                        <li><i class="fa fa-check"></i> Slide Transition</li>
+                                        <li><i class="fa fa-check"></i> Master Slide ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Slide Show পরিচালনা</li>
+                                        <li><i class="fa fa-check"></i> Presentation প্রিন্ট ও Save</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 6 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৬</div>
+                                    <div class="chapter-title">Internet and Social Media (ইন্টারনেট ও সামাজিক যোগাযোগ মাধ্যম)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> ইন্টারনেটের মৌলিক ধারণা</li>
+                                        <li><i class="fa fa-check"></i> Web Browser ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Search Engine ব্যবহার (Google)</li>
+                                        <li><i class="fa fa-check"></i> Email তৈরি ও ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Social Media পরিচিতি (Facebook, YouTube)</li>
+                                        <li><i class="fa fa-check"></i> E-commerce ধারণা</li>
+                                        <li><i class="fa fa-check"></i> Digital Communication</li>
+                                        <li><i class="fa fa-check"></i> Online Safety Tips</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 7 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৭</div>
+                                    <div class="chapter-title">ICT Ethics and Security (আইসিটি নৈতিকতা ও নিরাপত্তা)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> ICT Ethics (নৈতিকতা)</li>
+                                        <li><i class="fa fa-check"></i> Cyber Crime & Security</li>
+                                        <li><i class="fa fa-check"></i> Password Security</li>
+                                        <li><i class="fa fa-check"></i> Data Protection</li>
+                                        <li><i class="fa fa-check"></i> Copyright & Plagiarism</li>
+                                        <li><i class="fa fa-check"></i> Digital Footprint</li>
+                                        <li><i class="fa fa-check"></i> Responsible ICT Use</li>
+                                        <li><i class="fa fa-check"></i> Privacy Settings</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 8 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৮</div>
+                                    <div class="chapter-title">Programming Basics / Algorithm & Flowchart (প্রোগ্রামিং বেসিক / অ্যালগরিদম ও ফ্লোচার্ট)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Programming ধারণা</li>
+                                        <li><i class="fa fa-check"></i> Algorithm (অ্যালগরিদম)</li>
+                                        <li><i class="fa fa-check"></i> Flowchart Symbols</li>
+                                        <li><i class="fa fa-check"></i> Flowchart তৈরি</li>
+                                        <li><i class="fa fa-check"></i> Pseudocode লেখা</li>
+                                        <li><i class="fa fa-check"></i> Simple Programming Problems</li>
+                                        <li><i class="fa fa-check"></i> Scratch Programming (বেসিক)</li>
+                                        <li><i class="fa fa-check"></i> Problem Solving Techniques</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 9 - Practical & Revision -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৯</div>
+                                    <div class="chapter-title">Practical & Revision (প্র্যাকটিক্যাল ও রিভিশন)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> MS Office Practical Projects</li>
+                                        <li><i class="fa fa-check"></i> Database Practical Projects</li>
+                                        <li><i class="fa fa-check"></i> Presentation Practical Projects</li>
+                                        <li><i class="fa fa-check"></i> Internet Practical Tasks</li>
+                                        <li><i class="fa fa-check"></i> Complete Syllabus Revision</li>
+                                        <li><i class="fa fa-check"></i> Previous Year Questions Solution</li>
+                                        <li><i class="fa fa-check"></i> Model Test Series (8 Full Tests)</li>
+                                        <li><i class="fa fa-check"></i> Viva & Practical Exam Preparation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-4">
+                                <h5><i class="fa fa-info-circle me-2"></i> গুরুত্বপূর্ণ তথ্য:</h5>
+                                <p class="mb-0">
+                                    • বাংলা ও ইংরেজি উভয় ভার্সনের সিলেবাস সম্পূর্ণ কভার করা হবে<br>
+                                    • প্রতিটি চ্যাপ্টারের জন্য প্র্যাকটিক্যাল সেশন থাকবে<br>
+                                    • চ্যাপ্টার শেষে MCQ টেস্ট ও অ্যাসাইনমেন্ট<br>
+                                    • ৮০০+ বিগত বছরের প্রশ্ন প্র্যাকটিস<br>
+                                    • ৩০+ প্র্যাকটিক্যাল প্রজেক্ট<br>
+                                    • প্র্যাকটিক্যাল ও থিওরি উভয় পরীক্ষার প্রস্তুতি
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Plan Section -->
+                        <div class="container" id="PaymentPlan">
+                            <h2 class="mt-4">ইজি পেমেন্ট প্ল্যান</h2>
+                            <p>আপনার সুবিধামতো পেমেন্ট পদ্ধতি বেছে নিন। বিশেষ ছাড়ে A+ গ্রেডের গ্যারান্টি নিয়ে শুরু করুন!</p>
+                            
+                            <div class="row mt-4">
+                                <!-- Regular Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">রেগুলার প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ১২,০০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ১৬,০০০</del></p>
+                                            <small class="text-success">২৫% ছাড়</small>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সম্পূর্ণ কোর্স কন্টেন্ট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> লাইভ ক্লাস অ্যাক্সেস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সকল রেকর্ডেড ক্লাস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রশ্ন ব্যাংক (800+ MCQ)</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> বেসিক সার্টিফিকেট</p>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="regular-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Premium Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card recommended">
+                                        <div class="recommended-badge">সবচেয়ে জনপ্রিয়</div>
+                                        <h4 class="text-center mb-3">প্রিমিয়াম প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ১৫,০০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ২০,০০০</del></p>
+                                            <small class="text-success">২৫% ছাড়</small>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> রেগুলার প্যাকেজের সবকিছু</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> A+ গ্রেড গ্যারান্টি</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সাপ্তাহিক প্রাইভেট ডাউট সলভিং</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> পার্সোনাল মেন্টরিং</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম সার্টিফিকেট</p>
+                                        </div>
+                                        <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ultimate Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">আলটিমেট প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ১৮,০০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ২৪,০০০</del></p>
+                                            <small class="text-success">২৫% ছাড়</small>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম প্যাকেজের সবকিছু</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ১-১ পার্সোনাল টিউটর</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> বিশেষ মডেল টেস্ট সিরিজ</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ভাইভা প্রিপারেশন সেশন</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> বিশেষ আলটিমেট সার্টিফিকেট</p>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="ultimate-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Installment Options -->
+                            <div class="emi-calculator">
+                                <h5><i class="fa fa-calculator me-2"></i>ইজি ইএমআই/কিস্তি অপশন</h5>
+                                <div class="row mt-3">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <h6>২ কিস্তিতে</h6>
+                                                <p class="price-highlight">৳ ৭,৫০০ × ২</p>
+                                                <small class="text-muted">(প্রিমিয়াম প্যাকেজ)</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <h6>৩ কিস্তিতে</h6>
+                                                <p class="price-highlight">৳ ৫,০০০ × ৩</p>
+                                                <small class="text-muted">(প্রিমিয়াম প্যাকেজ)</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <h6>৪ কিস্তিতে</h6>
+                                                <p class="price-highlight">৳ ৩,৭৫০ × ৪</p>
+                                                <small class="text-muted">(প্রিমিয়াম প্যাকেজ)</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-center text-muted"><small>*কিস্তি সম্পর্কে বিস্তারিত জানতে কল করুন: ০১৮৯৩-২৫৫৫০৩</small></p>
+                            </div>
+                            
+                            <!-- Group Discount -->
+                            <div class="alert alert-warning mt-3">
+                                <h5><i class="fa fa-users me-2"></i>গ্রুপ ডিস্কাউন্ট</h5>
+                                <p class="mb-1">
+                                    <strong>২ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ১৪,০০০ (প্রিমিয়াম প্যাকেজ)<br>
+                                    <strong>৩ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ১৩,০০০ (প্রিমিয়াম প্যাকেজ)<br>
+                                    <strong>৫ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ১২,০০০ (প্রিমিয়াম প্যাকেজ)<br>
+                                    <small class="text-muted">*গ্রুপ ডিস্কাউন্টের জন্য সরাসরি WhatsApp করুন: ০১৮৯৩-২৫৫৫০৩</small>
+                                </p>
+                            </div>
+                            
+                            <!-- Payment Methods -->
+                            <div class="mt-4">
+                                <h5>সাপোর্টেড পেমেন্ট মেথডস</h5>
+                                <div class="d-flex flex-wrap gap-3 mt-3">
+                                    <span class="badge bg-success p-3"><i class="fa fa-mobile-alt me-2"></i>বিকাশ</span>
+                                    <span class="badge bg-info p-3"><i class="fa fa-credit-card me-2"></i>নগদ</span>
+                                    <span class="badge bg-warning p-3"><i class="fa fa-rocket me-2"></i>রকেট</span>
+                                    <span class="badge bg-secondary p-3"><i class="fa fa-university me-2"></i>ব্যাংক ট্রান্সফার</span>
+                                    <span class="badge bg-primary p-3"><i class="fa fa-credit-card me-2"></i>ক্রেডিট/ডেবিট কার্ড</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" id="Curriculum">
+                            <h2 class="mt-4">প্রোগ্রাম কারিকুলাম</h2>
+                            <p>২.৫ মাসের সম্পূর্ণ SSC ICT সিলেবাস কভার করার জন্য ডিজাইন করা বিশেষ কারিকুলাম</p>
+                            
+                            <div class="accordion accordion-flush" id="curriculumAccordion">
+                                <!-- Week 1-4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth1" aria-expanded="false" aria-controls="collapseMonth1">
+                                            মাস ১: ICT ফান্ডামেন্টালস ও ওয়ার্ড প্রসেসিং
+                                        </button>
+                                    </h2>
+                                    <div id="collapseMonth1" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> ICT পরিচিতি ও গুরুত্ব</li>
+                                                <li><i class="fa fa-video text-danger"></i> কম্পিউটার হার্ডওয়্যার ও সফটওয়্যার</li>
+                                                <li><i class="fa fa-video text-danger"></i> MS Word বেসিক থেকে অ্যাডভান্সড</li>
+                                                <li><i class="fa fa-video text-danger"></i> Document ফরম্যাটিং</li>
+                                                <li><i class="fa fa-video text-danger"></i> Table তৈরি ও এডিট</li>
+                                                <li><i class="fa fa-video text-danger"></i> Mail Merge প্রজেক্ট</li>
+                                                <li><i class="fa fa-video text-danger"></i> মাসিক টেস্ট ও মূল্যায়ন</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 5-8 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth2" aria-expanded="false" aria-controls="collapseMonth2">
+                                            মাস ২: স্প্রেডশিট, ডেটাবেজ ও প্রেজেন্টেশন
+                                        </button>
+                                    </h2>
+                                    <div id="collapseMonth2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> MS Excel - Formulas & Functions</li>
+                                                <li><i class="fa fa-video text-danger"></i> Chart তৈরি ও এডিট</li>
+                                                <li><i class="fa fa-video text-danger"></i> MS Access - Table & Query</li>
+                                                <li><i class="fa fa-video text-danger"></i> Form & Report তৈরি</li>
+                                                <li><i class="fa fa-video text-danger"></i> MS PowerPoint প্রেজেন্টেশন</li>
+                                                <li><i class="fa fa-video text-danger"></i> Animation & Transition</li>
+                                                <li><i class="fa fa-video text-danger"></i> মাসিক টেস্ট ও প্রজেক্ট মূল্যায়ন</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 9-10 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth3" aria-expanded="false" aria-controls="collapseMonth3">
+                                            মাস ২.৫: ইন্টারনেট, প্রোগ্রামিং ও রিভিশন
+                                        </button>
+                                    </h2>
+                                    <div id="collapseMonth3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> ইন্টারনেট ও Social Media</li>
+                                                <li><i class="fa fa-video text-danger"></i> ICT Ethics & Security</li>
+                                                <li><i class="fa fa-video text-danger"></i> Programming Basics</li>
+                                                <li><i class="fa fa-video text-danger"></i> Algorithm & Flowchart</li>
+                                                <li><i class="fa fa-video text-danger"></i> Scratch Programming</li>
+                                                <li><i class="fa fa-video text-danger"></i> সম্পূর্ণ সিলেবাস রিভিশন</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রাক্তন বছরের প্রশ্ন সমাধান</li>
+                                                <li><i class="fa fa-video text-danger"></i> মডেল টেস্ট সিরিজ (৮টি ফুল টেস্ট)</li>
+                                                <li><i class="fa fa-video text-danger"></i> ভাইভা প্রিপারেশন ও শেষ মুহূর্তের টিপস</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Section -->
+                        <div class="container" id="Benefits">
+                            <h2 class="mt-4">কেন এই প্রোগ্রামটি নির্বাচন করবেন?</h2>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-award text-primary me-2"></i> A+ গ্রেড গ্যারান্টি</h5>
+                                            <p>আমরা গ্যারান্টি দিচ্ছি আপনি A+ পাবেন। না পেলে পরবর্তী ব্যাচে ফ্রি এডমিশন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-chalkboard-teacher text-primary me-2"></i> বিশেষজ্ঞ শিক্ষক</h5>
+                                            <p>SSC ICT বিষয়ে বিশেষজ্ঞ শিক্ষক দ্বারা পরিচালিত, যিনি ৩০০+ শিক্ষার্থীকে A+ এনেছেন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-book text-primary me-2"></i> সম্পূর্ণ সিলেবাস কভার</h5>
+                                            <p>বাংলা ও ইংরেজি উভয় ভার্সনের সম্পূর্ণ NCTB সিলেবাস নির্ভুলভাবে কভার করা হবে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-question-circle text-primary me-2"></i> ৮০০+ MCQ প্র্যাকটিস</h5>
+                                            <p>বিগত বছরের প্রশ্নসহ ৮০০+ MCQ প্র্যাকটিসের সুযোগ, যা A+ নিশ্চিত করবে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-users text-primary me-2"></i> প্রাইভেট মেন্টরিং</h5>
+                                            <p>প্রত্যেক শিক্ষার্থী পাবেন ব্যক্তিগত মেন্টরিং ও ডাউট সলভিং এর সুযোগ।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-file-alt text-primary me-2"></i> মডেল টেস্ট সিরিজ</h5>
+                                            <p>৮টি ফুল লেন্থ মডেল টেস্ট, যা বোর্ড পরীক্ষার জন্য সম্পূর্ণ প্রস্তুতি নিশ্চিত করবে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" id="Instructor">
+                            <h2 class="mt-4">প্রশিক্ষক সম্পর্কে</h2>
+                            <div class="image-div text-left mt-4">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <img src="img/testimonial-2.png" alt=""
+                                            style="height: 150px; width: 150px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-lg-9 col-md-6 mt-2">
+                                        <h5>Junayed Bin Karim </h5>
+                                        <p>SSC ICT বিশেষজ্ঞ ও একাডেমিক মেন্টর</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-star"></i>
+                                                    5.00 প্রশিক্ষক রেটিং</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-check"></i>
+                                                    2,500+ রিভিউ</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-user"></i>
+                                                    5,200+ শিক্ষার্থী</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-award"></i>
+                                                    300+ A+ প্রাপ্ত শিক্ষার্থী</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="des mt-4 mb-5">
+                                    Junayed Bin Karim একজন অভিজ্ঞ SSC ICT বিশেষজ্ঞ যিনি গত ৪ বছর ধরে SSC শিক্ষার্থীদের ICT বিষয়ে ট্রেনিং দিচ্ছেন। তাঁর অধীনে ৩০০+ শিক্ষার্থী SSC ICT তে A+ গ্রেড অর্জন করেছেন। 
+                                    <br><br>
+                                    <strong>বিশেষত্ব:</strong><br>
+                                    • বাংলা ও ইংরেজি উভয় ভার্সনের সিলেবাসে পারদর্শী<br>
+                                    • NCTB কারিকুলাম অনুযায়ী প্রস্তুতি<br>
+                                    • প্র্যাকটিক্যাল ও থিওরিটিক্যাল ক্লাসের বিশেষায়িত মেথড<br>
+                                    • মডেল টেস্ট ও ভাইভা প্রিপারেশন<br>
+                                    • শিক্ষার্থীদের মনস্তাত্ত্বিক প্রস্তুতি<br>
+                                    <br><br>
+                                    তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটিতে (DIU) কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ পড়াশোনা করেছেন এবং শিক্ষার্থীদের বোর্ড পরীক্ষায় সর্বোচ্চ স্কোর অর্জনে সাহায্য করার জন্য বিশেষ টেকনিক রপ্ত করেছেন।
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative">
+                    <div class="image text-center">
+                        <img class="img-fluid mt-2" src="img/course-7.jpg" alt="" height="200px" width="500px">
+                        <p class="text-muted small mt-1">*A+ গ্রেডের গ্যারান্টিযুক্ত প্রোগ্রাম</p>
+                    </div>
+                    <span class="pricing-badge badge bg-danger">২৫% ছাড়</span>
+                </div>
+                
+                <div class="price-tag">মাত্র ৳ ১২,০০০</div>
+                
+                <h4 class="mt-2 p-2">
+                    <del>৳ 16,000</del> ৳ 12,000 <small>(রেগুলার প্যাকেজ)</small>
+                </h4>
+
+                <p class="text-success p-2"><i class="fa fa-gift"></i> <strong>বিশেষ অফার!</strong> A+ গ্রেড গ্যারান্টি</p>
+                <p class="text-info p-2"><i class="fa fa-users"></i> <strong>গ্রুপ ডিস্কাউন্ট:</strong> ৩ জন মিলে এনরোল করলে প্রতিজন ৳ ১৩,০০০</p>
+                <p class="text-warning p-2"><i class="fa fa-calendar"></i> <strong>কিস্তি সুবিধা:</strong> ৪ কিস্তিতে শুধু ৳ ৩,৭৫০/কিস্তি</p>
+
+                <div class="buttons">
+                    <button class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">এনরোল করুন</button>
+                    <a href="#demoClass" class="text-decoration-none text-white btn btn-outline-primary p-3 w-100 mb-2" data-bs-toggle="modal">ফ্রি ডেমো ক্লাস বুক করুন</a>
+                    <a href="#ChapterList" class="text-decoration-none text-white btn btn-info p-3 w-100 mb-2">চ্যাপ্টার লিস্ট দেখুন</a>
+                    <a href="#PaymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2">পেমেন্ট প্ল্যান দেখুন</a>
+                </div>
+
+                <div class="list mt-2">
+                    <div class="list1 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-clock"></i> সময়কাল</p>
+                        <p>২.৫ মাস</p>
+                    </div>
+                    <div class="list2 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-book"></i> মোট চ্যাপ্টার</p>
+                        <p>৯টি</p>
+                    </div>
+                    <div class="list3 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-bolt"></i> ভর্তি</p>
+                        <p>৩,৮০০+ শিক্ষার্থী</p>
+                    </div>
+                    <div class="list4 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-google-translate"></i> ভাষা</p>
+                        <p>বাংলা/ইংরেজি</p>
+                    </div>
+                    <div class="list5 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> দক্ষতা স্তর</p>
+                        <p>SSC/দাখিল শিক্ষার্থী</p>
+                    </div>
+                    <div class="list6 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> সময়সীমা</p>
+                        <p>লাইফটাইম এক্সেস</p>
+                    </div>
+                    <div class="list7 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-certificate"></i> সার্টিফিকেট</p>
+                        <p>হ্যাঁ (৩টি প্যাকেজ)</p>
+                    </div>
+                    <div class="list8 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-laptop-code"></i> সফ্টওয়্যার</p>
+                        <p>MS Office, Scratch</p>
+                    </div>
+                    <div class="list9 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-project-diagram"></i> MCQ প্র্যাকটিস</p>
+                        <p>৮০০+ প্রশ্ন</p>
+                    </div>
+                    <div class="list10 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-credit-card"></i> পেমেন্ট প্ল্যান</p>
+                        <p>৩ টি প্যাকেজ + কিস্তি</p>
+                    </div>
+                    <div class="button pt-4 text-center mb-4">
+                        <i class="fa fa-share"></i><a href=""> এই কোর্স শেয়ার করুন</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+<!-- Demo Class Modal -->
+<div class="modal fade" id="demoClass" tabindex="-1" aria-labelledby="demoClassLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="demoClassLabel">ফ্রি ডেমো ক্লাস বুক করুন</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>আমাদের SSC ICT Mastery Program এর একটি ফ্রি লাইভ ডেমো ক্লাসে অংশগ্রহণ করুন এবং আমাদের শিক্ষণ পদ্ধতি সম্পর্কে জানুন। সম্পূর্ণ বিনামূল্যে!</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">আপনার নাম</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">আপনার ইমেইল</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">আপনার ফোন নম্বর</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="education" class="form-label">শ্রেণী</label>
+                        <select class="form-control" id="education" required>
+                            <option value="">সিলেক্ট করুন</option>
+                            <option value="ssc9">Class 9</option>
+                            <option value="ssc10">Class 10</option>
+                            <option value="dakhil9">দাখিল 1st Year</option>
+                            <option value="dakhil10">দাখিল 2nd Year</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="version" class="form-label">ভার্সন</label>
+                        <select class="form-control" id="version" required>
+                            <option value="">সিলেক্ট করুন</option>
+                            <option value="bangla">বাংলা ভার্সন</option>
+                            <option value="english">ইংরেজি ভার্সন</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">ফ্রি ডেমো বুক করুন</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Plan Selection Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">পেমেন্ট প্যাকেজ সিলেক্ট করুন</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="paymentPlanDetails">
+                    <!-- Plan details will be loaded here dynamically -->
+                </div>
+                <div class="mt-4">
+                    <h6>পেমেন্ট সম্পূর্ণ করুন:</h6>
+                    <form id="paymentForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পূর্ণ নাম</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ইমেইল</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ফোন নম্বর</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">শ্রেণী</label>
+                                <select class="form-control" id="class" required>
+                                    <option value="">সিলেক্ট করুন</option>
+                                    <option value="ssc9">Class 9</option>
+                                    <option value="ssc10">Class 10</option>
+                                    <option value="dakhil1">দাখিল 1st Year</option>
+                                    <option value="dakhil2">দাখিল 2nd Year</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">প্যাকেজ</label>
+                                <input type="text" class="form-control" id="selectedPackageName" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">মোট পরিমাণ</label>
+                                <input type="text" class="form-control" id="selectedPackagePrice" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পেমেন্ট মেথড</label>
+                                <select class="form-control" id="paymentMethod" required>
+                                    <option value="">সিলেক্ট করুন</option>
+                                    <option value="bkash">বিকাশ</option>
+                                    <option value="nagad">নগদ</option>
+                                    <option value="rocket">রকেট</option>
+                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
+                                    <option value="card">ক্রেডিট/ডেবিট কার্ড</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">কিস্তি প্ল্যান (ঐচ্ছিক)</label>
+                                <select class="form-control" id="installmentPlan">
+                                    <option value="">একবারে পরিশোধ</option>
+                                    <option value="2">২ কিস্তিতে</option>
+                                    <option value="3">৩ কিস্তিতে</option>
+                                    <option value="4">৪ কিস্তিতে</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                আমি <a href="#">শর্তাবলী</a> পড়েছি এবং সম্মতি প্রদান করছি। A+ গ্যারান্টি পেতে হলে অবশ্যই সকল ক্লাসে উপস্থিত থাকতে হবে এবং সকল অ্যাসাইনমেন্ট জমা দিতে হবে।
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">কনফার্ম ও পেমেন্ট করুন</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
+                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
+                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
+                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
+                <p><a class="text-light" href="">শর্তাবলী</a></p>
+                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">যোগাযোগ</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
+                <p>এখনই সাবস্ক্রাইব করুন এবং SSC প্রস্তুতি টিপস ও অফার সম্পর্কে সর্বপ্রথম জানুন!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
+                    <button type="button"
+                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+<!-- Payment Plan JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Payment Plan Modal Handler
+        const paymentModal = document.getElementById('paymentModal');
+        const paymentPlanDetails = document.getElementById('paymentPlanDetails');
+        const selectedPackageName = document.getElementById('selectedPackageName');
+        const selectedPackagePrice = document.getElementById('selectedPackagePrice');
+        
+        paymentModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const plan = button.getAttribute('data-plan');
+            
+            let planDetails = '';
+            
+            switch(plan) {
+                case 'regular-package':
+                    planDetails = `
+                        <h4>রেগুলার প্যাকেজ</h4>
+                        <div class="alert alert-success">
+                            <h5>মোট পরিমাণ: ৳ ১২,০০০</h5>
+                            <p class="mb-0">আপনি ২৫% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ১৬,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>সম্পূর্ণ SSC ICT কোর্স কন্টেন্ট (৯টি চ্যাপ্টার)</li>
+                            <li>৩০টি লাইভ ক্লাস (সপ্তাহে ৩টি)</li>
+                            <li>সকল রেকর্ডেড ক্লাসের লাইফটাইম এক্সেস</li>
+                            <li>কোর্স ম্যাটেরিয়াল (PDF, Slides, Notes)</li>
+                            <li>৮০০+ MCQ প্রশ্ন ব্যাংক</li>
+                            <li>৩০+ প্র্যাকটিক্যাল অ্যাসাইনমেন্ট</li>
+                            <li>বেসিক সার্টিফিকেট</li>
+                            <li>কমিউনিটি সাপোর্ট গ্রুপ</li>
+                        </ul>
+                    `;
+                    selectedPackageName.value = 'রেগুলার প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ১২,০০০';
+                    break;
+                    
+                case 'premium-package':
+                    planDetails = `
+                        <h4>প্রিমিয়াম প্যাকেজ</h4>
+                        <div class="alert alert-primary">
+                            <h5>মোট পরিমাণ: ৳ ১৫,০০০</h5>
+                            <p class="mb-0">আপনি ২৫% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ২০,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>রেগুলার প্যাকেজের সবকিছু</li>
+                            <li><strong>A+ গ্রেড গ্যারান্টি</strong> (শর্ত প্রযোজ্য)</li>
+                            <li>সাপ্তাহিক প্রাইভেট ডাউট সলভিং সেশন</li>
+                            <li>ব্যক্তিগত অ্যাসাইনমেন্ট রিভিউ</li>
+                            <li>প্রিমিয়াম সার্টিফিকেট (PDF + হার্ড কপি)</li>
+                            <li>বিশেষ মডেল টেস্ট সিরিজ (৮টি ফুল টেস্ট)</li>
+                            <li>ভাইভা প্রিপারেশন সেশন (৪টি)</li>
+                            <li>প্রাইভেট WhatsApp গ্রুপ অ্যাক্সেস</li>
+                            <li>২৪/৭ ইমার্জেন্সি সাপোর্ট</li>
+                        </ul>
+                        <p><strong>বোনাস:</strong> SSC পরবর্তী Career Counseling Session</p>
+                    `;
+                    selectedPackageName.value = 'প্রিমিয়াম প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ১৫,০০০';
+                    break;
+                    
+                case 'ultimate-package':
+                    planDetails = `
+                        <h4>আলটিমেট প্যাকেজ</h4>
+                        <div class="alert alert-info">
+                            <h5>মোট পরিমাণ: ৳ ১৮,০০০</h5>
+                            <p class="mb-0">আপনি ২৫% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ২৪,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>প্রিমিয়াম প্যাকেজের সবকিছু</li>
+                            <li>১-১ পার্সোনাল টিউটর (সাপ্তাহিক ২টি সেশন)</li>
+                            <li>কাস্টামাইজড স্টাডি প্ল্যান</li>
+                            <li>বিশেষ মডেল টেস্ট সিরিজ (১২টি ফুল টেস্ট)</li>
+                            <li>মক ভাইভা (৮টি সেশন)</li>
+                            <li>প্রাইভেট প্রগ্রেস রিপোর্টিং</li>
+                            <li>আলটিমেট সার্টিফিকেট (ফ্রেম সহ)</li>
+                            <li>পরীক্ষার আগের দিন বিশেষ কাউন্সেলিং</li>
+                            <li>লাইফটাইম কোর্স আপডেট অ্যাক্সেস</li>
+                            <li>পরীক্ষার হলে যাওয়ার আগের দিন বিশেষ প্রিপারেশন</li>
+                        </ul>
+                        <p><strong>বোনাস:</strong> পরীক্ষার পরে College Admission Guidance</p>
+                    `;
+                    selectedPackageName.value = 'আলটিমেট প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ১৮,০০০';
+                    break;
+            }
+            
+            paymentPlanDetails.innerHTML = planDetails;
+        });
+        
+        // Payment Form Submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const packageName = selectedPackageName.value;
+            const packagePrice = selectedPackagePrice.value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const fullName = document.getElementById('fullName').value;
+            const installmentPlan = document.getElementById('installmentPlan').value;
+            const className = document.getElementById('class').value;
+            
+            // Calculate installment amounts
+            let installmentMessage = '';
+            if (installmentPlan && installmentPlan !== '') {
+                const total = parseInt(packagePrice.replace(/[^\d]/g, ''));
+                const installments = parseInt(installmentPlan);
+                const perInstallment = Math.ceil(total / installments);
+                
+                installmentMessage = `\nকিস্তি প্ল্যান: ${installmentPlan} কিস্তিতে\nপ্রতি কিস্তি: ৳ ${perInstallment.toLocaleString()}`;
+            }
+            
+            // Show payment instructions based on selected method
+            let paymentMessage = '';
+            switch(paymentMethod) {
+                case 'bkash':
+                    paymentMessage = `বিকাশ করুন: 01893255503\nরেফারেন্স: SSC-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}\nশ্রেণী: ${className}${installmentMessage}`;
+                    break;
+                case 'nagad':
+                    paymentMessage = `নগদ করুন: 01893255503\nরেফারেন্স: SSC-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}\nশ্রেণী: ${className}${installmentMessage}`;
+                    break;
+                case 'rocket':
+                    paymentMessage = `রকেট করুন: 018932555038\nরেফারেন্স: SSC-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}\nশ্রেণী: ${className}${installmentMessage}`;
+                    break;
+                default:
+                    paymentMessage = `আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব পেমেন্ট প্রসেস সম্পন্ন করতে।${installmentMessage}`;
+            }
+            
+            alert(`পেমেন্ট সফলভাবে সাবমিট হয়েছে!\n\nপ্যাকেজ: ${packageName}\nমূল্য: ${packagePrice}\nনাম: ${fullName}\nশ্রেণী: ${className}\n\n${paymentMessage}\n\nপেমেন্ট সম্পন্ন হওয়ার পর স্ক্রিনশট পাঠান আমাদের WhatsApp-এ: 01893255503\n\nA+ গ্যারান্টি পেতে সকল ক্লাসে উপস্থিত থাকুন ও অ্যাসাইনমেন্ট জমা দিন।`);
+            
+            // Here you would typically send the data to your server
+            const modal = bootstrap.Modal.getInstance(paymentModal);
+            modal.hide();
+        });
+        
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>
