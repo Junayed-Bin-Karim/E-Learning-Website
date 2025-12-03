@@ -64,6 +64,98 @@
         color: #f69050;
     }
     
+    .payment-plan-card {
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+        position: relative;
+        height: 100%;
+    }
+    
+    .payment-plan-card:hover {
+        border-color: #fb873f;
+        box-shadow: 0 5px 15px rgba(251, 135, 63, 0.1);
+    }
+    
+    .payment-plan-card.recommended {
+        border-color: #fb873f;
+        background-color: #fff9f5;
+    }
+    
+    .recommended-badge {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fb873f;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .price-highlight {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fb873f;
+    }
+    
+    .payment-feature {
+        margin: 5px 0;
+    }
+    
+    .payment-feature i {
+        color: #28a745;
+        margin-right: 8px;
+    }
+    
+    .emi-calculator {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .pricing-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(10%, -30%);
+    }
+    
+    .price-tag {
+        background-color: #ffc107;
+        color: #333;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    
+    .course-badge {
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    
+    .benefit-card {
+        border-radius: 10px;
+        padding: 20px;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+    }
+    
     .curriculum-week {
         background-color: #f8f9fa;
         border-radius: 5px;
@@ -84,25 +176,6 @@
         border-radius: 5px;
         margin-top: 10px;
         border-left: 3px solid #fb873f;
-    }
-    
-    .course-badge {
-        background-color: #28a745;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 14px;
-        margin-left: 10px;
-    }
-    
-    .price-tag {
-        background-color: #ffc107;
-        color: #333;
-        padding: 5px 15px;
-        border-radius: 30px;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 10px;
     }
 </style>
 
@@ -209,7 +282,37 @@
                             <h2>কোর্স সম্পর্কে</h2>
                             <p>C প্রোগ্রামিং হলো কম্পিউটার প্রোগ্রামিং এর ভিত্তি। এই ভাষাটি শেখার মাধ্যমে আপনি প্রোগ্রামিং এর মূলনীতি, লজিক বিল্ডিং এবং সমস্যা সমাধানের দক্ষতা অর্জন করবেন। আমাদের এই কোর্সটি বিশেষভাবে ডিজাইন করা হয়েছে সম্পূর্ণ নতুনদের জন্য যারা প্রোগ্রামিং সম্পর্কে কিছুই জানেন না।</p>
 
-                            <h2 class="mt-4">কেন C প্রোগ্রামিং শিখবেন?</h2>
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-calendar-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>সময়কাল</h5>
+                                            <p>১ মাস (৪ সপ্তাহ)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>শিডিউল</h5>
+                                            <p>মাসে ৮ দিন, ২.৫ ঘন্টা/সেশন</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-laptop text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>ফরম্যাট</h5>
+                                            <p>লাইভ অনলাইন ক্লাস + প্র্যাকটিস</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="mt-5">কেন C প্রোগ্রামিং শিখবেন?</h2>
                             <div class="row">
                                 <div class="col-md-6">
                                     <p><i class="fa fa-check-circle text-primary"></i> সমস্ত আধুনিক প্রোগ্রামিং ভাষার ভিত্তি</p>
@@ -220,22 +323,6 @@
                                     <p><i class="fa fa-check-circle text-primary"></i> হার্ডওয়্যার কন্ট্রোল বুঝতে সাহায্য করে</p>
                                     <p><i class="fa fa-check-circle text-primary"></i> বিশ্ববিদ্যালয়ের সিলেবাসের সাথে মিল রয়েছে</p>
                                     <p><i class="fa fa-check-circle text-primary"></i> কম্পিউটার বিজ্ঞানের মৌলিক ধারণা উন্নত করে</p>
-                                </div>
-                            </div>
-
-                            <h2 class="mt-4">কোর্স হাইলাইটস</h2>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><i class="fa fa-check-circle text-success"></i> লাইভ অনলাইন ক্লাস</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> মাসে মোট ক্লাস: ৮</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> ক্লাস প্রতি ২.৫ ঘন্টা</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> প্রতিটি ক্লাসের রেকর্ডিং</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><i class="fa fa-check-circle text-success"></i> প্র্যাকটিকাল কোডিং এক্সারসাইজ</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> রিয়েল-টাইম প্রজেক্ট</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> কোর্স সম্পন্ন সার্টিফিকেট</p>
-                                    <p><i class="fa fa-check-circle text-success"></i> ২৪/৭ সাপোর্ট</p>
                                 </div>
                             </div>
 
@@ -271,347 +358,243 @@
                                 style="font-size: 15px; font-weight: normal;">প্রজেক্ট ডেভেলপমেন্ট</span>
                         </div>
 
-
-
-
-
-
-
-<!-- Payment Plan Modal -->
-<div class="modal fade" id="paymentPlan" tabindex="-1" aria-labelledby="paymentPlanLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="paymentPlanLabel"><i class="fa fa-credit-card me-2"></i>ইজি পেমেন্ট প্ল্যান</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <div class="alert alert-success">
-                    <i class="fa fa-percentage me-2"></i> 
-                    <strong>বিশেষ অফার!</strong> প্রথম ১০০ জন শিক্ষার্থীর জন্য সমস্ত পেমেন্ট প্ল্যানে অতিরিক্ত ৫% ছাড়
-                </div>
-                
-                <div class="row g-4">
-                    <!-- One-time Payment -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-primary shadow-sm">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h5 class="mb-0"><i class="fa fa-bolt me-2"></i>ওয়ান-টাইম</h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <div class="price-display">
-                                    <h3 class="text-danger">৳ ৪,৭৫০</h3>
-                                    <small class="text-muted"><del>৳ ৫,০০০</del></small>
-                                    <div class="badge bg-success mt-2">সাশ্রয়ী</div>
+                        <!-- Payment Plan Section -->
+                        <div class="container" id="PaymentPlan">
+                            <h2 class="mt-4">ইজি পেমেন্ট প্ল্যান</h2>
+                            <p>আপনার সুবিধামতো পেমেন্ট পদ্ধতি বেছে নিন। কোর্সটি কম খরচে কিন্তু মানসম্পন্ন শিক্ষা!</p>
+                            
+                            <div class="row mt-4">
+                                <!-- Basic Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">বেসিক প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ৪,৫০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ৬,০০০</del></p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সম্পূর্ণ কোর্স কন্টেন্ট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> লাইভ ক্লাস অ্যাক্সেস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> বেসিক সার্টিফিকেট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রজেক্ট ফাইলস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> কমিউনিটি সাপোর্ট</p>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="basic-package">সিলেক্ট করুন</button>
+                                    </div>
                                 </div>
-                                <ul class="list-unstyled mt-3 text-start">
-                                    <li><i class="fa fa-check text-success me-2"></i> একবারে সম্পূর্ণ পেমেন্ট</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> ৫% এক্সট্রা ছাড়</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> কোর্স এক্সেস সাথে সাথে</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> ফ্রি প্রি-কোর্স ম্যাটেরিয়াল</li>
-                                </ul>
+                                
+                                <!-- Premium Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card recommended">
+                                        <div class="recommended-badge">সবচেয়ে জনপ্রিয়</div>
+                                        <h4 class="text-center mb-3">প্রিমিয়াম প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ৫,০০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ৮,০০০</del> ৩৭% ছাড়</p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম সার্টিফিকেট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ১:১ কোড রিভিউ</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ব্যক্তিগত প্রজেক্ট গাইডেন্স</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> চাকরি গাইডেন্স</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রাইভেট গ্রুপ এক্সেস</p>
+                                        </div>
+                                        <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Full Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">ফুল প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ৭,০০০</span>
+                                            <p class="text-muted">মূল্য: <del>৳ ১২,০০০</del> ৪২% ছাড়</p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম প্যাকেজের সবকিছু</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ৪ সপ্তাহ ব্যক্তিগত মেন্টরিং</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> কাস্টম প্রজেক্ট ডেভেলপমেন্ট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ইন্টারভিউ প্রস্তুতি সেশন</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> চাকরি প্লেসমেন্ট সহায়তা</p>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-primary w-100" onclick="selectPlan('one-time')">এই প্ল্যান নির্বাচন করুন</button>
+                            
+                            <!-- Group Discount -->
+                            <div class="alert alert-warning mt-3">
+                                <h5><i class="fa fa-users me-2"></i>গ্রুপ ডিস্কাউন্ট</h5>
+                                <p class="mb-1">
+                                    <strong>৩ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৪,০০০ (প্রিমিয়াম প্যাকেজ)<br>
+                                    <strong>৫ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৩,৫০০ (প্রিমিয়াম প্যাকেজ)<br>
+                                    <small class="text-muted">*গ্রুপ ডিস্কাউন্টের জন্য সরাসরি WhatsApp করুন: ০১৮৯৩-২৫৫৫০৩</small>
+                                </p>
+                            </div>
+                            
+                            <!-- Payment Methods -->
+                            <div class="mt-4">
+                                <h5>সাপোর্টেড পেমেন্ট মেথডস</h5>
+                                <div class="d-flex flex-wrap gap-3 mt-3">
+                                    <span class="badge bg-success p-3"><i class="fa fa-mobile-alt me-2"></i>বিকাশ</span>
+                                    <span class="badge bg-info p-3"><i class="fa fa-credit-card me-2"></i>নগদ</span>
+                                    <span class="badge bg-warning p-3"><i class="fa fa-rocket me-2"></i>রকেট</span>
+                                    <span class="badge bg-secondary p-3"><i class="fa fa-university me-2"></i>ব্যাংক ট্রান্সফার</span>
+                                    <span class="badge bg-primary p-3"><i class="fa fa-credit-card me-2"></i>ক্রেডিট/ডেবিট কার্ড</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Two Installments -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-warning shadow-sm">
-                            <div class="card-header bg-warning text-dark text-center">
-                                <h5 class="mb-0"><i class="fa fa-calendar me-2"></i>২ কিস্তিতে</h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <div class="price-display">
-                                    <h3 class="text-danger">৳ ৫,২৫০</h3>
-                                    <small class="text-muted">মোট মূল্য</small>
-                                    <div class="badge bg-warning text-dark mt-2">জনপ্রিয়</div>
-                                </div>
-                                <div class="installment-details mt-3">
-                                    <p class="mb-1"><strong>প্রথম কিস্তি:</strong> ৳ ২,৭৫০</p>
-                                    <p class="mb-1"><strong>দ্বিতীয় কিস্তি:</strong> ৳ ২,৫০০</p>
-                                    <small class="text-muted">(২য় সপ্তাহে)</small>
-                                </ul>
-                                <ul class="list-unstyled mt-3 text-start">
-                                    <li><i class="fa fa-check text-success me-2"></i> ২টি সুবিধামত কিস্তি</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> লো ইন্টারেস্ট রেট</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> সহজ পেমেন্ট</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> ফ্রি স্টাডি মেটেরিয়াল</li>
-                                </ul>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-warning w-100" onclick="selectPlan('two-installments')">এই প্ল্যান নির্বাচন করুন</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Three Installments -->
-                    <div class="col-md-4">
-                        <div class="card h-100 border-info shadow-sm">
-                            <div class="card-header bg-info text-white text-center">
-                                <h5 class="mb-0"><i class="fa fa-calendar-alt me-2"></i>৩ কিস্তিতে</h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <div class="price-display">
-                                    <h3 class="text-danger">৳ ৫,৫০০</h3>
-                                    <small class="text-muted">মোট মূল্য</small>
-                                    <div class="badge bg-info mt-2">সুবিধাজনক</div>
-                                </div>
-                                <div class="installment-details mt-3">
-                                    <p class="mb-1"><strong>প্রতি কিস্তি:</strong> ৳ ১,৮৩৩</p>
-                                    <small class="text-muted">(মাসে একবার)</small>
-                                </div>
-                                <ul class="list-unstyled mt-3 text-start">
-                                    <li><i class="fa fa-check text-success me-2"></i> ৩টি ছোট কিস্তি</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> কিস্তিতে সুবিধা</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> ফ্লেক্সিবল পেমেন্ট</li>
-                                    <li><i class="fa fa-check text-success me-2"></i> ০% সুদ প্রথম মাস</li>
-                                </ul>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button class="btn btn-info w-100" onclick="selectPlan('three-installments')">এই প্ল্যান নির্বাচন করুন</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Payment Methods -->
-                <div class="payment-methods mt-4">
-                    <h6><i class="fa fa-wallet me-2"></i>পেমেন্ট মাধ্যম:</h6>
-                    <div class="d-flex flex-wrap gap-2 mt-2">
-                        <span class="badge bg-success p-2"><i class="fa fa-mobile-alt me-1"></i> বিকাশ</span>
-                        <span class="badge bg-primary p-2"><i class="fa fa-university me-1"></i> নগদ</span>
-                        <span class="badge bg-danger p-2"><i class="fa fa-rocket me-1"></i> রকেট</span>
-                        <span class="badge bg-dark p-2"><i class="fa fa-credit-card me-1"></i> ব্যাংক কার্ড</span>
-                        <span class="badge bg-secondary p-2"><i class="fa fa-building me-1"></i> ব্যাংক ট্রান্সফার</span>
-                    </div>
-                </div>
-
-                <!-- Group Discount -->
-                <div class="group-discount alert alert-info mt-4">
-                    <h6><i class="fa fa-users me-2"></i>গ্রুপ ডিস্কাউন্ট</h6>
-                    <p class="mb-0">
-                        <strong>৩ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৪,০০০ <br>
-                        <strong>৫ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৩,৫০০ <br>
-                        <small class="text-muted">*গ্রুপ ডিস্কাউন্টের জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন</small>
-                    </p>
-                </div>
-
-                <!-- Installment Application Form (Initially Hidden) -->
-                <div id="installmentForm" class="mt-4" style="display: none;">
-                    <h6>পেমেন্ট প্ল্যান এপ্লাই করুন</h6>
-                    <form id="paymentPlanForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="selectedPlan" class="form-label">নির্বাচিত প্ল্যান</label>
-                                <input type="text" class="form-control" id="selectedPlan" readonly>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="planAmount" class="form-label">মোট পরিমাণ</label>
-                                <input type="text" class="form-control" id="planAmount" readonly>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="userName" class="form-label">আপনার নাম</label>
-                                <input type="text" class="form-control" id="userName" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="userPhone" class="form-label">ফোন নম্বর</label>
-                                <input type="tel" class="form-control" id="userPhone" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="paymentMethod" class="form-label">পছন্দের পেমেন্ট মাধ্যম</label>
-                                <select class="form-control" id="paymentMethod" required>
-                                    <option value="">সিলেক্ট করুন</option>
-                                    <option value="bkash">বিকাশ</option>
-                                    <option value="nogod">নগদ</option>
-                                    <option value="rocket">রকেট</option>
-                                    <option value="card">ব্যাংক কার্ড</option>
-                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-success w-100">
-                                    <i class="fa fa-paper-plane me-2"></i>এপ্লাই করুন
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .card {
-        transition: transform 0.3s;
-    }
-    
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    
-    .price-display {
-        background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .installment-details {
-        background-color: #f8f9fa;
-        padding: 10px;
-        border-radius: 5px;
-        border-left: 3px solid #fb873f;
-    }
-    
-    .badge {
-        font-size: 12px;
-        font-weight: 500;
-    }
-    
-    .list-unstyled li {
-        padding: 5px 0;
-        border-bottom: 1px dashed #eee;
-    }
-</style>
-
-<script>
-    function selectPlan(planType) {
-        const installmentForm = document.getElementById('installmentForm');
-        const selectedPlan = document.getElementById('selectedPlan');
-        const planAmount = document.getElementById('planAmount');
-        
-        switch(planType) {
-            case 'one-time':
-                selectedPlan.value = 'ওয়ান-টাইম পেমেন্ট';
-                planAmount.value = '৳ ৪,৭৫০';
-                break;
-            case 'two-installments':
-                selectedPlan.value = '২ কিস্তিতে';
-                planAmount.value = '৳ ৫,২৫০';
-                break;
-            case 'three-installments':
-                selectedPlan.value = '৩ কিস্তিতে';
-                planAmount.value = '৳ ৫,৫০০';
-                break;
-        }
-        
-        installmentForm.style.display = 'block';
-        installmentForm.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    document.getElementById('paymentPlanForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('আপনার পেমেন্ট প্ল্যান এপ্লিকেশন সফলভাবে জমা হয়েছে! শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।');
-        // Here you can add your form submission logic
-    });
-</script>
-
-
-
-
-
-
-
-                        
                         <div class="container" id="Curriculum">
-    <h2 class="mt-4">কোর্স কারিকুলাম</h2>
-    <p>১ মাস ব্যাপী সম্পূর্ণ C প্রোগ্রামিং ট্রেনিং</p>
+                            <h2 class="mt-4">কোর্স কারিকুলাম</h2>
+                            <p>১ মাস ব্যাপী সম্পূর্ণ C প্রোগ্রামিং ট্রেনিং</p>
 
-    <div class="accordion accordion-flush" id="curriculumAccordion">
-        <!-- Week 1 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek1" aria-expanded="false" aria-controls="collapseWeek1">
-                    সপ্তাহ ১: প্রোগ্রামিং এর ভিত্তি ও C পরিচিতি
-                </button>
-            </h2>
-            <div id="collapseWeek1" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> প্রোগ্রামিং কী এবং কেন শিখবেন</li>
-                        <li><i class="fa fa-video text-danger"></i> C প্রোগ্রামিং এর ইতিহাস ও গুরুত্ব</li>
-                        <li><i class="fa fa-video text-danger"></i> কম্পাইলার ইনস্টলেশন ও সেটআপ (Code::Blocks/Dev C++)</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রথম C প্রোগ্রাম: Hello World</li>
-                        <li><i class="fa fa-video text-danger"></i> ভেরিয়েবল, ডাটা টাইপ ও কনস্ট্যান্ট</li>
-                        <li><i class="fa fa-video text-danger"></i> ইনপুট/আউটপুট ফাংশন (printf, scanf)</li>
-                        <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: সাধারণ ক্যালকুলেটর প্রোগ্রাম</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                            <div class="accordion accordion-flush" id="curriculumAccordion">
+                                <!-- Week 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek1" aria-expanded="false" aria-controls="collapseWeek1">
+                                            সপ্তাহ ১: প্রোগ্রামিং এর ভিত্তি ও C পরিচিতি
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek1" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> প্রোগ্রামিং কী এবং কেন শিখবেন</li>
+                                                <li><i class="fa fa-video text-danger"></i> C প্রোগ্রামিং এর ইতিহাস ও গুরুত্ব</li>
+                                                <li><i class="fa fa-video text-danger"></i> কম্পাইলার ইনস্টলেশন ও সেটআপ (Code::Blocks/Dev C++)</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রথম C প্রোগ্রাম: Hello World</li>
+                                                <li><i class="fa fa-video text-danger"></i> ভেরিয়েবল, ডাটা টাইপ ও কনস্ট্যান্ট</li>
+                                                <li><i class="fa fa-video text-danger"></i> ইনপুট/আউটপুট ফাংশন (printf, scanf)</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: সাধারণ ক্যালকুলেটর প্রোগ্রাম</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <!-- Week 2 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek2" aria-expanded="false" aria-controls="collapseWeek2">
-                    সপ্তাহ ২: কন্ট্রোল স্টেটমেন্ট ও লুপস
-                </button>
-            </h2>
-            <div id="collapseWeek2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> অপারেটরস (Arithmetic, Relational, Logical)</li>
-                        <li><i class="fa fa-video text-danger"></i> কন্ডিশনাল স্টেটমেন্ট (if, if-else, nested if)</li>
-                        <li><i class="fa fa-video text-danger"></i> Switch-Case স্টেটমেন্ট</li>
-                        <li><i class="fa fa-video text-danger"></i> লুপস: For লুপ</li>
-                        <li><i class="fa fa-video text-danger"></i> লুপস: While ও Do-While লুপ</li>
-                        <li><i class="fa fa-video text-danger"></i> Break ও Continue স্টেটমেন্ট</li>
-                        <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: প্যাটার্ন প্রিন্টিং ও সংখ্যা গেম</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                                <!-- Week 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek2" aria-expanded="false" aria-controls="collapseWeek2">
+                                            সপ্তাহ ২: কন্ট্রোল স্টেটমেন্ট ও লুপস
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> অপারেটরস (Arithmetic, Relational, Logical)</li>
+                                                <li><i class="fa fa-video text-danger"></i> কন্ডিশনাল স্টেটমেন্ট (if, if-else, nested if)</li>
+                                                <li><i class="fa fa-video text-danger"></i> Switch-Case স্টেটমেন্ট</li>
+                                                <li><i class="fa fa-video text-danger"></i> লুপস: For লুপ</li>
+                                                <li><i class="fa fa-video text-danger"></i> লুপস: While ও Do-While লুপ</li>
+                                                <li><i class="fa fa-video text-danger"></i> Break ও Continue স্টেটমেন্ট</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: প্যাটার্ন প্রিন্টিং ও সংখ্যা গেম</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <!-- Week 3 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek3" aria-expanded="false" aria-controls="collapseWeek3">
-                    সপ্তাহ ৩: অ্যারেজ, ফাংশন ও স্ট্রিং
-                </button>
-            </h2>
-            <div id="collapseWeek3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> অ্যারেজ: ওয়ান ডাইমেনশনাল অ্যারে</li>
-                        <li><i class="fa fa-video text-danger"></i> টু-ডাইমেনশনাল অ্যারে (ম্যাট্রিক্স)</li>
-                        <li><i class="fa fa-video text-danger"></i> ফাংশন: ডিক্লারেশন, ডেফিনিশন ও কলিং</li>
-                        <li><i class="fa fa-video text-danger"></i> ফাংশন প্যারামিটার ও রিটার্ন ভ্যালু</li>
-                        <li><i class="fa fa-video text-danger"></i> রিকার্সন (Recursion)</li>
-                        <li><i class="fa fa-video text-danger"></i> স্ট্রিং ম্যানিপুলেশন</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: স্টুডেন্ট গ্রেড ক্যালকুলেটর</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                                <!-- Week 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek3" aria-expanded="false" aria-controls="collapseWeek3">
+                                            সপ্তাহ ৩: অ্যারেজ, ফাংশন ও স্ট্রিং
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> অ্যারেজ: ওয়ান ডাইমেনশনাল অ্যারে</li>
+                                                <li><i class="fa fa-video text-danger"></i> টু-ডাইমেনশনাল অ্যারে (ম্যাট্রিক্স)</li>
+                                                <li><i class="fa fa-video text-danger"></i> ফাংশন: ডিক্লারেশন, ডেফিনিশন ও কলিং</li>
+                                                <li><i class="fa fa-video text-danger"></i> ফাংশন প্যারামিটার ও রিটার্ন ভ্যালু</li>
+                                                <li><i class="fa fa-video text-danger"></i> রিকার্সন (Recursion)</li>
+                                                <li><i class="fa fa-video text-danger"></i> স্ট্রিং ম্যানিপুলেশন</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: স্টুডেন্ট গ্রেড ক্যালকুলেটর</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <!-- Week 4 -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek4" aria-expanded="false" aria-controls="collapseWeek4">
-                    সপ্তাহ ৪: এডভান্সড C ও প্রজেক্ট ডেভেলপমেন্ট
-                </button>
-            </h2>
-            <div id="collapseWeek4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> পয়েন্টার: বেসিক কনসেপ্ট ও ব্যবহার</li>
-                        <li><i class="fa fa-video text-danger"></i> পয়েন্টার ও অ্যারেজের সম্পর্ক</li>
-                        <li><i class="fa fa-video text-danger"></i> স্ট্রাকচার (Structure)</li>
-                        <li><i class="fa fa-video text-danger"></i> ফাইল হ্যান্ডলিং (File I/O)</li>
-                        <li><i class="fa fa-video text-danger"></i> ডাইনামিক মেমোরি অ্যালোকেশন</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: লাইব্রেরি ম্যানেজমেন্ট সিস্টেম</li>
-                        <li><i class="fa fa-video text-danger"></i> ক্যারিয়ার গাইডেন্স ও পরবর্তী পদক্ষেপ</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                                <!-- Week 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek4" aria-expanded="false" aria-controls="collapseWeek4">
+                                            সপ্তাহ ৪: এডভান্সড C ও প্রজেক্ট ডেভেলপমেন্ট
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> পয়েন্টার: বেসিক কনসেপ্ট ও ব্যবহার</li>
+                                                <li><i class="fa fa-video text-danger"></i> পয়েন্টার ও অ্যারেজের সম্পর্ক</li>
+                                                <li><i class="fa fa-video text-danger"></i> স্ট্রাকচার (Structure)</li>
+                                                <li><i class="fa fa-video text-danger"></i> ফাইল হ্যান্ডলিং (File I/O)</li>
+                                                <li><i class="fa fa-video text-danger"></i> ডাইনামিক মেমোরি অ্যালোকেশন</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: লাইব্রেরি ম্যানেজমেন্ট সিস্টেম</li>
+                                                <li><i class="fa fa-video text-danger"></i> ক্যারিয়ার গাইডেন্স ও পরবর্তী পদক্ষেপ</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Section -->
+                        <div class="container" id="Benefits">
+                            <h2 class="mt-4">কেন এই কোর্সটি নির্বাচন করবেন?</h2>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-chalkboard-teacher text-primary me-2"></i> লাইভ ইন্টারেক্টিভ ক্লাস</h5>
+                                            <p>প্রশিক্ষকের সাথে সরাসরি মিথস্ক্রিয়া, প্রশ্ন করা এবং তাৎক্ষণিক উত্তর পাওয়ার সুযোগ।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-laptop-code text-primary me-2"></i> প্র্যাকটিকাল প্রজেক্ট</h5>
+                                            <p>৪টি বাস্তবসম্মত প্রজেক্টের মাধ্যমে হাতে-কলমে শেখার অভিজ্ঞতা যা আপনার পোর্টফোলিওতে যোগ করবেন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-certificate text-primary me-2"></i> শিল্প-স্বীকৃত সার্টিফিকেট</h5>
+                                            <p>কোর্স সম্পন্ন করলে শিল্প-স্বীকৃত সার্টিফিকেট পাবেন যা চাকরি বা উচ্চশিক্ষায় সহায়ক হবে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-users text-primary me-2"></i> কমিউনিটি সাপোর্ট</h5>
+                                            <p>শিক্ষার্থীদের প্রাইভেট গ্রুপে যোগ দিন, সমস্যা নিয়ে আলোচনা করুন এবং একসাথে শিখুন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-life-ring text-primary me-2"></i> ২৪/৭ সাপোর্ট</h5>
+                                            <p>কোর্স চলাকালীন যেকোনো সমস্যায় ২৪/৭ সাপোর্ট পাবেন প্রশিক্ষক এবং সহায়ক দলের কাছ থেকে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-briefcase text-primary me-2"></i> ক্যারিয়ার গাইডেন্স</h5>
+                                            <p>প্রোগ্রামার হিসেবে ক্যারিয়ার শুরু করতে সম্পূর্ণ গাইডেন্স ও রোডম্যাপ।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="container" id="Instructor">
                             <h2 class="mt-4">প্রশিক্ষক সম্পর্কে</h2>
@@ -658,25 +641,27 @@
 
             </div>
             <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s">
-
-                <div class="image text-center">
-                    <img class="img-fluid mt-2" src="img/course-12.png" alt="" height="200px" width="500px">
-                    <p class="text-muted small mt-1">*প্রোগ্রামিং শুরু করার সেরা ভাষা</p>
+                <div class="position-relative">
+                    <div class="image text-center">
+                        <img class="img-fluid mt-2" src="img/course-12.png" alt="" height="200px" width="500px">
+                        <p class="text-muted small mt-1">*প্রোগ্রামিং শুরু করার সেরা ভাষা</p>
+                    </div>
+                    <span class="pricing-badge badge bg-danger">৩৭% ছাড়</span>
                 </div>
                 
                 <div class="price-tag">মাত্র ৳ ৫,০০০</div>
                 
-<h4 class="mt-2 p-2">
-    <del>৳ 8,000</del> ৳ 5,000 <small>(সম্পূর্ণ কোর্স)</small>
-</h4>
-                
-                <p class="text-success p-2"><i class="fa fa-gift"></i> <strong>বিশেষ অফার!</strong> প্রথম 100 জনের জন্য 37% ছাড়</p>
+                <h4 class="mt-2 p-2">
+                    <del>৳ 8,000</del> ৳ 5,000 <small>(প্রিমিয়াম প্যাকেজ)</small>
+                </h4>
+
+                <p class="text-success p-2"><i class="fa fa-gift"></i> <strong>বিশেষ অফার!</strong> প্রথম 100 জনের জন্য ৩৭% ছাড়</p>
                 <p class="text-info p-2"><i class="fa fa-users"></i> <strong>গ্রুপ ডিস্কাউন্ট:</strong> ৩ জন মিলে এনরোল করলে প্রতিজন ৳ ৪,০০০</p>
 
                 <div class="buttons">
-                    <a href="https://forms.gle/eUFiPfnLJvaucTU4A" class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2">এনরোল করুন</a>
+                    <button class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">এনরোল করুন</button>
                     <a href="#demoClass" class="text-decoration-none text-white btn btn-outline-primary p-3 w-100 mb-2" data-bs-toggle="modal">ডেমো ক্লাস বুক করুন</a>
-                    <a href="#paymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2" data-bs-toggle="modal">ইজি পেমেন্ট প্ল্যান দেখুন</a>
+                    <a href="#PaymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2">পেমেন্ট প্ল্যান দেখুন</a>
                 </div>
 
                 <div class="list mt-2">
@@ -715,6 +700,10 @@
                     <div class="list9 d-flex justify-content-between pt-2 border-bottom">
                         <p><i class="fa fa-headphones"></i> সাপোর্ট</p>
                         <p>২৪/৭</p>
+                    </div>
+                    <div class="list10 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-credit-card"></i> পেমেন্ট প্ল্যান</p>
+                        <p>৩ টি অপশন</p>
                     </div>
                     <div class="button pt-4 text-center mb-4">
                         <i class="fa fa-share"></i><a href=""> এই কোর্স শেয়ার করুন</a>
@@ -767,32 +756,56 @@
     </div>
 </div>
 
-<!-- Payment Plan Modal -->
-<div class="modal fade" id="paymentPlan" tabindex="-1" aria-labelledby="paymentPlanLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<!-- Payment Plan Selection Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="paymentPlanLabel">ইজি পেমেন্ট প্ল্যান</h5>
+                <h5 class="modal-title" id="paymentModalLabel">পেমেন্ট প্যাকেজ সিলেক্ট করুন</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>আপনার সুবিধা অনুযায়ী কোর্স ফি পরিশোধের বিকল্প প্ল্যান:</p>
-                <div class="list-group">
-                    <div class="list-group-item">
-                        <h6><i class="fa fa-check-circle text-success"></i> ওয়ান-টাইম পেমেন্ট</h6>
-                        <p>৳ ৫,০০০ একবারে (সবচেয়ে সাশ্রয়ী)</p>
-                    </div>
-                    <div class="list-group-item">
-                        <h6><i class="fa fa-calendar text-primary"></i> ২ কিস্তিতে</h6>
-                        <p>প্রথম কিস্তি: ৳ ৩,০০০ (কোর্স শুরুতে)<br>দ্বিতীয় কিস্তি: ৳ ২,৫০০ (২য় সপ্তাহে)</p>
-                    </div>
-                    <div class="list-group-item">
-                        <h6><i class="fa fa-calendar-alt text-info"></i> ৩ কিস্তিতে</h6>
-                        <p>প্রতি কিস্তি: ৳ ১,৮০০<br>(মোট ৳ ৫,৪০০)</p>
-                    </div>
+                <div id="paymentPlanDetails">
+                    <!-- Plan details will be loaded here dynamically -->
                 </div>
-                <div class="alert alert-info mt-3">
-                    <i class="fa fa-info-circle"></i> <strong>নোট:</strong> পেমেন্টের জন্য বিকাশ, নগদ, রকেট বা ব্যাংক ট্রান্সফার গ্রহণযোগ্য।
+                <div class="mt-4">
+                    <h6>পেমেন্ট সম্পূর্ণ করুন:</h6>
+                    <form id="paymentForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পূর্ণ নাম</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ইমেইল</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ফোন নম্বর</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">প্যাকেজ</label>
+                                <input type="text" class="form-control" id="selectedPackageName" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">মোট পরিমাণ</label>
+                                <input type="text" class="form-control" id="selectedPackagePrice" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পেমেন্ট মেথড</label>
+                                <select class="form-control" id="paymentMethod" required>
+                                    <option value="">সিলেক্ট করুন</option>
+                                    <option value="bkash">বিকাশ</option>
+                                    <option value="nagad">নগদ</option>
+                                    <option value="rocket">রকেট</option>
+                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
+                                    <option value="card">ক্রেডিট/ডেবিট কার্ড</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">কনফার্ম ও পেমেন্ট করুন</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -861,6 +874,139 @@
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+<!-- Payment Plan JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Payment Plan Modal Handler
+        const paymentModal = document.getElementById('paymentModal');
+        const paymentPlanDetails = document.getElementById('paymentPlanDetails');
+        const selectedPackageName = document.getElementById('selectedPackageName');
+        const selectedPackagePrice = document.getElementById('selectedPackagePrice');
+        
+        paymentModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const plan = button.getAttribute('data-plan');
+            
+            let planDetails = '';
+            
+            switch(plan) {
+                case 'basic-package':
+                    planDetails = `
+                        <h4>বেসিক প্যাকেজ</h4>
+                        <div class="alert alert-success">
+                            <h5>মোট পরিমাণ: ৳ ৪,৫০০</h5>
+                            <p class="mb-0">আপনি ২৫% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ৬,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>সম্পূর্ণ C প্রোগ্রামিং কোর্স কন্টেন্ট</li>
+                            <li>৮টি লাইভ ক্লাস (প্রতি সপ্তাহে ২টি)</li>
+                            <li>কোর্স ম্যাটেরিয়াল ও কোড ফাইলস</li>
+                            <li>বেসিক সার্টিফিকেট</li>
+                            <li>কমিউনিটি সাপোর্ট গ্রুপ</li>
+                            <li>৪টি প্র্যাকটিকাল প্রজেক্ট</li>
+                        </ul>
+                        <p><strong>যোগ্যতা:</strong> যেকোনো শিক্ষাগত যোগ্যতাসম্পন্ন ব্যক্তি</p>
+                    `;
+                    selectedPackageName.value = 'বেসিক প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ৪,৫০০';
+                    break;
+                    
+                case 'premium-package':
+                    planDetails = `
+                        <h4>প্রিমিয়াম প্যাকেজ</h4>
+                        <div class="alert alert-primary">
+                            <h5>মোট পরিমাণ: ৳ ৫,০০০</h5>
+                            <p class="mb-0">আপনি ৩৭% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ৮,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>বেসিক প্যাকেজের সবকিছু</li>
+                            <li>প্রিমিয়াম শিল্প-স্বীকৃত সার্টিফিকেট</li>
+                            <li>ব্যক্তিগত কোড রিভিউ সেশন (২টি)</li>
+                            <li>প্রাইভেট প্রজেক্ট গাইডেন্স</li>
+                            <li>চাকরি গাইডেন্স ও ইন্টারভিউ প্রস্তুতি</li>
+                            <li>প্রাইভেট WhatsApp গ্রুপ অ্যাক্সেস</li>
+                            <li>২৪/৭ প্রাথমিক সাপোর্ট</li>
+                        </ul>
+                        <p><strong>বোনাস:</strong> পরবর্তী কোর্সে ১৫% ডিস্কাউন্ট</p>
+                    `;
+                    selectedPackageName.value = 'প্রিমিয়াম প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ৫,০০০';
+                    break;
+                    
+                case 'full-package':
+                    planDetails = `
+                        <h4>ফুল প্যাকেজ</h4>
+                        <div class="alert alert-info">
+                            <h5>মোট পরিমাণ: ৳ ৭,০০০</h5>
+                            <p class="mb-0">আপনি ৪২% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ১২,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>প্রিমিয়াম প্যাকেজের সবকিছু</li>
+                            <li>৪ সপ্তাহ ব্যক্তিগত মেন্টরিং সেশন</li>
+                            <li>কাস্টম প্রজেক্ট ডেভেলপমেন্ট সহায়তা</li>
+                            <li>চাকরি প্লেসমেন্ট সহায়তা</li>
+                            <li>ইন্টারভিউ মক টেস্ট (২টি)</li>
+                            <li>ফ্রিল্যান্সিং প্রোফাইল সেটআপ গাইডেন্স</li>
+                            <li>লাইফটাইম কোর্স আপডেট অ্যাক্সেস</li>
+                        </ul>
+                        <p><strong>বোনাস:</strong> পরবর্তী ২টি কোর্সে ২০% ডিস্কাউন্ট</p>
+                    `;
+                    selectedPackageName.value = 'ফুল প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ৭,০০০';
+                    break;
+            }
+            
+            paymentPlanDetails.innerHTML = planDetails;
+        });
+        
+        // Payment Form Submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const packageName = selectedPackageName.value;
+            const packagePrice = selectedPackagePrice.value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            
+            // Show payment instructions based on selected method
+            let paymentMessage = '';
+            switch(paymentMethod) {
+                case 'bkash':
+                    paymentMessage = `বিকাশ করুন: 01893255503\nরেফারেন্স: C-${Date.now()}\nপ্যাকেজ: ${packageName}`;
+                    break;
+                case 'nagad':
+                    paymentMessage = `নগদ করুন: 01893255503\nরেফারেন্স: C-${Date.now()}\nপ্যাকেজ: ${packageName}`;
+                    break;
+                case 'rocket':
+                    paymentMessage = `রকেট করুন: 018932555038\nরেফারেন্স: C-${Date.now()}\nপ্যাকেজ: ${packageName}`;
+                    break;
+                default:
+                    paymentMessage = `আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব পেমেন্ট প্রসেস সম্পন্ন করতে।`;
+            }
+            
+            alert(`পেমেন্ট সফলভাবে সাবমিট হয়েছে!\n\nপ্যাকেজ: ${packageName}\nমূল্য: ${packagePrice}\n\n${paymentMessage}\n\nপেমেন্ট সম্পন্ন হওয়ার পর স্ক্রিনশট পাঠান আমাদের WhatsApp-এ: 01893255503`);
+            
+            // Here you would typically send the data to your server
+            const modal = bootstrap.Modal.getInstance(paymentModal);
+            modal.hide();
+        });
+        
+        // Smooth scroll to payment plan section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#PaymentPlan') {
+                    e.preventDefault();
+                    document.querySelector('#PaymentPlan').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 
 </html>
