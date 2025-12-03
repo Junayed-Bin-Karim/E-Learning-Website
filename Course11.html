@@ -1,1 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
+
+    <title>Junayed Academy : Java Programming for Beginners</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+<style>
+    .tabs ul li {
+        list-style-type: none;
+    }
+
+    .tabs ul li a {
+        font-size: 25px;
+        color: #4e4e4e !important;
+        font-weight: 500;
+    }
+
+    .tabs ul li a.active {
+        color: #f69050 !important;
+    }
+
+    .tabs ul li a:hover {
+        color: #f69050 !important;
+    }
+
+    #more {
+        display: none;
+    }
+
+    button {
+        border: none;
+        color: #f69050;
+    }
+    
+    .payment-plan-card {
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+        position: relative;
+        height: 100%;
+    }
+    
+    .payment-plan-card:hover {
+        border-color: #fb873f;
+        box-shadow: 0 5px 15px rgba(251, 135, 63, 0.1);
+    }
+    
+    .payment-plan-card.recommended {
+        border-color: #fb873f;
+        background-color: #fff9f5;
+    }
+    
+    .recommended-badge {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fb873f;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .price-highlight {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fb873f;
+    }
+    
+    .payment-feature {
+        margin: 5px 0;
+    }
+    
+    .payment-feature i {
+        color: #28a745;
+        margin-right: 8px;
+    }
+    
+    .emi-calculator {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .pricing-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(10%, -30%);
+    }
+    
+    .price-tag {
+        background-color: #ffc107;
+        color: #333;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    
+    .course-badge {
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    
+    .benefit-card {
+        border-radius: 10px;
+        padding: 20px;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .curriculum-week {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .curriculum-week:hover {
+        background-color: #e9ecef;
+    }
+    
+    .week-content {
+        display: none;
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        border-left: 3px solid #fb873f;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
+                    style="color: #fb873f;">Academy</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+
+                <div id="google_translate_element">
+                </div>
+
+
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Course</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="courses.html">Course</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Java Programming for Beginners - 1 Month Complete Course</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Header End -->
+
+<!-- Course Detail Start -->
+<div class="container-xxl py-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 wow fadeInUp">
+
+                <div class="container">
+                    <div class="row g-5 justify-content-center">
+
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <h2>Java Programming for Beginners <span class="course-badge">ফ্রি এক্সেস</span></h2>
+                            <p>ওয়েব, মোবাইল এবং ডেস্কটপ অ্যাপ্লিকেশন ডেভেলপমেন্টের জন্য সবচেয়ে জনপ্রিয় প্রোগ্রামিং ভাষা Java শিখুন। শূন্য থেকে শুরু করে আপনি তৈরি করতে পারবেন রিয়েল-টাইম জাভা অ্যাপ্লিকেশন।</p>
+                            <div class="d-flex">
+                                <small><i class="fa fa-star text-warning"></i>
+                                    4.8</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 3,800+ শিক্ষার্থী
+                                </small>
+                                <small style="margin-left: 15px;"><i class="fa fa-user"></i>সম্পূর্ণ নতুনদের জন্য</small>
+                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 1 মাস</small>
+                            </div>
+                            <div class="image-div text-left mt-3">
+                                <img src="img/testimonial-2.png" alt=""
+                                    style="height: 40px; width: 40px; border-radius: 50%;">
+                                <span style="margin-left: 10px;"><b>Instructor Name</b> - Junayed Bin Karim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid wow fadeInUp mt-5 tabs">
+                    <!-- Tab panes -->
+                    <div class="tab-content mt-4">
+
+                        <div class="tab-pane container active" id="Overview">
+                            <h2>কোর্স সম্পর্কে</h2>
+                            <p>Java হল বিশ্বের সবচেয়ে জনপ্রিয় প্রোগ্রামিং ভাষাগুলোর মধ্যে একটি, যা Android App Development, Web Applications, Enterprise Software এবং Scientific Applications তৈরিতে ব্যবহৃত হয়। এই কোর্সটি সম্পূর্ণ নতুনদের জন্য ডিজাইন করা হয়েছে যারা প্রোগ্রামিং এর জগতে প্রথম পদক্ষেপ নিতে চান।</p>
+
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-calendar-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>সময়কাল</h5>
+                                            <p>১ মাস (৪ সপ্তাহ)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>শিডিউল</h5>
+                                            <p>মাসে ৮ দিন, ২.৫ ঘন্টা/সেশন</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body text-center">
+                                            <i class="fa fa-laptop text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <h5>ফরম্যাট</h5>
+                                            <p>লাইভ অনলাইন ক্লাস + প্র্যাকটিস</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="mt-5">কেন Java শিখবেন?</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><i class="fa fa-check-circle text-primary"></i> Android App Development এর মূল ভাষা</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> Platform Independent (Write Once, Run Anywhere)</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> High Demand in Job Market</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><i class="fa fa-check-circle text-primary"></i> Enterprise Level Applications</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> Object-Oriented Programming শিখার আদর্শ</p>
+                                    <p><i class="fa fa-check-circle text-primary"></i> Large Community & Resources</p>
+                                </div>
+                            </div>
+
+                            <h2 class="mt-4">আপনি যা শিখবেন</h2>
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Java Syntax & Structure</span>
+
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Object-Oriented Programming</span>
+
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Methods & Functions</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Arrays & Collections</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Exception Handling</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">File I/O Operations</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Java GUI Basics</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Multithreading</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Database Connectivity</span>
+                                
+                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
+                                style="font-size: 15px; font-weight: normal;">Real Projects Development</span>
+                        </div>
+
+                        <!-- Payment Plan Section -->
+                        <div class="container" id="PaymentPlan">
+                            <h2 class="mt-4">ইজি পেমেন্ট প্ল্যান</h2>
+                            <p>আপনার সুবিধামতো পেমেন্ট পদ্ধতি বেছে নিন। কোর্সটি ফ্রি কিন্তু প্রিমিয়াম সার্টিফিকেটের জন্য নমনীয় পেমেন্ট অপশন!</p>
+                            
+                            <div class="row mt-4">
+                                <!-- Free Access -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">ফ্রি এক্সেস</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ০</span>
+                                            <p class="text-muted">মূল্য: সম্পূর্ণ ফ্রি</p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সম্পূর্ণ কোর্স কন্টেন্ট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> লাইভ ক্লাস অ্যাক্সেস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> বেসিক সার্টিফিকেট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সোর্স কোড ফাইলস</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> কমিউনিটি সাপোর্ট</p>
+                                        </div>
+                                        <a href="https://forms.gle/eUFiPfnLJvaucTU4A" class="btn btn-outline-primary w-100 mt-3">ফ্রি এনরোল করুন</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Premium Certificate -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card recommended">
+                                        <div class="recommended-badge">সবচেয়ে জনপ্রিয়</div>
+                                        <h4 class="text-center mb-3">প্রিমিয়াম সার্টিফিকেট</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ২,০০০</span>
+                                            <p class="text-muted"><del>৳ ৩,০০০</del> ৩৩% ছাড়</p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম সার্টিফিকেট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রজেক্ট রিভিউ</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ২ টি ১:১ মেন্টরিং সেশন</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> চাকরি গাইডেন্স</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> কোড রিভিউ</p>
+                                        </div>
+                                        <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-certificate">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Full Package -->
+                                <div class="col-md-4 mb-4">
+                                    <div class="payment-plan-card">
+                                        <h4 class="text-center mb-3">ফুল প্যাকেজ</h4>
+                                        <div class="text-center mb-3">
+                                            <span class="price-highlight">৳ ৫,০০০</span>
+                                            <p class="text-muted"><del>৳ ৮,০০০</del> ৩৮% ছাড়</p>
+                                        </div>
+                                        <div class="payment-features">
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রিমিয়াম সার্টিফিকেটের সবকিছু</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ৪ সপ্তাহ মেন্টরিং</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> পার্সোনাল প্রজেক্ট ডেভেলপমেন্ট</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> চাকরি প্লেসমেন্ট সহায়তা</p>
+                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ফ্রিল্যান্সিং গাইডেন্স</p>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full-package">সিলেক্ট করুন</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Group Discount -->
+                            <div class="alert alert-warning mt-3">
+                                <h5><i class="fa fa-users me-2"></i>গ্রুপ ডিস্কাউন্ট</h5>
+                                <p class="mb-1">
+                                    <strong>৩ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ১,৫০০ (প্রিমিয়াম সার্টিফিকেট)<br>
+                                    <strong>৫ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৪,০০০ (ফুল প্যাকেজ)<br>
+                                    <small class="text-muted">*গ্রুপ ডিস্কাউন্টের জন্য সরাসরি WhatsApp করুন: ০১৮৯৩-২৫৫৫০৩</small>
+                                </p>
+                            </div>
+                            
+                            <!-- Payment Methods -->
+                            <div class="mt-4">
+                                <h5>সাপোর্টেড পেমেন্ট মেথডস</h5>
+                                <div class="d-flex flex-wrap gap-3 mt-3">
+                                    <span class="badge bg-success p-3"><i class="fa fa-mobile-alt me-2"></i>বিকাশ</span>
+                                    <span class="badge bg-info p-3"><i class="fa fa-credit-card me-2"></i>নগদ</span>
+                                    <span class="badge bg-warning p-3"><i class="fa fa-rocket me-2"></i>রকেট</span>
+                                    <span class="badge bg-secondary p-3"><i class="fa fa-university me-2"></i>ব্যাংক ট্রান্সফার</span>
+                                    <span class="badge bg-primary p-3"><i class="fa fa-credit-card me-2"></i>ক্রেডিট/ডেবিট কার্ড</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" id="Curriculum">
+                            <h2 class="mt-4">কোর্স কারিকুলাম</h2>
+                            <p>৪ সপ্তাহের সম্পূর্ণ Java Programming বেসিক টু ইন্টারমিডিয়েট ট্রেনিং</p>
+                            
+                            <div class="accordion accordion-flush" id="curriculumAccordion">
+                                <!-- Week 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek1" aria-expanded="false" aria-controls="collapseWeek1">
+                                            সপ্তাহ ১: Java পরিচিতি ও বেসিক প্রোগ্রামিং
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek1" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> Java এর ইতিহাস ও গুরুত্ব</li>
+                                                <li><i class="fa fa-video text-danger"></i> JDK, JRE, JVM ইনস্টলেশন</li>
+                                                <li><i class="fa fa-video text-danger"></i> IDE সেটআপ (IntelliJ IDEA/Eclipse)</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রথম Java প্রোগ্রাম: Hello World</li>
+                                                <li><i class="fa fa-video text-danger"></i> Variables, Data Types & Operators</li>
+                                                <li><i class="fa fa-video text-danger"></i> Input/Output (Scanner Class)</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: সিম্পল ক্যালকুলেটর</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek2" aria-expanded="false" aria-controls="collapseWeek2">
+                                            সপ্তাহ ২: কন্ট্রোল স্টেটমেন্ট ও ফাংশন
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> Conditional Statements (if, else, switch)</li>
+                                                <li><i class="fa fa-video text-danger"></i> Loops (for, while, do-while)</li>
+                                                <li><i class="fa fa-video text-danger"></i> Methods/Functions</li>
+                                                <li><i class="fa fa-video text-danger"></i> Method Parameters & Return Types</li>
+                                                <li><i class="fa fa-video text-danger"></i> Arrays (1D & 2D)</li>
+                                                <li><i class="fa fa-video text-danger"></i> String Manipulation</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্র্যাকটিস: গেম ডেভেলপমেন্ট</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek3" aria-expanded="false" aria-controls="collapseWeek3">
+                                            সপ্তাহ ৩: অবজেক্ট-ওরিয়েন্টেড প্রোগ্রামিং
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> Classes & Objects</li>
+                                                <li><i class="fa fa-video text-danger"></i> Constructors</li>
+                                                <li><i class="fa fa-video text-danger"></i> Inheritance</li>
+                                                <li><i class="fa fa-video text-danger"></i> Polymorphism (Overloading & Overriding)</li>
+                                                <li><i class="fa fa-video text-danger"></i> Encapsulation & Abstraction</li>
+                                                <li><i class="fa fa-video text-danger"></i> Interfaces & Abstract Classes</li>
+                                                <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: লাইব্রেরি ম্যানেজমেন্ট সিস্টেম</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Week 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek4" aria-expanded="false" aria-controls="collapseWeek4">
+                                            সপ্তাহ ৪: অ্যাডভান্সড Java ও প্রজেক্ট
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWeek4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><i class="fa fa-video text-danger"></i> Exception Handling (try-catch-finally)</li>
+                                                <li><i class="fa fa-video text-danger"></i> File Handling (File I/O)</li>
+                                                <li><i class="fa fa-video text-danger"></i> Collections Framework</li>
+                                                <li><i class="fa fa-video text-danger"></i> Multithreading Basics</li>
+                                                <li><i class="fa fa-video text-danger"></i> JDBC (Java Database Connectivity)</li>
+                                                <li><i class="fa fa-video text-danger"></i> GUI Programming with Swing</li>
+                                                <li><i class="fa fa-video text-danger"></i> ফাইনাল প্রজেক্ট: স্টুডেন্ট ম্যানেজমেন্ট সিস্টেম</li>
+                                                <li><i class="fa fa-video text-danger"></i> ক্যারিয়ার গাইডেন্স ও পরবর্তী পদক্ষেপ</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Section -->
+                        <div class="container" id="Benefits">
+                            <h2 class="mt-4">কেন এই কোর্সটি নির্বাচন করবেন?</h2>
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-graduation-cap text-primary me-2"></i> সম্পূর্ণ ফ্রি</h5>
+                                            <p>কোর্সটি সম্পূর্ণ ফ্রি — কোন লুকানো খরচ নেই। শুরু করুন Java প্রোগ্রামিং শেখার যাত্রা বিনামূল্যে।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-chalkboard-teacher text-primary me-2"></i> লাইভ ইন্টারেক্টিভ ক্লাস</h5>
+                                            <p>প্রশিক্ষকের সাথে সরাসরি মিথস্ক্রিয়া, প্রশ্ন করা এবং তাৎক্ষণিক উত্তর পাওয়ার সুযোগ।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-laptop-code text-primary me-2"></i> প্র্যাকটিকাল প্রজেক্ট</h5>
+                                            <p>৪টি বাস্তবিক প্রজেক্টে কাজ করে শিখবেন যা আপনার পোর্টফোলিওতে যোগ করবেন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-certificate text-primary me-2"></i> শিল্প-স্বীকৃত সার্টিফিকেট</h5>
+                                            <p>কোর্স সম্পন্ন করলে শিল্প-স্বীকৃত সার্টিফিকেট পাবেন যা চাকরির ক্ষেত্রে অতিরিক্ত যোগ্যতা।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-users text-primary me-2"></i> কমিউনিটি সাপোর্ট</h5>
+                                            <p>শিক্ষার্থীদের গ্রুপে যোগ দিন, সমস্যা নিয়ে আলোচনা করুন এবং একসাথে শিখুন।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card benefit-card shadow-sm">
+                                        <div class="card-body">
+                                            <h5><i class="fa fa-briefcase text-primary me-2"></i> ক্যারিয়ার গাইডেন্স</h5>
+                                            <p>Java Developer হিসেবে ক্যারিয়ার শুরু করতে সম্পূর্ণ গাইডেন্স ও রোডম্যাপ।</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" id="Instructor">
+                            <h2 class="mt-4">প্রশিক্ষক সম্পর্কে</h2>
+                            <div class="image-div text-left mt-4">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6">
+                                        <img src="img/testimonial-2.png" alt=""
+                                            style="height: 150px; width: 150px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-lg-9 col-md-6 mt-2">
+                                        <h5>Junayed Bin Karim </h5>
+                                        <p>Java ও Software Development বিশেষজ্ঞ</p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-star"></i>
+                                                    4.8 প্রশিক্ষক রেটিং</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-check"></i>
+                                                    2,800+ রিভিউ</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p><i class="fa fa-user"></i>
+                                                    6,500+ শিক্ষার্থী</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p><i class="fa fa-video"></i>
+                                                    18+ কোর্স</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="des mt-4 mb-5">
+                                    Junayed Bin Karim একজন অভিজ্ঞ Java Developer এবং প্রশিক্ষক যার ৪+ বছরের সফটওয়্যার ডেভেলপমেন্ট ও শিক্ষাদান অভিজ্ঞতা রয়েছে। তিনি Java, Spring Boot, এবং Microservices আর্কিটেকচারে বিশেষজ্ঞ। 
+                                    <br><br>
+                                    <strong>বিশেষত্ব:</strong><br>
+                                    • Core Java & Advanced Java<br>
+                                    • Spring Framework (Spring Boot, Spring MVC)<br>
+                                    • RESTful API Development<br>
+                                    • Database Design & Optimization<br>
+                                    • Object-Oriented Design Patterns<br>
+                                    • Software Architecture<br>
+                                    <br><br>
+                                    তিনি ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটিতে (DIU) কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং-এ পড়াশোনা করেছেন এবং বড় স্কেলের সফটওয়্যার প্রকল্পে কাজ করার অভিজ্ঞতা রয়েছে। Junayed-এর বিশেষ দক্ষতা হল জটিল প্রোগ্রামিং কনসেপ্টগুলোকে সহজ ও বোধগম্য উপায়ে শিক্ষার্থীদের শেখানো।
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative">
+                    <div class="image text-center">
+                        <img class="img-fluid mt-2" src="img/course-java.png" alt="" height="200px" width="500px">
+                        <p class="text-muted small mt-1">*এন্ড্রয়েড ও ওয়েব ডেভেলপমেন্টের ভিত্তি</p>
+                    </div>
+                    <span class="pricing-badge badge bg-success">100% ফ্রি</span>
+                </div>
+                
+                <div class="price-tag">সম্পূর্ণ ফ্রি</div>
+                
+                <h4 class="mt-2 p-2">
+                    ৳ ০ <small>(বেসিক কোর্স)</small>
+                </h4>
+
+                <p class="text-success p-2"><i class="fa fa-gift"></i> <strong>বিশেষ সুযোগ!</strong> প্রিমিয়াম সার্টিফিকেটে ৩৩% ছাড়</p>
+                <p class="text-info p-2"><i class="fa fa-users"></i> <strong>কমিউনিটি:</strong> ৬,৫০০+ শিক্ষার্থীর সাথে শিখুন</p>
+
+                <div class="buttons">
+                    <a href="https://forms.gle/eUFiPfnLJvaucTU4A" class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2">ফ্রি এনরোল করুন</a>
+                    <a href="#demoClass" class="text-decoration-none text-white btn btn-outline-primary p-3 w-100 mb-2" data-bs-toggle="modal">ডেমো ক্লাস বুক করুন</a>
+                    <a href="#PaymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2">প্রিমিয়াম অপশন দেখুন</a>
+                </div>
+
+                <div class="list mt-2">
+                    <div class="list1 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-clock"></i> সময়কাল</p>
+                        <p>১ মাস</p>
+                    </div>
+                    <div class="list2 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-book"></i> মোট ক্লাস</p>
+                        <p>৮</p>
+                    </div>
+                    <div class="list3 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-bolt"></i> ভর্তি</p>
+                        <p>৩,৮০০+ শিক্ষার্থী</p>
+                    </div>
+                    <div class="list4 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-google-translate"></i> ভাষা</p>
+                        <p>বাংলা</p>
+                    </div>
+                    <div class="list5 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> দক্ষতা স্তর</p>
+                        <p>সম্পূর্ণ নতুনদের জন্য</p>
+                    </div>
+                    <div class="list6 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-list"></i> সময়সীমা</p>
+                        <p>লাইফটাইম এক্সেস</p>
+                    </div>
+                    <div class="list7 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-certificate"></i> বেসিক সার্টিফিকেট</p>
+                        <p>হ্যাঁ (ফ্রি)</p>
+                    </div>
+                    <div class="list8 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-laptop-code"></i> সফ্টওয়্যার</p>
+                        <p>IntelliJ IDEA / Eclipse</p>
+                    </div>
+                    <div class="list9 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-project-diagram"></i> প্রজেক্ট</p>
+                        <p>৪ টি</p>
+                    </div>
+                    <div class="list10 d-flex justify-content-between pt-2 border-bottom">
+                        <p><i class="fa fa-credit-card"></i> প্রিমিয়াম অপশন</p>
+                        <p>২ টি প্যাকেজ</p>
+                    </div>
+                    <div class="button pt-4 text-center mb-4">
+                        <i class="fa fa-share"></i><a href=""> এই কোর্স শেয়ার করুন</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Course Detail End -->
+
+<!-- Demo Class Modal -->
+<div class="modal fade" id="demoClass" tabindex="-1" aria-labelledby="demoClassLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="demoClassLabel">ফ্রি ডেমো ক্লাস বুক করুন</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>আমাদের Java Programming কোর্সের একটি ফ্রি লাইভ ডেমো ক্লাসে অংশগ্রহণ করুন। সম্পূর্ণ বিনামূল্যে কোনো বাধ্যবাধকতা ছাড়াই!</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">আপনার নাম</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">আপনার ইমেইল</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">আপনার ফোন নম্বর</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="goal" class="form-label">আপনার লক্ষ্য</label>
+                        <select class="form-control" id="goal" required>
+                            <option value="">সিলেক্ট করুন</option>
+                            <option value="android">Android App Development</option>
+                            <option value="web">Web Development</option>
+                            <option value="career">ক্যারিয়ার পরিবর্তন</option>
+                            <option value="freelance">ফ্রিল্যান্সিং শেখা</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">ফ্রি ডেমো বুক করুন</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Plan Selection Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">প্রিমিয়াম প্যাকেজ সিলেক্ট করুন</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="paymentPlanDetails">
+                    <!-- Plan details will be loaded here dynamically -->
+                </div>
+                <div class="mt-4">
+                    <h6>পেমেন্ট সম্পূর্ণ করুন:</h6>
+                    <form id="paymentForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পূর্ণ নাম</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ইমেইল</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">ফোন নম্বর</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">প্যাকেজ</label>
+                                <input type="text" class="form-control" id="selectedPackageName" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">মোট পরিমাণ</label>
+                                <input type="text" class="form-control" id="selectedPackagePrice" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">পেমেন্ট মেথড</label>
+                                <select class="form-control" id="paymentMethod" required>
+                                    <option value="">সিলেক্ট করুন</option>
+                                    <option value="bkash">বিকাশ</option>
+                                    <option value="nagad">নগদ</option>
+                                    <option value="rocket">রকেট</option>
+                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
+                                    <option value="card">ক্রেডিট/ডেবিট কার্ড</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">কনফার্ম ও পেমেন্ট করুন</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
+                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
+                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
+                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
+                <p><a class="text-light" href="">শর্তাবলী</a></p>
+                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">যোগাযোগ</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedbinkarim@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
+                <p>এখনই সাবস্ক্রাইব করুন এবং ফ্রি কোর্স ও অফার সম্পর্কে সর্বপ্রথম জানুন!</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
+                    <button type="button"
+                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+<!-- Payment Plan JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Payment Plan Modal Handler
+        const paymentModal = document.getElementById('paymentModal');
+        const paymentPlanDetails = document.getElementById('paymentPlanDetails');
+        const selectedPackageName = document.getElementById('selectedPackageName');
+        const selectedPackagePrice = document.getElementById('selectedPackagePrice');
+        
+        paymentModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const plan = button.getAttribute('data-plan');
+            
+            let planDetails = '';
+            
+            switch(plan) {
+                case 'premium-certificate':
+                    planDetails = `
+                        <h4>প্রিমিয়াম সার্টিফিকেট প্যাকেজ</h4>
+                        <div class="alert alert-success">
+                            <h5>মোট পরিমাণ: ৳ ২,০০০</h5>
+                            <p class="mb-0">আপনি ৩৩% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ৩,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>অফিসিয়াল প্রিমিয়াম সার্টিফিকেট (PDF & Hard Copy)</li>
+                            <li>প্রজেক্ট রিভিউ ও ডিটেইলড ফিডব্যাক</li>
+                            <li>২ টি ১:১ মেন্টরিং সেশন (৩০ মিনিট প্রতিটি)</li>
+                            <li>চাকরি সার্চ গাইডেন্স ও রেজুমি রিভিউ</li>
+                            <li>সোর্স কোড কালেকশন (১০০+ উদাহরণ)</li>
+                            <li>কোর্স কমপ্লিশন লেটার</li>
+                            <li>সার্টিফিকেট ভেরিফিকেশন সিস্টেম</li>
+                        </ul>
+                        <p><strong>যোগ্যতা:</strong> কোর্স সম্পন্ন করার পর সার্টিফিকেট প্রদান করা হবে।</p>
+                    `;
+                    selectedPackageName.value = 'প্রিমিয়াম সার্টিফিকেট';
+                    selectedPackagePrice.value = '৳ ২,০০০';
+                    break;
+                    
+                case 'full-package':
+                    planDetails = `
+                        <h4>ফুল প্যাকেজ</h4>
+                        <div class="alert alert-info">
+                            <h5>মোট পরিমাণ: ৳ ৫,০০০</h5>
+                            <p class="mb-0">আপনি ৩৮% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ৮,০০০)</p>
+                        </div>
+                        <p><strong>বৈশিষ্ট্য:</strong></p>
+                        <ul>
+                            <li>প্রিমিয়াম সার্টিফিকেট প্যাকেজের সবকিছু</li>
+                            <li>৪ সপ্তাহ ব্যক্তিগত মেন্টরিং (সাপ্তাহিক ১টি সেশন)</li>
+                            <li>কাস্টম পার্সোনাল প্রজেক্ট ডেভেলপমেন্ট</li>
+                            <li>চাকরি প্লেসমেন্ট সহায়তা (LinkedIn Profile Setup)</li>
+                            <li>৩টি ইন্টারভিউ প্রস্তুতি সেশন</li>
+                            <li>ফ্রিল্যান্সিং প্রোফাইল সেটআপ গাইডেন্স (Upwork/Fiverr)</li>
+                            <li>লাইফটাইম কোর্স আপডেট অ্যাক্সেস</li>
+                            <li>প্রাইভেট জব অ্যালার্ট গ্রুপ</li>
+                            <li>গিটহাব পোর্টফোলিও রিভিউ</li>
+                        </ul>
+                        <p><strong>বোনাস:</strong> পরবর্তী Android Development কোর্সে ৩৫% ডিস্কাউন্ট</p>
+                    `;
+                    selectedPackageName.value = 'ফুল প্যাকেজ';
+                    selectedPackagePrice.value = '৳ ৫,০০০';
+                    break;
+            }
+            
+            paymentPlanDetails.innerHTML = planDetails;
+        });
+        
+        // Payment Form Submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const packageName = selectedPackageName.value;
+            const packagePrice = selectedPackagePrice.value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const fullName = document.getElementById('fullName').value;
+            
+            // Show payment instructions based on selected method
+            let paymentMessage = '';
+            switch(paymentMethod) {
+                case 'bkash':
+                    paymentMessage = `বিকাশ করুন: 01893255503\nরেফারেন্স: JAVA-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}`;
+                    break;
+                case 'nagad':
+                    paymentMessage = `নগদ করুন: 01893255503\nরেফারেন্স: JAVA-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}`;
+                    break;
+                case 'rocket':
+                    paymentMessage = `রকেট করুন: 018932555038\nরেফারেন্স: JAVA-${Date.now()}\nপ্যাকেজ: ${packageName}\nনাম: ${fullName}`;
+                    break;
+                default:
+                    paymentMessage = `আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব পেমেন্ট প্রসেস সম্পন্ন করতে।`;
+            }
+            
+            alert(`পেমেন্ট সফলভাবে সাবমিট হয়েছে!\n\nপ্যাকেজ: ${packageName}\nমূল্য: ${packagePrice}\nনাম: ${fullName}\n\n${paymentMessage}\n\nপেমেন্ট সম্পন্ন হওয়ার পর স্ক্রিনশট পাঠান আমাদের WhatsApp-এ: 01893255503`);
+            
+            // Here you would typically send the data to your server
+            const modal = bootstrap.Modal.getInstance(paymentModal);
+            modal.hide();
+        });
+        
+        // Smooth scroll to payment plan section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#PaymentPlan') {
+                    e.preventDefault();
+                    document.querySelector('#PaymentPlan').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>
