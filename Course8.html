@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,6 +185,62 @@
         border-radius: 10px;
         margin: 20px 0;
     }
+    
+    .chapter-list {
+        margin-top: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 5px solid #fb873f;
+    }
+    
+    .chapter-item {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+    
+    .chapter-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    .chapter-number {
+        display: inline-block;
+        background: #fb873f;
+        color: white;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    
+    .chapter-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .chapter-topics {
+        padding-left: 40px;
+        margin-top: 10px;
+    }
+    
+    .chapter-topics li {
+        margin-bottom: 8px;
+        color: #555;
+    }
+    
+    .chapter-topics i {
+        color: #28a745;
+        margin-right: 8px;
+    }
 </style>
 
 <body>
@@ -369,6 +424,158 @@
                                 
                             <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
                                 style="font-size: 15px; font-weight: normal;">Model Test & Viva Preparation</span>
+                        </div>
+
+                        <!-- Complete Chapter List Section -->
+                        <div class="container" id="ChapterList">
+                            <h2 class="mt-4">HSC ICT সম্পূর্ণ চ্যাপ্টার লিস্ট (Class 12 / 2025)</h2>
+                            <p>NCTB সিলেবাস অনুযায়ী বাংলা ও ইংরেজি উভয় ভার্সনের সম্পূর্ণ চ্যাপ্টার</p>
+                            
+                            <div class="chapter-list">
+                                <!-- Chapter 1 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">১</div>
+                                    <div class="chapter-title">তথ্য ও যোগাযোগ প্রযুক্তি (ICT Overview)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> ICT সংজ্ঞা ও গুরুত্ব</li>
+                                        <li><i class="fa fa-check"></i> Hardware, Software, Input/Output Devices</li>
+                                        <li><i class="fa fa-check"></i> কম্পিউটার নেটওয়ার্কিং এর মৌলিক ধারণা</li>
+                                        <li><i class="fa fa-check"></i> ডেটা ও ইনফরমেশন</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 2 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">২</div>
+                                    <div class="chapter-title">ওয়ার্ড প্রসেসিং (Word Processing)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Advanced formatting (Paragraph, Font, Styles)</li>
+                                        <li><i class="fa fa-check"></i> Mail Merge ডকুমেন্ট তৈরি</li>
+                                        <li><i class="fa fa-check"></i> Table তৈরি ও ফরম্যাটিং</li>
+                                        <li><i class="fa fa-check"></i> Header/Footer এবং Page Numbering</li>
+                                        <li><i class="fa fa-check"></i> Document review এবং Track Changes</li>
+                                        <li><i class="fa fa-check"></i> টেমপ্লেট তৈরি ও ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> ডকুমেন্ট প্রিন্টিং ও PDF এক্সপোর্ট</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 3 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৩</div>
+                                    <div class="chapter-title">স্প্রেডশিট (Spreadsheet)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Formulas এবং Functions (IF, VLOOKUP, COUNTIF)</li>
+                                        <li><i class="fa fa-check"></i> Charts এবং Graphs তৈরি</li>
+                                        <li><i class="fa fa-check"></i> Data Analysis Tools</li>
+                                        <li><i class="fa fa-check"></i> Sorting, Filtering এবং Data Validation</li>
+                                        <li><i class="fa fa-check"></i> Conditional Formatting</li>
+                                        <li><i class="fa fa-check"></i> Pivot Table তৈরি</li>
+                                        <li><i class="fa fa-check"></i> What-If Analysis</li>
+                                        <li><i class="fa fa-check"></i> Macros এর প্রাথমিক ধারণা</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 4 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৪</div>
+                                    <div class="chapter-title">ডাটাবেস ম্যানেজমেন্ট সিস্টেম (DBMS)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Table, Query, Form, Report তৈরি</li>
+                                        <li><i class="fa fa-check"></i> Relational Database concepts</li>
+                                        <li><i class="fa fa-check"></i> Primary Key, Foreign Key</li>
+                                        <li><i class="fa fa-check"></i> MS Access / LibreOffice Base ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> SQL এর মৌলিক কমান্ড (SELECT, INSERT, UPDATE)</li>
+                                        <li><i class="fa fa-check"></i> Normalization এর ধারণা</li>
+                                        <li><i class="fa fa-check"></i> ER Diagram</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 5 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৫</div>
+                                    <div class="chapter-title">প্রেজেন্টেশন (Presentation)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Professional Slide design</li>
+                                        <li><i class="fa fa-check"></i> Animation এবং Transition</li>
+                                        <li><i class="fa fa-check"></i> Multimedia elements যোগ করা</li>
+                                        <li><i class="fa fa-check"></i> Slide master তৈরি</li>
+                                        <li><i class="fa fa-check"></i> Presentation delivery techniques</li>
+                                        <li><i class="fa fa-check"></i> Speaker notes ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> Timing এবং rehearsal</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 6 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৬</div>
+                                    <div class="chapter-title">ইন্টারনেট ও সামাজিক যোগাযোগ মাধ্যম (Internet & Social Media)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Web browsing techniques</li>
+                                        <li><i class="fa fa-check"></i> Search engines এর কার্যকর ব্যবহার</li>
+                                        <li><i class="fa fa-check"></i> E-commerce concepts</li>
+                                        <li><i class="fa fa-check"></i> Cybersecurity threats and protection</li>
+                                        <li><i class="fa fa-check"></i> Social media safety guidelines</li>
+                                        <li><i class="fa fa-check"></i> Digital communication etiquette</li>
+                                        <li><i class="fa fa-check"></i> Online collaboration tools</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 7 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৭</div>
+                                    <div class="chapter-title">প্রোগ্রামিং ভিত্তি (Basic Programming / Algorithm & Flowchart)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Algorithm design</li>
+                                        <li><i class="fa fa-check"></i> Flowchart symbols and creation</li>
+                                        <li><i class="fa fa-check"></i> Pseudocode writing</li>
+                                        <li><i class="fa fa-check"></i> Simple Python programs (HSC সিলেবাস অনুযায়ী)</li>
+                                        <li><i class="fa fa-check"></i> BASIC programming fundamentals</li>
+                                        <li><i class="fa fa-check"></i> Variables, Data Types, Operators</li>
+                                        <li><i class="fa fa-check"></i> Control Structures (If-Else, Loops)</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 8 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৮</div>
+                                    <div class="chapter-title">ICT নৈতিকতা ও নিরাপত্তা (Ethics & Security in ICT)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Cyber ethics and digital citizenship</li>
+                                        <li><i class="fa fa-check"></i> Password protection best practices</li>
+                                        <li><i class="fa fa-check"></i> Digital footprint management</li>
+                                        <li><i class="fa fa-check"></i> Copyright & Intellectual Property Awareness</li>
+                                        <li><i class="fa fa-check"></i> Plagiarism avoidance</li>
+                                        <li><i class="fa fa-check"></i> Data protection laws (মৌলিক ধারণা)</li>
+                                        <li><i class="fa fa-check"></i> Responsible use of ICT</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Chapter 9 -->
+                                <div class="chapter-item">
+                                    <div class="chapter-number">৯</div>
+                                    <div class="chapter-title">বিশেষ টপিকস ও প্র্যাকটিক্যাল (Special Topics & Practical)</div>
+                                    <ul class="chapter-topics">
+                                        <li><i class="fa fa-check"></i> Web Design fundamentals (HTML, CSS basics)</li>
+                                        <li><i class="fa fa-check"></i> Number Systems conversion (Binary, Decimal, Hexadecimal)</li>
+                                        <li><i class="fa fa-check"></i> Boolean Algebra and Logic Gates</li>
+                                        <li><i class="fa fa-check"></i> ICT in everyday life applications</li>
+                                        <li><i class="fa fa-check"></i> Emerging technologies overview</li>
+                                        <li><i class="fa fa-check"></i> ICT project development</li>
+                                        <li><i class="fa fa-check"></i> Viva and practical exam preparation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-4">
+                                <h5><i class="fa fa-info-circle me-2"></i> গুরুত্বপূর্ণ তথ্য:</h5>
+                                <p class="mb-0">
+                                    • বাংলা ও ইংরেজি উভয় ভার্সনের সিলেবাস সম্পূর্ণ কভার করা হবে<br>
+                                    • প্রতিটি চ্যাপ্টারের জন্য প্র্যাকটিক্যাল সেশন থাকবে<br>
+                                    • চ্যাপ্টার শেষে MCQ টেস্ট ও অ্যাসাইনমেন্ট<br>
+                                    • ১০০০+ বিগত বছরের প্রশ্ন প্র্যাকটিস<br>
+                                    • ৫০+ প্র্যাকটিক্যাল প্রজেক্ট
+                                </p>
+                            </div>
                         </div>
 
                         <!-- Payment Plan Section -->
@@ -705,6 +912,7 @@
                 <div class="buttons">
                     <button class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">এনরোল করুন</button>
                     <a href="#demoClass" class="text-decoration-none text-white btn btn-outline-primary p-3 w-100 mb-2" data-bs-toggle="modal">ফ্রি ডেমো ক্লাস বুক করুন</a>
+                    <a href="#ChapterList" class="text-decoration-none text-white btn btn-info p-3 w-100 mb-2">চ্যাপ্টার লিস্ট দেখুন</a>
                     <a href="#PaymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2">পেমেন্ট প্ল্যান দেখুন</a>
                 </div>
 
@@ -714,8 +922,8 @@
                         <p>৩ মাস</p>
                     </div>
                     <div class="list2 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-book"></i> মোট ক্লাস</p>
-                        <p>৩৬</p>
+                        <p><i class="fa fa-book"></i> মোট চ্যাপ্টার</p>
+                        <p>৯টি</p>
                     </div>
                     <div class="list3 d-flex justify-content-between pt-2 border-bottom">
                         <p><i class="fa fa-bolt"></i> ভর্তি</p>
@@ -739,7 +947,7 @@
                     </div>
                     <div class="list8 d-flex justify-content-between pt-2 border-bottom">
                         <p><i class="fa fa-laptop-code"></i> সফ্টওয়্যার</p>
-                        <p>MS Office, Code::Blocks</p>
+                        <p>MS Office, Code::Blocks, HTML Editor</p>
                     </div>
                     <div class="list9 d-flex justify-content-between pt-2 border-bottom">
                         <p><i class="fa fa-project-diagram"></i> MCQ প্র্যাকটিস</p>
@@ -977,7 +1185,7 @@
                         </div>
                         <p><strong>বৈশিষ্ট্য:</strong></p>
                         <ul>
-                            <li>সম্পূর্ণ HSC ICT কোর্স কন্টেন্ট</li>
+                            <li>সম্পূর্ণ HSC ICT কোর্স কন্টেন্ট (৯টি চ্যাপ্টার)</li>
                             <li>৩৬টি লাইভ ক্লাস (সপ্তাহে ৩টি)</li>
                             <li>সকল রেকর্ডেড ক্লাসের লাইফটাইম এক্সেস</li>
                             <li>কোর্স ম্যাটেরিয়াল (PDF, Slides, Notes)</li>
@@ -1089,14 +1297,18 @@
             modal.hide();
         });
         
-        // Smooth scroll to payment plan section
+        // Smooth scroll to sections
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#PaymentPlan') {
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
                     e.preventDefault();
-                    document.querySelector('#PaymentPlan').scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
