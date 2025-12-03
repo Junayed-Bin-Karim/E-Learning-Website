@@ -271,6 +271,253 @@
                                 style="font-size: 15px; font-weight: normal;">প্রজেক্ট ডেভেলপমেন্ট</span>
                         </div>
 
+
+
+
+
+
+
+<!-- Payment Plan Modal -->
+<div class="modal fade" id="paymentPlan" tabindex="-1" aria-labelledby="paymentPlanLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="paymentPlanLabel"><i class="fa fa-credit-card me-2"></i>ইজি পেমেন্ট প্ল্যান</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="alert alert-success">
+                    <i class="fa fa-percentage me-2"></i> 
+                    <strong>বিশেষ অফার!</strong> প্রথম ১০০ জন শিক্ষার্থীর জন্য সমস্ত পেমেন্ট প্ল্যানে অতিরিক্ত ৫% ছাড়
+                </div>
+                
+                <div class="row g-4">
+                    <!-- One-time Payment -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-primary shadow-sm">
+                            <div class="card-header bg-primary text-white text-center">
+                                <h5 class="mb-0"><i class="fa fa-bolt me-2"></i>ওয়ান-টাইম</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="price-display">
+                                    <h3 class="text-danger">৳ ৪,৭৫০</h3>
+                                    <small class="text-muted"><del>৳ ৫,০০০</del></small>
+                                    <div class="badge bg-success mt-2">সাশ্রয়ী</div>
+                                </div>
+                                <ul class="list-unstyled mt-3 text-start">
+                                    <li><i class="fa fa-check text-success me-2"></i> একবারে সম্পূর্ণ পেমেন্ট</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> ৫% এক্সট্রা ছাড়</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> কোর্স এক্সেস সাথে সাথে</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> ফ্রি প্রি-কোর্স ম্যাটেরিয়াল</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-primary w-100" onclick="selectPlan('one-time')">এই প্ল্যান নির্বাচন করুন</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two Installments -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-warning shadow-sm">
+                            <div class="card-header bg-warning text-dark text-center">
+                                <h5 class="mb-0"><i class="fa fa-calendar me-2"></i>২ কিস্তিতে</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="price-display">
+                                    <h3 class="text-danger">৳ ৫,২৫০</h3>
+                                    <small class="text-muted">মোট মূল্য</small>
+                                    <div class="badge bg-warning text-dark mt-2">জনপ্রিয়</div>
+                                </div>
+                                <div class="installment-details mt-3">
+                                    <p class="mb-1"><strong>প্রথম কিস্তি:</strong> ৳ ২,৭৫০</p>
+                                    <p class="mb-1"><strong>দ্বিতীয় কিস্তি:</strong> ৳ ২,৫০০</p>
+                                    <small class="text-muted">(২য় সপ্তাহে)</small>
+                                </ul>
+                                <ul class="list-unstyled mt-3 text-start">
+                                    <li><i class="fa fa-check text-success me-2"></i> ২টি সুবিধামত কিস্তি</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> লো ইন্টারেস্ট রেট</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> সহজ পেমেন্ট</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> ফ্রি স্টাডি মেটেরিয়াল</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-warning w-100" onclick="selectPlan('two-installments')">এই প্ল্যান নির্বাচন করুন</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Three Installments -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-info shadow-sm">
+                            <div class="card-header bg-info text-white text-center">
+                                <h5 class="mb-0"><i class="fa fa-calendar-alt me-2"></i>৩ কিস্তিতে</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="price-display">
+                                    <h3 class="text-danger">৳ ৫,৫০০</h3>
+                                    <small class="text-muted">মোট মূল্য</small>
+                                    <div class="badge bg-info mt-2">সুবিধাজনক</div>
+                                </div>
+                                <div class="installment-details mt-3">
+                                    <p class="mb-1"><strong>প্রতি কিস্তি:</strong> ৳ ১,৮৩৩</p>
+                                    <small class="text-muted">(মাসে একবার)</small>
+                                </div>
+                                <ul class="list-unstyled mt-3 text-start">
+                                    <li><i class="fa fa-check text-success me-2"></i> ৩টি ছোট কিস্তি</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> কিস্তিতে সুবিধা</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> ফ্লেক্সিবল পেমেন্ট</li>
+                                    <li><i class="fa fa-check text-success me-2"></i> ০% সুদ প্রথম মাস</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-info w-100" onclick="selectPlan('three-installments')">এই প্ল্যান নির্বাচন করুন</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods mt-4">
+                    <h6><i class="fa fa-wallet me-2"></i>পেমেন্ট মাধ্যম:</h6>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge bg-success p-2"><i class="fa fa-mobile-alt me-1"></i> বিকাশ</span>
+                        <span class="badge bg-primary p-2"><i class="fa fa-university me-1"></i> নগদ</span>
+                        <span class="badge bg-danger p-2"><i class="fa fa-rocket me-1"></i> রকেট</span>
+                        <span class="badge bg-dark p-2"><i class="fa fa-credit-card me-1"></i> ব্যাংক কার্ড</span>
+                        <span class="badge bg-secondary p-2"><i class="fa fa-building me-1"></i> ব্যাংক ট্রান্সফার</span>
+                    </div>
+                </div>
+
+                <!-- Group Discount -->
+                <div class="group-discount alert alert-info mt-4">
+                    <h6><i class="fa fa-users me-2"></i>গ্রুপ ডিস্কাউন্ট</h6>
+                    <p class="mb-0">
+                        <strong>৩ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৪,০০০ <br>
+                        <strong>৫ জন মিলে এনরোল করলে:</strong> প্রতিজন মাত্র ৳ ৩,৫০০ <br>
+                        <small class="text-muted">*গ্রুপ ডিস্কাউন্টের জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন</small>
+                    </p>
+                </div>
+
+                <!-- Installment Application Form (Initially Hidden) -->
+                <div id="installmentForm" class="mt-4" style="display: none;">
+                    <h6>পেমেন্ট প্ল্যান এপ্লাই করুন</h6>
+                    <form id="paymentPlanForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="selectedPlan" class="form-label">নির্বাচিত প্ল্যান</label>
+                                <input type="text" class="form-control" id="selectedPlan" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="planAmount" class="form-label">মোট পরিমাণ</label>
+                                <input type="text" class="form-control" id="planAmount" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="userName" class="form-label">আপনার নাম</label>
+                                <input type="text" class="form-control" id="userName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="userPhone" class="form-label">ফোন নম্বর</label>
+                                <input type="tel" class="form-control" id="userPhone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="paymentMethod" class="form-label">পছন্দের পেমেন্ট মাধ্যম</label>
+                                <select class="form-control" id="paymentMethod" required>
+                                    <option value="">সিলেক্ট করুন</option>
+                                    <option value="bkash">বিকাশ</option>
+                                    <option value="nogod">নগদ</option>
+                                    <option value="rocket">রকেট</option>
+                                    <option value="card">ব্যাংক কার্ড</option>
+                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fa fa-paper-plane me-2"></i>এপ্লাই করুন
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.3s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .price-display {
+        background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .installment-details {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        border-left: 3px solid #fb873f;
+    }
+    
+    .badge {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .list-unstyled li {
+        padding: 5px 0;
+        border-bottom: 1px dashed #eee;
+    }
+</style>
+
+<script>
+    function selectPlan(planType) {
+        const installmentForm = document.getElementById('installmentForm');
+        const selectedPlan = document.getElementById('selectedPlan');
+        const planAmount = document.getElementById('planAmount');
+        
+        switch(planType) {
+            case 'one-time':
+                selectedPlan.value = 'ওয়ান-টাইম পেমেন্ট';
+                planAmount.value = '৳ ৪,৭৫০';
+                break;
+            case 'two-installments':
+                selectedPlan.value = '২ কিস্তিতে';
+                planAmount.value = '৳ ৫,২৫০';
+                break;
+            case 'three-installments':
+                selectedPlan.value = '৩ কিস্তিতে';
+                planAmount.value = '৳ ৫,৫০০';
+                break;
+        }
+        
+        installmentForm.style.display = 'block';
+        installmentForm.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    document.getElementById('paymentPlanForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('আপনার পেমেন্ট প্ল্যান এপ্লিকেশন সফলভাবে জমা হয়েছে! শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।');
+        // Here you can add your form submission logic
+    });
+</script>
+
+
+
+
+
+
+
+                        
                         <div class="container" id="Curriculum">
     <h2 class="mt-4">কোর্স কারিকুলাম</h2>
     <p>১ মাস ব্যাপী সম্পূর্ণ C প্রোগ্রামিং ট্রেনিং</p>
