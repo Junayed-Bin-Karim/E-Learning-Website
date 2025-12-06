@@ -3,20 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Testimonial</title>
+    <title>Junayed Academy | Student Success Stories & Testimonials</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
+    <meta name="keywords" content="Junayed Academy testimonials, student success stories, course reviews, programming success, AI training reviews, Bangladesh tech education">
+    <meta name="description" content="Read inspiring success stories from Junayed Academy students. Discover how our courses transformed careers and helped students achieve professional growth in tech.">
+    
     <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -32,40 +30,134 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
+    <style>
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .quote-icon {
+            color: #fb873f;
+            opacity: 0.2;
+            font-size: 4rem;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        .rating {
+            color: #ffc107;
+            font-size: 1.1rem;
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+            border-radius: 15px;
+            color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .student-badge {
+            background-color: rgba(251, 135, 63, 0.1);
+            color: #fb873f;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        
+        .video-testimonial {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .video-testimonial:hover .video-overlay {
+            background-color: rgba(251, 135, 63, 0.8);
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fb873f;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
-                    style="color: #fb873f;">Academy</span></p>
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="Junayed Academy Logo" height="45px">Junayed<span style="color: #fb873f;">Academy</span></p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" style="border: none;">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="testimonial.html" class="dropdown-item active">Testimonials</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -78,18 +170,17 @@
     </nav>
     <!-- Navbar End -->
 
-
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Student Reviews</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Success Stories</h1>
+                    <p class="lead text-white mb-4">Hear from students who transformed their careers with Junayed Academy</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Reviews</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Testimonials</li>
                         </ol>
                     </nav>
                 </div>
@@ -98,113 +189,432 @@
     </div>
     <!-- Header End -->
 
-<!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="text-center">
-            <h1 class="bg-white text-center px-3" style="color: #fb873f;">সাফল্যের গল্প</h1>
-            <p class="mb-5">Junayed Academy-এর কোর্সগুলো কি আপনার ক্যারিয়ারকে সাহায্য করতে পারে? আমাদের শিক্ষার্থীরা জানাচ্ছেন।</p>
-        </div>
-        <div class="owl-carousel testimonial-carousel position-relative">
-
-            <div class="testimonial-item text-center">
-<img class="border rounded-circle p-2 mx-auto mb-3" src="img/rajon-testimonial-1.jpg" alt="Rajon Testimonial">
-                <h5 class="mb-0">Rajon-HAGC</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-<p class="mb-0">
-আমি Junayed Academy-তে Machine Learning কোর্সটি করেছি, এবং Junayed স্যার সত্যিই অসাধারণভাবে পড়ান! 
-পুরো কোর্সটি ছিল প্র্যাকটিক্যাল ও সহজবোধ্য — প্রতিটি ক্লাসে নতুন কিছু শেখার সুযোগ পেয়েছি। 
-যারা AI বা ML শিখতে চায়, তাদের আমি অবশ্যই Junayed Academy সাজেস্ট করব।
-</p>
+    <!-- Stats Section -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Our Impact in Numbers</h2>
+                <p class="lead">Join thousands of successful students who transformed their careers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <h3 class="stat-number">2,500+</h3>
+                        <p class="stat-label">Students Trained</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-<img class="border rounded-circle p-2 mx-auto mb-3" src="img/Parui-testimonial-2.jpg" alt="Parui Testimonial">
-                <h5 class="mb-0">Pauri-BUBT</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-<p class="mb-0">Junayed Academy‑এর কোর্সগুলো আমার ক্যারিয়ারকে নতুন মাত্রা দিয়েছে। ওয়েব ডেভেলপমেন্ট ট্র্যাকের মাধ্যমে আমি শুধু কোড শেখিনি, বরং বাস্তব প্রজেক্টের মাধ্যমে কাজের দক্ষতা অর্জন করেছি। 
-    ইন্সট্রাক্টরদের গাইডেন্স এবং হ্যান্ডস-অন অ্যাসাইনমেন্ট আমাকে প্রস্তুত করেছে প্রফেশনাল পরিবেশে কাজ করার জন্য।
-    তিন মাসের মধ্যে আমি আত্মবিশ্বাসী হয়ে উঠেছি, এবং আমার পোর্টফোলিও এখন চাকরি প্রার্থনার জন্য শক্তিশালী প্রমাণ। যারা তাদের প্রযুক্তি ক্যারিয়ার দ্রুত এগিয়ে নিতে চায়, তাদের জন্য Junayed Academy একটি সঠিক বিনিয়োগ।</p>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <h3 class="stat-number">96%</h3>
+                        <p class="stat-label">Satisfaction Rate</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-<img class="border rounded-circle p-2 mx-auto mb-3" src="img/fassabir-testimonial-3.jpg" alt="fassabir Testimonial">
-                <h5 class="mb-0">Fassabir-DIU</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">আমি এখানে একাধিক কোর্স করেছি এবং প্রতিটিই দুর্দান্ত হয়েছে। প্ল্যাটফর্মের ডিজাইন শেখাকে আনন্দদায়ক করে তোলে এবং অর্জিত জ্ঞান অমূল্য। বিশ্বাস করা কঠিন যে এই কোর্সগুলো ফ্রি!</p>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <h3 class="stat-number">1,200+</h3>
+                        <p class="stat-label">Career Placements</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3" src="img/Chowa-testimonial-4.jpg" alt="CHOWA Testimonial">
-
-                <h5 class="mb-0">Lailatul Ferdous Chowa-DIU</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">ফ্রি কোর্সের মান দেখে আমি বিস্মিত! প্রশিক্ষকরা তাদের ক্ষেত্রের বিশেষজ্ঞ এবং ইন্টারেক্টিভ পাঠগুলো শেখাকে সহজ করে। এই সুযোগের জন্য ধন্যবাদ!</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
-
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
-                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
-                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
-                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
-                <p><a class="text-light" href="">শর্তাবলী</a></p>
-                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">যোগাযোগ</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
-                <p>এখনই সাবস্ক্রাইব করুন এবং আমাদের বৃদ্ধিশীল শিক্ষার্থী কমিউনিটিতে যোগ দিন!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
-                    <button type="button"
-                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+                <div class="col-md-3">
+                    <div class="stats-card text-center">
+                        <h3 class="stat-number">4.8/5</h3>
+                        <p class="stat-label">Average Rating</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+
+    <!-- Video Testimonials Section -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Watch Student Success Stories</h2>
+                <p class="lead">Hear directly from our alumni about their journey</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-testimonial">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Student Testimonial Video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <h5>Md. Rajon Mahmud</h5>
+                        <p class="text-muted">Machine Learning Engineer</p>
+                        <span class="student-badge">AI & ML Track</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-testimonial">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Student Testimonial Video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <h5>Lailatul Ferdous Chowa</h5>
+                        <p class="text-muted">Full Stack Developer</p>
+                        <span class="student-badge">Web Development</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-testimonial">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Student Testimonial Video">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <h5>Fassabir Ahmed</h5>
+                        <p class="text-muted">Data Scientist</p>
+                        <span class="student-badge">Data Science Track</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
 
+    <!-- Detailed Testimonials -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">What Our Students Say</h2>
+                <p class="lead">Real stories from real students who achieved career breakthroughs</p>
+            </div>
+            
+            <!-- Featured Testimonial -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="testimonial-card bg-white shadow p-5">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 text-center">
+                                <img src="img/rajon-testimonial-1.jpg" class="testimonial-img rounded-circle mb-3" alt="Rajon Mahmud">
+                                <h5>Rajon Mahmud</h5>
+                                <p class="text-muted mb-2">Machine Learning Engineer</p>
+                                <p class="student-badge">HAGC University</p>
+                                <div class="rating mt-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 position-relative">
+                                <i class="fas fa-quote-right quote-icon"></i>
+                                <h4 class="mb-4">"From Novice to AI Professional in 6 Months"</h4>
+                                <p class="mb-4">
+                                    Junayed Academy's Machine Learning course transformed my career trajectory. Coming from a non-CS background, I was initially intimidated by complex AI concepts. However, Junayed Sir's teaching methodology made everything click. Each module was structured with real-world applications in mind, and the hands-on projects built my confidence.
+                                </p>
+                                <p class="mb-4">
+                                    The highlight was the capstone project where we developed a predictive model for a local startup. This practical experience, combined with Junayed Sir's mentorship, helped me secure a Machine Learning Engineer position at a leading tech company within two months of course completion. The career guidance sessions were particularly valuable for interview preparation.
+                                </p>
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Course Taken:</strong> Advanced Machine Learning</p>
+                                        <p class="mb-1"><strong>Duration:</strong> 6 Months</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1"><strong>Position:</strong> ML Engineer</p>
+                                        <p class="mb-1"><strong>Salary Increase:</strong> 300%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Testimonial Grid -->
+            <div class="row g-4">
+                <!-- Testimonial 2 -->
+                <div class="col-lg-6">
+                    <div class="testimonial-card bg-white shadow p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/Parui-testimonial-2.jpg" class="testimonial-img rounded-circle me-4" alt="Parui Rahman">
+                            <div>
+                                <h5 class="mb-1">Parui Rahman</h5>
+                                <p class="text-muted mb-1">Full Stack Developer</p>
+                                <p class="student-badge">BUBT</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="text-primary mb-3">"Career Transformation Through Web Development"</h6>
+                        <p class="mb-3">
+                            The Web Development track at Junayed Academy provided me with the perfect blend of theory and practice. Each project felt like solving real client problems, and the code reviews were incredibly detailed.
+                        </p>
+                        <p class="mb-3">
+                            Within three months of completing the course, I started freelancing on Upwork and now consistently earn $2,500+ monthly. The curriculum's focus on modern frameworks (React, Node.js) gave me a competitive edge.
+                        </p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <small class="text-muted"><i class="fas fa-clock me-1"></i> 4 Months Course</small>
+                            <small class="text-success"><i class="fas fa-briefcase me-1"></i> Freelance Success</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-lg-6">
+                    <div class="testimonial-card bg-white shadow p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/fassabir-testimonial-3.jpg" class="testimonial-img rounded-circle me-4" alt="Fassabir Ahmed">
+                            <div>
+                                <h5 class="mb-1">Fassabir Ahmed</h5>
+                                <p class="text-muted mb-1">Data Scientist</p>
+                                <p class="student-badge">DIU</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="text-primary mb-3">"From Theory to Practical Data Science Mastery"</h6>
+                        <p class="mb-3">
+                            As a statistics graduate, I understood the theory but lacked practical skills. Junayed Academy's Data Science program bridged this gap perfectly. The focus on real datasets and industry projects was invaluable.
+                        </p>
+                        <p class="mb-3">
+                            The career support team helped me prepare my portfolio and connected me with hiring partners. I received three job offers within a month of completing the program and accepted a Data Scientist role with a 250% salary increase.
+                        </p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <small class="text-muted"><i class="fas fa-clock me-1"></i> 5 Months Course</small>
+                            <small class="text-success"><i class="fas fa-chart-line me-1"></i> Multiple Offers</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="col-lg-6">
+                    <div class="testimonial-card bg-white shadow p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/Chowa-testimonial-4.jpg" class="testimonial-img rounded-circle me-4" alt="Lailatul Ferdous Chowa">
+                            <div>
+                                <h5 class="mb-1">Lailatul Ferdous Chowa</h5>
+                                <p class="text-muted mb-1">Frontend Developer</p>
+                                <p class="student-badge">DIU</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="text-primary mb-3">"Breaking into Tech with Zero Prior Experience"</h6>
+                        <p class="mb-3">
+                            Coming from a non-technical background, I was skeptical about learning programming. Junayed Academy's beginner-friendly approach and patient instructors made all the difference. The curriculum started from absolute basics and gradually progressed.
+                        </p>
+                        <p class="mb-3">
+                            What impressed me most was the community support. Fellow students and alumni were always available to help. Today, I work as a frontend developer at a reputable company, something I never thought possible a year ago.
+                        </p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <small class="text-muted"><i class="fas fa-clock me-1"></i> 6 Months Course</small>
+                            <small class="text-success"><i class="fas fa-user-graduate me-1"></i> Career Switch</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 (New) -->
+                <div class="col-lg-6">
+                    <div class="testimonial-card bg-white shadow p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="testimonial-img rounded-circle me-4" alt="Ahmed Hossain">
+                            <div>
+                                <h5 class="mb-1">Ahmed Hossain</h5>
+                                <p class="text-muted mb-1">Cybersecurity Analyst</p>
+                                <p class="student-badge">RUET</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="text-primary mb-3">"Securing Bangladesh's Digital Future"</h6>
+                        <p class="mb-3">
+                            The Cybersecurity Specialization at Junayed Academy provided hands-on experience with industry-standard tools. The lab sessions simulating real attacks and defense scenarios were particularly valuable for understanding threat landscapes.
+                        </p>
+                        <p class="mb-3">
+                            The certification preparation guidance helped me pass the CEH exam on the first attempt. I now lead security assessments for financial institutions, ensuring the safety of digital transactions across Bangladesh.
+                        </p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <small class="text-muted"><i class="fas fa-clock me-1"></i> 8 Months Course</small>
+                            <small class="text-success"><i class="fas fa-shield-alt me-1"></i> Industry Certified</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Testimonials -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Trusted by Industry Leaders</h2>
+                <p class="lead">What employers say about Junayed Academy graduates</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-building fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Tech Solutions Ltd.</h5>
+                                    <small class="text-muted">HR Manager</small>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                "Junayed Academy graduates come with practical skills that require minimal training. Their hands-on project experience makes them immediately productive."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-briefcase fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Startup Inc.</h5>
+                                    <small class="text-muted">CTO</small>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                "We've hired 5 developers from Junayed Academy in the last year. Their problem-solving skills and up-to-date technical knowledge have been invaluable for our growth."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-globe fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Global Tech</h5>
+                                    <small class="text-muted">Team Lead</small>
+                                </div>
+                            </div>
+                            <p class="mb-0">
+                                "The quality of Junayed Academy alumni consistently impresses us. Their strong foundation in fundamentals allows them to quickly adapt to new technologies."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="text-primary mb-4">Ready to Write Your Success Story?</h2>
+                <p class="lead mb-4">Join thousands of students who transformed their careers with Junayed Academy</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="courses.html" class="btn btn-primary btn-lg px-5 py-3">
+                        <i class="fas fa-graduation-cap me-2"></i>Explore Courses
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-primary btn-lg px-5 py-3">
+                        <i class="fas fa-headset me-2"></i>Talk to Advisor
+                    </a>
+                </div>
+                <p class="text-muted mt-4">
+                    <small><i class="fas fa-check-circle text-success me-1"></i> 30-Day Money-Back Guarantee</small>
+                    <span class="mx-3">•</span>
+                    <small><i class="fas fa-check-circle text-success me-1"></i> Career Support Included</small>
+                    <span class="mx-3">•</span>
+                    <small><i class="fas fa-check-circle text-success me-1"></i> Flexible Learning Schedule</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
+                    <p><a class="text-light" href="#">FAQ & Help Center</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact Information</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with latest courses, tech trends, and career opportunities.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" aria-label="Email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </div>
+                    <p class="small mt-3 text-muted">By subscribing, you agree to our Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
+                        <br><small class="text-muted">Registered Educational Institution, Bangladesh</small>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small>Designed with excellence for the future of Bangladesh</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -216,6 +626,29 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Initialize Owl Carousel for testimonials
+        $(document).ready(function(){
+            $('.testimonial-carousel').owlCarousel({
+                loop:true,
+                margin:30,
+                nav:true,
+                dots:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
