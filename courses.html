@@ -273,6 +273,89 @@
                 margin-bottom: 20px;
             }
         }
+
+
+
+        /* Course Statistics Bar */
+.course-stats {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fb873f;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Course Comparison */
+.course-comparison {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.comparison-table th {
+    background: #fb873f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Course Bundles */
+.course-bundle {
+    background: linear-gradient(135deg, #fb873f, #ff9e5c);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    margin-top: 50px;
+}
+
+.bundle-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bundle-saving {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+}
     </style>
 </head>
 
@@ -390,6 +473,42 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- Course Statistics -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="course-stats">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Courses Available</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">2,500+</div>
+                        <div class="stat-label">Active Learners</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">4.8/5</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             
             <!-- Course Grid -->
             <div class="row g-4" id="courseGrid">
@@ -739,7 +858,179 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Course 13: AWS Cloud (Paid) -->
+<div class="col-lg-3 col-md-6" data-category="web paid">
+    <div class="course-card">
+        <div class="position-relative overflow-hidden">
+            <img class="course-image" src="img/course-aws.jpg" alt="AWS Cloud Computing">
+            <div class="course-badge badge-paid">PREMIUM</div>
+        </div>
+        <div class="p-4">
+            <div class="mb-3">
+                <span class="course-level level-intermediate">Intermediate</span>
+                <span class="text-muted">•</span>
+                <span class="text-muted">2 Months</span>
+            </div>
+            <h5 class="mb-2">AWS Cloud Computing</h5>
+            <p class="small text-muted mb-3">Master AWS services, deployment, and cloud architecture for modern applications.</p>
+            <div class="d-flex align-items-center mb-3">
+                <div class="rating-stars me-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <small class="text-muted">5.0 (800+ learners)</small>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <i class="fas fa-user-graduate text-primary me-2"></i>
+                    <small>Cloud Experts</small>
+                </div>
+            </div>
+        </div>
+        <div class="course-meta">
+            <div>
+                <span class="course-price">৳ 18,000</span>
+                <span class="original-price">৳ 22,000</span>
+            </div>
+            <a href="course-aws.html" class="btn btn-sm btn-primary">
+                Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Course 14: Cybersecurity Fundamentals (Paid) -->
+<div class="col-lg-3 col-md-6" data-category="paid">
+    <div class="course-card">
+        <div class="position-relative overflow-hidden">
+            <img class="course-image" src="img/course-cybersecurity.jpg" alt="Cybersecurity Fundamentals">
+            <div class="course-badge badge-paid">PREMIUM</div>
+        </div>
+        <div class="p-4">
+            <div class="mb-3">
+                <span class="course-level level-intermediate">Intermediate</span>
+                <span class="text-muted">•</span>
+                <span class="text-muted">2 Months</span>
+            </div>
+            <h5 class="mb-2">Cybersecurity Fundamentals</h5>
+            <p class="small text-muted mb-3">Learn network security, ethical hacking, and protection strategies for digital assets.</p>
+            <div class="d-flex align-items-center mb-3">
+                <div class="rating-stars me-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <small class="text-muted">4.7 (600+ learners)</small>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <i class="fas fa-user-graduate text-primary me-2"></i>
+                    <small>Irfan</small>
+                </div>
+            </div>
+        </div>
+        <div class="course-meta">
+            <div>
+                <span class="course-price">৳ 12,000</span>
+            </div>
+            <a href="course-cybersecurity.html" class="btn btn-sm btn-primary">
+                Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Course 15: UI/UX Design (Paid) -->
+<div class="col-lg-3 col-md-6" data-category="web paid">
+    <div class="course-card">
+        <div class="position-relative overflow-hidden">
+            <img class="course-image" src="img/course-uiux.jpg" alt="UI/UX Design">
+            <div class="course-badge badge-paid">PREMIUM</div>
+        </div>
+        <div class="p-4">
+            <div class="mb-3">
+                <span class="course-level level-beginner">Beginner</span>
+                <span class="text-muted">•</span>
+                <span class="text-muted">2 Months</span>
+            </div>
+            <h5 class="mb-2">UI/UX Design Mastery</h5>
+            <p class="small text-muted mb-3">Learn design principles, wireframing, prototyping, and user research methodologies.</p>
+            <div class="d-flex align-items-center mb-3">
+                <div class="rating-stars me-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <small class="text-muted">4.9 (400+ learners)</small>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <i class="fas fa-user-graduate text-primary me-2"></i>
+                    <small>Design Experts</small>
+                </div>
+            </div>
+        </div>
+        <div class="course-meta">
+            <div>
+                <span class="course-price">৳ 14,000</span>
+                <span class="original-price">৳ 16,000</span>
+            </div>
+            <a href="course-uiux.html" class="btn btn-sm btn-primary">
+                Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Course 16: MySQL Database (Free) -->
+<div class="col-lg-3 col-md-6" data-category="programming free">
+    <div class="course-card">
+        <div class="position-relative overflow-hidden">
+            <img class="course-image" src="img/course-mysql.jpg" alt="MySQL Database">
+            <div class="course-badge badge-free">FREE</div>
+        </div>
+        <div class="p-4">
+            <div class="mb-3">
+                <span class="course-level level-beginner">Beginner</span>
+                <span class="text-muted">•</span>
+                <span class="text-muted">3 Weeks</span>
+            </div>
+            <h5 class="mb-2">MySQL Database Fundamentals</h5>
+            <p class="small text-muted mb-3">Master database design, SQL queries, normalization, and data management.</p>
+            <div class="d-flex align-items-center mb-3">
+                <div class="rating-stars me-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <small class="text-muted">Coming Soon</small>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <i class="fas fa-user-graduate text-primary me-2"></i>
+                    <small>Database Experts</small>
+                </div>
+            </div>
+        </div>
+        <div class="course-meta">
+            <div>
+                <span class="course-price">৳ 0</span>
+            </div>
+            <button class="btn btn-sm btn-secondary" disabled>
+                Coming Soon
+            </button>
+        </div>
+    </div>
+</div>
                 <!-- Add remaining courses following the same pattern -->
                 <!-- Course 9: MS Excel (Free) -->
                 <!-- Course 10: JSC ICT (Paid) -->
@@ -1093,6 +1384,38 @@
                 this.style.transform = 'translateY(0)';
             });
         });
+        // Update this function in your existing JavaScript
+function initializeCourseCounts() {
+    const categories = {
+        'all': document.querySelectorAll('#courseGrid .col-lg-3').length,
+        'web': 0,
+        'programming': 0,
+        'ai': 0,
+        'academic': 0,
+        'free': 0,
+        'paid': 0
+    };
+    
+    // Count courses per category
+    document.querySelectorAll('#courseGrid .col-lg-3').forEach(card => {
+        const cardCategories = card.getAttribute('data-category').split(' ');
+        cardCategories.forEach(cat => {
+            if (categories[cat] !== undefined) {
+                categories[cat]++;
+            }
+        });
+    });
+    
+    // Update category tags with counts
+    document.querySelectorAll('.category-tag').forEach(tag => {
+        const category = tag.getAttribute('data-category');
+        const countElement = tag.querySelector('.course-count');
+        
+        if (countElement && categories[category]) {
+            countElement.textContent = categories[category];
+        }
+    });
+}
     </script>
 </body>
 
