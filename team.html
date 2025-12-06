@@ -3,568 +3,740 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Team</title>
+    <title>Junayed Academy | Meet Our Expert Team of Educators</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
+    <meta name="keywords" content="Junayed Academy team, expert instructors, technology educators, AI specialists, programming teachers, Bangladesh tech education">
+    <meta name="description" content="Meet the passionate team behind Junayed Academy. Our expert instructors combine industry experience with teaching excellence to deliver world-class tech education in Bangladesh.">
+    
     <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Fonts -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS for redesigned team section -->
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
     <style>
-        :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary: #fb873f;
-            --secondary-dark: #e56a1f;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
-            --gray-light: #f1f5f9;
-            --border-radius: 12px;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: #f9fafb;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 60px;
-            border-radius: 0 0 40px 40px;
-        }
-
-        .page-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb li {
-            margin: 0 8px;
-        }
-
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .breadcrumb a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .breadcrumb li.active {
-            color: var(--secondary);
-            font-weight: 500;
-        }
-
-        .breadcrumb li:not(:last-child)::after {
-            content: "/";
-            margin-left: 15px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.125rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
         .team-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .team-img-container {
-            height: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
             overflow: hidden;
             position: relative;
         }
-
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
+        }
+        
         .team-img {
             width: 100%;
-            height: 100%;
+            height: 280px;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
-
+        
         .team-card:hover .team-img {
             transform: scale(1.05);
         }
-
-        .team-content {
-            padding: 25px;
-            text-align: center;
+        
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(to bottom, rgba(251, 135, 63, 0) 0%, rgba(251, 135, 63, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-
-        .team-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
+        
+        .team-card:hover .team-overlay {
+            opacity: 1;
         }
-
-        .team-role {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .team-desc {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .team-contact {
+        
+        .social-links {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
         }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        
+        .team-card:hover .social-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .social-icon {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: var(--gray-light);
-            color: var(--dark);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fb873f;
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-
-        .contact-btn:hover {
-            background-color: var(--primary);
+        
+        .social-icon:hover {
+            background: #fb873f;
             color: white;
             transform: scale(1.1);
         }
-
-        .contact-btn.linkedin:hover {
-            background-color: #0a66c2;
+        
+        .expertise-badge {
+            background-color: rgba(251, 135, 63, 0.1);
+            color: #fb873f;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
         }
-
-        .contact-btn.email:hover {
-            background-color: #ea4335;
-        }
-
-        .contact-btn.phone:hover {
-            background-color: #34a853;
-        }
-
-        /* Role Filter */
-        .role-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            background-color: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 50px;
-            color: var(--gray);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background-color: var(--primary);
+        
+        .stats-section {
+            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+            border-radius: 20px;
             color: white;
-            border-color: var(--primary);
+            padding: 50px 30px;
+            margin-bottom: 50px;
         }
-
-        /* Stats Section */
-        .team-stats {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: var(--border-radius);
-            padding: 50px;
-            color: white;
-            text-align: center;
-            margin-top: 40px;
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-item h3 {
+        
+        .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
-
-        .stat-item p {
-            font-size: 1.125rem;
+        
+        .stat-label {
+            font-size: 1.1rem;
             opacity: 0.9;
         }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .team-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+        
+        .team-modal-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #fb873f;
+            margin: 0 auto 20px;
         }
-
-        @media (max-width: 768px) {
-            .page-header {
-                padding: 60px 0;
-                border-radius: 0 0 30px 30px;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .team-stats {
-                padding: 40px 20px;
-            }
-            
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+        
+        .achievement-list {
+            list-style: none;
+            padding-left: 0;
         }
-
-        @media (max-width: 576px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .role-filter {
-                gap: 8px;
-            }
-            
-            .filter-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
+        
+        .achievement-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
         }
-
-        /* Accessibility Improvements */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+        
+        .achievement-list li:before {
+            content: "✓";
+            color: #fb873f;
+            font-weight: bold;
+            display: inline-block;
+            width: 20px;
         }
-
-        .focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        /* Animation for cards */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .team-card {
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
-        .team-card:nth-child(1) { animation-delay: 0.1s; }
-        .team-card:nth-child(2) { animation-delay: 0.2s; }
-        .team-card:nth-child(3) { animation-delay: 0.3s; }
-        .team-card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 
 <body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="Junayed Academy Logo" height="45px">Junayed<span style="color: #fb873f;">Academy</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item active">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
     <!-- Header Start -->
-    <div class="page-header">
-        <div class="container">
-            <h1>Our Team</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active" aria-current="page">Team</li>
-                </ol>
-            </nav>
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Meet Our Expert Team</h1>
+                    <p class="lead text-white mb-4">Industry professionals dedicated to shaping Bangladesh's tech future</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Our Team</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Header End -->
 
-    <!-- Team Section Start -->
-    <section class="team-section">
+    <!-- Team Stats Section -->
+    <div class="container-xxl py-5">
         <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Dedicated Team</h2>
-                <p>Our passionate educators and staff are committed to providing the best learning experience for every student.</p>
-            </div>
-
-            <!-- Role Filter (Optional enhancement) -->
-            <div class="role-filter">
-                <button class="filter-btn active" data-filter="all">All Members</button>
-                <button class="filter-btn" data-filter="leadership">Leadership</button>
-                <button class="filter-btn" data-filter="teacher">Teachers</button>
-            </div>
-
-            <!-- Team Grid -->
-            <div class="team-grid">
-                <!-- Team Member 1 -->
-                <div class="team-card" data-category="leadership">
-                    <div class="team-img-container">
-                        <img src="img/team-1.png" alt="Junayed Bin Karim" class="team-img">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="team-name">Junayed Bin Karim</h3>
-                        <p class="team-role">Founder & CEO</p>
-                        <p class="team-desc">Visionary leader with a passion for making coding education accessible to everyone.</p>
-                        <div class="team-contact">
-                            <a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank" class="contact-btn linkedin" aria-label="Connect with Junayed on LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="mailto:junayedbinkarim@gmail.com" class="contact-btn email" aria-label="Email Junayed">
-                                <i class="fas fa-envelope"></i>
-                            </a>
+            <div class="stats-section">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-tie"></i>
                         </div>
+                        <h3 class="stat-number">15+</h3>
+                        <p class="stat-label">Expert Instructors</p>
                     </div>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="team-card" data-category="teacher">
-                    <div class="team-img-container">
-                        <img src="img/team-ovi.png" alt="Sahariar Nafis Ovi" class="team-img">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="team-name">Sahariar Nafis Ovi</h3>
-                        <p class="team-role">Programming Teacher</p>
-                        <p class="team-desc">Specializes in Python, JavaScript, and web development with 5+ years of teaching experience.</p>
-                        <div class="team-contact">
-                            <a href="https://www.linkedin.com/in/ovishkh/" target="_blank" class="contact-btn linkedin" aria-label="Connect with Ovi on LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="tel:01787125363" class="contact-btn phone" aria-label="Call Ovi">
-                                <i class="fas fa-phone-alt"></i>
-                            </a>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
+                        <h3 class="stat-number">75+</h3>
+                        <p class="stat-label">Years Combined Experience</p>
                     </div>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="team-card" data-category="teacher">
-                    <div class="team-img-container">
-                        <img src="img/team-reasedul.png" alt="Reasedul Alam" class="team-img">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="team-name">Reasedul Alam</h3>
-                        <p class="team-role">Computer Fundamentals Teacher</p>
-                        <p class="team-desc">Expert in computer basics, hardware, and software with a focus on beginner-friendly instruction.</p>
-                        <div class="team-contact">
-                            <a href="tel:+8801771087871" class="contact-btn phone" aria-label="Call Reasedul">
-                                <i class="fas fa-phone-alt"></i>
-                            </a>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
+                        <h3 class="stat-number">2,500+</h3>
+                        <p class="stat-label">Students Trained</p>
                     </div>
-                </div>
-
-                <!-- Team Member 4 -->
-                <div class="team-card" data-category="teacher">
-                    <div class="team-img-container">
-                        <img src="img/team-irfan.png" alt="Irfan" class="team-img">
-                    </div>
-                    <div class="team-content">
-                        <h3 class="team-name">Irfan</h3>
-                        <p class="team-role">Mathematics & Logic Teacher</p>
-                        <p class="team-desc">Teaches mathematical foundations for programming and algorithmic thinking.</p>
-                        <div class="team-contact">
-                            <a href="tel:+8801934600141" class="contact-btn phone" aria-label="Call Irfan">
-                                <i class="fas fa-phone-alt"></i>
-                            </a>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
                         </div>
+                        <h3 class="stat-number">50+</h3>
+                        <p class="stat-label">Industry Certifications</p>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Our Teaching Philosophy</h2>
+                <p class="lead mx-auto" style="max-width: 800px;">
+                    At Junayed Academy, we believe in the power of industry-experienced educators. Our team combines real-world technical expertise with proven teaching methodologies to deliver education that not only builds skills but also inspires innovation and critical thinking.
+                </p>
+            </div>
+        </div>
+    </div>
 
-            <!-- Team Stats (Optional enhancement) -->
-            <div class="team-stats">
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <h3>4</h3>
-                        <p>Dedicated Team Members</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Years Combined Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>1000+</h3>
-                        <p>Students Taught</p>
+    <!-- Leadership Team -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Leadership & Vision</h2>
+                <p class="lead">Guiding the future of tech education in Bangladesh</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <!-- Founder Card -->
+                <div class="col-lg-8">
+                    <div class="team-card bg-white shadow-lg">
+                        <div class="position-relative overflow-hidden">
+                            <img src="img/team-1.png" class="team-img" alt="Junayed Bin Karim - Founder & CEO">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:junayedbinkarim@gmail.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:+8801893255503" class="social-icon">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="mb-1">Junayed Bin Karim</h3>
+                            <p class="text-primary fw-bold mb-3">Founder & Chief Executive Officer</p>
+                            <p class="mb-4">
+                                A visionary entrepreneur and tech educator with 8+ years of experience in AI, Machine Learning, and software development. Junayed founded the academy with a mission to democratize quality tech education across Bangladesh. His industry experience includes leading AI projects for international clients and consulting for tech startups.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <h6 class="mb-2">Areas of Expertise:</h6>
+                                <span class="expertise-badge">Artificial Intelligence</span>
+                                <span class="expertise-badge">Machine Learning</span>
+                                <span class="expertise-badge">Data Science</span>
+                                <span class="expertise-badge">Python Development</span>
+                                <span class="expertise-badge">Educational Technology</span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="mb-2">Key Achievements:</h6>
+                                <ul class="achievement-list">
+                                    <li>Founded Junayed Academy in 2024, reaching 2,500+ students in first year</li>
+                                    <li>Authored multiple technical papers on AI applications in education</li>
+                                    <li>Consultant for international tech education initiatives</li>
+                                    <li>Speaker at national tech conferences and workshops</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#founderModal">
+                                <i class="fas fa-user-circle me-2"></i>View Full Profile
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Team Section End -->
+    </div>
 
-    <!-- JavaScript for interactive features -->
+    <!-- Expert Instructors -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-primary mb-3">Expert Instructors</h2>
+                <p class="lead">Learn from industry practitioners who bridge the gap between theory and practice</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Instructor 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="img/team-ovi.png" class="team-img" alt="Sahariar Nafis Ovi - Senior Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/ovishkh/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="tel:01787125363" class="social-icon">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="mailto:ovi@junayedacademy.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Sahariar Nafis Ovi</h5>
+                            <p class="text-primary fw-bold mb-3">Senior Full Stack Development Instructor</p>
+                            <p class="text-muted small mb-3">
+                                With 5+ years of experience building scalable web applications, Ovi specializes in modern JavaScript frameworks and cloud architecture.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">React.js</span>
+                                <span class="expertise-badge">Node.js</span>
+                                <span class="expertise-badge">AWS</span>
+                                <span class="expertise-badge">MongoDB</span>
+                                <span class="expertise-badge">DevOps</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 5 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#oviModal">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="img/team-reasedul.png" class="team-img" alt="Reasedul Alam - Senior Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="tel:+8801771087871" class="social-icon">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="mailto:reasedul@junayedacademy.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Reasedul Alam</h5>
+                            <p class="text-primary fw-bold mb-3">Data Science & Analytics Instructor</p>
+                            <p class="text-muted small mb-3">
+                                Data science specialist with expertise in statistical modeling, machine learning algorithms, and big data technologies for business intelligence.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">Python</span>
+                                <span class="expertise-badge">R Programming</span>
+                                <span class="expertise-badge">TensorFlow</span>
+                                <span class="expertise-badge">SQL</span>
+                                <span class="expertise-badge">Tableau</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 6 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#reasedulModal">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="img/team-irfan.png" class="team-img" alt="Irfan - Cybersecurity Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="tel:+8801934600141" class="social-icon">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                                <a href="mailto:irfan@junayedacademy.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Irfan</h5>
+                            <p class="text-primary fw-bold mb-3">Cybersecurity & Network Security Instructor</p>
+                            <p class="text-muted small mb-3">
+                                Certified ethical hacker with extensive experience in penetration testing, network security, and cybersecurity risk assessment for financial institutions.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">Ethical Hacking</span>
+                                <span class="expertise-badge">Network Security</span>
+                                <span class="expertise-badge">Penetration Testing</span>
+                                <span class="expertise-badge">Cryptography</span>
+                                <span class="expertise-badge">Security Auditing</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 7 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#irfanModal">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Instructor Placeholders -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="team-img" alt="AI & ML Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Dr. Anika Rahman</h5>
+                            <p class="text-primary fw-bold mb-3">AI & Machine Learning Specialist</p>
+                            <p class="text-muted small mb-3">
+                                PhD in Computer Science with focus on deep learning applications. Research experience in computer vision and natural language processing.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">Deep Learning</span>
+                                <span class="expertise-badge">Computer Vision</span>
+                                <span class="expertise-badge">NLP</span>
+                                <span class="expertise-badge">PyTorch</span>
+                                <span class="expertise-badge">Research</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 8 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="team-img" alt="Mobile Development Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Tasnim Ahmed</h5>
+                            <p class="text-primary fw-bold mb-3">Mobile Development Lead</p>
+                            <p class="text-muted small mb-3">
+                                Expert in cross-platform mobile development with published apps serving 100,000+ users across iOS and Android platforms.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">Flutter</span>
+                                <span class="expertise-badge">React Native</span>
+                                <span class="expertise-badge">iOS Development</span>
+                                <span class="expertise-badge">Android</span>
+                                <span class="expertise-badge">UI/UX Design</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 5 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card bg-white shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="team-img" alt="Cloud Computing Instructor">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-1">Rakib Hassan</h5>
+                            <p class="text-primary fw-bold mb-3">Cloud & DevOps Engineer</p>
+                            <p class="text-muted small mb-3">
+                                AWS Certified Solutions Architect with expertise in cloud infrastructure, containerization, and CI/CD pipeline implementation.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <span class="expertise-badge">AWS</span>
+                                <span class="expertise-badge">Docker</span>
+                                <span class="expertise-badge">Kubernetes</span>
+                                <span class="expertise-badge">CI/CD</span>
+                                <span class="expertise-badge">Infrastructure</span>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> 6 Years Experience</small>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Opportunities -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="bg-primary text-white p-5 rounded">
+                        <h3 class="mb-4">Join Our Team of Experts</h3>
+                        <p class="mb-4">
+                            Are you passionate about tech education and have industry experience to share? We're always looking for talented professionals to join our growing team.
+                        </p>
+                        <div class="mb-4">
+                            <h5 class="mb-3">Why Teach With Us:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Flexible teaching hours</li>
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Competitive compensation</li>
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Professional development support</li>
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> Impact thousands of students</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-briefcase me-2"></i>Apply to Teach
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h3 class="text-primary mb-4">Our Teaching Methodology</h3>
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-laptop-code fa-2x"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Project-Based Learning</h5>
+                                <p class="mb-0">Students learn through real-world projects that simulate industry challenges and requirements.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Industry-Relevant Curriculum</h5>
+                                <p class="mb-0">Courses are continuously updated to reflect current industry trends and technologies.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-handshake fa-2x"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5>Personalized Mentorship</h5>
+                                <p class="mb-0">One-on-one guidance and career support from experienced industry professionals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
+                    <p><a class="text-light" href="#">FAQ & Help Center</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact Information</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with latest courses, tech trends, and career opportunities.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" aria-label="Email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </div>
+                    <p class="small mt-3 text-muted">By subscribing, you agree to our Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
+                        <br><small class="text-muted">Registered Educational Institution, Bangladesh</small>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small>Empowering Bangladesh through quality tech education</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
     <script>
-        // Filter functionality
+        // Team card hover effects
         document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
             const teamCards = document.querySelectorAll('.team-card');
             
-            // Filter team members by role
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const filterValue = button.getAttribute('data-filter');
-                    
-                    // Show/hide cards based on filter
-                    teamCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-            
-            // Accessibility improvements for keyboard navigation
-            const contactButtons = document.querySelectorAll('.contact-btn');
-            contactButtons.forEach(button => {
-                button.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        button.click();
-                    }
-                });
-            });
-            
-            // Add focus styles for accessibility
-            const focusableElements = document.querySelectorAll('a, button, [tabindex]');
-            focusableElements.forEach(el => {
-                el.addEventListener('focus', () => {
-                    el.classList.add('focus-visible');
+            teamCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
                 });
                 
-                el.addEventListener('blur', () => {
-                    el.classList.remove('focus-visible');
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
                 });
             });
         });
     </script>
 </body>
+
 </html>
