@@ -210,6 +210,90 @@
             padding: 40px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
+
+
+
+
+
+        /* Q&A Section Styling */
+.faq-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.accordion-button {
+    font-weight: 600;
+    background-color: white;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fb873f;
+    background-color: rgba(251, 135, 63, 0.1);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: #fb873f;
+    box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: white;
+}
+
+/* FAQ Item Cards */
+.faq-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #fb873f;
+}
+
+/* Search Styling */
+#faqSearch {
+    border-radius: 10px 0 0 10px;
+}
+
+#faqSearch:focus {
+    border-color: #fb873f;
+    box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
+}
+
+/* Category Cards */
+.category-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    border-color: #fb873f;
+    transform: translateY(-10px);
+}
+
+/* Support Items */
+.support-item {
+    border-left: 3px solid #fb873f;
+    padding-left: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .accordion-button {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .accordion-body {
+        padding: 1.25rem;
+    }
+}
         
         @media (max-width: 768px) {
             .stats-counter {
@@ -740,6 +824,152 @@
                             Subscribe to our newsletter for course updates, tech insights, and career opportunities.
                         </p>
                     </div>
+
+
+<!-- FAQ Grid Section -->
+<div class="container-xxl py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="text-primary mb-3">Quick Answers to Common Questions</h2>
+            <p class="lead">Get immediate answers to frequently asked questions</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Question 1 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">Is there any free trial?</h5>
+                            <p class="mb-0 text-muted">Yes! All courses offer free preview lessons. We also have completely free courses on HTML, Excel, and programming basics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">What if I miss a live class?</h5>
+                            <p class="mb-0 text-muted">All live sessions are recorded and available in your dashboard within 24 hours. You can watch them anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">Can I get job placement assistance?</h5>
+                            <p class="mb-0 text-muted">Yes! Our career support team provides resume reviews, interview preparation, and connects qualified students with hiring partners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">Are courses updated regularly?</h5>
+                            <p class="mb-0 text-muted">Absolutely! We update our curriculum every 6 months to reflect the latest industry trends and technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">What's the average class size?</h5>
+                            <p class="mb-0 text-muted">Live classes have 15-25 students for personalized attention. Recorded courses have unlimited enrollment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="col-md-6">
+                <div class="faq-item bg-white p-4 rounded shadow-sm">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-circle p-2 me-3">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-2">Do you offer group discounts?</h5>
+                            <p class="mb-0 text-muted">Yes! Groups of 5+ students get 20% discount. Corporate training packages are also available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Contact Options -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h5 class="mb-2">Need more personalized answers?</h5>
+                                <p class="mb-0">Get in touch with our support team for specific queries.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                                    <a href="tel:+8801893255503" class="btn btn-outline-primary">
+                                        <i class="fas fa-phone me-2"></i>Call Now
+                                    </a>
+                                    <a href="https://wa.me/8801893255503" target="_blank" class="btn btn-success">
+                                        <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                    
                     <div class="col-lg-6">
                         <form class="d-flex">
                             <input type="email" class="form-control me-2" placeholder="Your email address" required>
@@ -799,7 +1029,7 @@
                         <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <small>Designed with ❤️ for the future of Bangladesh</small>
+                        <small>Designed with excellence for the future of Bangladesh</small>
                     </div>
                 </div>
             </div>
