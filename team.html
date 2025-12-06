@@ -44,14 +44,12 @@
             box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
         }
         
-    .team-img-full {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 400px;
-
-            transition: transform 0.5s ease;
-        }
+        .team-img {
+    width: 100%;
+    height: auto !important; /* Override fixed height */
+    max-height: 500px; /* Set maximum height instead of fixed */
+    object-fit: contain !important; /* Show full image instead of cropping */
+}
         
         .team-card:hover .team-img {
             transform: scale(1.05);
@@ -285,62 +283,60 @@
             </div>
             
             <div class="row justify-content-center">
-               <!-- Founder Card -->
-<div class="col-lg-8">
-    <div class="team-card bg-white shadow-lg">
-        <div class="position-relative overflow-hidden">
-            <div class="text-center pt-4">
-                <img src="img/team-1.png" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover;" alt="Junayed Bin Karim - Founder & CEO">
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:junayedbinkarim@gmail.com" class="social-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+8801893255503" class="social-icon">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
-        </div>
-        <div class="p-5">
-            <div class="text-center mb-4">
-                <h3 class="mb-1">Junayed Bin Karim</h3>
-                <p class="text-primary fw-bold mb-3">Founder & Chief Executive Officer</p>
-            </div>
-            
-            <p class="mb-4">
-                A visionary entrepreneur and tech educator with 8+ years of experience in AI, Machine Learning, and software development. Junayed founded the academy with a mission to democratize quality tech education across Bangladesh. His industry experience includes leading AI projects for international clients and consulting for tech startups.
-            </p>
-            
-            <div class="mb-4">
-                <h6 class="mb-2">Areas of Expertise:</h6>
-                <span class="expertise-badge">Artificial Intelligence</span>
-                <span class="expertise-badge">Machine Learning</span>
-                <span class="expertise-badge">Data Science</span>
-                <span class="expertise-badge">Python Development</span>
-                <span class="expertise-badge">Educational Technology</span>
-            </div>
-            
-            <div class="mb-4">
-                <h6 class="mb-2">Key Achievements:</h6>
-                <ul class="achievement-list">
-                    <li>Founded Junayed Academy in 2024, reaching 2,500+ students in first year</li>
-                    <li>Authored multiple technical papers on AI applications in education</li>
-                    <li>Consultant for international tech education initiatives</li>
-                    <li>Speaker at national tech conferences and workshops</li>
-                </ul>
-            </div>
-            
-            <div class="text-center">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#founderModal">
-                    <i class="fas fa-user-circle me-2"></i>View Full Profile
-                </button>
+                <!-- Founder Card -->
+                <div class="col-lg-8">
+                    <div class="team-card bg-white shadow-lg">
+                        <div class="position-relative overflow-hidden">
+                            <img src="img/team-1.png" class="team-img" alt="Junayed Bin Karim - Founder & CEO">
+                            <div class="team-overlay"></div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:junayedbinkarim@gmail.com" class="social-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:+8801893255503" class="social-icon">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="mb-1">Junayed Bin Karim</h3>
+                            <p class="text-primary fw-bold mb-3">Founder & Chief Executive Officer</p>
+                            <p class="mb-4">
+                                A visionary entrepreneur and tech educator with 8+ years of experience in AI, Machine Learning, and software development. Junayed founded the academy with a mission to democratize quality tech education across Bangladesh. His industry experience includes leading AI projects for international clients and consulting for tech startups.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <h6 class="mb-2">Areas of Expertise:</h6>
+                                <span class="expertise-badge">Artificial Intelligence</span>
+                                <span class="expertise-badge">Machine Learning</span>
+                                <span class="expertise-badge">Data Science</span>
+                                <span class="expertise-badge">Python Development</span>
+                                <span class="expertise-badge">Educational Technology</span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="mb-2">Key Achievements:</h6>
+                                <ul class="achievement-list">
+                                    <li>Founded Junayed Academy in 2024, reaching 2,500+ students in first year</li>
+                                    <li>Authored multiple technical papers on AI applications in education</li>
+                                    <li>Consultant for international tech education initiatives</li>
+                                    <li>Speaker at national tech conferences and workshops</li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#founderModal">
+                                <i class="fas fa-user-circle me-2"></i>View Full Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
     <!-- Expert Instructors -->
     <div class="container-xxl py-5 bg-light">
         <div class="container">
