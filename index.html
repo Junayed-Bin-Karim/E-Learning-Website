@@ -4,22 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    </meta>
-
-    <title>Junayed Academy : Online Courses</title>
+    <title>Junayed Academy | Premier Tech Education Platform in Bangladesh</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
+    <meta name="keywords" content="Junayed Academy, tech courses Bangladesh, programming courses, AI training, web development, online learning, Bangladesh tech education">
+    <meta name="description" content="Junayed Academy - Bangladesh's leading tech education platform offering industry-relevant courses in programming, AI, web development, and more. Start your tech journey today.">
+    
     <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,27 +30,218 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-   
+
+    <style>
+        /* Hero Section Enhancement */
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(24, 29, 56, 0.9), rgba(251, 135, 63, 0.7));
+        }
+        
+        .hero-badge {
+            background: rgba(251, 135, 63, 0.9);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Counter */
+        .stats-counter {
+            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+            border-radius: 15px;
+            padding: 40px 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(251, 135, 63, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        /* Course Cards Enhancement */
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            z-index: 2;
+        }
+        
+        .badge-free {
+            background: #fb873f;
+            color: white;
+        }
+        
+        .badge-paid {
+            background: #0ed44c;
+            color: white;
+        }
+        
+        /* Category Cards */
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .category-card:hover {
+            border-color: #fb873f;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.1);
+        }
+        
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(251, 135, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .category-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+            border-radius: 20px;
+            padding: 60px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/pattern.png');
+            opacity: 0.1;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            border: 1px solid #eee;
+        }
+        
+        .testimonial-card .quote {
+            color: #fb873f;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Newsletter Form */
+        .newsletter-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .stats-counter {
+                margin-top: 0;
+                border-radius: 10px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
-                    style="color: #fb873f;">Academy</span></p>
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -63,936 +250,562 @@
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-
+                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
                 <a href="#" class="nav-item nav-link">
-
-                <div id="google_translate_element">
-                </div>
-
-
+                    <div id="google_translate_element"></div>
                 </a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
-<!-- Carousel Start -->
-<div class="container-fluid p-0 mb-4">
-    <div class="owl-carousel header-carousel position-relative">
+    <!-- Hero Section -->
+    <div class="container-fluid p-0 mb-4">
+        <div class="owl-carousel header-carousel position-relative">
+            <!-- Slide 1 -->
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="Junayed Academy Tech Learning Platform">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <span class="hero-badge">Bangladesh's #1 Tech Learning Platform</span>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">
+                                    Transform Your Career with Industry-Ready Tech Skills
+                                </h1>
+                                <p class="text-white lead mb-4">
+                                    Join 2,500+ learners who have accelerated their careers with Junayed Academy. 
+                                    Learn from industry experts, work on real projects, and get job-ready in months.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="courses.html" class="btn btn-primary py-3 px-5 animated slideInLeft">
+                                        <i class="fas fa-graduation-cap me-2"></i>Explore Courses
+                                    </a>
+                                    <a href="signup.html" class="btn btn-light py-3 px-5 animated slideInRight">
+                                        <i class="fas fa-rocket me-2"></i>Start Learning Free
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Carousel Item 1 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/carousel-1.jpg" alt="">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                style="background: rgba(24, 29, 56, .7);">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-10 col-lg-8">
-                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">শীর্ষ ই-লার্নিং প্ল্যাটফর্ম</h5>
-<h1 class="display-3 text-white animated slideInDown">
-Junayed Academy-তে অনলাইনে নতুন স্কিল শিখুন
-</h1>
-
-<p class="text-white mb-2">
-    যেকোনো সময়, যেকোনো জায়গা থেকে শিখুন এবং ক্যারিয়ারে এগিয়ে যান!
-</p>
-
-
-
-                            <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">আরও জানুন</a>
-                            <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">এখন যোগ দিন</a>
+            <!-- Slide 2 -->
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="Hands-on Learning Experience">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <span class="hero-badge">Project-Based Learning</span>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">
+                                    Learn by Building Real-World Projects
+                                </h1>
+                                <p class="text-white lead mb-4">
+                                    Move beyond theory. Our curriculum focuses on practical implementation with 
+                                    capstone projects that simulate real industry challenges and build your portfolio.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="about.html" class="btn btn-primary py-3 px-5 animated slideInLeft">
+                                        <i class="fas fa-play-circle me-2"></i>How We Teach
+                                    </a>
+                                    <a href="testimonial.html" class="btn btn-light py-3 px-5 animated slideInRight">
+                                        <i class="fas fa-star me-2"></i>See Success Stories
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/carousel-2.jpg" alt="">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                style="background: rgba(24, 29, 56, .7);">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-sm-10 col-lg-8">
-                            <h5 class="text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">জুনায়েদ একাডেমিতে স্বাগতম</h5>
-                            <h1 class="display-3 text-white animated slideInDown">ইন্টারেক্টিভ ও প্র্যাকটিক্যাল শেখার অভিজ্ঞতা</h1>
-<p class="text-white mb-4 pb-2">
-Junayed Academy-তে শেখা শুধু তত্ত্বে সীমাবদ্ধ নয় — এখানে প্রতিটি কোর্সে রয়েছে ইন্টারেক্টিভ লেসন, কুইজ এবং বাস্তব প্রজেক্ট। 
-হাতে-কলমে অনুশীলনের মাধ্যমে আপনি পাবেন এমন এক শেখার অভিজ্ঞতা, যা আপনার আত্মবিশ্বাস ও দক্ষতা দুটোই বাড়াবে।
-</p>
-
-                            <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">আরও জানুন</a>
-                            <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">এখন যোগ দিন</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-</div>
-<!-- Carousel End -->
 
-
-<!-- Service Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-2 text-center">
-            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                <h1 style="color: #fb873f;">জুনায়েদ একাডেমির মাধ্যমে আপনার পেশাগত লক্ষ্য অর্জনে বিনিয়োগ করুন</h1>
-                <p class="mb-5">
-                    আমাদের কোর্স, প্রজেক্ট, স্পেশালাইজেশন এবং পেশাগত সার্টিফিকেটে সীমাহীন অ্যাক্সেস পান। 
-                    শীর্ষস্থানীয় প্রশিক্ষকদের দ্বারা শেখানো কোর্সগুলো আপনাকে দক্ষতা অর্জনে সাহায্য করবে।
-                </p>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <img src="img/icon1.png" alt="" width="60px" class="mb-4">
-                        <h5 class="mb-3">যেকোনো কিছু শেখা</h5>
-                        <p>আপনার আগ্রহের বা ট্রেন্ডিং যে কোনো বিষয়ে শিখুন, প্রয়োজনীয় ভিত্তি নিন, এবং দক্ষতা বৃদ্ধি করুন।</p>
-                    </div>
+    <!-- Stats Counter -->
+    <div class="container-xxl">
+        <div class="stats-counter">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">2,500+</h3>
+                    <p class="stat-label">Students Trained</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <img src="img/icon2.png" alt="" width="60px" class="mb-4">
-                        <h5 class="mb-3">টাকা সাশ্রয় করুন</h5>
-                  <p>এক বছরে যদি আপনি একাধিক কোর্স গ্রহণ করেন, তাহলে কম খরচে শিখতে পারবেন।</p>                    
-                    </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">50+</h3>
+                    <p class="stat-label">Industry Experts</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <img src="img/icon3.png" alt="" width="60px" class="mb-4">
-                        <h5 class="mb-3">ফ্লেক্সিবল শেখা</h5>
-                        <p>নিজের গতিতে শিখুন, একাধিক কোর্সের মধ্যে পরিবর্তন করুন, অথবা অন্য কোনো কোর্সে সুইচ করুন।</p>
-                    </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">96%</h3>
+                    <p class="stat-label">Success Rate</p>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <img src="img/icon4.png" alt="" width="60px" class="mb-4">
-                        <h5 class="mb-3">সীমাহীন সার্টিফিকেট</h5>
-                        <p>আপনি যে কোনো লার্নিং প্রোগ্রাম সম্পন্ন করবেন, তার জন্য অতিরিক্ত খরচ ছাড়াই সার্টিফিকেট পান।</p>
-                    </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">12+</h3>
+                    <p class="stat-label">Tech Courses</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Service End -->
 
-
-
-    <!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="img/about.png" alt=""
-                        style="object-fit: cover;">
-                </div>
-           </div>
-<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-    <h6 class="section-title bg-white text-start pe-3">আমাদের সম্পর্কে</h6>
-    <h1 class="mb-4" style="color: #fb873f;">জুনায়েদ একাডেমিতে আপনাকে স্বাগতম</h1>
-    <p class="mb-4">
-        জুনায়েদ একাডেমিতে আমরা বিশ্বাস করি শিক্ষাকে সকলের জন্য সহজলভ্য এবং উদ্ভাবনী করা সম্ভব, যা আপনার সময়সূচি এবং শেখার স্টাইলের সঙ্গে খাপ খায়। আমাদের ইমারসিভ অনলাইন কোর্সের মাধ্যমে বাংলাদেশের শিক্ষাকে আলিঙ্গন করুন এবং আপনার সম্ভাবনাকে অনলক করুন।
-    </p>
-    <p class="mb-4">
-        জুনায়েদ একাডেমিতে আপনাকে স্বাগতম, যেখানে শেখার কোনো সীমা নেই। আমরা শিক্ষার গণতান্ত্রিকীকরণে প্রতিশ্রুতিবদ্ধ, এবং শিল্প বিশেষজ্ঞদের দ্বারা শিখানো বৈচিত্র্যময় কোর্স অফার করি। আমাদের লক্ষ্য হলো বাংলাদেশের শিক্ষার্থীদের ক্ষমতায়িত করা এবং এমন একটি কমিউনিটি-চালিত প্ল্যাটফর্ম তৈরি করা যেখানে জ্ঞানের কোনো সীমা নেই।
-    </p>
-    <div class="row gy-2 gx-4 mb-4">
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>বিশেষজ্ঞ প্রশিক্ষক</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>লাইভ ইন্টারেক্টিভ সেশন</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>সম্পূর্ণ কোর্স ক্যাটালগ</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>কমিউনিটি এনগেজমেন্ট</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>ব্যক্তিগত শেখার পথ</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>সার্টিফিকেট এবং স্বীকৃতি</p>
-        </div>
-    </div>
-    <a class="btn text-light py-3 px-5 mt-2" href="about.html">আরও পড়ুন</a>
-</div>
-</div>
-</div>
-</div>
-
-<!-- About End -->
-
-
-
-
-<!-- Banner-1 Start -->
-<div class="container-xxl py-5 pt-5 bg-light">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
-
-                <h1 class="mb-4" style="color: #fb873f;">আপনার দক্ষতা বৃদ্ধি করুন</h1>
-                <p class="mb-4">
-                    জুনায়েদ একাডেমিতে আমাদের বিভিন্ন পেইড এবং এক্সক্লুসিভ কোর্সের মাধ্যমে অনলাইন শিক্ষার যাত্রা শুরু করুন। 
-                    আমাদের কোর্সগুলো বিভিন্ন চাহিদাসম্পন্ন ক্ষেত্রে উন্নত দক্ষতা অর্জনে সাহায্য করে।
-                </p>
-
-                <a class="btn text-light py-3 px-5 mt-2" href="signup.html">কোর্সে যোগ দিন</a>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="img/banner-1.jpg" alt=""
-                        style="object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Banner-1 End -->
-
-
-
-
-    <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center px-3">Categories</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Popular Topics to Explore</h1>
-            </div>
-            <div class="row g-2 m-2">
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat1.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Microsoft Excel</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat2.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center"> AWS</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat3.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Python</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat4.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Java</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat5.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Design</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat6.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Development</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat7.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">MySQL</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat8.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">UI/UX Design</a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Categories End -->
-
-
-   <!-- Courses Start -->
+    <!-- Why Choose Us -->
     <div class="container-xxl py-5">
         <div class="container">
-            
-          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center px-3">Popular Courses</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
+            <div class="text-center mb-5">
+                <span class="section-title bg-white text-center px-3">WHY CHOOSE US</span>
+                <h2 class="mt-3">Learn Tech Skills That Matter</h2>
+                <p class="lead">Industry-designed curriculum taught by professionals</p>
             </div>
-
             
-            <div class="row g-4 py-2">
-                
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-1.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners </a></h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>2,500+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Month</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳  0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="single.html">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
+                        <h5 class="mb-3">Project-Based Learning</h5>
+                        <p class="mb-0">Build real projects from day one. Learn by doing with hands-on exercises and industry-relevant challenges.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-02.png" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Front End Development
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1,200+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3
-                                Month</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 15,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="course2.html">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
+                        <h5 class="mb-3">Expert Instructors</h5>
+                        <p class="mb-0">Learn from industry professionals with 5+ years of experience in top tech companies.</p>
                     </div>
                 </div>
-
-
-
-
-
-
-<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-3.webp" alt="">
-                            <div style="position:absolute; top:15px; left:16px; font-size:12px; border-radius:3px; background-color:#0ed44c !important;"
-     class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Machine Learning Mastery
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                5.00</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1,500+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3
-                                Month</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 15,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="course3.html">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
+                        <h5 class="mb-3">Career Support</h5>
+                        <p class="mb-0">Get career guidance, resume reviews, and interview preparation from our placement team.</p>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-                
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-02.png" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Python Programming
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                3.54</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1,000+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Month</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 5,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="course4.html">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-5.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Data Structures & Algorithms 
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                4.54</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>850+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Month</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 10,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course5.html">Enroll
-                                    Now  </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-
-                                    
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-6.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">ChatGPT for Beginners
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                3.55</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>0+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.5
-                                Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">COMING SOON </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-7.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">SSC ICT Mastery Program
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.53</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>1,200+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 20,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course7.html">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-8.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">HSC ICT Mastery Program
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                5.00</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>1,000+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 22,000 </small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course8.html">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-9.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Introduction to MS Excel</h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.6</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>0+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course9.html">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-10.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">JSC ICT Mastery Program
-                            
-                                
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-star text-warning me-2"></i>
-                                4.55</small>
-                            <small class="flex-fill text-center py-1 px-1"><i class="fa fa-user-graduate me-2"></i>1,000+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-1"><i
-                                    class="fa fa-user me-2"></i>Intermediate</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳20,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course10.html">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-11.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
-                                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">Java Programming
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.45</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>0+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 0</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="Course11.html">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item shadow">
-                        <div class="position-relative overflow-hidden text-light image">
-                            <img class="img-fluid" src="img/course-12.png" alt="">
-                             <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#0ed44c;"
-                                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                        </div>
-                        <div class="p-2 pb-0">
-
-                            <h5 class="mb-1">C for Beginners
-                            </h5>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
-                                4.5</small>
-                            <small class="flex-fill text-center py-1 px-2"><i class="fa fa-user-graduate me-2"></i>2,300+
-                                Learners
-                            </small>
-                            <small class="flex-fill text-center py-1 px-2"><i
-                                    class="fa fa-user me-2"></i>Beginner</small>
-                        </div>
-                        <div class="d-flex">
-                            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1
-                                Months</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">৳ 5,000</small>
-                            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="course12.html">Enroll
-                                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                        </div>
+                        <h5 class="mb-3">Community Learning</h5>
+                        <p class="mb-0">Join a vibrant community of learners, participate in discussions, and collaborate on projects.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <div class="container text-center">
-        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.html">All Courses</a>
-    </div>
-    <!-- Courses End -->
 
-
-  <!-- Banner-2 Start -->
-<section class="pb-5" style="background: url('img/banner-3.jpg');">
-    <div class="container-xxl mt-5">
+    <!-- Popular Categories -->
+    <div class="container-xxl py-5 bg-light">
         <div class="container">
-            <div class="row g-5">
+            <div class="text-center mb-5">
+                <span class="section-title bg-white text-center px-3">EXPLORE TOPICS</span>
+                <h2 class="mt-3 text-primary">Most In-Demand Tech Skills</h2>
+                <p class="lead">Master the skills that companies are hiring for</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="img/cat1.png" alt="Microsoft Excel">
+                        </div>
+                        <h5>Microsoft Excel</h5>
+                        <p class="small text-muted">Data analysis, formulas, and business intelligence</p>
+                        <span class="badge bg-primary">Beginner to Advanced</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="img/cat2.png" alt="AWS">
+                        </div>
+                        <h5>AWS Cloud</h5>
+                        <p class="small text-muted">Cloud computing, deployment, and architecture</p>
+                        <span class="badge bg-warning">In-Demand Skill</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="img/cat3.png" alt="Python">
+                        </div>
+                        <h5>Python Programming</h5>
+                        <p class="small text-muted">AI, data science, and automation</p>
+                        <span class="badge bg-success">Most Popular</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="img/cat4.png" alt="Java">
+                        </div>
+                        <h5>Java Development</h5>
+                        <p class="small text-muted">Enterprise applications and Android</p>
+                        <span class="badge bg-info">Industry Standard</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-search me-2"></i>Browse All Categories
+                </a>
+            </div>
+        </div>
+    </div>
 
-                <!-- ছবি -->
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100 bg-light" src="img/banner-2.png" alt=""
-                            style="object-fit: cover;">
+    <!-- Featured Courses -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-title bg-white text-center px-3">FEATURED COURSES</span>
+                <h2 class="mt-3">Most Popular Courses</h2>
+                <p class="lead">Join thousands of learners transforming their careers</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Course 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="course-card shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML Course for Beginners" style="height: 200px; object-fit: cover;">
+                            <div class="course-badge badge-free">FREE</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2">HTML & CSS Fundamentals</h5>
+                            <p class="small text-muted mb-3">Master web development basics with hands-on projects</p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-star text-warning me-1"></i>
+                                    <small>4.5</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-graduate me-1"></i>
+                                    <small>2,500+</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock me-1"></i>
+                                    <small>1 Month</small>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="text-primary mb-0">৳ 0</h5>
+                                <a href="single.html" class="btn btn-sm btn-outline-primary">
+                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- লেখা -->
-                <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
-
-                    <h1 class="mb-4" style="color: #fb873f;">আপনি হতে পারেন একজন প্রশিক্ষক</h1>
-                    <p class="mb-4 text-white">
-                        জুনায়েদ একাডেমিতে বাংলাদেশের বিভিন্ন শহর থেকে প্রশিক্ষকরা শিক্ষার্থীদের শেখান। আমরা আপনাকে সরঞ্জাম এবং দক্ষতা প্রদান করি যাতে আপনি আপনার ভালো লাগা বিষয় শিখাতে পারেন।
-                    </p>
-
-                    <a class="btn text-light py-3 mt-2" href="instructor.html">আজই প্রশিক্ষক হন</a>
+                <!-- Course 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="course-card shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/course-02.png" alt="Front End Development" style="height: 200px; object-fit: cover;">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2">Full Stack Development</h5>
+                            <p class="small text-muted mb-3">Master React, Node.js, and MongoDB for modern web apps</p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-star text-warning me-1"></i>
+                                    <small>4.7</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-graduate me-1"></i>
+                                    <small>1,200+</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock me-1"></i>
+                                    <small>3 Months</small>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="text-primary mb-0">৳ 15,000</h5>
+                                    <small class="text-muted"><s>৳ 20,000</s></small>
+                                </div>
+                                <a href="course2.html" class="btn btn-sm btn-primary">
+                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Course 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="course-card shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/course-3.webp" alt="Machine Learning" style="height: 200px; object-fit: cover;">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2">Machine Learning & AI</h5>
+                            <p class="small text-muted mb-3">Build intelligent systems with Python and TensorFlow</p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-star text-warning me-1"></i>
+                                    <small>5.0</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-graduate me-1"></i>
+                                    <small>1,500+</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock me-1"></i>
+                                    <small>3 Months</small>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="text-primary mb-0">৳ 15,000</h5>
+                                    <small class="text-muted"><s>৳ 18,000</s></small>
+                                </div>
+                                <a href="course3.html" class="btn btn-sm btn-primary">
+                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="course-card shadow">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="Data Structures" style="height: 200px; object-fit: cover;">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2">Data Structures & Algorithms</h5>
+                            <p class="small text-muted mb-3">Crack coding interviews with efficient problem solving</p>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-star text-warning me-1"></i>
+                                    <small>4.5</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-graduate me-1"></i>
+                                    <small>850+</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock me-1"></i>
+                                    <small>1 Month</small>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="text-primary mb-0">৳ 10,000</h5>
+                                    <small class="text-muted"><s>৳ 12,000</s></small>
+                                </div>
+                                <a href="Course5.html" class="btn btn-sm btn-primary">
+                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-list me-2"></i>View All 12+ Courses
+                </a>
             </div>
         </div>
     </div>
-</section>
-<!-- Banner-2 End -->
 
-
-
-
-<!-- FAQ Start -->
-<div class="container-xxl py-5 category">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h1 class="mb-5">সাধারণ জিজ্ঞাসিত প্রশ্নসমূহ (FAQ)</h1>
-        </div>
-        <div class="row g-2">
-            <div class="col-12">
-                <div class="accordion" id="accordionExample">
-
-                    <div class="accordion-item">
-    <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            জুনায়েদ একাডেমি কি?
-        </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            জুনায়েদ একাডেমি হলো জুনায়েদ বিন করিমের প্রতিষ্ঠিত একটি আধুনিক ই-লার্নিং প্ল্যাটফর্ম, যা প্রতিষ্ঠিত হয় ২০২৪ সালে। 
-            আমাদের লক্ষ্য শিক্ষার্থীদেরকে প্রযুক্তি ও ডিজিটাল দক্ষতার মাধ্যমে ভবিষ্যতের চাকরি ও প্রফেশনাল স্কিলের জন্য প্রস্তুত করা। 
-            এখানে আমরা প্রযুক্তি-কেন্দ্রিক ১২+ কোর্স প্রদান করি, যা অন্তর্ভুক্ত:
-            <ul>
-                <li>প্রোগ্রামিং (Python, Java, C)</li>
-                <li>ওয়েব ডেভেলপমেন্ট (Frontend & Backend)</li>
-                <li>মেশিন লার্নিং (Machine Learning)</li>
-                <li>কৃত্রিম বুদ্ধিমত্তা (AI)</li>
-                <li>ক্লাউড কম্পিউটিং</li>
-                <li>ডিজিটাল স্কিল ও অন্যান্য ভবিষ্যতনির্ভর প্রযুক্তি</li>
-            </ul>
-            আমাদের কোর্সগুলো সম্পূর্ণ প্রজেক্ট-ভিত্তিক ও ইন্টারেক্টিভ, যাতে শিক্ষার্থীরা শুধু তত্ত্বই নয়, বাস্তব জীবনের কাজে দক্ষতা অর্জন করতে পারে। 
-            এছাড়াও, ফ্লেক্সিবল সময়সূচি এবং রেকর্ডেড ক্লাসের সুবিধা রয়েছে, যা শিক্ষার্থীদের নিজস্ব গতিতে শেখার সুযোগ দেয়। 
-            জুনায়েদ একাডেমি শিক্ষার্থীদের ক্যারিয়ার এবং ভবিষ্যতের জন্য একটি শক্তিশালী ভিত্তি প্রদান করে।
-        </div>
-    </div>
-</div>
-
-<div class="accordion-item">
-    <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            কেন জুনায়েদ একাডেমি বেছে নেব?
-        </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            জুনায়েদ একাডেমি বেছে নেওয়ার প্রধান কারণ হলো আমাদের **প্র্যাকটিক্যাল ও ইন্টারেক্টিভ শেখার পদ্ধতি**। 
-            প্রতিটি কোর্স ডিজাইন করা হয়েছে বাস্তব-জীবনের প্রজেক্ট, কুইজ, এবং হ্যান্ডস-অন এক্সারসাইজের মাধ্যমে, 
-            যাতে শিক্ষার্থীরা শুধু তত্ত্ব নয়, বাস্তব কাজে দক্ষতা অর্জন করতে পারে। 
-
-            আমাদের কোর্সগুলোর মূল বৈশিষ্ট্যগুলো:
-            <ul>
-                <li><strong>ইন্টারেক্টিভ লেসন:</strong> শেখা আরও engaging ও সহজবোধ্য।</li>
-                <li><strong>প্রজেক্ট-ভিত্তিক শেখা:</strong> বাস্তব জীবনের সমস্যা সমাধানে দক্ষতা অর্জন।</li>
-                <li><strong>অভিজ্ঞ প্রশিক্ষক:</strong> যাঁরা শিল্প-প্রাসঙ্গিক দক্ষতা শিক্ষায় নিশ্চিত।</li>
-                <li><strong>আপডেটেড কনটেন্ট:</strong> সর্বশেষ প্রযুক্তি ও শিল্প-মান অনুসারে কোর্স।</li>
-                <li><strong>ক্যারিয়ার-ফোকাসড কারিকুলাম:</strong> শিক্ষার্থীদের ভবিষ্যতের টেক জব মার্কেটে প্রতিযোগিতায় এগিয়ে রাখে।</li>
-            </ul>
-
-            এছাড়াও আমাদের ই-লার্নিং প্ল্যাটফর্ম ফ্লেক্সিবল সময়সূচি এবং রেকর্ডেড ক্লাসের সুবিধা প্রদান করে, 
-            যাতে শিক্ষার্থীরা তাদের সুবিধামতো লার্নিং শিডিউল মেইনটেইন করতে পারে। 
-            সংক্ষেপে, জুনায়েদ একাডেমি শিক্ষার্থীদের জন্য **একটি শক্তিশালী প্রযুক্তি ও ক্যারিয়ার-ফোকাসড শেখার পরিবেশ** প্রদান করে।
-        </div>
-    </div>
-</div>
-
-
-
-                   <div class="accordion-item">
-    <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            একসাথে কতটি কোর্সে আমি ভর্তি হতে পারি?
-        </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            জুনায়েদ একাডেমিতে আপনি একসাথে একাধিক কোর্সে ভর্তি হতে পারবেন। 
-            আমাদের ই-লার্নিং প্ল্যাটফর্ম এমনভাবে ডিজাইন করা হয়েছে যাতে শিক্ষার্থীরা বিভিন্ন স্কিল এবং প্রযুক্তিতে দক্ষতা অর্জন করতে পারে। 
-            উদাহরণস্বরূপ, আপনি একই সময়ে <strong>AI, Machine Learning এবং Web Development</strong> কোর্সগুলো করতে পারেন। 
-            প্রতিটি কোর্স সম্পূর্ণ ইন্টারেক্টিভ ও প্রজেক্ট-ভিত্তিক, তাই একসাথে একাধিক কোর্সে অংশ নিলেও শেখার অভিজ্ঞতা প্রভাবিত হবে না। 
-            এছাড়াও, আমাদের ফ্লেক্সিবল সময়সূচি এবং রেকর্ডেড ক্লাসের সুবিধা রয়েছে, যা আপনাকে নিজের গতিতে শেখার সুযোগ দেয়।
-        </div>
-    </div>
-</div>
-
-<div class="accordion-item">
-    <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            কিভাবে আমি এই কোর্সগুলোতে ভর্তি হতে পারি?
-        </button>
-    </h2>
-    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            জুনায়েদ একাডেমিতে কোর্সে ভর্তি হওয়া খুব সহজ। 
-            আপনি উপরের ডানদিকে থাকা <strong>“Sign Up”</strong> বোতামে ক্লিক করে আপনার ইমেল ঠিকানা ব্যবহার করে রেজিস্ট্রেশন করতে পারেন। 
-            এছাড়াও, আপনি সরাসরি <strong>Google অ্যাকাউন্ট</strong> ব্যবহার করেও লগইন করতে পারবেন। 
-            ভর্তি হয়ে গেলে, আপনি আমাদের ই-লার্নিং প্ল্যাটফর্মে প্রবেশ করতে পারবেন, সমস্ত কোর্সের বিস্তারিত মডিউল, ভিডিও লেসন, কুইজ এবং প্রজেক্টের মাধ্যমে শেখা শুরু করতে পারবেন। 
-            আমাদের ফ্লেক্সিবল সময়সূচি এবং রেকর্ডেড ক্লাসের সুবিধা রয়েছে, যাতে আপনি আপনার সুবিধামতো লার্নিং শিডিউল মেইনটেইন করতে পারেন।
-        </div>
-    </div>
-</div>
-
-
-   
-    <div class="accordion-item">
-    <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            কোন কোন কোর্সগুলো সবচেয়ে জনপ্রিয়?
-        </button>
-    </h2>
-    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-            জুনায়েদ একাডেমি শিক্ষার্থীদের জন্য চাহিদাসম্পন্ন এবং প্রযুক্তি-কেন্দ্রিক কোর্স প্রস্তাব করে। 
-            আমাদের কোর্সগুলো ডিজাইন করা হয়েছে প্রজেক্ট-ভিত্তিক, ইন্টারেক্টিভ এবং বাস্তব জীবনের দক্ষতা অর্জনের উপযোগী। 
-            সবচেয়ে জনপ্রিয় কোর্সগুলো অন্তর্ভুক্ত:
-            <ul>
-                <li><strong>কৃত্রিম বুদ্ধিমত্তা (AI):</strong> AI-এর মূল ধারণা, ন্যাচারাল ল্যাঙ্গুয়েজ প্রসেসিং, কম্পিউটার ভিশন ও বাস্তব প্রজেক্ট।</li>
-                <li><strong>মেশিন লার্নিং (ML):</strong> সুপারভাইজড ও আনসুপারভাইজড লার্নিং, মডেল তৈরি, ডেটা প্রিপ্রসেসিং এবং প্র্যাকটিক্যাল অ্যাপ্লিকেশন।</li>
-                <li><strong>ওয়েব ডেভেলপমেন্ট (Web Development):</strong> HTML, CSS, JavaScript, React, Backend ও ফ্রন্ট-এন্ড প্রজেক্ট।</li>
-                <li><strong>ক্লাউড কম্পিউটিং:</strong> AWS, Azure, Cloud Architecture ও Deployment প্রজেক্ট।</li>
-                <li><strong>ডেটা সায়েন্স:</strong> ডেটা বিশ্লেষণ, ভিজ্যুয়ালাইজেশন, পাইথন ও বাস্তব ডেটা প্রজেক্ট।</li>
-            </ul>
-            এই কোর্সগুলো শিক্ষার্থীদের দক্ষতা বাড়াতে এবং পেশাগত ক্ষেত্রে তাদের এগিয়ে রাখতে ডিজাইন করা হয়েছে।  
-        </div>
-    </div>
-</div>
-
+    <!-- Become Instructor CTA -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="cta-section">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-3">Share Your Knowledge, Become an Instructor</h2>
+                        <p class="mb-4">
+                            Join our team of expert instructors and help shape the future of tech education in Bangladesh. 
+                            Share your industry experience and earn while teaching.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="instructor.html" class="btn btn-light btn-lg">
+                                <i class="fas fa-chalkboard-teacher me-2"></i>Apply Now
+                            </a>
+                            <a href="team.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-users me-2"></i>Meet Our Team
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fas fa-user-tie display-1 opacity-25"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- FAQ End -->
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
-                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
-                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
-                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
-                <p><a class="text-light" href="">শর্তাবলী</a></p>
-                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
+    <!-- Student Testimonials -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-title bg-white text-center px-3">SUCCESS STORIES</span>
+                <h2 class="mt-3">What Our Students Say</h2>
+                <p class="lead">Join thousands who transformed their careers</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">যোগাযোগ</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote">"</div>
+                        <p class="mb-4">
+                            "Junayed Academy's ML course transformed my career. Within 3 months, I went from a 
+                            biology graduate to a machine learning engineer at a top tech company."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="img/rajon-testimonial-1.jpg" class="rounded-circle" width="50" height="50" alt="Rajon">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">Rajon Mahmud</h6>
+                                <small class="text-muted">Machine Learning Engineer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote">"</div>
+                        <p class="mb-4">
+                            "The practical approach and real projects gave me the confidence to start freelancing. 
+                            Now I earn 3x more than my previous job as a web developer."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="img/Parui-testimonial-2.jpg" class="rounded-circle" width="50" height="50" alt="Parui">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">Parui Rahman</h6>
+                                <small class="text-muted">Full Stack Developer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote">"</div>
+                        <p class="mb-4">
+                            "Coming from a non-tech background, I was skeptical. But the structured curriculum 
+                            and supportive community made my transition smooth and successful."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle" width="50" height="50" alt="Chowa">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="mb-1">Lailatul Ferdous Chowa</h6>
+                                <small class="text-muted">Frontend Developer</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-4">
+                <a href="testimonial.html" class="btn btn-primary">
+                    <i class="fas fa-comment me-2"></i>Read More Success Stories
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
-                <p>এখনই সাবস্ক্রাইব করুন এবং আমাদের বৃদ্ধিশীল শিক্ষার্থী কমিউনিটিতে যোগ দিন!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
-                    <button type="button"
-                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+    <!-- Newsletter -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="newsletter-form">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3 class="mb-3">Stay Updated with Tech Trends</h3>
+                        <p class="mb-4">
+                            Subscribe to our newsletter for course updates, tech insights, and career opportunities.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">
+                                Subscribe
+                            </button>
+                        </form>
+                        <p class="small text-muted mt-2">
+                            We respect your privacy. Unsubscribe at any time.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="courses.html">All Courses</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact Information</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Office Hours</h4>
+                    <p class="mb-2"><i class="fas fa-clock me-2"></i>Saturday - Thursday: 9:00 AM - 6:00 PM</p>
+                    <p class="mb-4"><i class="fas fa-clock me-2"></i>Friday: 10:00 AM - 4:00 PM</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" aria-label="Email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
+                        <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <small>Designed with ❤️ for the future of Bangladesh</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
-
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -1007,6 +820,31 @@ Junayed Academy-তে শেখা শুধু তত্ত্বে সীম
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Initialize Owl Carousel
+        $(document).ready(function(){
+            $('.header-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 1
+                    },
+                    992: {
+                        items: 1
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
