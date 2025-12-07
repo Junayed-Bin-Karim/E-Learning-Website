@@ -290,17 +290,8 @@
         }
 
 
-
-        /* যদি শুধু number orange করতে চাও */
-.orange-text .stat-number {
-    color: #fb873f !important;
-    text-shadow: 2px 2px 4px rgba(251, 135, 63, 0.3);
-}
-
-/* অথবা যদি শুধু icon orange করতে চাও */
-.orange-icon .stat-icon {
-    color: #fb873f !important;
-}
+/* শুধু এই ১ লাইন CSS যোগ কর */
+.orange-highlight .stat-number { color: #fb873f !important; }
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-title {
@@ -515,6 +506,8 @@
     </div>
 
    <!-- Stats Counter -->
+    <div class="stat-card orange-highlight">
+    <!-- content -->
 <div class="container-xxl py-5">
     <div class="stats-counter">
         <div class="row text-center">
@@ -537,6 +530,8 @@
         </div>
     </div>
 </div>
+        </div>
+
     <!-- Why Choose Us -->
     <div class="container-xxl py-5">
         <div class="container">
