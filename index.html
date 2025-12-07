@@ -332,28 +332,34 @@
     </div>
 
     <!-- Stats Counter -->
-    <div class="container-xxl">
-        <div class="stats-counter">
-            <div class="row text-center">
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number">2,500+</h3>
-                    <p class="stat-label">Students Trained</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number">50+</h3>
-                    <p class="stat-label">Industry Experts</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number">96%</h3>
-                    <p class="stat-label">Success Rate</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number">12+</h3>
-                    <p class="stat-label">Tech Courses</p>
-                </div>
+<div class="container-xxl">
+    <div class="stats-counter">
+        <div class="row text-center">
+
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="2500" data-suffix="+">0</h3>
+                <p class="stat-label">Students Trained</p>
             </div>
+
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
+                <p class="stat-label">Industry Experts</p>
+            </div>
+
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="96" data-suffix="%">0</h3>
+                <p class="stat-label">Success Rate</p>
+            </div>
+
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="12" data-suffix="+">0</h3>
+                <p class="stat-label">Tech Courses</p>
+            </div>
+
         </div>
     </div>
+</div>
+
 
     <!-- Why Choose Us -->
     <div class="container-xxl py-5">
@@ -853,28 +859,29 @@
 
 
 
-
-        document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".stat-number");
 
     const animateCounter = (el) => {
-        const raw = el.textContent.replace(/[^0-9]/g, "");
-        const target = parseInt(raw);
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || ""; // %, +, empty
         let current = 0;
-
         const duration = 1500;
-        const start = performance.now();
+        const startTime = performance.now();
 
-        const tick = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = progress * (2 - progress); // ease-out curve
+        const update = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = progress * (2 - progress);
 
-            el.textContent = Math.floor(eased * target) + "%";
+            const value = Math.floor(eased * target);
+            el.textContent = value.toLocaleString() + suffix;
 
-            if (progress < 1) requestAnimationFrame(tick);
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
         };
 
-        requestAnimationFrame(tick);
+        requestAnimationFrame(update);
     };
 
     const observer = new IntersectionObserver(
@@ -889,7 +896,7 @@
         { threshold: 0.5 }
     );
 
-    counters.forEach(el => observer.observe(el));
+    counters.forEach(counter => observer.observe(counter));
 });
 
     </script>
