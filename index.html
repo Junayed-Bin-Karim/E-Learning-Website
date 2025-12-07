@@ -1064,6 +1064,53 @@
                 }
             });
         });
+
+
+
+
+        // Animated Counter Function
+function animateCounter() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // The lower the slower
+    
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+        
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(() => animateCounter(), 10);
+        } else {
+            counter.innerText = target;
+        }
+    });
+}
+
+// Intersection Observer for counter animation
+function initCounterObserver() {
+    const statsSection = document.querySelector('.stats-counter');
+    
+    if (!statsSection) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5 // 50% দেখা গেলে শুরু হবে
+    });
+    
+    observer.observe(statsSection);
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initCounterObserver();
+});
     </script>
 </body>
 
