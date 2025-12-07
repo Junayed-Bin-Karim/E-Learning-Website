@@ -31,16 +31,16 @@
            ========================================= */
 
         :root {
-            /* Palette: Deep Navy & Vibrant Orange */
+            /* Palette */
             --brand-primary: #0F172A; /* Slate 900 */
             --brand-secondary: #FB873F;
             --brand-secondary-hover: #e6722e;
-            --brand-accent: #38bdf8; /* Light Blue for tech accents */
+            --brand-accent: #38bdf8;
             
             /* Backgrounds */
             --bg-body: #F8FAFC;
             --bg-white: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.95);
+            --bg-glass: rgba(255, 255, 255, 0.98);
             
             /* Typography */
             --font-heading: 'Outfit', sans-serif;
@@ -50,10 +50,7 @@
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-            --shadow-hover: 0 25px 50px -12px rgba(251, 135, 63, 0.15);
-            
             --radius-lg: 20px;
-            --radius-xl: 30px;
         }
 
         body {
@@ -69,27 +66,36 @@
             font-weight: 700;
         }
 
-        /* --- 1. Premium Navbar (Glassmorphism) --- */
+        /* --- 1. Fixed Premium Navbar --- */
         .navbar {
             background: var(--bg-glass) !important;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding: 15px 0;
+            z-index: 1000;
         }
 
         .navbar-brand p {
             font-weight: 800 !important;
             letter-spacing: -0.5px;
+            color: var(--brand-primary);
+        }
+
+        /* Nav Link Alignment Fix */
+        .navbar-nav {
+            align-items: center; /* This fixes the "Not same position" bug */
         }
 
         .nav-item.nav-link {
             color: #64748b !important;
             font-weight: 600;
-            padding: 10px 20px !important;
+            padding: 8px 16px !important;
+            margin: 0 2px;
             border-radius: 50px;
             transition: all 0.3s ease;
+            font-size: 15px;
+            display: inline-block;
         }
 
         .nav-item.nav-link:hover, .nav-item.nav-link.active {
@@ -97,10 +103,67 @@
             background: rgba(251, 135, 63, 0.08);
         }
 
-        /* --- 2. Hero Section (Immersive) --- */
+        /* Login Button in Nav */
+        .btn-nav-login {
+            background-color: var(--brand-primary);
+            color: #ffffff !important;
+            padding: 10px 25px !important;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-nav-login:hover {
+            background-color: var(--brand-secondary);
+            transform: translateY(-2px);
+            color: #ffffff !important;
+        }
+
+        /* --- 2. Button Text Visibility Fixes --- */
+        .btn {
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+            text-transform: capitalize;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-secondary) 0%, #ff6b6b 100%);
+            border: none;
+            color: #ffffff !important; /* Forces text to show */
+            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 12px 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
+            color: #ffffff !important;
+        }
+
+        .btn-light {
+            background: #ffffff;
+            color: var(--brand-primary) !important; /* Forces text to show */
+            border-radius: 50px;
+            font-weight: 700;
+            padding: 12px 30px;
+            border: 1px solid transparent;
+        }
+        
+        .btn-light:hover {
+            background: var(--brand-primary);
+            color: #ffffff !important;
+            border: 1px solid var(--brand-primary);
+        }
+
+        /* --- 3. Hero Section --- */
         .header-carousel .owl-carousel-item {
             position: relative;
-            min-height: 600px; /* Reduced height for modern look */
+            min-height: 650px; 
         }
         
         .header-carousel .owl-carousel-item img {
@@ -126,46 +189,15 @@
             backdrop-filter: blur(5px);
             display: inline-block;
             margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .display-3 {
             font-weight: 800;
             letter-spacing: -1px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Premium Buttons */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--brand-secondary) 0%, #ff6b6b 100%);
-            border: none;
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
-            border-radius: 50px;
-            font-weight: 600;
-            padding: 15px 35px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
-        }
-
-        .btn-light {
-            background: #ffffff;
-            color: var(--brand-primary);
-            border-radius: 50px;
-            font-weight: 600;
-            padding: 15px 35px;
-            border: 1px solid transparent;
-        }
-        
-        .btn-light:hover {
-            background: var(--brand-primary);
-            color: white;
-            border: 1px solid var(--brand-primary);
-        }
-
-        /* --- 3. Floating Stats Section (Card Lift) --- */
+        /* --- 4. Floating Stats Section --- */
         .stat-card.orange-highlight {
             position: relative;
             margin-top: -80px;
@@ -175,30 +207,32 @@
         .stats-counter {
             background: var(--bg-white);
             border-radius: var(--radius-lg);
-            padding: 50px;
+            padding: 40px;
             box-shadow: var(--shadow-lg);
             border-bottom: 4px solid var(--brand-secondary);
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0;
+            /* Fallback for when text-fill is acting up */
+            color: var(--brand-secondary); 
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #94a3b8;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
-        /* --- 4. Feature Cards (Clean & Minimal) --- */
+        /* --- 5. Feature & Category Cards --- */
         .section-title {
             color: var(--brand-secondary);
             font-weight: 700;
@@ -206,106 +240,47 @@
             font-size: 0.9rem;
         }
 
-        .feature-card {
+        .feature-card, .category-card {
             background: var(--bg-white);
-            padding: 40px 30px;
+            padding: 30px;
             border-radius: var(--radius-lg);
             border: 1px solid #f1f5f9;
             transition: all 0.4s ease;
             height: 100%;
         }
 
-        .feature-card .feature-icon {
-            width: 70px;
-            height: 70px;
+        .feature-card:hover, .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(251, 135, 63, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
             background: rgba(251, 135, 63, 0.1);
             color: var(--brand-secondary);
-            border-radius: 20px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: transparent;
-        }
-
-        .feature-card:hover .feature-icon {
-            background: var(--brand-secondary);
-            color: white;
-            transform: rotate(-10deg) scale(1.1);
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
-        }
-
-        /* --- 5. Category Cards (Pill Shaped) --- */
-        .category-card {
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Subtle Gradient Border Effect on Hover */
-        .category-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--brand-secondary), var(--brand-accent));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-            transform-origin: left;
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .category-icon img {
-            width: 60px;
-            height: 60px;
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-            transition: transform 0.3s;
         }
 
-        .category-card:hover .category-icon img {
-            transform: scale(1.15);
-        }
-
-        /* --- 6. Course Cards (The Hero Element) --- */
+        /* --- 6. Course Cards --- */
         .course-card {
             background: var(--bg-white);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            border: none;
+            border: 1px solid #f1f5f9;
             box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .course-card img {
-            transition: transform 0.5s ease;
-        }
-
-        .course-card:hover img {
-            transform: scale(1.08);
+            transition: all 0.4s ease;
+            height: 100%; /* Ensures equal height */
         }
 
         .course-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
         }
 
@@ -313,11 +288,10 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            padding: 6px 16px;
+            padding: 5px 12px;
             border-radius: 6px;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
             z-index: 2;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
@@ -325,21 +299,8 @@
         .badge-free { background: #10b981; color: white; }
         .badge-paid { background: var(--brand-secondary); color: white; }
 
-        .course-card .p-4 {
-            padding: 1.8rem !important;
-        }
-
-        .course-card h5 {
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        .course-meta i {
-            color: #cbd5e1;
-        }
-
         .btn-outline-primary {
-            color: var(--brand-secondary);
+            color: var(--brand-secondary) !important;
             border: 2px solid rgba(251, 135, 63, 0.2);
             border-radius: 50px;
             font-weight: 600;
@@ -347,79 +308,55 @@
 
         .btn-outline-primary:hover {
             background: var(--brand-secondary);
+            color: #ffffff !important;
             border-color: var(--brand-secondary);
         }
 
-        /* --- 7. Testimonials (Clean Cards) --- */
-        .testimonial-card {
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            border: 1px solid #f1f5f9;
-        }
-
-        .testimonial-card .quote {
-            font-size: 6rem;
-            color: rgba(251, 135, 63, 0.1);
-            position: absolute;
-            top: 0px;
-            right: 30px;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        /* --- 8. Footer (Dark Premium) --- */
+        /* --- 7. Footer --- */
         .footer {
-            background: #0b1120 !important; /* Almost black navy */
+            background: #0b1120 !important;
             margin-top: 80px;
         }
         
-        .footer h4 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-        }
-
-        .footer p, .footer a {
-            color: #94a3b8 !important;
-            transition: 0.3s;
-        }
-
-        .footer a:hover {
-            color: var(--brand-secondary) !important;
-            padding-left: 5px;
-        }
+        .footer a { color: #94a3b8 !important; transition: 0.3s; }
+        .footer a:hover { color: var(--brand-secondary) !important; padding-left: 5px; }
 
         .btn-social {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            width: 40px;
-            height: 40px;
+            color: white !important;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             margin-right: 10px;
-            transition: all 0.3s;
         }
 
         .btn-social:hover {
             background: var(--brand-secondary);
             border-color: var(--brand-secondary);
-            transform: translateY(-3px);
         }
 
-        /* FAQ Section */
-        .faq-item {
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s;
-        }
-        .faq-item:hover {
-            border-color: var(--brand-secondary);
-            box-shadow: var(--shadow-md);
+        /* FAQ */
+        .faq-item { border: 1px solid #f1f5f9; transition: all 0.3s; }
+        .faq-item:hover { border-color: var(--brand-secondary); box-shadow: var(--shadow-md); }
+
+        /* Responsive Navbar Fix */
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                align-items: flex-start; /* Align left on mobile */
+                padding-top: 20px;
+            }
+            .btn-nav-login {
+                margin-left: 0;
+                margin-top: 15px;
+                display: inline-block;
+            }
+            .nav-item.nav-link {
+                padding: 10px 0 !important;
+            }
         }
     </style>
 </head>
@@ -430,11 +367,11 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
         <div class="container">
             <a href="index.html" class="navbar-brand d-flex align-items-center">
                 <p class="m-0 fw-bold" style="font-size: 24px;">
-                    <img src="img/icon.png" alt="Junayed Academy Logo" height="45px" class="me-2">
+                    <img src="img/icon.png" alt="Junayed Academy Logo" height="40px" class="me-2">
                     Junayed<span style="color: #fb873f;">Academy</span>
                 </p>
             </a>
@@ -442,7 +379,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <div class="navbar-nav ms-auto align-items-center p-4 p-lg-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="courses.html" class="nav-item nav-link">Courses</a>
@@ -454,7 +391,10 @@
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user me-1"></i> Login</a>
+                    
+                    <a href="login.html" class="btn btn-nav-login">
+                        <i class="fa fa-user me-2"></i>Login
+                    </a>
                 </div>
             </div>
         </div>
@@ -473,7 +413,6 @@
                                 </h1>
                                 <p class="text-white lead mb-4 opacity-75">
                                     Join 2,500+ learners who have accelerated their careers with Junayed Academy. 
-                                    Learn from industry experts, work on real projects, and get job-ready in months.
                                 </p>
                                 <div class="d-flex flex-wrap gap-3">
                                     <a href="courses.html" class="btn btn-primary animated slideInLeft">
@@ -500,8 +439,7 @@
                                     Learn by Building <span style="color: #fb873f;">Real-World</span> Projects
                                 </h1>
                                 <p class="text-white lead mb-4 opacity-75">
-                                    Move beyond theory. Our curriculum focuses on practical implementation with 
-                                    capstone projects that simulate real industry challenges and build your portfolio.
+                                    Move beyond theory. Our curriculum focuses on practical implementation.
                                 </p>
                                 <div class="d-flex flex-wrap gap-3">
                                     <a href="about.html" class="btn btn-primary animated slideInLeft">
@@ -549,7 +487,6 @@
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <span class="section-title text-center px-3">WHY CHOOSE US</span>
                 <h2 class="mt-2 mb-3 display-6">Learn Tech Skills That Matter</h2>
-                <p class="lead text-muted">Industry-designed curriculum taught by professionals</p>
             </div>
             
             <div class="row g-4">
@@ -558,8 +495,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h5 class="mb-3">Project-Based Learning</h5>
-                        <p class="mb-0 text-muted">Build real projects from day one. Learn by doing with hands-on exercises and industry-relevant challenges.</p>
+                        <h5 class="mb-3">Project-Based</h5>
+                        <p class="mb-0 text-muted small">Build real projects from day one. Learn by doing with hands-on exercises.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -568,7 +505,7 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <h5 class="mb-3">Expert Instructors</h5>
-                        <p class="mb-0 text-muted">Learn from industry professionals with 5+ years of experience in top tech companies.</p>
+                        <p class="mb-0 text-muted small">Learn from industry professionals with 5+ years of experience.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -577,7 +514,7 @@
                             <i class="fas fa-briefcase"></i>
                         </div>
                         <h5 class="mb-3">Career Support</h5>
-                        <p class="mb-0 text-muted">Get career guidance, resume reviews, and interview preparation from our placement team.</p>
+                        <p class="mb-0 text-muted small">Get career guidance, resume reviews, and interview preparation.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -585,8 +522,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h5 class="mb-3">Community Learning</h5>
-                        <p class="mb-0 text-muted">Join a vibrant community of learners, participate in discussions, and collaborate on projects.</p>
+                        <h5 class="mb-3">Community</h5>
+                        <p class="mb-0 text-muted small">Join a vibrant community of learners and collaborate on projects.</p>
                     </div>
                 </div>
             </div>
@@ -595,100 +532,72 @@
 
     <div class="container-xxl py-5" style="background-color: #f1f5f9;">
         <div class="container">
-            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center mb-5 wow fadeInUp">
                 <span class="section-title text-center px-3">EXPLORE TOPICS</span>
-                <h2 class="mt-2 text-primary display-6">Most In-Demand Tech Skills</h2>
-                <p class="lead text-muted">Master the skills that companies are hiring for</p>
+                <h2 class="mt-2 text-primary display-6">Most In-Demand Skills</h2>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="category-card h-100">
-                        <div class="category-icon">
-                            <img src="img/cat1.png" alt="Microsoft Excel">
+                        <div class="feature-icon mx-auto mb-3">
+                            <img src="img/cat1.png" width="40" alt="Excel">
                         </div>
-                        <h5 class="mb-2">Microsoft Excel</h5>
-                        <p class="small text-muted mb-3">Data analysis, formulas, and business intelligence</p>
-                        <span class="badge bg-primary rounded-pill">Beginner to Advanced</span>
+                        <h5 class="mb-2 text-center">Microsoft Excel</h5>
+                        <p class="small text-muted text-center">Data analysis & BI</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="category-card h-100">
-                        <div class="category-icon">
-                            <img src="img/cat2.png" alt="AWS">
+                        <div class="feature-icon mx-auto mb-3">
+                            <img src="img/cat2.png" width="40" alt="AWS">
                         </div>
-                        <h5 class="mb-2">AWS Cloud</h5>
-                        <p class="small text-muted mb-3">Cloud computing, deployment, and architecture</p>
-                        <span class="badge bg-warning rounded-pill">In-Demand Skill</span>
+                        <h5 class="mb-2 text-center">AWS Cloud</h5>
+                        <p class="small text-muted text-center">Cloud computing</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="category-card h-100">
-                        <div class="category-icon">
-                            <img src="img/cat3.png" alt="Python">
+                        <div class="feature-icon mx-auto mb-3">
+                            <img src="img/cat3.png" width="40" alt="Python">
                         </div>
-                        <h5 class="mb-2">Python Programming</h5>
-                        <p class="small text-muted mb-3">AI, data science, and automation</p>
-                        <span class="badge bg-success rounded-pill">Most Popular</span>
+                        <h5 class="mb-2 text-center">Python</h5>
+                        <p class="small text-muted text-center">AI & Data Science</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="category-card h-100">
-                        <div class="category-icon">
-                            <img src="img/cat4.png" alt="Java">
+                        <div class="feature-icon mx-auto mb-3">
+                            <img src="img/cat4.png" width="40" alt="Java">
                         </div>
-                        <h5 class="mb-2">Java Development</h5>
-                        <p class="small text-muted mb-3">Enterprise applications and Android</p>
-                        <span class="badge bg-info rounded-pill">Industry Standard</span>
+                        <h5 class="mb-2 text-center">Java Dev</h5>
+                        <p class="small text-muted text-center">Enterprise Apps</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
-                <a href="courses.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-search me-2"></i>Browse All Categories
-                </a>
             </div>
         </div>
     </div>
 
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center mb-5 wow fadeInUp">
                 <span class="section-title text-center px-3">FEATURED COURSES</span>
                 <h2 class="mt-2 display-6">Most Popular Courses</h2>
-                <p class="lead text-muted">Join thousands of learners transforming their careers</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-card h-100">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML Course for Beginners" style="height: 220px; object-fit: cover;">
+                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-free">FREE</div>
                         </div>
                         <div class="p-4">
-                            <h5 class="mb-2">HTML & CSS Fundamentals</h5>
-                            <p class="small text-muted mb-3">Master web development basics with hands-on projects</p>
-                            <div class="d-flex justify-content-between mb-4 course-meta">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small class="fw-bold text-dark">4.5</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>2.5k+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>1 Mo</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                            <h5 class="mb-2">HTML & CSS</h5>
+                            <p class="small text-muted mb-3">Master web basics</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-3">
                                 <h5 class="text-primary mb-0">Free</h5>
-                                <a href="single.html" class="btn btn-sm btn-outline-primary px-3">
-                                    Enroll <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                                <a href="single.html" class="btn btn-sm btn-outline-primary px-3">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -697,34 +606,15 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-card h-100">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-02.png" alt="Front End Development" style="height: 220px; object-fit: cover;">
+                            <img class="img-fluid w-100" src="img/course-02.png" alt="Full Stack" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="p-4">
-                            <h5 class="mb-2">Full Stack Development</h5>
-                            <p class="small text-muted mb-3">Master React, Node.js, and MongoDB for modern web apps</p>
-                            <div class="d-flex justify-content-between mb-4 course-meta">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small class="fw-bold text-dark">4.7</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>1.2k+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>3 Mo</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
-                                <div>
-                                    <h5 class="text-primary mb-0">৳ 15,000</h5>
-                                    <small class="text-muted text-decoration-line-through" style="font-size: 0.8em">৳ 20,000</small>
-                                </div>
-                                <a href="course2.html" class="btn btn-sm btn-primary px-3">
-                                    Enroll <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                            <h5 class="mb-2">Full Stack Dev</h5>
+                            <p class="small text-muted mb-3">React, Node, MongoDB</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-3">
+                                <div><h5 class="text-primary mb-0">৳ 15k</h5></div>
+                                <a href="course2.html" class="btn btn-sm btn-primary px-3">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -733,34 +623,15 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-card h-100">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-3.webp" alt="Machine Learning" style="height: 220px; object-fit: cover;">
+                            <img class="img-fluid w-100" src="img/course-3.webp" alt="ML" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="p-4">
-                            <h5 class="mb-2">Machine Learning & AI</h5>
-                            <p class="small text-muted mb-3">Build intelligent systems with Python and TensorFlow</p>
-                            <div class="d-flex justify-content-between mb-4 course-meta">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small class="fw-bold text-dark">5.0</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>1.5k+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>3 Mo</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
-                                <div>
-                                    <h5 class="text-primary mb-0">৳ 15,000</h5>
-                                    <small class="text-muted text-decoration-line-through" style="font-size: 0.8em">৳ 18,000</small>
-                                </div>
-                                <a href="course3.html" class="btn btn-sm btn-primary px-3">
-                                    Enroll <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                            <h5 class="mb-2">Machine Learning</h5>
+                            <p class="small text-muted mb-3">Python & TensorFlow</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-3">
+                                <div><h5 class="text-primary mb-0">৳ 15k</h5></div>
+                                <a href="course3.html" class="btn btn-sm btn-primary px-3">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -769,44 +640,23 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="course-card h-100">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="Data Structures" style="height: 220px; object-fit: cover;">
+                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="DSA" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="p-4">
                             <h5 class="mb-2">Data Structures</h5>
-                            <p class="small text-muted mb-3">Crack coding interviews with efficient problem solving</p>
-                            <div class="d-flex justify-content-between mb-4 course-meta">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small class="fw-bold text-dark">4.5</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>850+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>1 Mo</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
-                                <div>
-                                    <h5 class="text-primary mb-0">৳ 10,000</h5>
-                                    <small class="text-muted text-decoration-line-through" style="font-size: 0.8em">৳ 12,000</small>
-                                </div>
-                                <a href="Course5.html" class="btn btn-sm btn-primary px-3">
-                                    Enroll <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                            <p class="small text-muted mb-3">Crack coding interviews</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-3">
+                                <div><h5 class="text-primary mb-0">৳ 10k</h5></div>
+                                <a href="Course5.html" class="btn btn-sm btn-primary px-3">Enroll Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <a href="courses.html" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-list me-2"></i>View All 12+ Courses
-                </a>
+             <div class="text-center mt-5">
+                <a href="courses.html" class="btn btn-outline-primary btn-lg">View All Courses</a>
             </div>
         </div>
     </div>
@@ -814,237 +664,55 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="cta-section bg-dark text-white rounded-3 p-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0F172A, #1e293b);">
-                <div class="position-absolute top-0 end-0 bg-white opacity-10 rounded-circle" style="width: 300px; height: 300px; margin-right: -100px; margin-top: -100px;"></div>
-                
                 <div class="row align-items-center position-relative z-1">
                     <div class="col-lg-8">
-                        <h2 class="mb-3 text-white display-6">Share Your Knowledge, Become an Instructor</h2>
-                        <p class="mb-4 text-white-50 lead">
-                            Join our team of expert instructors and help shape the future of tech education in Bangladesh. 
-                            Share your industry experience and earn while teaching.
-                        </p>
+                        <h2 class="mb-3 text-white">Become an Instructor</h2>
+                        <p class="mb-4 text-white-50">Join our team of expert instructors and help shape the future of tech education.</p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="instructor.html" class="btn btn-light btn-lg">
-                                <i class="fas fa-chalkboard-teacher me-2"></i>Apply Now
-                            </a>
-                            <a href="team.html" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-users me-2"></i>Meet Our Team
-                            </a>
+                            <a href="instructor.html" class="btn btn-light btn-lg">Apply Now</a>
                         </div>
-                    </div>
-                    <div class="col-lg-4 text-center d-none d-lg-block">
-                        <i class="fas fa-user-tie" style="font-size: 150px; color: rgba(255,255,255,0.05);"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-xxl py-5 bg-light">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mb-5 wow fadeInUp">
-                <span class="section-title text-center px-3">SUCCESS STORIES</span>
-                <h2 class="mt-2 display-6">What Our Students Say</h2>
-                <p class="lead text-muted">Join thousands who transformed their careers</p>
+                <h2 class="text-primary mb-3">Common Questions</h2>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-card h-100">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "Junayed Academy's ML course transformed my career. Within 3 months, I went from a 
-                            biology graduate to a machine learning engineer at a top tech company."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/rajon-testimonial-1.jpg" class="rounded-circle shadow-sm" width="50" height="50" alt="Rajon">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">Rajon Mahmud</h6>
-                                <small class="text-primary fw-bold">ML Engineer</small>
-                            </div>
-                        </div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="faq-item bg-white p-4 rounded-3 h-100">
+                        <h5 class="mb-2">Is there any free trial?</h5>
+                        <p class="mb-0 text-muted">Yes! All courses offer free preview lessons.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="testimonial-card h-100">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "The practical approach and real projects gave me the confidence to start freelancing. 
-                            Now I earn 3x more than my previous job as a web developer."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/Parui-testimonial-2.jpg" class="rounded-circle shadow-sm" width="50" height="50" alt="Parui">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">Parui Rahman</h6>
-                                <small class="text-primary fw-bold">Full Stack Dev</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="testimonial-card h-100">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "Coming from a non-tech background, I was skeptical. But the structured curriculum 
-                            and supportive community made my transition smooth and successful."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle shadow-sm" width="50" height="50" alt="Chowa">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-0">Lailatul Ferdous</h6>
-                                <small class="text-primary fw-bold">Frontend Dev</small>
-                            </div>
-                        </div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="faq-item bg-white p-4 rounded-3 h-100">
+                        <h5 class="mb-2">What if I miss a live class?</h5>
+                        <p class="mb-0 text-muted">All live sessions are recorded and available in your dashboard.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <a href="testimonial.html" class="btn btn-primary">
-                    <i class="fas fa-comment me-2"></i>Read More Success Stories
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mb-5 wow fadeInUp">
-            <h2 class="text-primary mb-3">Quick Answers to Common Questions</h2>
-            <p class="lead text-muted">Get immediate answers to frequently asked questions</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-question"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">Is there any free trial?</h5>
-                            <p class="mb-0 text-muted">Yes! All courses offer free preview lessons. We also have completely free courses on HTML, Excel, and programming basics.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-video"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">What if I miss a live class?</h5>
-                            <p class="mb-0 text-muted">All live sessions are recorded and available in your dashboard within 24 hours. You can watch them anytime.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">Can I get job placement assistance?</h5>
-                            <p class="mb-0 text-muted">Yes! Our career support team provides resume reviews, interview preparation, and connects qualified students with hiring partners.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-sync"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">Are courses updated regularly?</h5>
-                            <p class="mb-0 text-muted">Absolutely! We update our curriculum every 6 months to reflect the latest industry trends and technologies.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">What's the average class size?</h5>
-                            <p class="mb-0 text-muted">Live classes have 15-25 students for personalized attention. Recorded courses have unlimited enrollment.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="faq-item bg-white p-4 rounded-3 h-100">
-                    <div class="d-flex">
-                        <div class="flex-shrink-0">
-                            <div class="bg-light text-primary rounded-circle p-3 me-3">
-                                <i class="fas fa-tags"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                            <h5 class="mb-2">Do you offer group discounts?</h5>
-                            <p class="mb-0 text-muted">Yes! Groups of 5+ students get 20% discount. Corporate training packages are also available.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="card border-0 shadow-lg overflow-hidden rounded-3">
-                    <div class="card-body p-5">
-                        <div class="row align-items-center">
-                            <div class="col-lg-8">
-                                <h5 class="mb-2 fw-bold">Need more personalized answers?</h5>
-                                <p class="mb-0 text-muted">Get in touch with our support team for specific queries.</p>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-                                    <a href="tel:+8801893255503" class="btn btn-outline-primary rounded-pill px-4">
-                                        <i class="fas fa-phone me-2"></i>Call Now
-                                    </a>
-                                    <a href="https://wa.me/8801893255503" target="_blank" class="btn btn-success rounded-pill px-4">
-                                        <i class="fab fa-whatsapp me-2"></i>WhatsApp
-                                    </a>
-                                </div>
-                            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm overflow-hidden rounded-3">
+                        <div class="card-body p-4 text-center">
+                             <h5 class="mb-3 fw-bold">Need more help?</h5>
+                             <div class="d-flex justify-content-center gap-2">
+                                <a href="tel:+8801893255503" class="btn btn-outline-primary rounded-pill px-4">Call Now</a>
+                                <a href="https://wa.me/8801893255503" class="btn btn-success rounded-pill px-4">WhatsApp</a>
+                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -1054,43 +722,26 @@
                     <p><a class="text-white-50" href="about.html">About Us</a></p>
                     <p><a class="text-white-50" href="courses.html">All Courses</a></p>
                     <p><a class="text-white-50" href="contact.html">Contact Us</a></p>
-                    <p><a class="text-white-50" href="#">Privacy Policy</a></p>
-                    <p><a class="text-white-50" href="#">Terms & Conditions</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Contact Information</h4>
-                    <p class="mb-2 text-white-50"><i class="fa fa-map-marker-alt me-3 text-white"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2 text-white-50"><i class="fa fa-map-marker-alt me-3 text-white"></i>Mirpur, Dhaka</p>
                     <p class="mb-2 text-white-50"><i class="fa fa-phone-alt me-3 text-white"></i>+880 1893 255503</p>
                     <p class="mb-2 text-white-50"><i class="fa fa-envelope me-3 text-white"></i>junayedacademy@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Office Hours</h4>
-                    <p class="mb-2 text-white-50"><i class="fas fa-clock me-2 text-white"></i>Saturday - Thursday: 9:00 AM - 6:00 PM</p>
-                    <p class="mb-4 text-white-50"><i class="fas fa-clock me-2 text-white"></i>Friday: 10:00 AM - 4:00 PM</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5 rounded-pill" type="email" placeholder="Your email" aria-label="Email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 rounded-pill">Subscribe</button>
+                    <h4 class="text-white mb-3">Social</h4>
+                     <div class="d-flex pt-2">
+                        <a class="btn btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="copyright border-top border-secondary pt-4 pb-4">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-white-50">
-                        &copy; <a class="text-white" href="index.html">Junayed Academy</a>, All Rights Reserved.
-                        <br><small>Empowering Bangladesh through tech education since 2024</small>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-white-50">
-                        <small>Designed with excellence for the future of Bangladesh</small>
-                    </div>
-                </div>
+            <div class="copyright border-top border-secondary pt-4 pb-4 text-center">
+                 <p class="text-white-50 mb-0">&copy; <a class="text-white" href="index.html">Junayed Academy</a>. All Rights Reserved.</p>
             </div>
         </div>
     </div>
@@ -1120,7 +771,7 @@
             });
         });
 
-        // Simple counter animation with suffixes
+        // Simple counter animation
         document.addEventListener('DOMContentLoaded', function() {
             const counters = document.querySelectorAll('.stat-number');
             let animationStarted = false;
@@ -1128,24 +779,20 @@
             function startCounterAnimation() {
                 if (animationStarted) return;
                 animationStarted = true;
-                
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
                     const suffix = counter.getAttribute('data-suffix') || '';
                     let count = 0;
                     const increment = target / 40; 
-                    
                     const updateCount = () => {
                         if (count < target) {
                             count += increment;
-                            const currentValue = Math.ceil(count);
-                            counter.innerText = currentValue + suffix;
+                            counter.innerText = Math.ceil(count) + suffix;
                             setTimeout(updateCount, 25);
                         } else {
                             counter.innerText = target + suffix;
                         }
                     };
-                    
                     updateCount();
                 });
             }
@@ -1153,19 +800,14 @@
             function checkScroll() {
                 const statsSection = document.querySelector('.stats-counter');
                 if (!statsSection) return;
-                
                 const position = statsSection.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
-                
                 if (position < screenPosition) {
                     startCounterAnimation();
                     window.removeEventListener('scroll', checkScroll);
                 }
             }
-            
             window.addEventListener('scroll', checkScroll);
-            
-            // Check immediately in case it's already visible
             checkScroll();
         });
     </script>
