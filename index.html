@@ -305,6 +305,56 @@
                 font-size: 2rem;
             }
         }
+
+
+
+
+
+
+
+
+
+
+        /* Stats Counter Styles */
+.stats-counter {
+    background: linear-gradient(135deg, #fb873f, #ff9e5c);
+    border-radius: 15px;
+    padding: 50px 20px;
+    margin: 50px auto;
+    box-shadow: 0 10px 30px rgba(251, 135, 63, 0.3);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-counter {
+        padding: 30px 15px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 
@@ -418,25 +468,24 @@
     <div class="stats-counter">
         <div class="row text-center">
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="2500 +">0</h3>
+                <h3 class="stat-number" data-target="2500" data-suffix="+">0</h3>
                 <p class="stat-label">Students Trained</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="10 +">0</h3>
+                <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
                 <p class="stat-label">Industry Experts</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="96">0</h3>
+                <h3 class="stat-number" data-target="96" data-suffix="%">0</h3>
                 <p class="stat-label">Success Rate</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="12 +">0</h3>
+                <h3 class="stat-number" data-target="12" data-suffix="+">0</h3>
                 <p class="stat-label">Tech Courses</p>
             </div>
         </div>
     </div>
 </div>
-
     <!-- Why Choose Us -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -1067,37 +1116,63 @@
 
 
 
-// Simple counter animation
+// Simple counter animation with suffixes
 document.addEventListener('DOMContentLoaded', function() {
     const counters = document.querySelectorAll('.stat-number');
+    let animationStarted = false;
     
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const increment = target / 100;
+    function startCounterAnimation() {
+        if (animationStarted) return;
+        animationStarted = true;
         
-        const updateCount = () => {
-            if (count < target) {
-                count += increment;
-                counter.innerText = Math.ceil(count);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        
-        // Scroll হলে শুরু হবে
-        window.addEventListener('scroll', function() {
-            const position = counter.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+        counters.forEach(counter => {
+            // Get the target value and suffix
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            let count = 0;
+            const increment = target / 50; // Reduced for faster animation
             
-            if (position < screenPosition) {
-                updateCount();
-                // একবার শুরু হলে event listener সরানো
-                this.removeEventListener('scroll', arguments.callee);
-            }
+            const updateCount = () => {
+                if (count < target) {
+                    count += increment;
+                    const currentValue = Math.ceil(count);
+                    counter.innerText = currentValue + suffix;
+                    setTimeout(updateCount, 20);
+                } else {
+                    // Final value with suffix
+                    counter.innerText = target + suffix;
+                }
+            };
+            
+            updateCount();
         });
-    });
+    }
+    
+    // Scroll হলে শুরু হবে
+    function checkScroll() {
+        const statsSection = document.querySelector('.stats-counter');
+        if (!statsSection) return;
+        
+        const position = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.5;
+        
+        if (position < screenPosition) {
+            startCounterAnimation();
+            window.removeEventListener('scroll', checkScroll);
+        }
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    
+    // If the section is already visible on load
+    const statsSection = document.querySelector('.stats-counter');
+    if (statsSection) {
+        const position = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+        if (position < screenPosition) {
+            checkScroll();
+        }
+    }
 });
     </script>
 </body>
