@@ -8,9 +8,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="keywords" content="Junayed Academy, tech courses Bangladesh, programming courses, AI training, web development, online learning, Bangladesh tech education">
     <meta name="description" content="Junayed Academy - Bangladesh's leading tech education platform offering industry-relevant courses in programming, AI, web development, and more. Start your tech journey today.">
-    <!-- GSAP CDN যোগ করুন head-এ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
@@ -307,169 +305,6 @@
                 font-size: 2rem;
             }
         }
-
-
-
-        /* Modern Stats Counter */
-.stats-counter-modern {
-    padding: 60px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.stats-counter-modern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right, #fb873f, #ffb84d, #fb873f);
-    animation: shimmer 3s infinite linear;
-}
-
-@keyframes shimmer {
-    0% { background-position: -200px 0; }
-    100% { background-position: 200px 0; }
-}
-
-.stat-card {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(251, 135, 63, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-}
-
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right, #fb873f, #ffb84d);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.6s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
-}
-
-.stat-card:hover::before {
-    transform: scaleX(1);
-}
-
-.stat-icon-wrapper {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, #fb873f, #ffb84d);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.stat-icon-wrapper::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border: 2px dashed #fb873f;
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: spin 20s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.stat-icon {
-    font-size: 28px;
-    color: white;
-}
-
-.stat-number {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(to right, #fb873f, #ff6b35);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.counter-value {
-    font-weight: 800;
-}
-
-.counter-suffix {
-    font-size: 2.5rem;
-    margin-left: 5px;
-    opacity: 0.9;
-}
-
-.stat-label {
-    font-size: 1.1rem;
-    color: #555;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-.stat-progress {
-    height: 6px;
-    background: #e9ecef;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 15px;
-}
-
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(to right, #fb873f, #ffb84d);
-    border-radius: 3px;
-    transition: width 2s ease-out;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .stat-card {
-        padding: 20px 15px;
-        margin-bottom: 20px;
-    }
-    
-    .stat-number {
-        font-size: 2.8rem;
-    }
-    
-    .counter-suffix {
-        font-size: 2rem;
-    }
-    
-    .stat-icon-wrapper {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 20px;
-    }
-    
-    .stat-icon {
-        font-size: 24px;
-    }
-}
     </style>
 </head>
 
@@ -578,80 +413,30 @@
         </div>
     </div>
 
-<!-- Modern Stats Counter -->
+   <!-- Stats Counter -->
 <div class="container-xxl py-5">
-    <div class="stats-counter-modern">
-        <div class="row g-4 text-center">
-            <!-- Students Trained -->
-            <div class="col-md-3 col-6">
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper">
-                        <i class="fas fa-user-graduate stat-icon"></i>
-                    </div>
-                    <h3 class="stat-number" data-target="2500">
-                        <span class="counter-value">0</span>
-                        <span class="counter-suffix">+</span>
-                    </h3>
-                    <p class="stat-label">Students Trained</p>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
+    <div class="stats-counter">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="2500 +">0</h3>
+                <p class="stat-label">Students Trained</p>
             </div>
-            
-            <!-- Industry Experts -->
-            <div class="col-md-3 col-6">
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper">
-                        <i class="fas fa-users stat-icon"></i>
-                    </div>
-                    <h3 class="stat-number" data-target="10">
-                        <span class="counter-value">0</span>
-                        <span class="counter-suffix">+</span>
-                    </h3>
-                    <p class="stat-label">Industry Experts</p>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="10 +">0</h3>
+                <p class="stat-label">Industry Experts</p>
             </div>
-            
-            <!-- Success Rate -->
-            <div class="col-md-3 col-6">
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper">
-                        <i class="fas fa-chart-line stat-icon"></i>
-                    </div>
-                    <h3 class="stat-number" data-target="96">
-                        <span class="counter-value">0</span>
-                        <span class="counter-suffix">%</span>
-                    </h3>
-                    <p class="stat-label">Success Rate</p>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="96">0</h3>
+                <p class="stat-label">Success Rate</p>
             </div>
-            
-            <!-- Tech Courses -->
-            <div class="col-md-3 col-6">
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper">
-                        <i class="fas fa-laptop-code stat-icon"></i>
-                    </div>
-                    <h3 class="stat-number" data-target="12">
-                        <span class="counter-value">0</span>
-                        <span class="counter-suffix">+</span>
-                    </h3>
-                    <p class="stat-label">Tech Courses</p>
-                    <div class="stat-progress">
-                        <div class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
+            <div class="col-md-3 col-6 mb-4">
+                <h3 class="stat-number" data-target="12 +">0</h3>
+                <p class="stat-label">Tech Courses</p>
             </div>
         </div>
     </div>
 </div>
+
     <!-- Why Choose Us -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -1282,66 +1067,37 @@
 
 
 
-// GSAP Version (More Professional)
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if GSAP is loaded
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
+// Simple counter animation
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 100;
         
-        // Animate each counter
-        gsap.utils.toArray('.stat-card').forEach((card, index) => {
-            const counter = card.querySelector('.counter-value');
-            const target = parseInt(card.querySelector('.stat-number').getAttribute('data-target'));
-            const progressBar = card.querySelector('.progress-bar');
-            const suffix = card.querySelector('.counter-suffix');
+        const updateCount = () => {
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        // Scroll হলে শুরু হবে
+        window.addEventListener('scroll', function() {
+            const position = counter.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
             
-            // Create ScrollTrigger animation
-            ScrollTrigger.create({
-                trigger: card,
-                start: "top 80%",
-                onEnter: () => {
-                    // Animate counter
-                    gsap.to(counter, {
-                        innerText: target,
-                        duration: 2,
-                        ease: "power2.out",
-                        snap: { innerText: 1 },
-                        onUpdate: function() {
-                            counter.textContent = Math.floor(counter._gsap.innerText);
-                        }
-                    });
-                    
-                    // Animate progress bar
-                    gsap.to(progressBar, {
-                        width: "100%",
-                        duration: 2,
-                        ease: "power2.out",
-                        delay: 0.3
-                    });
-                    
-                    // Animate icon
-                    gsap.from(card.querySelector('.stat-icon-wrapper'), {
-                        rotation: 360,
-                        duration: 1.5,
-                        ease: "back.out(1.7)"
-                    });
-                    
-                    // Animate card entrance
-                    gsap.from(card, {
-                        y: 50,
-                        opacity: 0,
-                        duration: 0.8,
-                        delay: index * 0.1,
-                        ease: "power2.out"
-                    });
-                },
-                once: true
-            });
+            if (position < screenPosition) {
+                updateCount();
+                // একবার শুরু হলে event listener সরানো
+                this.removeEventListener('scroll', arguments.callee);
+            }
         });
-    } else {
-        // Fallback to vanilla JS if GSAP not available
-        new ModernCounter();
-    }
+    });
 });
     </script>
 </body>
