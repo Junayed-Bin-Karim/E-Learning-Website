@@ -413,16 +413,16 @@
         </div>
     </div>
 
-   <!-- Stats Counter -->
+<!-- Stats Counter -->
 <div class="container-xxl py-5">
     <div class="stats-counter">
         <div class="row text-center">
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="2500 +">0</h3>
+                <h3 class="stat-number" data-target="2500">0</h3>
                 <p class="stat-label">Students Trained</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="10 +">0</h3>
+                <h3 class="stat-number" data-target="10">0</h3>
                 <p class="stat-label">Industry Experts</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
@@ -430,7 +430,7 @@
                 <p class="stat-label">Success Rate</p>
             </div>
             <div class="col-md-3 col-6 mb-4">
-                <h3 class="stat-number" data-target="12 +">0</h3>
+                <h3 class="stat-number" data-target="12">0</h3>
                 <p class="stat-label">Tech Courses</p>
             </div>
         </div>
@@ -1067,37 +1067,72 @@
 
 
 
-// Simple counter animation
+// Simple counter animation with plus sign
 document.addEventListener('DOMContentLoaded', function() {
     const counters = document.querySelectorAll('.stat-number');
+    let animationStarted = false;
     
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const increment = target / 100;
+    function startCounterAnimation() {
+        if (animationStarted) return;
+        animationStarted = true;
         
-        const updateCount = () => {
-            if (count < target) {
-                count += increment;
-                counter.innerText = Math.ceil(count);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        
-        // Scroll হলে শুরু হবে
-        window.addEventListener('scroll', function() {
-            const position = counter.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+        counters.forEach(counter => {
+            // Get the target value
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const increment = target / 100;
             
-            if (position < screenPosition) {
-                updateCount();
-                // একবার শুরু হলে event listener সরানো
-                this.removeEventListener('scroll', arguments.callee);
-            }
+            const updateCount = () => {
+                if (count < target) {
+                    count += increment;
+                    // Check which counters need plus sign
+                    if (counter.getAttribute('data-target') === "2500" || 
+                        counter.getAttribute('data-target') === "10" || 
+                        counter.getAttribute('data-target') === "12") {
+                        counter.innerText = Math.ceil(count) + "+";
+                    } else {
+                        counter.innerText = Math.ceil(count);
+                    }
+                    setTimeout(updateCount, 20);
+                } else {
+                    // Final value with plus sign
+                    if (counter.getAttribute('data-target') === "2500" || 
+                        counter.getAttribute('data-target') === "10" || 
+                        counter.getAttribute('data-target') === "12") {
+                        counter.innerText = target + "+";
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+            };
+            
+            updateCount();
         });
+    }
+    
+    // Scroll হলে শুরু হবে
+    window.addEventListener('scroll', function checkScroll() {
+        const statsSection = document.querySelector('.stats-counter');
+        if (!statsSection) return;
+        
+        const position = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (position < screenPosition) {
+            startCounterAnimation();
+            window.removeEventListener('scroll', checkScroll);
+        }
     });
+    
+    // If the section is already visible on load
+    const statsSection = document.querySelector('.stats-counter');
+    if (statsSection) {
+        const position = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+        if (position < screenPosition) {
+            startCounterAnimation();
+        }
+    }
 });
     </script>
 </body>
