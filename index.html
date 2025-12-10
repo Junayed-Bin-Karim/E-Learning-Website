@@ -6,347 +6,163 @@
     <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
     <title>Junayed Academy | Premier Tech Education Platform in Bangladesh</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy, tech courses Bangladesh, programming courses, AI training, web development, online learning, Bangladesh tech education">
-    <meta name="description" content="Junayed Academy - Bangladesh's leading tech education platform offering industry-relevant courses in programming, AI, web development, and more. Start your tech journey today.">
+    <meta name="keywords" content="Junayed Academy, tech courses Bangladesh, programming courses, AI training">
+    <meta name="description" content="Junayed Academy - Bangladesh's leading tech education platform.">
     
-    <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <style>
+        /* =========================================
+           PREMIUM UI OVERRIDES
+           ========================================= */
         :root {
-            --primary-color: #fb873f;
-            --primary-dark: #e6722a;
-            --primary-light: #ff9e5c;
-            --secondary-color: #6c63ff;
-            --dark-color: #181d38;
-            --light-color: #f8f9fa;
-            --gradient-primary: linear-gradient(135deg, #fb873f 0%, #ff6b6b 100%);
-            --gradient-secondary: linear-gradient(135deg, #6c63ff 0%, #3a7bd5 100%);
-            --gradient-dark: linear-gradient(135deg, #181d38 0%, #2d3748 100%);
-            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.07);
-            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --border-radius: 12px;
-        }
-
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --secondary: #181d38;
+            --light: #f0fbfc;
+            --gradient-main: linear-gradient(135deg, #fb873f 0%, #ff6b6b 100%);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 40px rgba(251, 135, 63, 0.2);
         }
 
         body {
-            overflow-x: hidden;
-            position: relative;
+            background-color: #fcfcfc;
+            font-family: 'Nunito', sans-serif;
         }
 
-        /* Navbar Enhancement */
-        .navbar {
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            padding: 15px 0;
-        }
-
-        .navbar.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-size: 28px !important;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            position: relative;
-            margin: 0 8px;
-            padding: 8px 16px !important;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .nav-link:hover, .nav-link.active {
-            background: rgba(251, 135, 63, 0.1);
-            color: var(--primary-color) !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: var(--gradient-primary);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 70%;
-        }
-
-        .dropdown-menu {
+        /* --- Premium Buttons --- */
+        .btn-premium {
+            background: var(--gradient-main);
             border: none;
-            box-shadow: var(--shadow-lg);
-            border-radius: var(--border-radius);
-            padding: 10px;
-        }
-
-        .dropdown-item {
-            border-radius: 8px;
-            padding: 10px 15px;
-            margin: 2px 0;
-            transition: var(--transition);
-        }
-
-        .dropdown-item:hover {
-            background: rgba(251, 135, 63, 0.1);
-            transform: translateX(5px);
-        }
-
-        /* Premium Buttons */
-        .btn {
-            border-radius: 10px;
-            font-weight: 600;
-            padding: 12px 28px;
-            transition: var(--transition);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
             overflow: hidden;
             z-index: 1;
-            border: none;
-            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(251, 135, 63, 0.4);
         }
 
-        .btn::before {
+        .btn-premium::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
+            left: 0;
+            width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
+            background: #181d38;
+            transition: width 0.4s ease;
             z-index: -1;
+            border-radius: 50px;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .btn-premium:hover::before {
+            width: 100%;
         }
 
-        .btn-primary {
-            background: var(--gradient-primary);
-            box-shadow: 0 8px 25px rgba(251, 135, 63, 0.3);
-        }
-
-        .btn-primary:hover {
+        .btn-premium:hover {
+            color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(251, 135, 63, 0.4);
+            box-shadow: 0 8px 25px rgba(24, 29, 56, 0.3);
         }
 
-        .btn-outline-primary {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+        .btn-premium-outline {
             background: transparent;
+            border: 2px solid #fb873f;
+            color: #fb873f;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
         }
 
-        .btn-outline-primary:hover {
-            background: var(--gradient-primary);
+        .btn-premium-outline:hover {
+            background: var(--gradient-main);
+            border-color: transparent;
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(251, 135, 63, 0.3);
+            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.3);
         }
 
-        .btn-lg {
-            padding: 15px 35px;
-            font-size: 1.1rem;
-        }
-
-        .btn-sm {
-            padding: 8px 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section Enhancement */
-        .hero-overlay {
-            background: linear-gradient(90deg, rgba(24, 29, 56, 0.85) 30%, rgba(24, 29, 56, 0.6) 100%);
-        }
-
-        .header-carousel .owl-item.active h1 {
-            animation: fadeInUp 1s both 0.3s;
-        }
-
-        .header-carousel .owl-item.active p {
-            animation: fadeInUp 1s both 0.6s;
-        }
-
-        .header-carousel .owl-item.active .btn {
-            animation: fadeInUp 1s both 0.9s;
-        }
-
-        .hero-badge {
-            background: var(--gradient-primary);
-            padding: 10px 25px;
+        /* --- Hero Badge --- */
+        .hero-badge {   
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 25px;
             border-radius: 30px;
             display: inline-block;
             font-weight: 600;
             margin-bottom: 20px;
             color: white;
-            box-shadow: 0 6px 15px rgba(251, 135, 63, 0.3);
-            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 6px 15px rgba(251, 135, 63, 0.3); }
-            50% { box-shadow: 0 6px 25px rgba(251, 135, 63, 0.5); }
-            100% { box-shadow: 0 6px 15px rgba(251, 135, 63, 0.3); }
-        }
-
-        /* Stats Counter */
+        /* --- Glassmorphism Stats --- */
         .stats-counter {
-            background: var(--gradient-dark);
-            border-radius: var(--border-radius);
-            padding: 50px 20px;
-            margin-top: -60px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin-top: -70px;
             position: relative;
-            z-index: 1;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--primary);
+            backdrop-filter: blur(10px);
         }
-
+        
         .stat-number {
             font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
+            font-weight: 800;
+            background: var(--gradient-main);
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+        
         .stat-label {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            font-weight: 500;
+            color: #555;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
         }
 
-        /* Course Cards Enhancement */
-        .course-card {
-            transition: var(--transition);
-            border: none;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 100%;
+        /* --- Feature Cards (Modern Minimal) --- */
+        .feature-card {
             background: white;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-        }
-
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .course-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            padding: 8px 20px;
             border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            z-index: 2;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .badge-free {
-            background: var(--gradient-primary);
-        }
-
-        .badge-paid {
-            background: var(--gradient-secondary);
-        }
-
-        /* Category Cards */
-        .category-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             height: 100%;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            overflow: hidden;
+            border: 1px solid #eee;
         }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
             border-color: transparent;
         }
 
-        .category-icon {
+        .feature-icon {
             width: 80px;
             height: 80px;
             background: rgba(251, 135, 63, 0.1);
@@ -354,379 +170,163 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            transition: var(--transition);
-        }
-
-        .category-card:hover .category-icon {
-            background: var(--gradient-primary);
-            transform: scale(1.1);
-        }
-
-        .category-card:hover .category-icon img {
-            filter: brightness(0) invert(1);
-        }
-
-        .category-icon img {
-            width: 40px;
-            height: 40px;
-            transition: var(--transition);
-        }
-
-        /* Feature Cards */
-        .feature-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 35px 25px;
-            text-align: center;
-            transition: var(--transition);
-            height: 100%;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .feature-icon {
-            width: 90px;
-            height: 90px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0 auto 25px;
-            color: white;
-            font-size: 2.2rem;
-            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
-            transition: var(--transition);
+            color: var(--primary);
+            font-size: 2rem;
+            transition: all 0.4s ease;
         }
 
         .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient-main);
+            color: white;
+            transform: rotateY(180deg);
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: var(--gradient-primary);
+        /* --- Course Cards (Premium) --- */
+        .course-card {
+            background: white;
             border-radius: 20px;
-            padding: 70px 50px;
-            color: white;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .course-image-wrapper {
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
         }
 
-        .cta-section::before {
-            content: '';
+        .course-image-wrapper img {
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .course-badge {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
+            top: 15px;
+            left: 15px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            z-index: 2;
+            letter-spacing: 1px;
         }
 
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            bottom: -75px;
-            left: -75px;
+        .badge-free { background: #fb873f; color: white; box-shadow: 0 4px 10px rgba(251, 135, 63, 0.4); }
+        .badge-paid { background: #0ed44c; color: white; box-shadow: 0 4px 10px rgba(14, 212, 76, 0.4); }
+
+        .course-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
         }
 
-        /* Testimonial Cards */
-        .testimonial-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 35px 30px;
-            box-shadow: var(--shadow-sm);
-            height: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+        /* --- Section Titles --- */
+        .section-header {
             position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-main);
+            margin: 15px auto 0;
+            border-radius: 2px;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+        /* --- CTA Section --- */
+        .cta-section {
+            background: url('img/overlay-bottom.png'), var(--gradient-main);
+            background-size: cover;
+            border-radius: 30px;
+            padding: 80px 50px;
+            color: white;
+            box-shadow: 0 20px 60px rgba(251, 135, 63, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
-        .testimonial-card .quote {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            opacity: 0.7;
-        }
-
-        /* Newsletter Form */
-        .newsletter-form {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 45px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .newsletter-form input {
-            padding: 15px 20px;
-            border-radius: 10px;
-            border: 2px solid rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .newsletter-form input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(251, 135, 63, 0.1);
-        }
-
-        /* Section Titles */
-        .section-title {
-            color: var(--primary-color);
+        /* --- Footer & Nav (Keeping original logic, just ensuring compatibility) --- */
+        .navbar-light .navbar-nav .nav-link {
             font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 15px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--gradient-primary);
-            bottom: 0;
-            left: 0;
-        }
-
-        .text-center .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Footer Enhancement */
-        .footer {
-            background: var(--gradient-dark) !important;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-        }
-
-        .footer a {
-            transition: var(--transition);
-        }
-
-        .footer a:hover {
-            color: var(--primary-color) !important;
-            transform: translateX(5px);
-        }
-
-        .btn-social {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .btn-social:hover {
-            transform: translateY(-5px);
-            background: var(--gradient-primary) !important;
-            border-color: transparent !important;
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            box-shadow: 0 8px 25px rgba(251, 135, 63, 0.3);
-            transition: var(--transition);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(251, 135, 63, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .stats-counter {
-                margin-top: 20px;
-                padding: 30px 15px;
-            }
-            
-            .stat-number {
-                font-size: 2.2rem;
-            }
-
-            .hero-badge {
-                font-size: 0.9rem;
-                padding: 8px 20px;
-            }
-
-            .cta-section {
-                padding: 40px 25px;
-            }
-
-            .newsletter-form {
-                padding: 30px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            background: rgba(251, 135, 63, 0.1);
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        .floating-1 {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            right: -150px;
-            animation: float 20s infinite linear;
-        }
-
-        .floating-2 {
-            width: 200px;
-            height: 200px;
-            bottom: 20%;
-            left: -100px;
-            animation: float 25s infinite linear reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Glass Morphism Effect */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: .3s;
         }
     </style>
 </head>
 
 <body>
-    <!-- Floating Background Elements -->
-    <div class="floating-element floating-1"></div>
-    <div class="floating-element floating-2"></div>
-
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top p-0" id="mainNavbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <p class="m-0 fw-bold" style="font-size: 24px;">
-                    <img src="img/icon.png" alt="Junayed Academy Logo" height="45px" class="me-2">
-                    Junayed<span style="color: #fb873f;">Academy</span>
-                </p>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="courses.html" class="nav-item nav-link">Courses</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                        <div class="dropdown-menu fade-down m-0">
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonials</a>
-                        </div>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user me-1"></i> Login</a>
-                    <a href="#" class="nav-item nav-link">
-                        <div id="google_translate_element"></div>
-                    </a>
                 </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Hero Section -->
-    <div class="container-fluid p-0 mb-5 position-relative">
+    <div class="container-fluid p-0 mb-4">
         <div class="owl-carousel header-carousel position-relative">
-            <!-- Slide 1 -->
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="Junayed Academy Tech Learning Platform">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay" style="background: linear-gradient(rgba(24, 29, 56, 0.85), rgba(24, 29, 56, 0.7));">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <span class="hero-badge">Bangladesh's #1 E-Learning Platform</span>
-                                <h1 class="display-3 text-white mb-4 fw-bold">
-                                    Transform Your Career with Industry-Ready Tech Skills
+                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bold">
+                                    Unlock Your Potential with <span style="color: #fb873f;">Premium</span> Tech Skills
                                 </h1>
-                                <p class="text-white lead mb-4 opacity-90">
-                                    Join 2,500+ learners who have accelerated their careers with Junayed Academy. 
-                                    Learn from industry experts, work on real projects, and get job-ready in months.
+                                <p class="text-white lead mb-4 opacity-75">
+                                    Join 2,500+ learners. Learn from industry experts, build real projects, and launch your dream career.
                                 </p>
                                 <div class="d-flex flex-wrap gap-3">
-                                    <a href="courses.html" class="btn btn-primary btn-lg py-3 px-5">
-                                        <i class="fas fa-graduation-cap me-2"></i>Explore Courses
+                                    <a href="courses.html" class="btn btn-premium py-3 px-5 animated slideInLeft">
+                                        Explore Courses <i class="fas fa-arrow-right ms-2"></i>
                                     </a>
-                                    <a href="signup.html" class="btn btn-outline-light btn-lg py-3 px-5">
-                                        <i class="fas fa-rocket me-2"></i>Start Learning Free
+                                    <a href="signup.html" class="btn btn-outline-light py-3 px-5 animated slideInRight rounded-pill fw-bold">
+                                        Start Free Trial
                                     </a>
                                 </div>
                             </div>
@@ -735,56 +335,25 @@
                 </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-2.jpg" alt="Hands-on Learning Experience">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay" style="background: linear-gradient(rgba(24, 29, 56, 0.85), rgba(24, 29, 56, 0.7));">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <span class="hero-badge">Project-Based Learning</span>
-                                <h1 class="display-3 text-white mb-4 fw-bold">
-                                    Learn by Building Real-World Projects
+                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bold">
+                                    Learn by Building <br> Real-World Projects
                                 </h1>
-                                <p class="text-white lead mb-4 opacity-90">
-                                    Move beyond theory. Our curriculum focuses on practical implementation with 
-                                    capstone projects that simulate real industry challenges and build your portfolio.
+                                <p class="text-white lead mb-4 opacity-75">
+                                    Theory is not enough. Build a portfolio that gets you hired with our capstone projects.
                                 </p>
                                 <div class="d-flex flex-wrap gap-3">
-                                    <a href="about.html" class="btn btn-primary btn-lg py-3 px-5">
-                                        <i class="fas fa-play-circle me-2"></i>How We Teach
+                                    <a href="about.html" class="btn btn-premium py-3 px-5 animated slideInLeft">
+                                        How We Teach
                                     </a>
-                                    <a href="testimonial.html" class="btn btn-outline-light btn-lg py-3 px-5">
-                                        <i class="fas fa-star me-2"></i>See Success Stories
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-3.jpg" alt="Community and Mentorship at Junayed Academy">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-sm-10 col-lg-8">
-                                <span class="hero-badge">Expert Mentorship & 24/7 Support</span>
-                                <h1 class="display-3 text-white mb-4 fw-bold">
-                                    Learn With Mentors Who Guide You Every Step of the Way
-                                </h1>
-                                <p class="text-white lead mb-4 opacity-90">
-                                    Get personalized guidance, live mentoring sessions, Q&A support, and a vibrant
-                                    learning community that keeps you motivated and on track to your goals.
-                                </p>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <a href="team.html" class="btn btn-primary btn-lg py-3 px-5">
-                                        <i class="fas fa-users me-2"></i>Meet the Mentors
-                                    </a>
-                                    <a href="instructor.html" class="btn btn-outline-light btn-lg py-3 px-5">
-                                        <i class="fas fa-comments me-2"></i>Apply as an Instructor
+                                    <a href="testimonial.html" class="btn btn-outline-light py-3 px-5 animated slideInRight rounded-pill fw-bold">
+                                        Success Stories
                                     </a>
                                 </div>
                             </div>
@@ -795,290 +364,229 @@
         </div>
     </div>
 
-    <!-- Stats Counter -->
     <div class="container-xxl">
-        <div class="stats-counter">
-            <div class="row text-center">
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number" data-target="2500" data-suffix="+">0</h3>
-                    <p class="stat-label">Students Trained</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
-                    <p class="stat-label">Industry Experts</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number" data-target="96" data-suffix="%">0</h3>
-                    <p class="stat-label">Success Rate</p>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <h3 class="stat-number" data-target="12" data-suffix="+">0</h3>
-                    <p class="stat-label">Tech Courses</p>
+        <div class="container">
+            <div class="stats-counter">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4 mb-md-0 border-end border-light">
+                        <h3 class="stat-number" data-target="2500" data-suffix="+">0</h3>
+                        <p class="stat-label">Students Trained</p>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0 border-end border-light">
+                        <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
+                        <p class="stat-label">Industry Experts</p>
+                    </div>
+                    <div class="col-md-3 col-6 mb-md-0 border-end border-light">
+                        <h3 class="stat-number" data-target="96" data-suffix="%">0</h3>
+                        <p class="stat-label">Success Rate</p>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <h3 class="stat-number" data-target="12" data-suffix="+">0</h3>
+                        <p class="stat-label">Tech Courses</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Why Choose Us -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-title bg-white text-center px-3">WHY CHOOSE US</span>
-                <h2 class="mt-3 fw-bold">Learn Tech Skills That Matter</h2>
-                <p class="lead text-muted">Industry-designed curriculum taught by professionals</p>
+            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold">Why Choose Us</h6>
+                <h1 class="mb-5">Experience The <span style="color:#fb873f;">Premium</span> Difference</h1>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-laptop"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <h5 class="mb-3">Online Learning</h5>
-                        <p class="mb-0 text-muted">Learn from anywhere at your own pace. Access courses anytime, on any device.</p>
+                        <h5 class="mb-3 fw-bold">Flexible Learning</h5>
+                        <p class="mb-0 text-muted">Access high-quality content anytime, anywhere, on any device.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-certificate"></i>
                         </div>
-                        <h5 class="mb-3">Certificate</h5>
-                        <p class="mb-0 text-muted">Receive a certificate upon completing each course, validating your skills for the industry.</p>
+                        <h5 class="mb-3 fw-bold">Verified Certificates</h5>
+                        <p class="mb-0 text-muted">Earn industry-recognized certificates to validate your skills.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-laptop-code"></i>
+                            <i class="fas fa-project-diagram"></i>
                         </div>
-                        <h5 class="mb-3">Project-Based Learning</h5>
-                        <p class="mb-0 text-muted">Build real-world projects from day one and gain hands-on experience with industry-relevant challenges.</p>
+                        <h5 class="mb-3 fw-bold">Real Projects</h5>
+                        <p class="mb-0 text-muted">Build a professional portfolio with hands-on capstone projects.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-briefcase"></i>
+                            <i class="fas fa-headset"></i>
                         </div>
-                        <h5 class="mb-3">Career Support</h5>
-                        <p class="mb-0 text-muted">Get resume guidance, interview preparation, and mentorship to boost your career opportunities.</p>
+                        <h5 class="mb-3 fw-bold">24/7 Support</h5>
+                        <p class="mb-0 text-muted">Get unstuck quickly with our dedicated mentor support system.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Popular Categories -->
     <div class="container-xxl py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-title bg-white text-center px-3">EXPLORE TOPICS</span>
-                <h2 class="mt-3 fw-bold">Most In-Demand Tech Skills</h2>
-                <p class="lead text-muted">Master the skills that companies are hiring for</p>
+            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold">Explore Topics</h6>
+                <h1 class="mb-5">Master In-Demand Skills</h1>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <img src="img/cat1.png" alt="Microsoft Excel">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
+                        <div class="category-icon mb-3">
+                            <img src="img/cat1.png" alt="Excel" style="width: 50px;">
                         </div>
                         <h5 class="fw-bold">Microsoft Excel</h5>
-                        <p class="small text-muted">Data analysis, formulas, and business intelligence</p>
-                        <span class="badge bg-primary">Beginner to Advanced</span>
+                        <span class="badge bg-light text-dark mb-2">Data Analysis</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <img src="img/cat2.png" alt="AWS">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
+                        <div class="category-icon mb-3">
+                            <img src="img/cat2.png" alt="AWS" style="width: 50px;">
                         </div>
                         <h5 class="fw-bold">AWS Cloud</h5>
-                        <p class="small text-muted">Cloud computing, deployment, and architecture</p>
-                        <span class="badge bg-warning">In-Demand Skill</span>
+                        <span class="badge bg-light text-dark mb-2">Cloud Computing</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <img src="img/cat3.png" alt="Python">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
+                        <div class="category-icon mb-3">
+                            <img src="img/cat3.png" alt="Python" style="width: 50px;">
                         </div>
-                        <h5 class="fw-bold">Python Programming</h5>
-                        <p class="small text-muted">AI, data science, and automation</p>
-                        <span class="badge bg-success">Most Popular</span>
+                        <h5 class="fw-bold">Python</h5>
+                        <span class="badge bg-light text-dark mb-2">AI & Data Science</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <img src="img/cat4.png" alt="Java">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
+                        <div class="category-icon mb-3">
+                            <img src="img/cat4.png" alt="Java" style="width: 50px;">
                         </div>
-                        <h5 class="fw-bold">Java Development</h5>
-                        <p class="small text-muted">Enterprise applications and Android</p>
-                        <span class="badge bg-info">Industry Standard</span>
+                        <h5 class="fw-bold">Java</h5>
+                        <span class="badge bg-light text-dark mb-2">Software Dev</span>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-5">
-                <a href="courses.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-search me-2"></i>Browse All Categories
+                <a href="courses.html" class="btn btn-premium-outline">
+                    Browse All Categories <i class="fas fa-layer-group ms-2"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Featured Courses -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-title bg-white text-center px-3">FEATURED COURSES</span>
-                <h2 class="mt-3 fw-bold">Most Popular Courses</h2>
-                <p class="lead text-muted">Join thousands of learners transforming their careers</p>
+            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold">Our Courses</h6>
+                <h1 class="mb-5">Top Rated Premium Courses</h1>
             </div>
             
             <div class="row g-4">
-                <!-- Course 1 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-card">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML Course for Beginners" style="height: 200px; object-fit: cover;">
-                            <div class="course-badge badge-free">FREE</div>
+                        <div class="course-image-wrapper">
+                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML" style="height: 200px; object-fit: cover;">
+                            <div class="course-badge badge-free">FREE ACCESS</div>
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between mb-2">
+                                <small class="text-muted"><i class="fa fa-users me-1"></i> 2.5k+</small>
+                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.5</small>
+                            </div>
                             <h5 class="mb-2 fw-bold">HTML & CSS Fundamentals</h5>
-                            <p class="small text-muted mb-3">Master web development basics with hands-on projects</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small>4.5</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>2,500+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>1 Month</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="text-primary mb-0 fw-bold">৳ 0</h5>
-                                <a href="single.html" class="btn btn-sm btn-primary">
-                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                            <p class="small text-muted flex-grow-1">Master web development basics with hands-on projects.</p>
+                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
+                                <span class="course-price">৳ 0</span>
+                                <a href="single.html" class="btn btn-sm btn-primary rounded-pill px-3">View Details</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 2 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="course-card">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-02.png" alt="Front End Development" style="height: 200px; object-fit: cover;">
+                        <div class="course-image-wrapper">
+                            <img class="img-fluid w-100" src="img/course-02.png" alt="MERN" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between mb-2">
+                                <small class="text-muted"><i class="fa fa-users me-1"></i> 1.2k+</small>
+                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.7</small>
+                            </div>
                             <h5 class="mb-2 fw-bold">Full Stack Development</h5>
-                            <p class="small text-muted mb-3">Master React, Node.js, and MongoDB for modern web apps</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small>4.7</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>1,200+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>3 Months</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <p class="small text-muted flex-grow-1">MERN Stack: React, Node.js, Express & MongoDB.</p>
+                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h5 class="text-primary mb-0 fw-bold">৳ 15,000</h5>
-                                    <small class="text-muted"><s>৳ 20,000</s></small>
+                                    <span class="course-price">৳ 15k</span>
+                                    <small class="text-muted text-decoration-line-through ms-1">20k</small>
                                 </div>
-                                <a href="course2.html" class="btn btn-sm btn-primary">
-                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                                <a href="course2.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 3 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="course-card">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-3.webp" alt="Machine Learning" style="height: 200px; object-fit: cover;">
+                        <div class="course-image-wrapper">
+                            <img class="img-fluid w-100" src="img/course-3.webp" alt="AI" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between mb-2">
+                                <small class="text-muted"><i class="fa fa-users me-1"></i> 1.5k+</small>
+                                <small class="text-warning"><i class="fa fa-star me-1"></i> 5.0</small>
+                            </div>
                             <h5 class="mb-2 fw-bold">Machine Learning & AI</h5>
-                            <p class="small text-muted mb-3">Build intelligent systems with Python and TensorFlow</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small>5.0</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>1,500+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>3 Months</small>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <p class="small text-muted flex-grow-1">Build intelligent systems with Python & TensorFlow.</p>
+                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h5 class="text-primary mb-0 fw-bold">৳ 15,000</h5>
-                                    <small class="text-muted"><s>৳ 18,000</s></small>
+                                    <span class="course-price">৳ 15k</span>
+                                    <small class="text-muted text-decoration-line-through ms-1">18k</small>
                                 </div>
-                                <a href="course3.html" class="btn btn-sm btn-primary">
-                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                                <a href="course3.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 4 -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="course-card">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="Data Structures" style="height: 200px; object-fit: cover;">
+                        <div class="course-image-wrapper">
+                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="DSA" style="height: 200px; object-fit: cover;">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
-                        <div class="p-4">
-                            <h5 class="mb-2 fw-bold">Data Structures & Algorithms</h5>
-                            <p class="small text-muted mb-3">Crack coding interviews with efficient problem solving</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-star text-warning me-1"></i>
-                                    <small>4.5</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-user-graduate me-1"></i>
-                                    <small>850+</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-clock me-1"></i>
-                                    <small>1 Month</small>
-                                </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between mb-2">
+                                <small class="text-muted"><i class="fa fa-users me-1"></i> 850+</small>
+                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.5</small>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-2 fw-bold">Data Structures (DSA)</h5>
+                            <p class="small text-muted flex-grow-1">Crack coding interviews with efficient problem solving.</p>
+                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h5 class="text-primary mb-0 fw-bold">৳ 10,000</h5>
-                                    <small class="text-muted"><s>৳ 12,000</s></small>
+                                    <span class="course-price">৳ 10k</span>
+                                    <small class="text-muted text-decoration-line-through ms-1">12k</small>
                                 </div>
-                                <a href="Course5.html" class="btn btn-sm btn-primary">
-                                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
+                                <a href="Course5.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
                             </div>
                         </div>
                     </div>
@@ -1086,144 +594,115 @@
             </div>
             
             <div class="text-center mt-5">
-                <a href="courses.html" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-list me-2"></i>View All 12+ Courses
+                <a href="courses.html" class="btn btn-premium-outline btn-lg">
+                    View All Courses <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Become Instructor CTA -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="cta-section">
+            <div class="cta-section wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row align-items-center">
                     <div class="col-lg-8 mb-4 mb-lg-0">
+                        <span class="badge bg-light text-primary mb-3">Join Our Community</span>
                         <h2 class="mb-3 fw-bold">Share Your Knowledge, Become an Instructor</h2>
-                        <p class="mb-4 opacity-90">
-                            Join our team of expert instructors and help shape the future of tech education in Bangladesh. 
-                            Share your industry experience and earn while teaching.
+                        <p class="mb-4 text-white-50 lead">
+                            Join our team of expert instructors. Share your industry experience, mentor the next generation, and earn while you teach.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="instructor.html" class="btn btn-light btn-lg" style="z-index:10;">
+                            <a href="instructor.html" class="btn btn-light py-3 px-5 rounded-pill fw-bold text-primary shadow">
                                 <i class="fas fa-chalkboard-teacher me-2"></i>Apply Now
                             </a>
-                            <a href="team.html" class="btn btn-outline-light btn-lg" style="z-index:10;">
-                                <i class="fas fa-users me-2"></i>Meet Our Team
+                            <a href="team.html" class="btn btn-outline-light py-3 px-5 rounded-pill fw-bold">
+                                Meet Team
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center">
-                        <i class="fas fa-user-tie display-1 opacity-25"></i>
+                        <div class="position-relative">
+                             <i class="fas fa-rocket display-1 text-white opacity-25" style="transform: rotate(-45deg);"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Student Testimonials -->
     <div class="container-xxl py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-title bg-white text-center px-3">SUCCESS STORIES</span>
-                <h2 class="mt-3 fw-bold">What Our Students Say</h2>
-                <p class="lead text-muted">Join thousands who transformed their careers</p>
+            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase fw-bold">Testimonials</h6>
+                <h1 class="mb-5">Trusted by Students</h1>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "Junayed Academy's ML course transformed my career. Within 3 months, I went from a 
-                            biology graduate to a machine learning engineer at a top tech company."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/rajon-testimonial-1.jpg" class="rounded-circle" width="50" height="50" alt="Rajon">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-1 fw-bold">Rajon Mahmud</h6>
-                                <small class="text-muted">Machine Learning Engineer</small>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
+                        <p class="mb-4 text-muted fst-italic">"Junayed Academy's ML course transformed my career. Within 3 months, I went from a biology graduate to a machine learning engineer."</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Rajon">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Rajon Mahmud</h6>
+                                <small class="text-primary">ML Engineer</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "The practical approach and real projects gave me the confidence to start freelancing. 
-                            Now I earn 3x more than my previous job as a web developer."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/Parui-testimonial-2.jpg" class="rounded-circle" width="50" height="50" alt="Parui">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-1 fw-bold">Parui Rahman</h6>
-                                <small class="text-muted">Full Stack Developer</small>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
+                        <p class="mb-4 text-muted fst-italic">"The practical approach and real projects gave me the confidence to start freelancing. Now I earn 3x more."</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Parui">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Parui Rahman</h6>
+                                <small class="text-primary">Full Stack Dev</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="quote">"</div>
-                        <p class="mb-4 text-muted">
-                            "Coming from a non-tech background, I was skeptical. But the structured curriculum 
-                            and supportive community made my transition smooth and successful."
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle" width="50" height="50" alt="Chowa">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6 class="mb-1 fw-bold">Lailatul Ferdous Chowa</h6>
-                                <small class="text-muted">Frontend Developer</small>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
+                        <p class="mb-4 text-muted fst-italic">"Coming from a non-tech background, I was skeptical. But the supportive community made my transition smooth."</p>
+                        <div class="d-flex align-items-center mt-auto">
+                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Chowa">
+                            <div class="ms-3">
+                                <h6 class="mb-0 fw-bold">Lailatul F. Chowa</h6>
+                                <small class="text-primary">Frontend Dev</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="testimonial.html" class="btn btn-primary">
-                    <i class="fas fa-comment me-2"></i>Read More Success Stories
-                </a>
             </div>
         </div>
     </div>
 
-    <!-- Newsletter -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="newsletter-form">
+            <div class="bg-white rounded-3 p-5 shadow-lg border-top border-5 border-primary wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h3 class="mb-3 fw-bold">Stay Updated with Tech Trends</h3>
-                        <p class="mb-4 text-muted">
-                            Subscribe to our newsletter for course updates, tech insights, and career opportunities.
-                        </p>
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h3 class="mb-2 fw-bold">Stay Updated with Tech Trends</h3>
+                        <p class="mb-0 text-muted">Subscribe to our newsletter for course updates and insights.</p>
                     </div>
                     <div class="col-lg-6">
-                        <form class="d-flex">
-                            <input type="email" class="form-control me-2" placeholder="Your email address" required>
-                            <button type="submit" class="btn btn-primary px-4">
+                        <form class="position-relative">
+                            <input class="form-control border-2 rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" style="border-color: #eee;">
+                            <button type="button" class="btn btn-premium position-absolute top-0 end-0 mt-1 me-1 py-2 px-4">
                                 Subscribe
                             </button>
                         </form>
-                        <p class="small text-muted mt-2">
-                            We respect your privacy. Unsubscribe at any time.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer Start -->
-    <div class="container-fluid text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
@@ -1271,12 +750,8 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -1284,7 +759,6 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
@@ -1297,62 +771,30 @@
                 dots: false,
                 autoplay: true,
                 autoplayTimeout: 5000,
-                animateOut: 'fadeOut',
                 responsive: {
                     0: { items: 1 },
                     768: { items: 1 },
                     992: { items: 1 }
                 }
             });
-            
-            // Navbar scroll effect
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 50) {
-                    $('#mainNavbar').addClass('scrolled');
-                } else {
-                    $('#mainNavbar').removeClass('scrolled');
-                }
-            });
-            
-            // Back to top button
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 300) {
-                    $('.back-to-top').fadeIn('slow');
-                } else {
-                    $('.back-to-top').fadeOut('slow');
-                }
-            });
-            
-            $('.back-to-top').click(function(e) {
-                e.preventDefault();
-                $('html, body').animate({scrollTop: 0}, 500);
-                return false;
-            });
         });
 
-        // Animated Counter
+        // Stats Counter Animation
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll(".stat-number");
-
             const animateCounter = (el) => {
                 const target = parseInt(el.dataset.target);
                 const suffix = el.dataset.suffix || "";
-                let current = 0;
                 const duration = 1500;
                 const startTime = performance.now();
 
                 const update = (now) => {
                     const progress = Math.min((now - startTime) / duration, 1);
                     const eased = progress * (2 - progress);
-
                     const value = Math.floor(eased * target);
                     el.textContent = value.toLocaleString() + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(update);
-                    }
+                    if (progress < 1) requestAnimationFrame(update);
                 };
-
                 requestAnimationFrame(update);
             };
 
@@ -1367,14 +809,7 @@
                 },
                 { threshold: 0.5 }
             );
-
             counters.forEach(counter => observer.observe(counter));
-            
-            // Initialize tooltips
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
-            });
         });
     </script>
 </body>
