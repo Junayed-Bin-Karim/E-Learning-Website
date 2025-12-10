@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Machine Learning Mastery</title>
+    <title>Junayed Academy | Frontend Development Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Machine Learning, Data Science, Python, AI, Deep Learning, Neural Networks">
-    <meta name="description" content="Master Python, Data Science, and Machine Learning algorithms with this comprehensive 3-month bootcamp. Build real-world AI models.">
+    <meta name="keywords" content="Frontend Development, React, JavaScript, CSS, Freelancing">
+    <meta name="description" content="A complete 3-month roadmap to becoming a professional Frontend Developer.">
     
     <link href="img/icon.png" rel="icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -24,452 +24,198 @@
 
     <link href="css/style.css" rel="stylesheet">
 
-   <style>
-    /* =========================================
-       ULTRA PREMIUM PLUS DESIGN SYSTEM
-       ========================================= */
-    :root {
-        --primary: #fb873f;
-        --primary-dark: #e0691e;
-        --secondary: #0f172a;
-        --accent: #3b82f6; /* Tech Blue for ML */
-        --gradient-main: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-        --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        --glass-bg: rgba(255, 255, 255, 0.8);
-        --glass-border: rgba(255, 255, 255, 0.6);
-        --shadow-card: 0 20px 40px rgba(0,0,0,0.06);
-        --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
-        --font-head: 'Outfit', sans-serif;
-        --font-body: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    body {
-        font-family: var(--font-body);
-        background-color: #f8f9fa;
-        color: #475569;
-    }
-
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); }
-    
-    html { scroll-behavior: smooth; }
-
-    /* --- Page Header (Immersive) --- */
-    .course-header {
-        background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.95)), url('img/course-3.webp');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 120px 0 100px 0;
-        color: white;
-        margin-bottom: 60px;
-        position: relative;
-    }
-
-    .course-header::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to top, #f8f9fa, transparent);
-    }
-
-    .instructor-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 2px solid var(--primary);
-        object-fit: cover;
-    }
-
-    /* --- Sticky Sidebar Card --- */
-    .course-sidebar {
-        position: sticky;
-        top: 100px;
-        background: white;
-        border-radius: 24px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-        overflow: hidden;
-        border: 1px solid rgba(0,0,0,0.03);
-        z-index: 100;
-        transition: transform 0.3s;
-    }
-
-    .video-preview {
-        position: relative;
-        height: 220px;
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        overflow: hidden;
-    }
-    
-    .video-preview img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.8;
-        transition: 0.5s;
-    }
-
-    .video-preview:hover img { opacity: 0.6; transform: scale(1.05); }
-
-    .play-btn {
-        position: absolute;
-        width: 70px;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-        font-size: 1.8rem;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-        animation: pulse-white 2s infinite;
-    }
-
-    .sidebar-content { padding: 35px; }
-
-    .price-wrapper {
-        display: flex;
-        align-items: flex-end;
-        gap: 12px;
-        margin-bottom: 25px;
-    }
-
-    .price-current {
-        font-size: 2.8rem;
-        font-weight: 800;
-        color: #0f172a;
-        line-height: 1;
-    }
-
-    .price-old {
-        font-size: 1.2rem;
-        color: #94a3b8;
-        text-decoration: line-through;
-        margin-bottom: 5px;
-    }
-
-    /* --- Content Styling --- */
-    .content-card {
-        background: white;
-        border-radius: 24px;
-        padding: 45px;
-        margin-bottom: 35px;
-        box-shadow: var(--shadow-card);
-        border: 1px solid rgba(0,0,0,0.02);
-    }
-
-    .section-title {
-        font-weight: 800;
-        color: #0f172a;
-        margin-bottom: 30px;
-        position: relative;
-        display: inline-block;
-        font-size: 1.8rem;
-    }
-
-    /* REMOVED YELLOW LINE - This was the issue */
-    /* .section-title::after { ... } */
-
-    /* --- Curriculum Accordion --- */
-    .accordion-ultra .accordion-item {
-        border: 1px solid #f1f5f9;
-        margin-bottom: 15px;
-        border-radius: 16px !important;
-        overflow: hidden;
-        background: #fff;
-    }
-
-    .accordion-ultra .accordion-button {
-        background: #f8fafc;
-        color: #334155;
-        font-weight: 700;
-        padding: 22px;
-        box-shadow: none;
-        font-family: var(--font-head);
-        font-size: 1.1rem;
-    }
-
-    .accordion-ultra .accordion-button:not(.collapsed) {
-        background: rgba(251, 135, 63, 0.08);
-        color: var(--primary);
-        border-bottom: 1px solid rgba(251, 135, 63, 0.1);
-    }
-
-    .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
-    .accordion-body li {
-        padding: 12px 15px;
-        border-bottom: 1px solid #f1f5f9;
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-        color: #64748b;
-        transition: 0.2s;
-        border-radius: 8px;
-    }
-    .accordion-body li:hover { background-color: #f8fafc; color: var(--primary); }
-    .accordion-body li:last-child { border-bottom: none; }
-    .accordion-body li i { margin-right: 15px; color: var(--primary); font-size: 1.1rem; }
-
-    /* --- Ultra Buttons --- */
-    .btn-ultra {
-        background: var(--gradient-main);
-        color: white;
-        border: none;
-        padding: 16px 30px;
-        border-radius: 50px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        transition: 0.4s;
-        box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
-        font-size: 1rem;
-    }
-    .btn-ultra::after {
-        content: '';
-        position: absolute;
-        top: 0; left: -100%; width: 100%; height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: 0.5s;
-    }
-    .btn-ultra:hover::after { left: 100%; }
-    .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
-
-    /* --- Payment Cards --- */
-    .plan-card {
-        border: 2px solid #f1f5f9;
-        border-radius: 24px;
-        padding: 35px;
-        text-align: center;
-        transition: 0.3s;
-        position: relative;
-        background: white;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .plan-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: var(--shadow-hover); }
-    .plan-card.recommended { border-color: var(--primary); background: #fffaf6; }
-    
-    .badge-rec {
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--primary);
-        color: white;
-        padding: 8px 20px;
-        border-radius: 30px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        box-shadow: 0 5px 15px rgba(251, 135, 63, 0.3);
-    }
-
-    .check-list li { margin-bottom: 12px; font-size: 0.95rem; color: #64748b; }
-    
-    /* --- EMI Calculator --- */
-    .emi-box {
-        background: #f8fafc;
-        border-radius: 20px;
-        padding: 30px;
-        border: 1px solid #e2e8f0;
-    }
-    .form-range { height: 6px; }
-    .form-range::-webkit-slider-thumb { background: var(--primary); width: 20px; height: 20px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-
-    @keyframes pulse-white {
-        0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-        70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-    }
-
-    /* --- MOBILE RESPONSIVE FIXES --- */
-    @media (max-width: 991px) {
-        .course-sidebar { 
-            position: static; 
-            margin-top: 30px; 
+    <style>
+        /* =========================================
+           ULTRA PREMIUM COURSE DETAIL STYLES
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
-        .course-header { 
-            padding: 80px 0 60px 0; 
-            background-attachment: scroll;
-        }
-        
-        /* Fix right side gap on mobile */
-        .container {
-            padding-right: 15px !important;
-            padding-left: 15px !important;
-        }
-        
-        .row {
-            margin-right: -15px;
-            margin-left: -15px;
-        }
-        
-        .col-lg-8, .col-lg-4 {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-    }
 
-    @media (max-width: 768px) {
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* --- Page Header --- */
         .course-header {
-            padding: 60px 0 40px 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-02.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            margin-bottom: 50px;
+            background-attachment: fixed;
+        }
+
+        /* --- Sticky Sidebar Card --- */
+        .course-sidebar {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+
+        .video-preview {
+            position: relative;
+            height: 220px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
         }
         
-        .course-header h1.display-3 {
-            font-size: 2rem;
-        }
-        
-        .course-header .lead {
-            font-size: 1rem;
-        }
-        
-        /* Content card mobile fix */
-        .content-card {
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-        }
-        
-        /* Mentor section mobile fix */
-        .content-card .d-flex.align-items-start {
-            flex-direction: column !important;
-            align-items: center !important;
-            text-align: center !important;
-        }
-        
-        .content-card .d-flex.align-items-start img {
-            margin-bottom: 20px !important;
-            margin-right: 0 !important;
-            width: 140px !important;
-            height: 140px !important;
-        }
-        
-        .content-card .ms-4 {
-            margin-left: 0 !important;
-            margin-top: 15px;
-        }
-        
-        .content-card .d-flex.gap-2 {
-            justify-content: center !important;
-            flex-wrap: wrap !important;
-        }
-        
-        /* Price display mobile fix */
-        .price-current {
-            font-size: 2.2rem;
-        }
-        
-        .price-old {
-            font-size: 1rem;
-        }
-        
-        /* Section title mobile fix */
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Accordion mobile fix */
-        .accordion-ultra .accordion-button {
-            padding: 16px;
-            font-size: 1rem;
-        }
-        
-        /* Button sizing for mobile */
-        .btn-ultra {
-            padding: 14px 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Fix spacing issues */
-        .mb-4, .mb-5, .mb-3 {
-            margin-bottom: 1rem !important;
-        }
-        
-        .mt-4, .mt-5 {
-            margin-top: 1rem !important;
-        }
-        
-        /* Fix right side padding */
-        body, html {
-            overflow-x: hidden;
+        .video-preview img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.3s;
         }
-    }
 
-    @media (max-width: 576px) {
-        .course-header h1.display-3 {
-            font-size: 1.8rem;
-        }
-        
-        /* Content card extra small */
-        .content-card {
-            padding: 20px 15px;
-            border-radius: 12px;
-        }
-        
-        /* Mentor section extra small screen */
-        .content-card .d-flex.align-items-start img {
-            width: 120px !important;
-            height: 120px !important;
-        }
-        
-        /* Price display extra small */
-        .price-wrapper {
-            gap: 8px;
-        }
-        
-        .price-current {
-            font-size: 2rem;
-        }
-        
-        /* Badge adjustments */
-        .badge.bg-warning, .badge.bg-light {
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            margin-bottom: 5px;
-        }
-        
-        /* Fix any horizontal scroll */
-        .container, .container-fluid {
-            padding-right: 12px !important;
-            padding-left: 12px !important;
-            max-width: 100% !important;
-        }
-        
-        /* Ensure no overflow on small screens */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    }
+        .video-preview:hover img { opacity: 0.5; }
 
-    /* Extra small devices */
-    @media (max-width: 375px) {
+        .play-btn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .sidebar-content { padding: 30px; }
+
+        .price-big {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-big small {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        /* --- Main Content Styling --- */
         .content-card {
-            padding: 15px 12px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0,0,0,0.02);
         }
-        
-        .price-current {
-            font-size: 1.8rem;
+
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
         }
-        
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--gradient-ultra);
+            border-radius: 2px;
+        }
+
+        /* --- Curriculum Accordion --- */
+        .accordion-ultra .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .accordion-ultra .accordion-button {
+            background: #f8f9fa;
+            color: #333;
+            font-weight: 700;
+            padding: 20px;
+            box-shadow: none;
+        }
+
+        .accordion-ultra .accordion-button:not(.collapsed) {
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+        }
+
+        .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+        .accordion-body li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .accordion-body li:last-child { border-bottom: none; }
+        .accordion-body li i { margin-right: 15px; color: var(--primary); width: 20px; }
+
+        /* --- Ultra Buttons --- */
         .btn-ultra {
-            padding: 12px 15px;
-            font-size: 0.85rem;
+            background: var(--gradient-ultra);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
         }
-    }
-</style>
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+
+        /* --- EMI Calculator --- */
+        .emi-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        .form-range::-webkit-slider-thumb { background: var(--primary); }
+
+        /* Mobile Fix */
+        @media (max-width: 991px) {
+            .course-sidebar { position: static; margin-top: 30px; }
+            .course-header { padding: 60px 0; }
+        }
+    </style>
 </head>
 
 <body>
@@ -514,24 +260,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="mb-4 animated slideInDown">
-                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2"><i class="fas fa-fire me-1"></i> Bestseller</span>
-                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">Data Science & AI</span>
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Bestseller</span>
+                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">3 Months Program</span>
                     </div>
-                    <h1 class="display-3 fw-bold text-white mb-3 animated slideInDown">Machine Learning Mastery</h1>
-                    <p class="lead text-white-50 mb-5 animated slideInUp" style="max-width: 600px;">From Python basics to building intelligent AI systems. The most comprehensive Machine Learning roadmap in Bangladesh.</p>
+                    <h1 class="display-4 fw-bold text-white mb-3">Frontend Development Mastery</h1>
+                    <p class="lead text-white-50 mb-4">A complete roadmap to becoming a professional Frontend Developer. Master React, modern JavaScript, and start freelancing.</p>
                     
-                    <div class="d-flex flex-wrap align-items-center gap-4 text-white-50 small animated slideInUp">
-                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 (1.5k+ Ratings)</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-primary"></i> 1,500+ Enrolled</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-globe me-2 text-primary"></i> Bengali / English</span>
+                    <div class="d-flex align-items-center gap-4 text-white-50 small">
+                        <span><i class="fas fa-star text-warning me-1"></i> 4.9 (1.2k+ Ratings)</span>
+                        <span><i class="fas fa-user-graduate me-1"></i> 1,200+ Enrolled</span>
+                        <span><i class="fas fa-globe me-1"></i> Bengali / English</span>
                     </div>
 
-                    <div class="d-flex align-items-center mt-5 animated slideInUp">
-                        <img src="img/team-1.png" class="instructor-avatar" alt="Instructor">
+                    <div class="d-flex align-items-center mt-4">
+                        <img src="img/team-1.png" class="rounded-circle border border-2 border-white" width="50" height="50" alt="Instructor">
                         <div class="ms-3">
                             <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
-                            <small class="text-white-50">AI Specialist & Lead Instructor</small>
+                            <small class="text-white-50">Lead Instructor</small>
                         </div>
                     </div>
                 </div>
@@ -546,83 +292,49 @@
                 
                 <div class="content-card animated fadeInUp">
                     <h3 class="section-title">Course Overview</h3>
-                    <p class="text-muted mb-4 fs-5" style="line-height: 1.8;">
-                        Machine Learning is reshaping the world. This intensive <strong class="text-dark">3-month bootcamp</strong> is designed to take you from writing your first line of Python code to deploying complex Machine Learning models. You will work with real-world datasets, clean messy data, visualize trends, and predict outcomes using powerful algorithms like Regression, SVM, and Neural Networks.
+                    <p class="text-muted mb-4">
+                        This 3-month comprehensive program is not just about coding; it's about building a career. You will learn HTML, CSS, JavaScript, and modern frontend frameworks. Through hands-on projects, you will be ready to tackle the freelance market on Upwork and Fiverr.
                     </p>
                     
-                    <h5 class="fw-bold mb-4 mt-5">What You Will Master</h5>
-                    <div class="row g-4">
+                    <h5 class="fw-bold mb-3">Why Choose This Course?</h5>
+                    <div class="row g-3">
                         <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Python for Data Science</h6>
-                                    <p class="small text-muted mb-0">Master libraries like Pandas, NumPy & Matplotlib.</p>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Live Interactive Classes</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 4 Real-world Projects</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Freelance Marketplace Guide</li>
+                            </ul>
                         </div>
                         <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Supervised Learning</h6>
-                                    <p class="small text-muted mb-0">Linear Regression, Logistic Regression, SVM.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Unsupervised Learning</h6>
-                                    <p class="small text-muted mb-0">K-Means Clustering, PCA, and dimensionality reduction.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Model Deployment</h6>
-                                    <p class="small text-muted mb-0">Deploy models using Flask/Streamlit for the world to see.</p>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Verified Certification</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Lifetime Access</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 24/7 Community Support</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="content-card animated fadeInUp text-center">
-                    <h3 class="section-title mb-4">Your Learning Path</h3>
-                    <p class="text-muted mb-4">A structured roadmap from beginner to professional.</p>
-                    
-                    <div class="mt-3">
-                        <small class="text-muted fst-italic">Visual representation of the course progression.</small>
-                    </div>
-                </div>
-
 
                 <div class="content-card animated fadeInUp" id="curriculum">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="section-title mb-0">Curriculum</h3>
-                        <span class="badge bg-light text-primary rounded-pill px-3 py-2">12 Weeks</span>
-                    </div>
+                    <h3 class="section-title">Course Curriculum</h3>
+                    <p class="text-muted mb-4">Step-by-step 3 Month Journey</p>
                     
                     <div class="accordion accordion-ultra" id="courseAccordion">
                         
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Month 1: Python Data Analysis Foundation
+                                    Month 1: The Foundation (HTML, CSS, JS)
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> Python Syntax, Data Types & Functions</li>
-                                        <li><i class="fas fa-play-circle"></i> High-Performance Computing with NumPy</li>
-                                        <li><i class="fas fa-play-circle"></i> Data Manipulation & Cleaning with Pandas</li>
-                                        <li><i class="fas fa-play-circle"></i> Data Visualization (Matplotlib & Seaborn)</li>
-                                        <li><i class="fas fa-laptop-code"></i> <strong>Capstone 1:</strong> Exploratory Data Analysis (EDA) on Titanic Dataset</li>
+                                        <li><i class="fas fa-play-circle"></i> HTML5 Semantic Structure</li>
+                                        <li><i class="fas fa-play-circle"></i> CSS3 Styling & Layouts</li>
+                                        <li><i class="fas fa-play-circle"></i> JavaScript Logic Fundamentals</li>
+                                        <li><i class="fas fa-play-circle"></i> Building Static Websites</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: Personal Portfolio Site</li>
                                     </ul>
                                 </div>
                             </div>
@@ -631,17 +343,17 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    Month 2: Core Machine Learning Algorithms
+                                    Month 2: Advanced Frontend (ES6+, React)
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> Math for ML: Linear Algebra & Statistics</li>
-                                        <li><i class="fas fa-play-circle"></i> Linear & Logistic Regression from Scratch</li>
-                                        <li><i class="fas fa-play-circle"></i> Decision Trees & Random Forests</li>
-                                        <li><i class="fas fa-play-circle"></i> Support Vector Machines (SVM) & Kernels</li>
-                                        <li><i class="fas fa-laptop-code"></i> <strong>Capstone 2:</strong> House Price Prediction System</li>
+                                        <li><i class="fas fa-play-circle"></i> Modern JavaScript (ES6+)</li>
+                                        <li><i class="fas fa-play-circle"></i> Responsive Design (Flexbox, Grid)</li>
+                                        <li><i class="fas fa-play-circle"></i> DOM Manipulation</li>
+                                        <li><i class="fas fa-play-circle"></i> Git & GitHub Version Control</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: E-commerce Website UI</li>
                                     </ul>
                                 </div>
                             </div>
@@ -650,17 +362,17 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    Month 3: Advanced ML & Deployment
+                                    Month 3: Deployment & Career
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> K-Means Clustering & PCA (Dimensionality Reduction)</li>
-                                        <li><i class="fas fa-play-circle"></i> Intro to Neural Networks & Deep Learning</li>
-                                        <li><i class="fas fa-play-circle"></i> Model Evaluation: Precision, Recall, F1-Score</li>
-                                        <li><i class="fas fa-play-circle"></i> Deploying Models with Streamlit & Flask</li>
-                                        <li><i class="fas fa-laptop-code"></i> <strong>Final Project:</strong> End-to-End Disease Prediction Web App</li>
+                                        <li><i class="fas fa-play-circle"></i> Deployment (Netlify, Vercel)</li>
+                                        <li><i class="fas fa-play-circle"></i> API Consumption & Backend Basics</li>
+                                        <li><i class="fas fa-play-circle"></i> Upwork/Fiverr Profile Optimization</li>
+                                        <li><i class="fas fa-play-circle"></i> Mock Interviews & Resume Building</li>
+                                        <li><i class="fas fa-laptop-code"></i> Final Capstone Project</li>
                                     </ul>
                                 </div>
                             </div>
@@ -670,62 +382,53 @@
                 </div>
 
                 <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Your Mentor</h3>
-                    <div class="d-flex align-items-start mt-4">
-                        <img src="img/team-1.png" class="rounded-3 shadow-sm" style="width: 140px; height: 140px; object-fit: cover;" alt="Instructor">
+                    <h3 class="section-title">Your Instructor</h3>
+                    <div class="d-flex align-items-start mt-3">
+                        <img src="img/team-1.png" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Instructor">
                         <div class="ms-4">
-                            <h4 class="fw-bold mb-1">Junayed Bin Karim</h4>
-                            <p class="text-primary fw-bold mb-3 small text-uppercase ls-1">AI Specialist & Researcher</p>
-                            <p class="text-muted small lh-lg">
-                                Junayed has extensive experience in Artificial Intelligence and Software Engineering. He has published research papers on AI applications and is dedicated to mentoring the next generation of Data Scientists in Bangladesh. His teaching style focuses on mathematical intuition combined with practical coding.
+                            <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
+                            <p class="text-primary small mb-3">Senior Frontend Engineer</p>
+                            <p class="text-muted small">
+                                Junayed has 3+ years of experience in building scalable web applications. A CSE graduate from Daffodil International University, he specializes in React, Node.js, and AI integration in web apps.
                             </p>
-                            <div class="d-flex gap-2 mt-3">
-                                <span class="badge bg-light text-dark border">Python</span>
-                                <span class="badge bg-light text-dark border">TensorFlow</span>
-                                <span class="badge bg-light text-dark border">Scikit-Learn</span>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-light text-dark">React</span>
+                                <span class="badge bg-light text-dark">Node.js</span>
+                                <span class="badge bg-light text-dark">SEO</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="content-card animated fadeInUp" id="payment">
-                    <h3 class="section-title">Flexible Payment Options</h3>
-                    <p class="text-muted mb-4">We believe financial constraints shouldn't stop learning. Use our calculator.</p>
+                    <h3 class="section-title">Flexible Payment Plans</h3>
+                    <p class="text-muted">No credit card? No problem. Use our installment system.</p>
                     
                     <div class="emi-box">
-                        <h5 class="fw-bold mb-4"><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h5>
-                        <div class="row g-4 align-items-center">
+                        <h5><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h5>
+                        <div class="row mt-4">
                             <div class="col-md-6">
-                                <label class="form-label text-muted small fw-bold text-uppercase">Course Fee</label>
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="fw-bold text-dark">৳ 15,000</span>
-                                </div>
+                                <label class="form-label">Course Fee: <strong>৳ 15,000</strong></label>
                                 <input type="range" class="form-range" id="courseFee" min="15000" max="15000" value="15000" disabled>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label text-muted small fw-bold text-uppercase">Duration</label>
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="fw-bold text-primary" id="monthDisplay">3 Months</span>
-                                </div>
+                                <label class="form-label">Installments: <strong id="monthDisplay">3 Months</strong></label>
                                 <input type="range" class="form-range" id="installments" min="1" max="3" step="1" value="3">
                             </div>
                         </div>
-                        
-                        <div class="mt-4 p-4 bg-white rounded-3 shadow-sm border d-flex justify-content-between align-items-center">
-                            <div>
-                                <small class="text-muted d-block">Monthly Payment</small>
-                                <span class="text-success small"><i class="fas fa-check-circle me-1"></i> 0% Interest</span>
-                            </div>
-                            <h2 class="mb-0 fw-bold text-dark" id="emiAmount">৳ 5,000</h2>
+                        <div class="alert alert-primary mt-3 d-flex justify-content-between align-items-center">
+                            <span>Monthly Payment:</span>
+                            <h4 class="mb-0 fw-bold" id="emiAmount">৳ 5,000</h4>
                         </div>
                     </div>
 
                     <div class="mt-4">
-                        <h6 class="fw-bold small text-uppercase text-muted mb-3">Secure Payment Partners</h6>
-                        <div class="d-flex gap-3 flex-wrap">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Bkash_logo_2.png" style="height: 40px;" alt="Bkash">
-                            <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="height: 40px;" alt="Nagad">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" style="height: 40px; object-fit: contain;" alt="Visa">
+                        <h6>Supported Payment Methods:</h6>
+                        <div class="d-flex gap-3 mt-2 flex-wrap">
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-danger"></i>Bkash</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-warning"></i>Nagad</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-primary"></i>Rocket</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-university me-2 text-secondary"></i>Bank Transfer</span>
                         </div>
                     </div>
                 </div>
@@ -735,36 +438,32 @@
             <div class="col-lg-4">
                 <div class="course-sidebar">
                     <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
-                        <img src="img/course-3.webp" alt="ML Preview">
+                        <img src="img/course-02.png" alt="Preview">
                         <div class="play-btn"><i class="fas fa-play"></i></div>
                     </div>
                     <div class="sidebar-content">
-                        <div class="price-wrapper">
-                            <div class="price-current">৳ 15,000</div>
-                            <div class="price-old">৳ 20,000</div>
+                        <div class="price-big mb-3">
+                            ৳ 15,000 <small>৳ 20,000</small>
                         </div>
-                        <span class="badge bg-success bg-opacity-10 text-success mb-4 px-3 py-2">25% OFF Limited Time</span>
                         
                         <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo Class</button>
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo</button>
 
-                        <h6 class="fw-bold mb-3 text-dark">This Course Includes:</h6>
-                        <ul class="list-unstyled text-muted small spacing-y-2">
-                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-clock me-3 text-primary"></i> 3 Months Live Training</li>
-                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-video me-3 text-primary"></i> 20+ Interactive Sessions</li>
-                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-brain me-3 text-primary"></i> 3 AI Capstone Projects</li>
-                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-infinity me-3 text-primary"></i> Lifetime Access to Code</li>
-                            <li class="d-flex align-items-center py-2"><i class="fas fa-certificate me-3 text-primary"></i> Premium ML Certification</li>
+                        <h6 class="fw-bold mb-3">Course Includes:</h6>
+                        <ul class="list-unstyled text-muted small">
+                            <li class="mb-2"><i class="fas fa-clock me-2 text-primary"></i> 3 Months Duration</li>
+                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 15+ Live Classes</li>
+                            <li class="mb-2"><i class="fas fa-project-diagram me-2 text-primary"></i> 4 Capstone Projects</li>
+                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Lifetime Access</li>
+                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Premium Certificate</li>
                         </ul>
                         
-                        <div class="mt-4 pt-4 border-top">
-                            <h6 class="fw-bold mb-2 small text-uppercase">Share this course</h6>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-facebook-f text-muted"></i></button>
-                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-twitter text-muted"></i></button>
-                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-linkedin-in text-muted"></i></button>
-                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-whatsapp text-muted"></i></button>
-                            </div>
+                        <hr>
+                        <h6 class="fw-bold mb-2">Share this course:</h6>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-whatsapp"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
                         </div>
                     </div>
                 </div>
@@ -775,27 +474,24 @@
 
     <div class="modal fade" id="demoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0">
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold px-3 pt-3">Book Free ML Demo</h5>
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Book Free Demo Class</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body p-4">
-                    <p class="text-muted mb-4 small">Join a live session to experience our teaching methodology in Data Science.</p>
+                <div class="modal-body">
+                    <p class="text-muted mb-3">Experience our live teaching style before you commit.</p>
                     <form>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="demoName" placeholder="Name" required>
-                            <label for="demoName">Full Name</label>
+                        <div class="mb-3">
+                            <input type="text" class="form-control rounded-pill px-3" placeholder="Your Name" required>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control rounded-3" id="demoEmail" placeholder="name@example.com" required>
-                            <label for="demoEmail">Email Address</label>
+                        <div class="mb-3">
+                            <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address" required>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="tel" class="form-control rounded-3" id="demoPhone" placeholder="Phone" required>
-                            <label for="demoPhone">Phone Number</label>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control rounded-pill px-3" placeholder="Phone Number" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">Confirm Booking</button>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Confirm Booking</button>
                     </form>
                 </div>
             </div>
@@ -804,65 +500,33 @@
 
     <div class="modal fade" id="paymentModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0">
-                <div class="modal-header border-0 bg-light rounded-top-4">
-                    <h5 class="modal-title fw-bold">Secure Enrollment</h5>
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Complete Enrollment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-primary bg-opacity-10 rounded-3 border border-primary border-opacity-10">
-                        <div>
-                            <small class="text-uppercase fw-bold text-primary">Total Payable</small>
-                            <div class="fs-4 fw-bold text-dark">৳ 15,000</div>
+                <div class="modal-body pt-0">
+                    <div class="alert alert-success mb-3">
+                        <div class="d-flex justify-content-between">
+                            <strong>Total Payable:</strong>
+                            <strong>৳ 15,000</strong>
                         </div>
-                        <span class="badge bg-primary">ML Mastery</span>
                     </div>
-                    
                     <form>
-                        <h6 class="fw-bold mb-3 small text-uppercase">Student Information</h6>
+                        <h6 class="fw-bold mb-3">Student Details</h6>
                         <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <input type="text" class="form-control py-2" placeholder="Full Name">
-                            </div>
-                            <div class="col-6">
-                                <input type="tel" class="form-control py-2" placeholder="Phone Number">
-                            </div>
+                            <div class="col-6"><input type="text" class="form-control" placeholder="Full Name"></div>
+                            <div class="col-6"><input type="tel" class="form-control" placeholder="Phone"></div>
                         </div>
-                        
-                        <h6 class="fw-bold mb-3 small text-uppercase mt-4">Payment Method</h6>
-                        <div class="list-group mb-4">
-                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
-                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="bkash" checked>
-                                <span class="d-flex align-items-center justify-content-between w-100">
-                                    <span>Bkash</span>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Bkash_logo_2.png" style="height: 20px;">
-                                </span>
-                            </label>
-                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
-                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="nagad">
-                                <span class="d-flex align-items-center justify-content-between w-100">
-                                    <span>Nagad</span>
-                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="height: 20px;">
-                                </span>
-                            </label>
-                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
-                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="card">
-                                <span class="d-flex align-items-center justify-content-between w-100">
-                                    <span>Credit/Debit Card</span>
-                                    <i class="fas fa-credit-card text-muted"></i>
-                                </span>
-                            </label>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Plan Type</label>
-                            <select class="form-select">
-                                <option value="full">Full Payment (10% Extra Discount)</option>
-                                <option value="emi">Monthly Installment (3 Months)</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-ultra w-100">Complete Payment</button>
+                        <label class="form-label small fw-bold">Payment Method</label>
+                        <select class="form-select mb-4">
+                            <option selected>Select Option</option>
+                            <option value="bkash">Bkash</option>
+                            <option value="nagad">Nagad</option>
+                            <option value="one-time">Full Payment (10% Off)</option>
+                            <option value="install">Installment (3 Months)</option>
+                        </select>
+                        <button type="submit" class="btn btn-ultra">Proceed to Payment</button>
                     </form>
                 </div>
             </div>
