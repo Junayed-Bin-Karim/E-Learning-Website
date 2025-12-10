@@ -1,323 +1,347 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Frontend Mastery Premium</title>
+    <title>Junayed Academy | Machine Learning Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="Machine Learning, Data Science, Python, AI, Deep Learning, Neural Networks">
+    <meta name="description" content="Master Python, Data Science, and Machine Learning algorithms with this comprehensive 3-month bootcamp. Build real-world AI models.">
     
     <link href="img/icon.png" rel="icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PREMIUM UI VARIABLES
+           ULTRA PREMIUM PLUS DESIGN SYSTEM
            ========================================= */
         :root {
             --primary: #fb873f;
-            --primary-dark: #d96921;
+            --primary-dark: #e0691e;
             --secondary: #0f172a;
-            --accent: #6366f1;
-            --bg-body: #f1f5f9;
-            --glass-bg: rgba(255, 255, 255, 0.85);
+            --accent: #3b82f6; /* Tech Blue for ML */
+            --gradient-main: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.8);
             --glass-border: rgba(255, 255, 255, 0.6);
-            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
-            --shadow-hover: 0 20px 50px -10px rgba(251, 135, 63, 0.2);
-            --font-main: 'Plus Jakarta Sans', sans-serif;
-            --radius-xl: 24px;
-            --radius-lg: 16px;
+            --shadow-card: 0 20px 40px rgba(0,0,0,0.06);
+            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
+            --font-head: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-body);
-            color: #334155;
-            overflow-x: hidden;
-        }
-
-        /* --- Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-
-        /* =========================================
-           NAVBAR STYLING
-           ========================================= */
-        .navbar {
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .brand-text {
-            background: linear-gradient(90deg, #333 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        /* =========================================
-           HERO SECTION
-           ========================================= */
-        .course-header {
-            position: relative;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 140px 0 100px 0;
-            color: white;
-            overflow: hidden;
-        }
-
-        .course-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('img/pattern.png'); /* Optional Pattern */
-            opacity: 0.1;
-        }
-
-        .hero-badge {
-            background: rgba(251, 135, 63, 0.15);
-            border: 1px solid rgba(251, 135, 63, 0.3);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .instructor-img-ring {
-            padding: 3px;
-            background: linear-gradient(45deg, var(--primary), #fff);
-            border-radius: 50%;
-        }
-
-        /* =========================================
-           CARDS & CONTENT
-           ========================================= */
-        .content-card {
-            background: var(--glass-bg);
-            border: 1px solid white;
-            border-radius: var(--radius-xl);
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.3s ease;
-        }
-
-        .section-title {
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 4px;
-            background: var(--primary);
-            bottom: -8px;
-            left: 0;
-            border-radius: 2px;
-        }
-
-        /* --- Custom Accordion --- */
-        .accordion-ultra .accordion-item {
-            border: 1px solid rgba(0,0,0,0.05);
-            margin-bottom: 15px;
-            border-radius: var(--radius-lg) !important;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-            transition: 0.3s;
-        }
-
-        .accordion-ultra .accordion-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-        }
-
-        .accordion-ultra .accordion-button {
-            background: white;
-            color: var(--secondary);
-            font-weight: 700;
-            padding: 20px 25px;
-            box-shadow: none;
-        }
-
-        .accordion-ultra .accordion-button:not(.collapsed) {
-            background: linear-gradient(to right, rgba(251, 135, 63, 0.05), transparent);
-            color: var(--primary);
-        }
-
-        .accordion-body li {
-            padding: 12px 15px;
-            margin-bottom: 8px;
-            background: #f8fafc;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            font-family: var(--font-body);
+            background-color: #f8f9fa;
             color: #475569;
-            display: flex;
-            align-items: center;
         }
-        .accordion-body li i { color: var(--primary); margin-right: 12px; }
 
-        /* =========================================
-           SIDEBAR & STICKY ELEMENTS
-           ========================================= */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); }
+        
+        html { scroll-behavior: smooth; }
+
+        /* --- Page Header (Immersive) --- */
+        .course-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.95)), url('img/course-3.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0 100px 0;
+            color: white;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .course-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to top, #f8f9fa, transparent);
+        }
+
+        .instructor-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            object-fit: cover;
+        }
+
+        /* --- Sticky Sidebar Card --- */
         .course-sidebar {
             position: sticky;
             top: 100px;
             background: white;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-soft);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.8);
-            z-index: 90;
+            border: 1px solid rgba(0,0,0,0.03);
+            z-index: 100;
+            transition: transform 0.3s;
         }
 
         .video-preview {
             position: relative;
-            height: 240px;
+            height: 220px;
             background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             overflow: hidden;
         }
         
         .video-preview img {
-            width: 100%; height: 100%; object-fit: cover;
-            opacity: 0.8; transition: 0.5s;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: 0.5s;
         }
-        
-        .video-preview:hover img { transform: scale(1.1); opacity: 0.6; }
+
+        .video-preview:hover img { opacity: 0.6; transform: scale(1.05); }
 
         .play-btn {
             position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px; height: 60px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 20px;
-            border: 2px solid white;
-            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+            animation: pulse-white 2s infinite;
         }
 
-        /* --- Buttons --- */
+        .sidebar-content { padding: 35px; }
+
+        .price-wrapper {
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .price-current {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+        }
+
+        .price-old {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        /* --- Content Styling --- */
+        .content-card {
+            background: white;
+            border-radius: 24px;
+            padding: 45px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            font-size: 1.8rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 5px;
+            background: var(--gradient-main);
+            border-radius: 5px;
+        }
+
+        /* --- Curriculum Accordion --- */
+        .accordion-ultra .accordion-item {
+            border: 1px solid #f1f5f9;
+            margin-bottom: 15px;
+            border-radius: 16px !important;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .accordion-ultra .accordion-button {
+            background: #f8fafc;
+            color: #334155;
+            font-weight: 700;
+            padding: 22px;
+            box-shadow: none;
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+        }
+
+        .accordion-ultra .accordion-button:not(.collapsed) {
+            background: rgba(251, 135, 63, 0.08);
+            color: var(--primary);
+            border-bottom: 1px solid rgba(251, 135, 63, 0.1);
+        }
+
+        .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+        .accordion-body li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: #64748b;
+            transition: 0.2s;
+            border-radius: 8px;
+        }
+        .accordion-body li:hover { background-color: #f8fafc; color: var(--primary); }
+        .accordion-body li:last-child { border-bottom: none; }
+        .accordion-body li i { margin-right: 15px; color: var(--primary); font-size: 1.1rem; }
+
+        /* --- Ultra Buttons --- */
         .btn-ultra {
-            background: linear-gradient(135deg, #fb873f 0%, #e0691e 100%);
+            background: var(--gradient-main);
             color: white;
             border: none;
             padding: 16px 30px;
             border-radius: 50px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             width: 100%;
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
-            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+            font-size: 1rem;
         }
-        .btn-ultra:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
+        .btn-ultra::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .btn-ultra:hover::after { left: 100%; }
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+
+        /* --- Payment Cards --- */
+        .plan-card {
+            border: 2px solid #f1f5f9;
+            border-radius: 24px;
+            padding: 35px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            background: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .plan-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+        .plan-card.recommended { border-color: var(--primary); background: #fffaf6; }
+        
+        .badge-rec {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
             color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.3);
         }
 
-        /* =========================================
-           EMI CALCULATOR
-           ========================================= */
+        .check-list li { margin-bottom: 12px; font-size: 0.95rem; color: #64748b; }
+        
+        /* --- EMI Calculator --- */
         .emi-box {
             background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--radius-lg);
+            border-radius: 20px;
             padding: 30px;
+            border: 1px solid #e2e8f0;
         }
+        .form-range { height: 6px; }
+        .form-range::-webkit-slider-thumb { background: var(--primary); width: 20px; height: 20px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
-        /* Custom Range Slider */
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 24px; width: 24px;
-            border-radius: 50%;
-            background: var(--primary);
-            cursor: pointer;
-            margin-top: -10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%; height: 6px;
-            background: #cbd5e1;
-            border-radius: 3px;
-        }
-
-        /* =========================================
-           MOBILE OPTIMIZATIONS
-           ========================================= */
-        .mobile-bottom-nav {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: white;
-            padding: 15px;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: none; /* Hidden on desktop */
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid #eee;
+        @keyframes pulse-white {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
         }
 
         @media (max-width: 991px) {
-            .course-header { padding: 100px 0 60px 0; }
-            .content-card { padding: 25px; }
-            
-            /* Hide Sidebar Main Content on Mobile, show sticky bottom instead */
-            .sidebar-desktop-only { display: none; }
-            .course-sidebar { margin-top: 0; background: transparent; box-shadow: none; border: none;}
-            .video-preview { border-radius: 15px; margin-bottom: 20px; }
-            
-            .mobile-bottom-nav { display: flex; }
-            body { padding-bottom: 80px; } /* Prevent content hiding behind nav */
+            .course-sidebar { position: static; margin-top: 30px; }
+            .course-header { padding: 80px 0; }
         }
     </style>
 </head>
 
 <body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
 
-    <nav class="navbar navbar-expand-lg sticky-top p-0">
-        <div class="container">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="img/icon.png" alt="Logo" height="40px" class="me-2">
-                <span class="brand-text h4 m-0">Junayed Academy</span>
-            </a>
-            <button type="button" class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link px-3 text-dark fw-bold">Home</a>
-                    <a href="courses.html" class="nav-item nav-link px-3 text-primary fw-bold">Courses</a>
-                    <a href="contact.html" class="nav-item nav-link px-3 text-dark fw-bold">Contact</a>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link active">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                    </div>
                 </div>
-                <a href="login.html" class="btn btn-outline-dark rounded-pill px-4 ms-3 d-none d-lg-block">Login</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
             </div>
         </div>
     </nav>
@@ -326,35 +350,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="hero-badge">
-                        <i class="fas fa-bolt"></i> Bestselling Course 2025
+                    <div class="mb-4 animated slideInDown">
+                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2"><i class="fas fa-fire me-1"></i> Bestseller</span>
+                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">Data Science & AI</span>
                     </div>
-                    <h1 class="display-4 fw-800 mb-3" style="font-weight: 800; letter-spacing: -1px;">
-                        Frontend Development <span style="color:var(--primary)">Mastery</span>
-                    </h1>
-                    <p class="lead text-white-50 mb-4" style="max-width: 600px;">
-                        The only roadmap you need to master React, modern JavaScript, and start earning in Dollars. Built for absolute beginners.
-                    </p>
+                    <h1 class="display-3 fw-bold text-white mb-3 animated slideInDown">Machine Learning Mastery</h1>
+                    <p class="lead text-white-50 mb-5 animated slideInUp" style="max-width: 600px;">From Python basics to building intelligent AI systems. The most comprehensive Machine Learning roadmap in Bangladesh.</p>
                     
-                    <div class="d-flex flex-wrap gap-4 text-white-50 small mb-4">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-star text-warning me-2"></i> 4.9 (1.2k Ratings)
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-users me-2 text-info"></i> 1,200+ Enrolled
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-language me-2 text-success"></i> Bangla / English
-                        </div>
+                    <div class="d-flex flex-wrap align-items-center gap-4 text-white-50 small animated slideInUp">
+                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 (1.5k+ Ratings)</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-primary"></i> 1,500+ Enrolled</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-globe me-2 text-primary"></i> Bengali / English</span>
                     </div>
 
-                    <div class="d-flex align-items-center p-3 rounded-3" style="background: rgba(255,255,255,0.05); width: fit-content; border: 1px solid rgba(255,255,255,0.1);">
-                        <div class="instructor-img-ring">
-                            <img src="img/team-1.png" class="rounded-circle" width="45" height="45" alt="Instructor">
-                        </div>
+                    <div class="d-flex align-items-center mt-5 animated slideInUp">
+                        <img src="img/team-1.png" class="instructor-avatar" alt="Instructor">
                         <div class="ms-3">
-                            <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Junayed Bin Karim</p>
-                            <small class="text-white-50" style="font-size: 0.75rem;">Senior Software Engineer</small>
+                            <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
+                            <small class="text-white-50">AI Specialist & Lead Instructor</small>
                         </div>
                     </div>
                 </div>
@@ -362,147 +375,193 @@
         </div>
     </div>
 
-    <div class="container pb-5" style="margin-top: -50px; position: relative; z-index: 10;">
-        <div class="row g-4">
+    <div class="container pb-5">
+        <div class="row">
             
             <div class="col-lg-8">
                 
                 <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">What You'll Learn</h3>
-                    <p class="text-muted mb-4">
-                        This 3-month comprehensive program is designed to take you from "Hello World" to "Hired". We focus on the skills that high-paying clients actually want.
+                    <h3 class="section-title">Course Overview</h3>
+                    <p class="text-muted mb-4 fs-5" style="line-height: 1.8;">
+                        Machine Learning is reshaping the world. This intensive <strong class="text-dark">3-month bootcamp</strong> is designed to take you from writing your first line of Python code to deploying complex Machine Learning models. You will work with real-world datasets, clean messy data, visualize trends, and predict outcomes using powerful algorithms like Regression, SVM, and Neural Networks.
                     </p>
                     
-                    <div class="row g-3">
+                    <h5 class="fw-bold mb-4 mt-5">What You Will Master</h5>
+                    <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
-                                    <i class="fas fa-code text-primary"></i>
-                                </div>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
                                 <div>
-                                    <h6 class="fw-bold mb-1">Modern Stack</h6>
-                                    <small class="text-muted">React 18, Tailwind, Next.js</small>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
-                                    <i class="fas fa-laptop-code text-primary"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Real Projects</h6>
-                                    <small class="text-muted">Build 4 Portfolio-ready apps</small>
+                                    <h6 class="fw-bold mb-1">Python for Data Science</h6>
+                                    <p class="small text-muted mb-0">Master libraries like Pandas, NumPy & Matplotlib.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
-                                    <i class="fas fa-dollar-sign text-primary"></i>
-                                </div>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
                                 <div>
-                                    <h6 class="fw-bold mb-1">Freelancing</h6>
-                                    <small class="text-muted">Upwork & Fiverr Crash Course</small>
+                                    <h6 class="fw-bold mb-1">Supervised Learning</h6>
+                                    <p class="small text-muted mb-0">Linear Regression, Logistic Regression, SVM.</p>
                                 </div>
                             </div>
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
-                                    <i class="fas fa-certificate text-primary"></i>
-                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
                                 <div>
-                                    <h6 class="fw-bold mb-1">Certification</h6>
-                                    <small class="text-muted">Verifyable digital certificate</small>
+                                    <h6 class="fw-bold mb-1">Unsupervised Learning</h6>
+                                    <p class="small text-muted mb-0">K-Means Clustering, PCA, and dimensionality reduction.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Model Deployment</h6>
+                                    <p class="small text-muted mb-0">Deploy models using Flask/Streamlit for the world to see.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp" style="animation-delay: 0.1s;">
-                    <h3 class="section-title">Course Curriculum</h3>
-                    <div class="accordion accordion-ultra mt-3" id="courseAccordion">
+                <div class="content-card animated fadeInUp text-center">
+                    <h3 class="section-title mb-4">Your Learning Path</h3>
+                    <p class="text-muted mb-4">A structured roadmap from beginner to professional.</p>
+                    
+                    <div class="mt-3">
+                        <small class="text-muted fst-italic">Visual representation of the course progression.</small>
+                    </div>
+                </div>
+
+
+                <div class="content-card animated fadeInUp" id="curriculum">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="section-title mb-0">Curriculum</h3>
+                        <span class="badge bg-light text-primary rounded-pill px-3 py-2">12 Weeks</span>
+                    </div>
+                    
+                    <div class="accordion accordion-ultra" id="courseAccordion">
                         
                         <div class="accordion-item">
-                            <h2 class="accordion-header">
+                            <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    <span class="me-3 fw-bold text-muted">01</span> Month 1: The Foundation
+                                    Month 1: Python Data Analysis Foundation
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fas fa-play-circle"></i> HTML5 Semantic Structure & SEO</li>
-                                        <li><i class="fas fa-play-circle"></i> CSS3, Flexbox & Grid Mastery</li>
-                                        <li><i class="fas fa-play-circle"></i> JavaScript Logic Fundamentals</li>
-                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Project: Personal Portfolio Website</li>
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> Python Syntax, Data Types & Functions</li>
+                                        <li><i class="fas fa-play-circle"></i> High-Performance Computing with NumPy</li>
+                                        <li><i class="fas fa-play-circle"></i> Data Manipulation & Cleaning with Pandas</li>
+                                        <li><i class="fas fa-play-circle"></i> Data Visualization (Matplotlib & Seaborn)</li>
+                                        <li><i class="fas fa-laptop-code"></i> <strong>Capstone 1:</strong> Exploratory Data Analysis (EDA) on Titanic Dataset</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
-                            <h2 class="accordion-header">
+                            <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    <span class="me-3 fw-bold text-muted">02</span> Month 2: Advanced Frontend
+                                    Month 2: Core Machine Learning Algorithms
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fas fa-play-circle"></i> Modern JS (ES6+, Async/Await)</li>
-                                        <li><i class="fas fa-play-circle"></i> React.js Components & Hooks</li>
-                                        <li><i class="fas fa-play-circle"></i> State Management (Context API)</li>
-                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Project: Dynamic E-commerce UI</li>
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> Math for ML: Linear Algebra & Statistics</li>
+                                        <li><i class="fas fa-play-circle"></i> Linear & Logistic Regression from Scratch</li>
+                                        <li><i class="fas fa-play-circle"></i> Decision Trees & Random Forests</li>
+                                        <li><i class="fas fa-play-circle"></i> Support Vector Machines (SVM) & Kernels</li>
+                                        <li><i class="fas fa-laptop-code"></i> <strong>Capstone 2:</strong> House Price Prediction System</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
-                            <h2 class="accordion-header">
+                            <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    <span class="me-3 fw-bold text-muted">03</span> Month 3: Career Launch
+                                    Month 3: Advanced ML & Deployment
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fas fa-play-circle"></i> API Consumption & Deployment</li>
-                                        <li><i class="fas fa-play-circle"></i> Upwork Profile Optimization</li>
-                                        <li><i class="fas fa-play-circle"></i> Client Communication Skills</li>
-                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Final: Full Stack Integration Project</li>
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> K-Means Clustering & PCA (Dimensionality Reduction)</li>
+                                        <li><i class="fas fa-play-circle"></i> Intro to Neural Networks & Deep Learning</li>
+                                        <li><i class="fas fa-play-circle"></i> Model Evaluation: Precision, Recall, F1-Score</li>
+                                        <li><i class="fas fa-play-circle"></i> Deploying Models with Streamlit & Flask</li>
+                                        <li><i class="fas fa-laptop-code"></i> <strong>Final Project:</strong> End-to-End Disease Prediction Web App</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content-card animated fadeInUp">
+                    <h3 class="section-title">Your Mentor</h3>
+                    <div class="d-flex align-items-start mt-4">
+                        <img src="img/team-1.png" class="rounded-3 shadow-sm" style="width: 140px; height: 140px; object-fit: cover;" alt="Instructor">
+                        <div class="ms-4">
+                            <h4 class="fw-bold mb-1">Junayed Bin Karim</h4>
+                            <p class="text-primary fw-bold mb-3 small text-uppercase ls-1">AI Specialist & Researcher</p>
+                            <p class="text-muted small lh-lg">
+                                Junayed has extensive experience in Artificial Intelligence and Software Engineering. He has published research papers on AI applications and is dedicated to mentoring the next generation of Data Scientists in Bangladesh. His teaching style focuses on mathematical intuition combined with practical coding.
+                            </p>
+                            <div class="d-flex gap-2 mt-3">
+                                <span class="badge bg-light text-dark border">Python</span>
+                                <span class="badge bg-light text-dark border">TensorFlow</span>
+                                <span class="badge bg-light text-dark border">Scikit-Learn</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp" id="payment-section" style="animation-delay: 0.2s;">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="section-title m-0">Easy Installments</h3>
-                        <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">0% Interest</span>
-                    </div>
+                <div class="content-card animated fadeInUp" id="payment">
+                    <h3 class="section-title">Flexible Payment Options</h3>
+                    <p class="text-muted mb-4">We believe financial constraints shouldn't stop learning. Use our calculator.</p>
                     
                     <div class="emi-box">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 mb-4 mb-md-0">
-                                <label class="text-muted fw-bold small text-uppercase mb-2">Adjust Duration</label>
-                                <div class="d-flex justify-content-between mb-2 fw-bold">
-                                    <span>1 Month</span>
-                                    <span class="text-primary" id="monthDisplay">3 Months</span>
+                        <h5 class="fw-bold mb-4"><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h5>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold text-uppercase">Course Fee</label>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold text-dark">৳ 15,000</span>
                                 </div>
-                                <input type="range" id="installments" min="1" max="3" step="1" value="3">
-                                <div class="d-flex gap-2 mt-3">
-                                    <img src="https://securepay.sslcommerz.com/public/image/bkash.png" height="30" alt="">
-                                    <img src="https://securepay.sslcommerz.com/public/image/nagad.png" height="30" alt="">
-                                    <img src="https://securepay.sslcommerz.com/public/image/rocket.png" height="30" alt="">
+                                <input type="range" class="form-range" id="courseFee" min="15000" max="15000" value="15000" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold text-uppercase">Duration</label>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold text-primary" id="monthDisplay">3 Months</span>
                                 </div>
+                                <input type="range" class="form-range" id="installments" min="1" max="3" step="1" value="3">
                             </div>
-                            <div class="col-md-5 text-center text-md-end">
-                                <p class="mb-0 text-muted">You Pay Monthly</p>
-                                <h2 class="display-6 fw-bold text-dark mb-0" id="emiAmount">৳ 5,000</h2>
-                                <small class="text-muted">Total: ৳ 15,000</small>
+                        </div>
+                        
+                        <div class="mt-4 p-4 bg-white rounded-3 shadow-sm border d-flex justify-content-between align-items-center">
+                            <div>
+                                <small class="text-muted d-block">Monthly Payment</small>
+                                <span class="text-success small"><i class="fas fa-check-circle me-1"></i> 0% Interest</span>
                             </div>
+                            <h2 class="mb-0 fw-bold text-dark" id="emiAmount">৳ 5,000</h2>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="fw-bold small text-uppercase text-muted mb-3">Secure Payment Partners</h6>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Bkash_logo_2.png" style="height: 40px;" alt="Bkash">
+                            <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="height: 40px;" alt="Nagad">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" style="height: 40px; object-fit: contain;" alt="Visa">
                         </div>
                     </div>
                 </div>
@@ -512,73 +571,67 @@
             <div class="col-lg-4">
                 <div class="course-sidebar">
                     <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
-                        <img src="img/course-02.png" alt="Course Preview">
-                        <div class="play-btn">
-                            <i class="fas fa-play" style="margin-left: 4px;"></i>
-                        </div>
+                        <img src="img/course-3.webp" alt="ML Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
                     </div>
-
-                    <div class="p-4 sidebar-desktop-only">
-                        <div class="d-flex align-items-end gap-2 mb-3">
-                            <h2 class="fw-bold text-dark m-0">৳ 15,000</h2>
-                            <h5 class="text-muted text-decoration-line-through mb-1">৳ 25,000</h5>
+                    <div class="sidebar-content">
+                        <div class="price-wrapper">
+                            <div class="price-current">৳ 15,000</div>
+                            <div class="price-old">৳ 20,000</div>
                         </div>
+                        <span class="badge bg-success bg-opacity-10 text-success mb-4 px-3 py-2">25% OFF Limited Time</span>
                         
-                        <div class="alert alert-warning d-flex align-items-center p-2 small mb-4">
-                            <i class="fas fa-clock me-2"></i> Offer ends in 2 days!
-                        </div>
+                        <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo Class</button>
 
-                        <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
-                            Enroll Now <i class="fas fa-arrow-right ms-2"></i>
-                        </button>
+                        <h6 class="fw-bold mb-3 text-dark">This Course Includes:</h6>
+                        <ul class="list-unstyled text-muted small spacing-y-2">
+                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-clock me-3 text-primary"></i> 3 Months Live Training</li>
+                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-video me-3 text-primary"></i> 20+ Interactive Sessions</li>
+                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-brain me-3 text-primary"></i> 3 AI Capstone Projects</li>
+                            <li class="d-flex align-items-center py-2 border-bottom border-light"><i class="fas fa-infinity me-3 text-primary"></i> Lifetime Access to Code</li>
+                            <li class="d-flex align-items-center py-2"><i class="fas fa-certificate me-3 text-primary"></i> Premium ML Certification</li>
+                        </ul>
                         
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">
-                            Book Free Demo Class
-                        </button>
-
-                        <div class="border-top pt-4">
-                            <h6 class="fw-bold mb-3">This Course Includes:</h6>
-                            <ul class="list-unstyled small text-muted">
-                                <li class="mb-3 d-flex"><i class="fas fa-video text-primary me-3 mt-1"></i> 30+ Live Zoom Classes</li>
-                                <li class="mb-3 d-flex"><i class="fas fa-folder-open text-primary me-3 mt-1"></i> Source Code Access</li>
-                                <li class="mb-3 d-flex"><i class="fab fa-discord text-primary me-3 mt-1"></i> Private Discord Community</li>
-                                <li class="mb-3 d-flex"><i class="fas fa-infinity text-primary me-3 mt-1"></i> Lifetime Access to Videos</li>
-                            </ul>
+                        <div class="mt-4 pt-4 border-top">
+                            <h6 class="fw-bold mb-2 small text-uppercase">Share this course</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-facebook-f text-muted"></i></button>
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-twitter text-muted"></i></button>
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-linkedin-in text-muted"></i></button>
+                                <button class="btn btn-sm btn-light rounded-circle"><i class="fab fa-whatsapp text-muted"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="mobile-bottom-nav">
-        <div>
-            <span class="d-block text-muted small text-decoration-line-through">৳ 25,000</span>
-            <span class="d-block fw-bold text-dark h5 m-0">৳ 15,000</span>
         </div>
-        <button class="btn btn-ultra py-2 px-4 w-50" data-bs-toggle="modal" data-bs-target="#paymentModal">
-            Enroll Now
-        </button>
     </div>
 
     <div class="modal fade" id="demoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4 shadow-lg">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Book Free Class</h5>
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold px-3 pt-3">Book Free ML Demo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
+                    <p class="text-muted mb-4 small">Join a live session to experience our teaching methodology in Data Science.</p>
                     <form>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="floatingName" placeholder="Name">
-                            <label for="floatingName">Your Name</label>
+                            <input type="text" class="form-control rounded-3" id="demoName" placeholder="Name" required>
+                            <label for="demoName">Full Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control rounded-3" id="floatingPhone" placeholder="Phone">
-                            <label for="floatingPhone">Phone Number</label>
+                            <input type="email" class="form-control rounded-3" id="demoEmail" placeholder="name@example.com" required>
+                            <label for="demoEmail">Email Address</label>
                         </div>
-                        <button class="btn btn-ultra w-100">Confirm Booking</button>
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control rounded-3" id="demoPhone" placeholder="Phone" required>
+                            <label for="demoPhone">Phone Number</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">Confirm Booking</button>
                     </form>
                 </div>
             </div>
@@ -587,96 +640,134 @@
 
     <div class="modal fade" id="paymentModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4 shadow-lg">
+            <div class="modal-content rounded-4 border-0">
                 <div class="modal-header border-0 bg-light rounded-top-4">
-                    <h5 class="modal-title fw-bold">Secure Checkout</h5>
+                    <h5 class="modal-title fw-bold">Secure Enrollment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded-3">
-                        <span class="text-muted">Total Payable</span>
-                        <span class="h4 fw-bold m-0 text-primary">৳ 15,000</span>
+                    <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-primary bg-opacity-10 rounded-3 border border-primary border-opacity-10">
+                        <div>
+                            <small class="text-uppercase fw-bold text-primary">Total Payable</small>
+                            <div class="fs-4 fw-bold text-dark">৳ 15,000</div>
+                        </div>
+                        <span class="badge bg-primary">ML Mastery</span>
                     </div>
                     
                     <form>
+                        <h6 class="fw-bold mb-3 small text-uppercase">Student Information</h6>
                         <div class="row g-2 mb-3">
-                            <div class="col-6"><input type="text" class="form-control p-3 bg-light border-0" placeholder="Full Name"></div>
-                            <div class="col-6"><input type="tel" class="form-control p-3 bg-light border-0" placeholder="Phone"></div>
+                            <div class="col-6">
+                                <input type="text" class="form-control py-2" placeholder="Full Name">
+                            </div>
+                            <div class="col-6">
+                                <input type="tel" class="form-control py-2" placeholder="Phone Number">
+                            </div>
                         </div>
                         
-                        <label class="fw-bold small mb-2">Select Payment Method</label>
-                        <div class="d-grid gap-2 mb-4">
-                            <input type="radio" class="btn-check" name="options" id="bkash" autocomplete="off" checked>
-                            <label class="btn btn-outline-danger d-flex justify-content-between align-items-center" for="bkash">
-                                <span><i class="fas fa-mobile-alt me-2"></i> Bkash</span>
-                                <i class="fas fa-check-circle"></i>
+                        <h6 class="fw-bold mb-3 small text-uppercase mt-4">Payment Method</h6>
+                        <div class="list-group mb-4">
+    
+
                             </label>
-                            
-                            <input type="radio" class="btn-check" name="options" id="nagad" autocomplete="off">
-                            <label class="btn btn-outline-warning d-flex justify-content-between align-items-center" for="nagad">
-                                <span><i class="fas fa-mobile-alt me-2"></i> Nagad</span>
-                                <i class="fas fa-circle text-light"></i>
+                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
+                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="nagad">
+                                <span class="d-flex align-items-center justify-content-between w-100">
+                                    <span>Nagad</span>
+                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="height: 20px;">
+                                </span>
+                            </label>
+                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
+                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="card">
+                                <span class="d-flex align-items-center justify-content-between w-100">
+                                    <span>Credit/Debit Card</span>
+                                    <i class="fas fa-credit-card text-muted"></i>
+                                </span>
                             </label>
                         </div>
                         
-                        <button type="submit" class="btn btn-ultra w-100">Pay Now</button>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Plan Type</label>
+                            <select class="form-select">
+                                <option value="full">Full Payment (10% Extra Discount)</option>
+                                <option value="emi">Monthly Installment (3 Months)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-ultra w-100">Complete Payment</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h4 class="fw-bold text-primary mb-3">Junayed Academy</h4>
-                    <p class="text-white-50">Empowering the next generation of Bangladeshi developers with world-class tech education.</p>
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="courses.html">All Courses</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
                 </div>
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Contact</h5>
-                    <ul class="list-unstyled text-white-50">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Mirpur, Dhaka</li>
-                        <li><i class="fas fa-phone me-2"></i> +880 1893 255503</li>
-                    </ul>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact Information</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Socials</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-youtube"></i></a>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe</h4>
+                    <p>Get the latest updates and offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
-            <hr class="border-secondary mt-5">
-            <div class="text-center text-white-50 small">
-                &copy; 2025 Junayed Academy. All rights reserved.
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
     <script>
-        // Smooth EMI Calculator
-        const slider = document.getElementById('installments');
+        // EMI Calculator Logic
+        const installmentSlider = document.getElementById('installments');
         const emiDisplay = document.getElementById('emiAmount');
         const monthDisplay = document.getElementById('monthDisplay');
-        const totalAmount = 15000;
+        const totalFee = 15000;
 
-        slider.addEventListener('input', (e) => {
-            const months = e.target.value;
-            const amount = Math.ceil(totalAmount / months);
+        installmentSlider.addEventListener('input', function() {
+            const months = parseInt(this.value);
+            const monthlyPayment = Math.ceil(totalFee / months);
             
-            // Text Update
-            monthDisplay.innerText = `${months} Month${months > 1 ? 's' : ''}`;
-            emiDisplay.innerText = `৳ ${amount.toLocaleString()}`;
-            
-            // Animation for text
-            emiDisplay.classList.remove('animate__fadeIn');
-            void emiDisplay.offsetWidth; // trigger reflow
-            emiDisplay.classList.add('animate__animated', 'animate__fadeIn');
+            monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
+            emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
         });
     </script>
 </body>
+
 </html>
