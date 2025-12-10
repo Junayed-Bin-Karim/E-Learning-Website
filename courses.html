@@ -5,370 +5,285 @@
     <meta charset="utf-8">
     <title>Junayed Academy | Tech Courses Catalog - Programming, AI, Web Development</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy courses, programming courses Bangladesh, AI training, web development courses, machine learning, Python, Java, tech education">
-    <meta name="description" content="Explore Junayed Academy's comprehensive tech courses catalog. Learn programming, AI, web development, and more from industry experts. Free and paid courses available.">
+    <meta name="keywords" content="Junayed Academy courses, programming courses Bangladesh, AI training">
+    <meta name="description" content="Explore Junayed Academy's comprehensive tech courses catalog.">
     
-    <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* Course Catalog Styling */
-        .course-catalog {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        /* =========================================
+           ULTRA PREMIUM DESIGN SYSTEM (Courses Page)
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-card: 0 15px 35px rgba(0,0,0,0.05);
+            --shadow-hover: 0 25px 50px rgba(251, 135, 63, 0.15);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
-        
-        .category-filter {
-            background: white;
-            border-radius: 15px;
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+        }
+
+        /* --- Smooth Scrolling --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Page Header --- */
+        .page-header-ultra {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('img/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        /* --- Glassmorphism Search Bar --- */
+        .glass-filter-bar {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid white;
+            border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            box-shadow: var(--shadow-card);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
         }
-        
+
+        .search-input-ultra {
+            border: 2px solid #eee;
+            border-radius: 50px;
+            padding: 15px 25px;
+            transition: 0.3s;
+            background: #fcfcfc;
+        }
+
+        .search-input-ultra:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 5px rgba(251, 135, 63, 0.1);
+        }
+
+        /* --- Category Pills (Premium) --- */
         .category-tag {
             display: inline-block;
-            background: rgba(251, 135, 63, 0.1);
-            color: #fb873f;
-            padding: 8px 20px;
-            border-radius: 25px;
+            background: white;
+            color: #555;
+            padding: 10px 25px;
+            border-radius: 50px;
             margin: 5px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            border: 2px solid transparent;
-        }
-        
-        .category-tag:hover,
-        .category-tag.active {
-            background: #fb873f;
-            color: white;
-            border-color: #fb873f;
-            transform: translateY(-2px);
-        }
-        
-        .course-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             border: 1px solid #eee;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .category-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .category-tag.active {
+            background: var(--gradient-ultra);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+        }
+
+        .course-count {
+            background: rgba(255,255,255,0.2);
+            color: inherit;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+        
+        .category-tag.active .course-count {
+            background: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        /* --- Course Cards (Ultra) --- */
+        .course-card-ultra {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.05);
             height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
-        
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
-            border-color: #fb873f;
+
+        .course-card-ultra:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            z-index: 5;
         }
-        
+
+        .course-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .course-card-ultra:hover .course-image {
+            transform: scale(1.1);
+        }
+
         .course-badge {
             position: absolute;
             top: 15px;
-            left: 15px;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            z-index: 2;
-        }
-        
-        .badge-free {
-            background: #fb873f;
-            color: white;
-        }
-        
-        .badge-paid {
-            background: #0ed44c;
-            color: white;
-        }
-        
-        .badge-coming {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .course-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .course-card:hover .course-image {
-            transform: scale(1.05);
-        }
-        
-        .course-level {
-            display: inline-block;
-            padding: 3px 12px;
-            border-radius: 15px;
+            right: 15px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 700;
             font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 5px;
+            z-index: 2;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(5px);
+        }
+
+        .badge-free { background: rgba(251, 135, 63, 0.9); color: white; }
+        .badge-paid { background: rgba(14, 212, 76, 0.9); color: white; }
+        .badge-coming { background: rgba(108, 117, 125, 0.9); color: white; }
+
+        .course-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-tags {
+            margin-bottom: 15px;
+        }
+
+        .level-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
         }
         
-        .level-beginner {
-            background: rgba(40, 167, 69, 0.1);
-            color: #28a745;
-        }
-        
-        .level-intermediate {
-            background: rgba(255, 193, 7, 0.1);
-            color: #ffc107;
-        }
-        
-        .level-advanced {
-            background: rgba(220, 53, 69, 0.1);
-            color: #dc3545;
-        }
-        
-        .rating-stars {
-            color: #ffc107;
-        }
-        
-        .course-meta {
+        .level-beginner { background: #e8f5e9; color: #2e7d32; }
+        .level-intermediate { background: #fff8e1; color: #f57f17; }
+        .level-advanced { background: #ffebee; color: #c62828; }
+
+        .course-price-wrapper {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-top: 1px solid #eee;
         }
-        
-        .course-price {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fb873f;
+
+        .price-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-ultra);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .original-price {
-            text-decoration: line-through;
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-left: 5px;
+
+        /* --- Ultra Buttons --- */
+        .btn-ultra-sm {
+            background: var(--gradient-ultra);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .category-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+
+        .btn-ultra-sm::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
         }
-        
-        .category-card:hover {
-            border-color: #fb873f;
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(251, 135, 63, 0.1);
-        }
-        
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(251, 135, 63, 0.1), rgba(255, 158, 92, 0.1));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-        
-        .category-icon img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .filter-controls {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        .filter-group {
-            margin-bottom: 20px;
-        }
-        
-        .filter-group:last-child {
-            margin-bottom: 0;
-        }
-        
-        .course-count {
-            background: #fb873f;
+
+        .btn-ultra-sm:hover::after { left: 100%; }
+        .btn-ultra-sm:hover {
             color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            margin-left: 10px;
+            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.4);
+            transform: translateY(-2px);
         }
-        
-        .pagination-custom .page-link {
-            color: #fb873f;
-            border: 1px solid #dee2e6;
-            padding: 0.5rem 1rem;
-        }
-        
-        .pagination-custom .page-link:hover {
-            background-color: rgba(251, 135, 63, 0.1);
-            border-color: #fb873f;
-        }
-        
-        .pagination-custom .page-item.active .page-link {
-            background-color: #fb873f;
-            border-color: #fb873f;
-            color: white;
-        }
-        
-        .no-courses {
-            text-align: center;
-            padding: 60px 20px;
+
+        /* --- Stats Bar --- */
+        .stats-island {
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.03);
         }
         
-        .no-courses-icon {
-            font-size: 4rem;
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-        
+        .stat-item { padding: 10px; border-right: 1px solid #eee; }
+        .stat-item:last-child { border-right: none; }
+        .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .stat-txt { font-size: 0.85rem; color: #777; font-weight: 600; text-transform: uppercase; }
+
         @media (max-width: 768px) {
-            .category-filter {
-                padding: 20px;
-            }
-            
-            .course-card {
-                margin-bottom: 20px;
-            }
-            
-            .filter-controls {
-                margin-bottom: 20px;
-            }
+            .glass-filter-bar { margin-top: -40px; padding: 20px; }
+            .stat-item { border-right: none; border-bottom: 1px solid #eee; margin-bottom: 10px; }
         }
-
-
-
-        /* Course Statistics Bar */
-.course-stats {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.stat-item {
-    text-align: center;
-    padding: 10px;
-}
-
-.stat-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fb873f;
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: #6c757d;
-}
-
-/* Course Comparison */
-.course-comparison {
-    background: #f8f9fa;
-    border-radius: 15px;
-    padding: 30px;
-    margin-top: 50px;
-}
-
-.comparison-table {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.comparison-table th {
-    background: #fb873f;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-.comparison-table td {
-    padding: 15px;
-    border-bottom: 1px solid #dee2e6;
-    text-align: center;
-}
-
-.comparison-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* Course Bundles */
-.course-bundle {
-    background: linear-gradient(135deg, #fb873f, #ff9e5c);
-    border-radius: 15px;
-    padding: 30px;
-    color: white;
-    margin-top: 50px;
-}
-
-.bundle-price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.bundle-saving {
-    background: rgba(255,255,255,0.2);
-    padding: 5px 15px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: 600;
-}
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <p class="m-0 fw-bold" style="font-size: 24px;">
@@ -399,710 +314,316 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Course Catalog</h1>
-                    <p class="lead text-white mb-4">Master in-demand tech skills with industry-relevant curriculum</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div class="container-fluid page-header-ultra">
+        <div class="container py-5 text-center">
+            <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">Premium Content</span>
+            <h1 class="display-3 text-white animated slideInDown fw-bolder">Course Catalog</h1>
+            <p class="lead text-white-50 mb-0 animated slideInUp">Master in-demand tech skills with industry-relevant curriculum</p>
         </div>
     </div>
-    <!-- Header End -->
-
-    <!-- Course Catalog -->
-    <div class="container-xxl py-5 course-catalog">
+    <div class="container-xxl">
         <div class="container">
-            <!-- Search & Filter -->
-            <div class="row mb-5">
-                <div class="col-lg-12">
-                    <div class="filter-controls">
-                        <div class="row align-items-center">
-                            <div class="col-lg-8">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white border-end-0">
-                                        <i class="fas fa-search text-muted"></i>
-                                    </span>
-                                    <input type="text" class="form-control border-start-0" id="courseSearch" placeholder="Search courses (e.g., 'Python', 'Web Development', 'Machine Learning')">
-                                    <button class="btn btn-primary" type="button" id="searchButton">
-                                        Search
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                                <div class="d-flex align-items-center justify-content-lg-end">
-                                    <span class="me-3 text-muted">Sort by:</span>
-                                    <select class="form-select w-auto" id="sortCourses">
-                                        <option value="popular">Most Popular</option>
-                                        <option value="rating">Highest Rated</option>
-                                        <option value="newest">Newest First</option>
-                                        <option value="price-low">Price: Low to High</option>
-                                        <option value="price-high">Price: High to Low</option>
-                                    </select>
-                                </div>
-                            </div>
+            <div class="glass-filter-bar animated fadeInUp">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-0 ps-4" style="border-radius: 50px 0 0 50px;">
+                                <i class="fas fa-search text-primary"></i>
+                            </span>
+                            <input type="text" class="form-control border-0 py-3 ps-2" id="courseSearch" placeholder="What do you want to learn today?" style="border-radius: 0 50px 50px 0;">
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <select class="form-select border-0 py-3 rounded-pill shadow-none" id="sortCourses" style="background-color: #f8f9fa;">
+                            <option value="popular">🔥 Most Popular</option>
+                            <option value="rating">⭐ Highest Rated</option>
+                            <option value="newest">🆕 Newest First</option>
+                            <option value="price-low">💰 Price: Low to High</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
             
-            <!-- Course Categories -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="category-filter">
-                        <h5 class="mb-4">Browse by Category:</h5>
-                        <div class="d-flex flex-wrap">
-                            <span class="category-tag active" data-category="all">All Courses <span class="course-count">12</span></span>
-                            <span class="category-tag" data-category="web">Web Development <span class="course-count">4</span></span>
-                            <span class="category-tag" data-category="programming">Programming <span class="course-count">5</span></span>
-                            <span class="category-tag" data-category="ai">AI & Machine Learning <span class="course-count">2</span></span>
-                            <span class="category-tag" data-category="academic">Academic ICT <span class="course-count">3</span></span>
-                            <span class="category-tag" data-category="free">Free Courses <span class="course-count">4</span></span>
-                            <span class="category-tag" data-category="paid">Premium Courses <span class="course-count">8</span></span>
-                        </div>
+            <div class="stats-island animated fadeInUp">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="stat-val">12+</div>
+                        <div class="stat-txt">Courses</div>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="stat-val">2.5k+</div>
+                        <div class="stat-txt">Learners</div>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="stat-val">96%</div>
+                        <div class="stat-txt">Success</div>
+                    </div>
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="stat-val">4.9</div>
+                        <div class="stat-txt">Rating</div>
                     </div>
                 </div>
             </div>
 
+            <div class="text-center mb-5 animated fadeInUp">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <span class="category-tag active" data-category="all">All <span class="course-count">12</span></span>
+                    <span class="category-tag" data-category="web">Web Dev <span class="course-count">4</span></span>
+                    <span class="category-tag" data-category="programming">Programming <span class="course-count">5</span></span>
+                    <span class="category-tag" data-category="ai">AI & ML <span class="course-count">2</span></span>
+                    <span class="category-tag" data-category="academic">Academic <span class="course-count">3</span></span>
+                    <span class="category-tag" data-category="free">Free <span class="course-count">4</span></span>
+                    <span class="category-tag" data-category="paid">Premium <span class="course-count">8</span></span>
+                </div>
+            </div>
 
-
-            <!-- Course Statistics -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="course-stats">
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">12+</div>
-                        <div class="stat-label">Courses Available</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">2,500+</div>
-                        <div class="stat-label">Active Learners</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">96%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stat-item">
-                        <div class="stat-number">4.8/5</div>
-                        <div class="stat-label">Average Rating</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            
-
-
-
-
-
-
-
-
-
-
-
-            <!-- Course Grid -->
-<div class="row g-4" id="courseGrid">
-    <!-- Course 1: HTML Course for Beginners -->
-    <div class="col-lg-3 col-md-6" data-category="web free">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-1.jpg" alt="HTML Course for Beginners">
-                <div class="course-badge badge-free">FREE</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">2.0 Hours</span>
-                </div>
-                <h5 class="mb-2">HTML Course for Beginners</h5>
-                <p class="small text-muted mb-3">Learn HTML fundamentals with hands-on projects and examples.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.55 (500+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Junayed Academy</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 0</span>
-                </div>
-                <a href="single.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 2: Front End Development -->
-    <div class="col-lg-3 col-md-6" data-category="web paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-02.png" alt="Front End Development">
-                <div class="course-badge badge-paid">PREMIUM
-</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">15 Classes</span>
-                </div>
-                <h5 class="mb-2">Front End Development</h5>
-                <p class="small text-muted mb-3">Master modern frontend technologies and build responsive websites.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.55 (1200+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 15,000</span>
-                </div>
-                <a href="course2.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 3: Machine Learning Mastery -->
-    <div class="col-lg-3 col-md-6" data-category="ai paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-3.webp" alt="Machine Learning Mastery">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">15 Classes</span>
-                </div>
-                <h5 class="mb-2">Machine Learning Mastery</h5>
-                <p class="small text-muted mb-3">Learn ML algorithms, data preprocessing, and model building.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <small class="text-muted">4.46 (1100+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 15,000</span>
-                </div>
-                <a href="course3.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 4: Python Programming -->
-    <div class="col-lg-3 col-md-6" data-category="programming paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-4.jpg" alt="Python Programming">
-                <div class="course-badge badge-paid">PREMIUM
-</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">15 Classes</span>
-                </div>
-                <h5 class="mb-2">Python Programming</h5>
-                <p class="small text-muted mb-3">Learn Python from basics to advanced concepts with practical examples.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <small class="text-muted">3.54 (500+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 5,000</span>
-                </div>
-                <a href="course4.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 5: Data Structure & Algorithm -->
-    <div class="col-lg-3 col-md-6" data-category="programming paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-5.jpg" alt="Data Structure & Algorithm">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-intermediate">Intermediate</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">5.0 Hours</span>
-                </div>
-                <h5 class="mb-2">Data Structure & Algorithm</h5>
-                <p class="small text-muted mb-3">Master DSA concepts for coding interviews and problem solving.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.54 (850+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 10,000</span>
-                </div>
-                <a href="Course5.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 6: ChatGPT for Beginners -->
-    <div class="col-lg-3 col-md-6" data-category="ai free">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-6.jpg" alt="ChatGPT for Beginners">
-                <div class="course-badge badge-coming">COMING SOON</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">4.5 Hours</span>
-                </div>
-                <h5 class="mb-2">ChatGPT for Beginners</h5>
-                <p class="small text-muted mb-3">Learn to use ChatGPT effectively for various tasks and applications.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <small class="text-muted">3.55 (0+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Junayed Academy</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 0</span>
-                </div>
-                <button class="btn btn-sm btn-secondary" disabled>
-                    Coming Soon
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 7: SSC ICT Mastery Program -->
-    <div class="col-lg-3 col-md-6" data-category="academic paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-7.jpg" alt="SSC ICT Mastery Program">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">3 Months</span>
-                </div>
-                <h5 class="mb-2">SSC ICT Mastery Program</h5>
-                <p class="small text-muted mb-3">Comprehensive ICT preparation for SSC exam success.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.53 (1200+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 20,000</span>
-                </div>
-                <a href="Course7.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 8: HSC ICT Mastery Program -->
-    <div class="col-lg-3 col-md-6" data-category="academic paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-8.jpg" alt="HSC ICT Mastery Program">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-intermediate">Intermediate</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">3 Months</span>
-                </div>
-                <h5 class="mb-2">HSC ICT Mastery Program</h5>
-                <p class="small text-muted mb-3">Advanced ICT preparation for HSC students with practical focus.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <small class="text-muted">5.0 (1000+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 22,000</span>
-                </div>
-                <a href="Course8.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 9: Introduction to MS Excel -->
-    <div class="col-lg-3 col-md-6" data-category="office free">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-9.jpg" alt="Introduction to MS Excel">
-                <div class="course-badge badge-free">FREE</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">1 Month</span>
-                </div>
-                <h5 class="mb-2">Introduction to MS Excel</h5>
-                <p class="small text-muted mb-3">Learn Excel basics, formulas, and data analysis techniques.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <small class="text-muted">4.6 (0+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Junayed Academy</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 0</span>
-                </div>
-                <a href="Course9.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 10: JSC ICT Mastery Program -->
-    <div class="col-lg-3 col-md-6" data-category="academic paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-10.jpg" alt="JSC ICT Mastery Program">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-intermediate">Intermediate</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">3 Months</span>
-                </div>
-                <h5 class="mb-2">JSC ICT Mastery Program</h5>
-                <p class="small text-muted mb-3">Comprehensive ICT preparation for JSC exam students.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.55 (1000+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 20,000</span>
-                </div>
-                <a href="Course10.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 11: Java Programming -->
-    <div class="col-lg-3 col-md-6" data-category="programming free">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-11.jpg" alt="Java Programming">
-                <div class="course-badge badge-free">FREE</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">1 Month</span>
-                </div>
-                <h5 class="mb-2">Java Programming</h5>
-                <p class="small text-muted mb-3">Learn Java basics, OOP concepts, and build simple applications.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <small class="text-muted">4.45 (0+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Junayed Academy</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 0</span>
-                </div>
-                <a href="Course11.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Course 12: C for Beginners -->
-    <div class="col-lg-3 col-md-6" data-category="programming paid">
-        <div class="course-card">
-            <div class="position-relative overflow-hidden">
-                <img class="course-image" src="img/course-12.png" alt="C for Beginners">
-                <div class="course-badge badge-paid">PREMIUM</div>
-            </div>
-            <div class="p-4">
-                <div class="mb-3">
-                    <span class="course-level level-beginner">Beginner</span>
-                    <span class="text-muted">•</span>
-                    <span class="text-muted">15 Classes / 3 Months</span>
-                </div>
-                <h5 class="mb-2">C for Beginners</h5>
-                <p class="small text-muted mb-3">Learn C programming fundamentals, pointers, and memory management.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="rating-stars me-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <small class="text-muted">4.5 (1200+ learners)</small>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="flex-grow-1">
-                        <i class="fas fa-user-graduate text-primary me-2"></i>
-                        <small>Expert Instructors</small>
-                    </div>
-                </div>
-            </div>
-            <div class="course-meta">
-                <div>
-                    <span class="course-price">৳ 5,000</span>
-                </div>
-                <a href="course12.html" class="btn btn-sm btn-primary">
-                    Enroll Now <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-                <!-- Add remaining courses following the same pattern -->
-                <!-- Course 9: MS Excel (Free) -->
-                <!-- Course 10: JSC ICT (Paid) -->
-                <!-- Course 11: Java Programming (Free) -->
-                <!-- Course 12: C Programming (Paid) -->
+            <div class="row g-4" id="courseGrid">
                 
-                <!-- Course Placeholder for JavaScript dynamic loading -->
-                <div class="col-12" id="noCoursesMessage" style="display: none;">
-                    <div class="no-courses">
-                        <div class="no-courses-icon">
-                            <i class="fas fa-search"></i>
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="web free">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-1.jpg" alt="HTML">
+                            <div class="course-badge badge-free">FREE</div>
                         </div>
-                        <h4 class="mb-3">No courses found</h4>
-                        <p class="text-muted mb-4">Try adjusting your search or filter criteria</p>
-                        <button class="btn btn-primary" id="resetFilters">
-                            Reset All Filters
-                        </button>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 2h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">HTML & CSS Fundamentals</h5>
+                            <p class="small text-muted mb-3">Build your first website with industry standard best practices.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.5</span>
+                                <span class="text-muted small ms-2">(500+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 0</span>
+                                <a href="single.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="web paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-02.png" alt="Frontend">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-intermediate">Intermediate</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 15h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Front End Development</h5>
+                            <p class="small text-muted mb-3">Master React, Tailwind, and modern JavaScript.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.8</span>
+                                <span class="text-muted small ms-2">(1.2k+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 15,000</span>
+                                <a href="course2.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="ai paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-3.webp" alt="AI">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-advanced">Advanced</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 30h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Machine Learning Mastery</h5>
+                            <p class="small text-muted mb-3">Python for Data Science, ML algorithms and Deployment.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="text-muted small ms-2">(1.1k+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 15,000</span>
+                                <a href="course3.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-4.jpg" alt="Python">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 10h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Python Programming</h5>
+                            <p class="small text-muted mb-3">The most popular language for automation and backend.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.7</span>
+                                <span class="text-muted small ms-2">(500+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 5,000</span>
+                                <a href="course4.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-5.jpg" alt="DSA">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-intermediate">Intermediate</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 25h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Data Structures & Algo</h5>
+                            <p class="small text-muted mb-3">Crack coding interviews with optimized problem solving.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.8</span>
+                                <span class="text-muted small ms-2">(850+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 10,000</span>
+                                <a href="Course5.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="ai free">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-6.jpg" alt="ChatGPT">
+                            <div class="course-badge badge-coming">SOON</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 4.5h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">ChatGPT for Beginners</h5>
+                            <p class="small text-muted mb-3">Prompt engineering fundamentals for daily productivity.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted small"><i class="far fa-star"></i> New</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">Free</span>
+                                <button class="btn btn-outline-secondary btn-sm rounded-pill" disabled>Waitlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="academic paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-7.jpg" alt="SSC">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-beginner">Academic</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 3m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">SSC ICT Mastery</h5>
+                            <p class="small text-muted mb-3">Complete preparation for SSC exams.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="text-muted small ms-2">(1.2k+)</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 20,000</span>
+                                <a href="Course7.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming free">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-11.jpg" alt="Java">
+                            <div class="course-badge badge-free">FREE</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="meta-tags">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 1m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Java Programming</h5>
+                            <p class="small text-muted mb-3">OOP concepts and building robust applications.</p>
+                            
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-warning small"><i class="fas fa-star"></i> 4.4</span>
+                            </div>
+                            
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 0</span>
+                                <a href="Course11.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            <!-- Pagination -->
+
+            <div id="noCoursesMessage" class="text-center py-5" style="display: none;">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h3 class="fw-bold">No courses found</h3>
+                <p class="text-muted">Try adjusting your filters.</p>
+                <button class="btn btn-primary rounded-pill" id="resetFilters">Reset Filters</button>
+            </div>
+
             <div class="row mt-5">
-                <div class="col-12">
-                    <nav aria-label="Course pagination">
-                        <ul class="pagination pagination-custom justify-content-center">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
+                <div class="col-12 d-flex justify-content-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#"><i class="fas fa-chevron-left"></i></a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm bg-primary text-white" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#"><i class="fas fa-chevron-right"></i></a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            
-            <!-- Call to Action -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="card border-primary">
-                        <div class="card-body p-5 text-center">
-                            <h3 class="text-primary mb-3">Need Help Choosing a Course?</h3>
-                            <p class="mb-4">Our academic advisors can help you select the right course based on your career goals and current skill level.</p>
-                            <div class="d-flex flex-wrap justify-content-center gap-3">
-                                <a href="contact.html" class="btn btn-primary btn-lg">
-                                    <i class="fas fa-calendar-alt me-2"></i>Book Consultation
-                                </a>
-                                <a href="tel:+8801893255503" class="btn btn-outline-primary btn-lg">
-                                    <i class="fas fa-phone me-2"></i>Call for Advice
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 
-    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -1133,7 +654,6 @@
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" aria-label="Email address">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
                     </div>
-                    <p class="small mt-3 text-muted">By subscribing, you agree to our Privacy Policy</p>
                 </div>
             </div>
         </div>
@@ -1145,18 +665,14 @@
                         <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <small>12+ courses • 2,500+ students • 96% satisfaction</small>
+                        <small>Designed for the Junayed Academy</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -1164,268 +680,71 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
-        // Course Filtering and Search Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const courseCards = document.querySelectorAll('#courseGrid .col-lg-3');
             const categoryTags = document.querySelectorAll('.category-tag');
             const searchInput = document.getElementById('courseSearch');
-            const searchButton = document.getElementById('searchButton');
-            const sortSelect = document.getElementById('sortCourses');
-            const resetButton = document.getElementById('resetFilters');
             const noCoursesMessage = document.getElementById('noCoursesMessage');
             
-            let activeCategory = 'all';
-            
-            // Category filter functionality
+            // --- Category Filtering with Smooth Scroll ---
             categoryTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    // Remove active class from all tags
-                    categoryTags.forEach(t => t.classList.remove('active'));
+                tag.addEventListener('click', function(e) {
+                    e.preventDefault();
                     
-                    // Add active class to clicked tag
+                    // Toggle active state
+                    categoryTags.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Get category from data attribute
-                    activeCategory = this.getAttribute('data-category');
+                    const category = this.getAttribute('data-category');
                     
-                    // Filter courses
-                    filterCourses();
-                });
-            });
-            
-            // Search functionality
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                filterCourses(searchTerm);
-            }
-            
-            searchButton.addEventListener('click', performSearch);
-            searchInput.addEventListener('keyup', function(event) {
-                if (event.key === 'Enter') {
-                    performSearch();
-                }
-            });
-            
-            // Sort functionality
-            sortSelect.addEventListener('change', function() {
-                sortCourses(this.value);
-            });
-            
-            // Reset filters
-            if (resetButton) {
-                resetButton.addEventListener('click', function() {
-                    // Reset category filter
-                    categoryTags.forEach(tag => {
-                        if (tag.getAttribute('data-category') === 'all') {
-                            tag.classList.add('active');
+                    // Filter Logic
+                    let visible = 0;
+                    courseCards.forEach(card => {
+                        const cardCats = card.getAttribute('data-category');
+                        if (category === 'all' || cardCats.includes(category)) {
+                            card.style.display = 'block';
+                            card.classList.add('animated', 'fadeInUp'); // Re-trigger animation
+                            visible++;
                         } else {
-                            tag.classList.remove('active');
+                            card.style.display = 'none';
                         }
                     });
-                    
-                    // Reset search
-                    searchInput.value = '';
-                    
-                    // Reset sort
-                    sortSelect.value = 'popular';
-                    
-                    // Reset active category
-                    activeCategory = 'all';
-                    
-                    // Show all courses
-                    filterCourses();
+
+                    // Show/Hide Empty State
+                    noCoursesMessage.style.display = visible === 0 ? 'block' : 'none';
+
+                    // Smooth Scroll to Grid
+                    document.getElementById('courseGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
-            }
-            
-            // Filter courses based on category and search
-            function filterCourses(searchTerm = '') {
-                let visibleCount = 0;
+            });
+
+            // --- Search Functionality ---
+            searchInput.addEventListener('keyup', function() {
+                const term = this.value.toLowerCase();
+                let visible = 0;
                 
                 courseCards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
                     const title = card.querySelector('h5').textContent.toLowerCase();
-                    const description = card.querySelector('p').textContent.toLowerCase();
-                    const instructor = card.querySelector('small').textContent.toLowerCase();
-                    
-                    // Check if course matches category
-                    const categoryMatch = activeCategory === 'all' || categories.includes(activeCategory);
-                    
-                    // Check if course matches search term
-                    const searchMatch = !searchTerm || 
-                        title.includes(searchTerm) || 
-                        description.includes(searchTerm) || 
-                        instructor.includes(searchTerm);
-                    
-                    if (categoryMatch && searchMatch) {
+                    if (title.includes(term)) {
                         card.style.display = 'block';
-                        visibleCount++;
+                        visible++;
                     } else {
                         card.style.display = 'none';
                     }
                 });
                 
-                // Show/hide no courses message
-                if (visibleCount === 0) {
-                    noCoursesMessage.style.display = 'block';
-                } else {
-                    noCoursesMessage.style.display = 'none';
-                }
-                
-                // Update course count display
-                updateCourseCount(visibleCount);
-            }
-            
-            // Sort courses
-            function sortCourses(sortBy) {
-                const container = document.getElementById('courseGrid');
-                const cards = Array.from(container.querySelectorAll('.col-lg-3'));
-                
-                cards.sort((a, b) => {
-                    switch(sortBy) {
-                        case 'rating':
-                            const ratingA = parseFloat(a.querySelector('.rating-stars').textContent) || 0;
-                            const ratingB = parseFloat(b.querySelector('.rating-stars').textContent) || 0;
-                            return ratingB - ratingA;
-                            
-                        case 'price-low':
-                            const priceA = parseFloat(a.querySelector('.course-price').textContent.replace(/[^\d]/g, '')) || 0;
-                            const priceB = parseFloat(b.querySelector('.course-price').textContent.replace(/[^\d]/g, '')) || 0;
-                            return priceA - priceB;
-                            
-                        case 'price-high':
-                            const priceC = parseFloat(a.querySelector('.course-price').textContent.replace(/[^\d]/g, '')) || 0;
-                            const priceD = parseFloat(b.querySelector('.course-price').textContent.replace(/[^\d]/g, '')) || 0;
-                            return priceD - priceC;
-                            
-                        case 'newest':
-                            // For demo, we'll use a simple order
-                            return 0;
-                            
-                        default: // popular
-                            // For demo, we'll use rating as popularity indicator
-                            const ratingC = parseFloat(a.querySelector('.rating-stars').textContent) || 0;
-                            const ratingD = parseFloat(b.querySelector('.rating-stars').textContent) || 0;
-                            return ratingD - ratingC;
-                    }
-                });
-                
-                // Reorder cards in the container
-                cards.forEach(card => {
-                    container.appendChild(card);
-                });
-            }
-            
-            // Update course count in category tags
-            function updateCourseCount(visibleCount) {
-                const allTag = document.querySelector('[data-category="all"] .course-count');
-                if (allTag) {
-                    allTag.textContent = visibleCount;
-                }
-            }
-            
-            // Initialize course counts
-            function initializeCourseCounts() {
-                const categories = {};
-                
-                // Count courses per category
-                courseCards.forEach(card => {
-                    const cardCategories = card.getAttribute('data-category').split(' ');
-                    cardCategories.forEach(cat => {
-                        categories[cat] = (categories[cat] || 0) + 1;
-                    });
-                });
-                
-                // Update category tags with counts
-                categoryTags.forEach(tag => {
-                    const category = tag.getAttribute('data-category');
-                    const countElement = tag.querySelector('.course-count');
-                    
-                    if (countElement && categories[category]) {
-                        countElement.textContent = categories[category];
-                    }
-                });
-            }
-            
-            // Initialize
-            initializeCourseCounts();
-            
-            // Add animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                    }
-                });
-            }, observerOptions);
-            
-            courseCards.forEach(card => {
-                observer.observe(card);
+                noCoursesMessage.style.display = visible === 0 ? 'block' : 'none';
             });
             
-            // Smooth scroll for category tags
-            document.querySelectorAll('.category-tag').forEach(tag => {
-                tag.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const courseGrid = document.getElementById('courseGrid');
-                    courseGrid.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                });
+            // --- Reset ---
+            document.getElementById('resetFilters').addEventListener('click', function(){
+                searchInput.value = '';
+                document.querySelector('[data-category="all"]').click();
             });
         });
-        
-        // Course card hover effects
-        document.querySelectorAll('.course-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        // Update this function in your existing JavaScript
-function initializeCourseCounts() {
-    const categories = {
-        'all': document.querySelectorAll('#courseGrid .col-lg-3').length,
-        'web': 0,
-        'programming': 0,
-        'ai': 0,
-        'academic': 0,
-        'free': 0,
-        'paid': 0
-    };
-    
-    // Count courses per category
-    document.querySelectorAll('#courseGrid .col-lg-3').forEach(card => {
-        const cardCategories = card.getAttribute('data-category').split(' ');
-        cardCategories.forEach(cat => {
-            if (categories[cat] !== undefined) {
-                categories[cat]++;
-            }
-        });
-    });
-    
-    // Update category tags with counts
-    document.querySelectorAll('.category-tag').forEach(tag => {
-        const category = tag.getAttribute('data-category');
-        const countElement = tag.querySelector('.course-count');
-        
-        if (countElement && categories[category]) {
-            countElement.textContent = categories[category];
-        }
-    });
-}
     </script>
 </body>
 
