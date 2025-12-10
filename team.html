@@ -230,40 +230,30 @@
     <!-- Header End -->
 
     <!-- Team Stats Section -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="stats-section">
-                <div class="row text-center">
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3 class="stat-number">4+</h3>
-                        <p class="stat-label">Expert Instructors</p>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3 class="stat-number">10+</h3>
-                        <p class="stat-label">Years Combined Experience</p>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="stat-number">2,500+</h3>
-                        <p class="stat-label">Students Trained</p>
-                    </div>
-                    <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="stat-number">50+</h3>
-                        <p class="stat-label">Industry Certifications</p>
-                    </div>
-                </div>
-            </div>
+  <div class="row text-center">
+    <div class="col-md-3 col-6 mb-4">
+        <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+        <h3 class="stat-number" data-target="4">0+</h3>
+        <p class="stat-label">Expert Instructors</p>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+        <h3 class="stat-number" data-target="10">0+</h3>
+        <p class="stat-label">Years Combined Experience</p>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+        <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3 class="stat-number" data-target="2500">0+</h3>
+        <p class="stat-label">Students Trained</p>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+        <h3 class="stat-number" data-target="50">0+</h3>
+        <p class="stat-label">Industry Certifications</p>
+    </div>
+</div>
+
+                
             
             <div class="text-center mb-5">
                 <h2 class="text-primary mb-3">Our Teaching Philosophy</h2>
@@ -625,45 +615,80 @@ Ovi is a senior full-stack engineer with over five years of experience architect
 
 
 
+(function () {
+  const duration = 1500; // milliseconds for the count animation
+  const statsSection = document.querySelector('.stats-section');
+  const counters = Array.from(document.querySelectorAll('.stat-number'));
+  let started = false;
 
+  // safe parser: prefer data-target, fallback to digits in text
+  const parseTarget = el => {
+    const dt = el.getAttribute('data-target');
+    if (dt && !isNaN(Number(dt))) return Math.max(0, Number(dt));
+    const digits = el.textContent.replace(/[^\d]/g, '');
+    return digits ? Number(digits) : 0;
+  };
 
+  const formatNumber = n => {
+    // adds commas for thousands, returns string
+    return n.toLocaleString();
+  };
 
-        document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".stat-number");
-    let started = false;
+  const animateCounter = (el, target) => {
+    let startTime = null;
 
-    const startCounting = () => {
-        counters.forEach(counter => {
-            const target = parseInt(counter.textContent.replace("+", ""));
-            counter.textContent = "0+";
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const fraction = Math.min(progress / duration, 1);
+      const value = Math.floor(fraction * target);
 
-            let current = 0;
-            const increment = Math.ceil(target / 100); // speed control
+      el.textContent = formatNumber(value) + '+';
 
-            const updateCount = () => {
-                current += increment;
-                if (current < target) {
-                    counter.textContent = current + "+";
-                    requestAnimationFrame(updateCount);
-                } else {
-                    counter.textContent = target + "+";
-                }
-            };
-
-            updateCount();
-        });
+      if (fraction < 1) {
+        requestAnimationFrame(step);
+      } else {
+        // ensure exact final value
+        el.textContent = formatNumber(target) + '+';
+      }
     };
 
-    // Trigger only when stats section becomes visible
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !started) {
-            startCounting();
-            started = true;
-        }
-    }, { threshold: 0.4 });
+    requestAnimationFrame(step);
+  };
 
-    observer.observe(document.querySelector(".stats-section"));
-});
+  const startAll = () => {
+    if (started) return;
+    started = true;
+    counters.forEach(counter => {
+      const target = parseTarget(counter);
+      // if target is 0 just set 0+
+      if (target === 0) {
+        counter.textContent = '0+';
+      } else {
+        animateCounter(counter, target);
+      }
+    });
+  };
+
+  // If IntersectionObserver supported, use it, otherwise start immediately
+  if ('IntersectionObserver' in window && statsSection) {
+    const obs = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAll();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    obs.observe(statsSection);
+  } else {
+    // fallback for very old browsers
+    startAll();
+  }
+})();
+
+
 
     </script>
 </body>
