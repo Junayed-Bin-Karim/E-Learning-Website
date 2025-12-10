@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Instructor</title>
+    <title>Become an Instructor | Junayed Academy</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -18,24 +18,364 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #fb873f;
+            --secondary-color: #1a237e;
+            --light-bg: #f8f9fa;
+            --dark-bg: #121212;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23fb873f' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title-left {
+            text-align: left;
+        }
+        
+        .section-title-left::after {
+            left: 0;
+            transform: translateX(0);
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid var(--border-color);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(251, 135, 63, 0.1) 0%, rgba(251, 135, 63, 0.05) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-icon i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            z-index: 2;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 60%;
+            width: 80%;
+            height: 2px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+        
+        @media (max-width: 992px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        .expectation-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .expectation-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            margin: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #e6732f;
+            border-color: #e6732f;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.2);
+        }
+        
+        .btn-outline-custom {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: white;
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-container {
+            background-color: var(--light-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .modal-content {
+            border-radius: 16px;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
+            color: white;
+            border-bottom: none;
+            padding: 1.5rem 2rem;
+        }
+        
+        .modal-title {
+            font-weight: 700;
+        }
+        
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .img-fluid {
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .instructor-quote {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 3rem 0;
+            font-style: italic;
+        }
+        
+        .instructor-quote cite {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-style: normal;
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+    </style>
 
 </head>
 
 <body>
-    <!-- Spinner Start -->
+    <!-- Spinner Start (Same as before) -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -44,19 +384,19 @@
     </div>
     <!-- Spinner End -->
 
-
-    <!-- Navbar Start -->
+    <!-- Navbar Start (Same as before) -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-<p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
-                    style="color: #fb873f;">Academy</span></p>        </a>
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
+                    style="color: #fb873f;">Academy</span></p>
+        </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             style="border: none;">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
@@ -64,7 +404,6 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                       
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -74,352 +413,462 @@
     </nav>
     <!-- Navbar End -->
 
-
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Become An Instructor</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Become An Instructor</li>
-                        </ol>
-                    </nav>
+                    <h1 class="hero-title text-white animated slideInDown">Become an Instructor</h1>
+                    <p class="text-white fs-5 mb-4">Share your knowledge, shape the future, and earn with Junayed Academy - where expertise meets opportunity.</p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
+                        <a href="#benefits" class="btn btn-primary-custom">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
-<!-- Instructor Page Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h1 class="mb-5 bg-white text-center px-3" style="color: #fb873f;">প্রশিক্ষক হিসেবে আবেদন করুন</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                <h5>জুনায়েদ একাডেমিতে স্বাগতম - যেখানে জ্ঞান মিলে উদ্ভাবনের সঙ্গে</h5>
-                <p class="mb-4">
-                    আপনি কি আপনার দক্ষতা শেয়ার করতে এবং বাংলাদেশের শিক্ষার্থীদের উপর বাস্তব প্রভাব ফেলতে আগ্রহী? যদি হ্যাঁ, তাহলে আমরা আপনাকে আমাদের গতিশীল ই-লার্নিং প্ল্যাটফর্মে প্রশিক্ষক হিসেবে যোগ দেওয়ার আমন্ত্রণ জানাই! শিক্ষার প্রতি ভালোবাসা সৃষ্টি এবং শিক্ষার্থীদের তাদের লক্ষ্য অর্জনে সাহায্য করার জন্য নিবেদিত শিক্ষকদের কমিউনিটিতে যোগ দিন।
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- About Instructor Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <!-- ছবি -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="img/instructor-1.jpg" alt=""
-                        style="object-fit: cover;">
-                </div>
-            </div>
-
-            <!-- লেখা -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h1 class="mb-4" style="color: #fb873f;">কেন জুনায়েদ একাডেমিকে আপনার শিক্ষাদান কেন্দ্র হিসেবে বেছে নেবেন?</h1>
-                <div class="row gy-2 gx-4 mb-4">
-                    <ul style="list-style: none;">
-                        <li><b>লোকাল রিচ, বাস্তব প্রভাব :</b> বাংলাদেশের বিভিন্ন প্রান্ত থেকে বৈচিত্র্যময় শিক্ষার্থী পৌঁছান এবং ব্যক্তিগত জীবনে অর্থবহ প্রভাব ফেলুন।</li>
-                        <li><b>উন্নত প্রযুক্তি :</b> আমাদের আধুনিক ই-লার্নিং ইকোসিস্টেম ব্যবহার করুন, যা আপনাকে এবং আপনার শিক্ষার্থীদের জন্য একটি সাবলীল এবং আকর্ষণীয় শিক্ষার অভিজ্ঞতা নিশ্চিত করে।</li>
-                        <li><b>ফ্লেক্সিবল শিক্ষাদান :</b> আপনার কোর্সগুলো এমন সময়সূচিতে তৈরি ও পরিচালনা করুন যা আপনার জীবনযাত্রার সাথে মানানসই, যাতে পেশাগত ও ব্যক্তিগত দায়িত্ব সমন্বয় করা যায়।</li>
-                        <li><b>প্রতিযোগিতামূলক পারিশ্রমিক :</b> একটি স্বচ্ছ এবং মূল্যায়নযোগ্য পারিশ্রমিক কাঠামোর সুবিধা নিন যা আপনার দক্ষতা এবং শিক্ষার প্রতি প্রতিশ্রুতি স্বীকৃতি দেয়।</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- About Instructor End -->
-
-
-    <!-- Service Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-2 text-center">
-            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                <h1 style="color: #fb873f;">কিভাবে এটি কাজ করে</h1>
-                <p class="mb-5">আপনার প্রশিক্ষক হওয়ার যাত্রা</p>
-            </div>
-        </div>
-        <div class="row g-4">
-            <!-- Application Process -->
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <h5 class="mb-3">আবেদন প্রক্রিয়া</h5>
-                        <p>আপনার আবেদন জমা দিন এবং আপনার দক্ষতা, শিক্ষাদানের দৃষ্টিভঙ্গি এবং যে কোর্সগুলো প্রদান করতে চান তার বিস্তারিত তথ্য দিন।</p>
+    <!-- Stats Section -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="stats-container animate-fade-in-up">
+                <div class="row g-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Active Students</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Content Creation -->
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <h5 class="mb-3">কন্টেন্ট তৈরি</h5>
-                        <p>আমাদের ইন্সট্রাকশনাল ডিজাইন টিমের সহায়তায় উচ্চমানের কোর্স কন্টেন্ট তৈরি করুন, যাতে আপনার শিক্ষামূলক উপকরণ আকর্ষণীয় এবং কার্যকর হয়।</p>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Expert Instructors</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Go Live -->
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <h5 class="mb-3">লাইভ শুরু</h5>
-                        <p>অনুমোদনের পর, আপনার কোর্সগুলো আমাদের প্ল্যাটফর্মে লাইভ হবে, এবং বিশ্বের শিক্ষার্থীরা আপনার জ্ঞান থেকে উপকৃত হতে পারবে।</p>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Courses Published</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Engage and Grow -->
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-3 shadow">
-                    <div class="p-4">
-                        <h5 class="mb-3">যোগাযোগ ও বৃদ্ধি</h5>
-                        <p>ডিসকাশন ফোরাম, লাইভ প্রশ্নোত্তর সেশন এবং ফিডব্যাক মাধ্যমে আপনার শিক্ষার্থীদের সাথে যোগাযোগ করুন, একটি সহায়ক শিক্ষার কমিউনিটি গড়ে তুলুন।</p>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Service End -->
 
-
-    <!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <!-- লেখা -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h1 class="mb-4" style="color: #fb873f;">আমরা আমাদের প্রশিক্ষক থেকে কি আশা করি</h1>
-                <div class="row gy-2 gx-4 mb-4">
-                    <ul style="list-style: none;">
-                        <li><b>শিক্ষার প্রতি অনুরাগ :</b> জ্ঞান শেয়ার করার এবং শিক্ষার্থীদের শেখার যাত্রা সহজ করার প্রতি সত্যিকার আগ্রহ।</li>
-                        <li><b>আপনার ক্ষেত্রের দক্ষতা :</b> বিষয়বস্তুতে প্রমাণিত দক্ষতা, প্রাসঙ্গিক যোগ্যতা এবং অভিজ্ঞতা দ্বারা সমর্থিত।</li>
-                        <li><b>যোগাযোগের দক্ষতা :</b> জটিল ধারণা স্পষ্ট এবং কার্যকরভাবে বোঝাতে পারা এবং বিভিন্ন পটভূমির শিক্ষার্থীদের সাথে যুক্ত থাকা।</li>
-                        <li><b>উদ্ভাবন :</b> শেখার অভিজ্ঞতা উন্নত করতে উদ্ভাবনী শিক্ষাদান পদ্ধতি এবং প্রযুক্তি গ্রহণের ইচ্ছা।</li>
-                    </ul>
-                </div>
+    <!-- Benefits Section -->
+    <div class="container-xxl py-5" id="benefits">
+        <div class="container">
+            <div class="text-center mb-5 animate-fade-in-up">
+                <h2 class="section-title">Why Teach with Junayed Academy?</h2>
+                <p class="fs-5 text-muted">Join our community of educators and enjoy a rewarding teaching experience.</p>
             </div>
-
-            <!-- ছবি -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="img-fluid position-absolute w-100 h-100" src="img/instructor-2.jpg" alt=""
-                        style="object-fit: cover;">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- About End -->
-
-  <div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <!-- ছবি -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <img class="img-fluid" src="img/ready.jpg" alt="">
-            </div>
-
-            <!-- লেখা -->
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h1 style="color: #fb873f;">আমাদের সাথে যোগ দিতে প্রস্তুত?</h1>
-                <p class="mb-4">শুরু করার ধাপসমূহ</p>
-
-                <div class="row gy-2 gx-4 mb-4">
-                    <ul style="list-style: none;">
-                        <li><i class="fa fa-check"></i> Junayed Academy এবং আমরা যে বিভিন্ন কোর্স অফার করি তা সম্পর্কে ধারণা নিন।</li>
-                        <li><i class="fa fa-check"></i> একটি প্রভাবশালী আবেদন তৈরি করুন যা আপনার শিক্ষার প্রতি আগ্রহ, দক্ষতা, এবং প্রস্তাবিত কোর্সগুলো তুলে ধরে।</li>
-                    </ul>
-                </div>
-                <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">এখনই আবেদন করুন</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ইনস্ট্রাক্টর হিসেবে আবেদন করুন</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <form>
-              <h5 class="mb-4">Junayed Academy-এর বাংলাদেশের শিক্ষকমণ্ডলীতে যোগ দিন</h5>
-              <div class="row g-3">
-                  <div class="col-md-6">
-                      <div class="form-floating">
-                          <input type="text" class="form-control" id="f_name" placeholder="নামের প্রথম অংশ">
-                          <label for="f_name">নামের প্রথম অংশ</label>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-floating">
-                          <input type="text" class="form-control" id="l_name" placeholder="নামের শেষ অংশ">
-                          <label for="l_name">নামের শেষ অংশ</label>
-                      </div>
-                  </div>
-
-                  <div class="col-md-6">
-                      <div class="form-floating">
-                          <input type="email" class="form-control" id="email" placeholder="আপনার ইমেইল">
-                          <label for="email">আপনার ইমেইল</label>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-floating">
-                          <input type="tel" class="form-control" id="phone" placeholder="ফোন নাম্বার">
-                          <label for="phone">ফোন নাম্বার</label>
-                      </div>
-                  </div>
-                  
-                  <div class="col-12">
-                      <div class="form-floating">
-                          <label for="degree">আপনার সর্বোচ্চ শিক্ষাগত যোগ্যতা কি?</label>
-                          <select name="degree" id="degree" class="form-control">
-                              <option value="..">...</option>
-                              <option value="High School">উচ্চ বিদ্যালয়</option>
-                              <option value="Undergraduate">স্নাতক</option>
-                              <option value="Graduate">স্নাতকোত্তর</option>
-                              <option value="Post-Graduate">পোস্ট-গ্র্যাজুয়েট</option>
-                          </select>
-                      </div>
-                  </div>
-                  
-                  <div class="col-12">
-                      <div class="form-floating">
-                          <label for="subject">আপনি কোন বিষয় পড়াতে আগ্রহী?</label>
-                          <select name="subject" id="subject" class="form-control">
-                              <option value="..">...</option>
-                              <option value="Technology">প্রযুক্তি</option>
-                              <option value="Marketing">মার্কেটিং</option>
-                              <option value="Business">ব্যবসা</option>
-                              <option value="Education">শিক্ষা</option>
-                          </select>
-                      </div>
-                  </div>
-                  
-                  <div class="col-12">
-                      <div class="form-floating">
-                          <textarea class="form-control" placeholder="ঠিকানা লিখুন" id="address"
-                              style="height: 150px"></textarea>
-                          <label for="address">ঠিকানা</label>
-                      </div>
-                  </div>
-
-                  <div class="col-12">
-                      <div class="">
-                          <input type="checkbox"> আমি নিশ্চিত করছি যে প্রদত্ত তথ্য সঠিক। এছাড়াও আমি পড়েছি, বুঝেছি এবং সম্মত হয়েছি Terms of Service-এর শর্তাবলীর সাথে এবং সমস্ত লেনদেন চূড়ান্ত, কোনো রিফান্ড নেই।
-                      </div>
-                  </div>
-              </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বন্ধ করুন</button>
-        <button type="submit" class="btn text-white">আবেদন করুন</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-   <!-- About End -->
-
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
             
-            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                
-                <h5 class="mb-4">শিক্ষার মাধ্যমে জীবন রূপান্তরে আমাদের সঙ্গে যোগ দিন!</h5>
-                
-                <p>Junayed Academy-তে আমরা বিশ্বাস করি যে শিক্ষা জীবনের পরিবর্তন ঘটানোর শক্তি রাখে। আমাদের সঙ্গে মিলিত হয়ে এমন একটি বিশ্ব গড়ুন যেখানে জ্ঞানের কোনো সীমা নেই, এবং একসাথে আমরা অনুপ্রাণিত করি, উদ্ভাবন করি এবং শিক্ষাদান করি!</p>
-                
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-    <!-- Instructor Page End -->
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
-                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
-                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
-                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
-                <p><a class="text-light" href="">শর্তাবলী</a></p>
-                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">যোগাযোগ</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedbinkarim@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 animate-fade-in-up delay-1">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h5>Global Reach, Local Impact</h5>
+                        <p>Connect with diverse learners across Bangladesh and make a meaningful impact on their personal and professional lives.</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
-                <p>এখনই সাবস্ক্রাইব করুন এবং আমাদের বৃদ্ধিশীল শিক্ষার্থী কমিউনিটিতে যোগ দিন!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
-                    <button type="button"
-                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+                <div class="col-lg-3 col-md-6 animate-fade-in-up delay-2">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h5>Advanced Technology</h5>
+                        <p>Utilize our modern e-learning ecosystem designed to create seamless and engaging learning experiences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-fade-in-up delay-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h5>Flexible Teaching</h5>
+                        <p>Create and manage courses on your schedule, balancing professional and personal commitments effortlessly.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-fade-in-up delay-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5>Competitive Earnings</h5>
+                        <p>Benefit from a transparent and rewarding compensation structure that values your expertise.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+
+    <!-- How It Works Section -->
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">How It Works</h2>
+                <p class="fs-5 text-muted">Your journey to becoming an instructor in four simple steps</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h5>Apply</h5>
+                        <p>Submit your application with details about your skills, teaching approach, and course ideas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h5>Create Content</h5>
+                        <p>Develop high-quality course content with guidance from our instructional design team.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h5>Go Live</h5>
+                        <p>Launch your courses on our platform and start reaching students worldwide.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h5>Engage & Grow</h5>
+                        <p>Connect with students through discussions, live Q&A sessions, and build a supportive learning community.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
 
+    <!-- Instructor Expectations -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <img class="img-fluid animate-fade-in-up" src="img/instructor-2.jpg" alt="Instructor teaching">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title section-title-left mb-4">What We Expect from Our Instructors</h2>
+                    <ul class="expectation-list">
+                        <li><strong>Passion for Teaching:</strong> A genuine interest in sharing knowledge and facilitating student learning journeys.</li>
+                        <li><strong>Subject Matter Expertise:</strong> Proven proficiency in your field, supported by relevant qualifications and experience.</li>
+                        <li><strong>Communication Skills:</strong> Ability to explain complex concepts clearly and effectively to diverse learners.</li>
+                        <li><strong>Innovation:</strong> Willingness to adopt innovative teaching methodologies and technologies to enhance learning.</li>
+                        <li><strong>Commitment:</strong> Dedication to creating high-quality educational content and supporting student success.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="instructor-quote animate-fade-in-up">
+                <p class="fs-4">"Teaching with Junayed Academy has been one of the most rewarding experiences of my career. The platform's intuitive tools and supportive community have allowed me to reach thousands of eager learners across Bangladesh while doing what I love most – sharing knowledge."</p>
+                <cite>– Dr. Sarah Ahmed, Computer Science Instructor (3+ years with Junayed Academy)</cite>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="cta-section animate-fade-in-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="cta-title">Ready to Share Your Knowledge?</h2>
+                        <p class="fs-5 mb-4">Join thousands of instructors who are transforming lives through education. Start your teaching journey today!</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button type="button" class="btn btn-outline-custom me-3" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
+                        <a href="#faq" class="btn btn-primary-custom">View FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container-xxl py-5" id="faq">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What qualifications do I need to become an instructor?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We look for instructors with proven expertise in their field. While formal qualifications are beneficial, practical experience, industry recognition, and a passion for teaching are equally important.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How much can I earn as an instructor?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Earnings vary based on course popularity, pricing, and student enrollment. Our competitive revenue share model ensures you're rewarded for your efforts. Top instructors earn significant monthly incomes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border rounded-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    What support do you provide for course creation?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our instructional design team provides comprehensive support including course planning, video production guidance, content review, and platform training to help you create engaging, high-quality courses.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applicationModalLabel">Instructor Application</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h5 class="mb-4">Join Junayed Academy's Teaching Community</h5>
+                    <form id="instructorApplicationForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                    <label for="firstName">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                                    <label for="phone">Phone Number</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="educationLevel" required>
+                                        <option value="" selected disabled>Select your highest education</option>
+                                        <option value="High School">High School</option>
+                                        <option value="Undergraduate">Undergraduate</option>
+                                        <option value="Graduate">Graduate</option>
+                                        <option value="Post-Graduate">Post-Graduate</option>
+                                        <option value="Professional Certification">Professional Certification</option>
+                                    </select>
+                                    <label for="educationLevel">Highest Education Level</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="teachingSubject" required>
+                                        <option value="" selected disabled>Select your teaching subject</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Personal Development">Personal Development</option>
+                                        <option value="Languages">Languages</option>
+                                        <option value="Academic Subjects">Academic Subjects</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <label for="teachingSubject">Teaching Subject</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Tell us about your teaching experience and course ideas" id="experience" style="height: 120px" required></textarea>
+                                    <label for="experience">Teaching Experience & Course Ideas</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="linkedin" placeholder="LinkedIn Profile (Optional)">
+                                    <label for="linkedin">LinkedIn Profile (Optional)</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I confirm that the information provided is accurate. I have read, understood, and agree to the Terms of Service. I acknowledge that all transactions are final with no refunds.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="instructorApplicationForm" class="btn btn-primary-custom">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start (Same as before) -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Condition</a></p>
+                    <p><a class="text-light" href="#">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedbinkarim@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to Our Newsletter</h4>
+                    <p>Subscribe now and join our growing community of learners!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
+    
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Spinner
+        var spinner = function () {
+            setTimeout(function () {
+                if ($('#spinner').length > 0) {
+                    $('#spinner').removeClass('show');
+                }
+            }, 1);
+        };
+        spinner();
+        
+        // Back to top button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+        $('.back-to-top').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+            return false;
+        });
+        
+        // Form submission
+        document.getElementById('instructorApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will review your submission and get back to you within 5-7 business days.');
+            $('#applicationModal').modal('hide');
+            this.reset();
+        });
+        
+        // Initialize animations on scroll
+        function initAnimations() {
+            const elements = document.querySelectorAll('.animate-fade-in-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(element);
+            });
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initAnimations);
+    </script>
 </body>
 
 </html>
