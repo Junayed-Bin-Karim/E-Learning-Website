@@ -622,6 +622,49 @@ Ovi is a senior full-stack engineer with over five years of experience architect
                 });
             });
         });
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
+    let started = false;
+
+    const startCounting = () => {
+        counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace("+", ""));
+            counter.textContent = "0+";
+
+            let current = 0;
+            const increment = Math.ceil(target / 100); // speed control
+
+            const updateCount = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = current + "+";
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.textContent = target + "+";
+                }
+            };
+
+            updateCount();
+        });
+    };
+
+    // Trigger only when stats section becomes visible
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+            startCounting();
+            started = true;
+        }
+    }, { threshold: 0.4 });
+
+    observer.observe(document.querySelector(".stats-section"));
+});
+
     </script>
 </body>
 
