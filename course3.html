@@ -3,245 +3,321 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Frontend Development Mastery</title>
+    <title>Junayed Academy | Frontend Mastery Premium</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Frontend Development, React, JavaScript, CSS, Freelancing">
-    <meta name="description" content="A complete 3-month roadmap to becoming a professional Frontend Developer.">
     
     <link href="img/icon.png" rel="icon">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PREMIUM COURSE DETAIL STYLES
+           ULTRA PREMIUM UI VARIABLES
            ========================================= */
         :root {
             --primary: #fb873f;
-            --primary-dark: #e0691e;
-            --dark-bg: #0f172a;
-            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-            --glass-bg: rgba(255, 255, 255, 0.9);
-            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
-            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
+            --primary-dark: #d96921;
+            --secondary: #0f172a;
+            --accent: #6366f1;
+            --bg-body: #f1f5f9;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 50px -10px rgba(251, 135, 63, 0.2);
             --font-main: 'Plus Jakarta Sans', sans-serif;
+            --radius-xl: 24px;
+            --radius-lg: 16px;
         }
 
         body {
             font-family: var(--font-main);
-            background-color: #f8f9fa;
+            background-color: var(--bg-body);
+            color: #334155;
+            overflow-x: hidden;
         }
 
-        html { scroll-behavior: smooth; }
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
-        /* --- Page Header --- */
-        .course-header {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-02.png');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            color: white;
-            margin-bottom: 50px;
-            background-attachment: fixed;
-        }
-
-        /* --- Sticky Sidebar Card --- */
-        .course-sidebar {
-            position: sticky;
-            top: 100px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
-            z-index: 100;
-        }
-
-        .video-preview {
-            position: relative;
-            height: 220px;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        /* =========================================
+           NAVBAR STYLING
+           ========================================= */
+        .navbar {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        .video-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: 0.3s;
-        }
-
-        .video-preview:hover img { opacity: 0.5; }
-
-        .play-btn {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        .sidebar-content { padding: 30px; }
-
-        .price-big {
-            font-size: 2.5rem;
+        .brand-text {
+            background: linear-gradient(90deg, #333 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 800;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .course-header {
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 0 100px 0;
+            color: white;
+            overflow: hidden;
+        }
+
+        .course-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('img/pattern.png'); /* Optional Pattern */
+            opacity: 0.1;
+        }
+
+        .hero-badge {
+            background: rgba(251, 135, 63, 0.15);
+            border: 1px solid rgba(251, 135, 63, 0.3);
             color: var(--primary);
-            display: flex;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
-        .price-big small {
-            font-size: 1rem;
-            color: #999;
-            text-decoration: line-through;
-            font-weight: 500;
+        .instructor-img-ring {
+            padding: 3px;
+            background: linear-gradient(45deg, var(--primary), #fff);
+            border-radius: 50%;
         }
 
-        /* --- Main Content Styling --- */
+        /* =========================================
+           CARDS & CONTENT
+           ========================================= */
         .content-card {
-            background: white;
-            border-radius: 20px;
+            background: var(--glass-bg);
+            border: 1px solid white;
+            border-radius: var(--radius-xl);
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
         }
 
         .section-title {
             font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 25px;
             position: relative;
             display: inline-block;
         }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
 
-    
-
-        /* --- Curriculum Accordion --- */
+        /* --- Custom Accordion --- */
         .accordion-ultra .accordion-item {
-            border: none;
+            border: 1px solid rgba(0,0,0,0.05);
             margin-bottom: 15px;
-            border-radius: 12px !important;
+            border-radius: var(--radius-lg) !important;
             overflow: hidden;
-            background: #f8f9fa;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .accordion-ultra .accordion-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
         }
 
         .accordion-ultra .accordion-button {
-            background: #f8f9fa;
-            color: #333;
+            background: white;
+            color: var(--secondary);
             font-weight: 700;
-            padding: 20px;
+            padding: 20px 25px;
             box-shadow: none;
         }
 
         .accordion-ultra .accordion-button:not(.collapsed) {
-            background: rgba(251, 135, 63, 0.1);
+            background: linear-gradient(to right, rgba(251, 135, 63, 0.05), transparent);
             color: var(--primary);
         }
 
-        .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
         .accordion-body li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #475569;
             display: flex;
             align-items: center;
-            font-size: 0.95rem;
-            color: #555;
         }
-        .accordion-body li:last-child { border-bottom: none; }
-        .accordion-body li i { margin-right: 15px; color: var(--primary); width: 20px; }
+        .accordion-body li i { color: var(--primary); margin-right: 12px; }
 
-        /* --- Ultra Buttons --- */
+        /* =========================================
+           SIDEBAR & STICKY ELEMENTS
+           ========================================= */
+        .course-sidebar {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.8);
+            z-index: 90;
+        }
+
+        .video-preview {
+            position: relative;
+            height: 240px;
+            background: #000;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .video-preview img {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0.8; transition: 0.5s;
+        }
+        
+        .video-preview:hover img { transform: scale(1.1); opacity: 0.6; }
+
+        .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Buttons --- */
         .btn-ultra {
-            background: var(--gradient-ultra);
+            background: linear-gradient(135deg, #fb873f 0%, #e0691e 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 16px 30px;
             border-radius: 50px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             width: 100%;
-            position: relative;
-            overflow: hidden;
-            transition: 0.4s;
-            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
+            transition: all 0.3s ease;
         }
-        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+        .btn-ultra:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
+            color: white;
+        }
 
-        /* --- EMI Calculator --- */
+        /* =========================================
+           EMI CALCULATOR
+           ========================================= */
         .emi-box {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 30px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-lg);
+            padding: 30px;
         }
-        .form-range::-webkit-slider-thumb { background: var(--primary); }
 
-        /* Mobile Fix */
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px; width: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            margin-top: -10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 6px;
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        /* =========================================
+           MOBILE OPTIMIZATIONS
+           ========================================= */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none; /* Hidden on desktop */
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+        }
+
         @media (max-width: 991px) {
-            .course-sidebar { position: static; margin-top: 30px; }
-            .course-header { padding: 60px 0; }
+            .course-header { padding: 100px 0 60px 0; }
+            .content-card { padding: 25px; }
+            
+            /* Hide Sidebar Main Content on Mobile, show sticky bottom instead */
+            .sidebar-desktop-only { display: none; }
+            .course-sidebar { margin-top: 0; background: transparent; box-shadow: none; border: none;}
+            .video-preview { border-radius: 15px; margin-bottom: 20px; }
+            
+            .mobile-bottom-nav { display: flex; }
+            body { padding-bottom: 80px; } /* Prevent content hiding behind nav */
         }
     </style>
 </head>
 
 <body>
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
 
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;">
-                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
-                Junayed<span style="color: #fb873f;">Academy</span>
-            </p>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link active">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
-                    </div>
+    <nav class="navbar navbar-expand-lg sticky-top p-0">
+        <div class="container">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/icon.png" alt="Logo" height="40px" class="me-2">
+                <span class="brand-text h4 m-0">Junayed Academy</span>
+            </a>
+            <button type="button" class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link px-3 text-dark fw-bold">Home</a>
+                    <a href="courses.html" class="nav-item nav-link px-3 text-primary fw-bold">Courses</a>
+                    <a href="contact.html" class="nav-item nav-link px-3 text-dark fw-bold">Contact</a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
-                </a>
+                <a href="login.html" class="btn btn-outline-dark rounded-pill px-4 ms-3 d-none d-lg-block">Login</a>
             </div>
         </div>
     </nav>
@@ -250,24 +326,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="mb-3">
-                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Bestseller</span>
-                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">3 Months Program</span>
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i> Bestselling Course 2025
                     </div>
-                    <h1 class="display-4 fw-bold text-white mb-3">Frontend Development Mastery</h1>
-                    <p class="lead text-white-50 mb-4">A complete roadmap to becoming a professional Frontend Developer. Master React, modern JavaScript, and start freelancing.</p>
+                    <h1 class="display-4 fw-800 mb-3" style="font-weight: 800; letter-spacing: -1px;">
+                        Frontend Development <span style="color:var(--primary)">Mastery</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-4" style="max-width: 600px;">
+                        The only roadmap you need to master React, modern JavaScript, and start earning in Dollars. Built for absolute beginners.
+                    </p>
                     
-                    <div class="d-flex align-items-center gap-4 text-white-50 small">
-                        <span><i class="fas fa-star text-warning me-1"></i> 4.9 (1.2k+ Ratings)</span>
-                        <span><i class="fas fa-user-graduate me-1"></i> 1,200+ Enrolled</span>
-                        <span><i class="fas fa-globe me-1"></i> Bengali / English</span>
+                    <div class="d-flex flex-wrap gap-4 text-white-50 small mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-star text-warning me-2"></i> 4.9 (1.2k Ratings)
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-users me-2 text-info"></i> 1,200+ Enrolled
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-language me-2 text-success"></i> Bangla / English
+                        </div>
                     </div>
 
-                    <div class="d-flex align-items-center mt-4">
-                        <img src="img/team-1.png" class="rounded-circle border border-2 border-white" width="50" height="50" alt="Instructor">
+                    <div class="d-flex align-items-center p-3 rounded-3" style="background: rgba(255,255,255,0.05); width: fit-content; border: 1px solid rgba(255,255,255,0.1);">
+                        <div class="instructor-img-ring">
+                            <img src="img/team-1.png" class="rounded-circle" width="45" height="45" alt="Instructor">
+                        </div>
                         <div class="ms-3">
-                            <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
-                            <small class="text-white-50">Lead Instructor</small>
+                            <p class="text-white mb-0 fw-bold" style="font-size: 0.9rem;">Junayed Bin Karim</p>
+                            <small class="text-white-50" style="font-size: 0.75rem;">Senior Software Engineer</small>
                         </div>
                     </div>
                 </div>
@@ -275,150 +362,147 @@
         </div>
     </div>
 
-    <div class="container pb-5">
-        <div class="row">
+    <div class="container pb-5" style="margin-top: -50px; position: relative; z-index: 10;">
+        <div class="row g-4">
             
             <div class="col-lg-8">
                 
                 <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Course Overview</h3>
+                    <h3 class="section-title">What You'll Learn</h3>
                     <p class="text-muted mb-4">
-                        This 3-month comprehensive program is not just about coding; it's about building a career. You will learn HTML, CSS, JavaScript, and modern frontend frameworks. Through hands-on projects, you will be ready to tackle the freelance market on Upwork and Fiverr.
+                        This 3-month comprehensive program is designed to take you from "Hello World" to "Hired". We focus on the skills that high-paying clients actually want.
                     </p>
                     
-                    <h5 class="fw-bold mb-3">Why Choose This Course?</h5>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Live Interactive Classes</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 4 Real-world Projects</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Freelance Marketplace Guide</li>
-                            </ul>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                    <i class="fas fa-code text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Modern Stack</h6>
+                                    <small class="text-muted">React 18, Tailwind, Next.js</small>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                    <i class="fas fa-laptop-code text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Real Projects</h6>
+                                    <small class="text-muted">Build 4 Portfolio-ready apps</small>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Verified Certification</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Lifetime Access</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 24/7 Community Support</li>
-                            </ul>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                    <i class="fas fa-dollar-sign text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Freelancing</h6>
+                                    <small class="text-muted">Upwork & Fiverr Crash Course</small>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-3">
+                                <div class="bg-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                    <i class="fas fa-certificate text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Certification</h6>
+                                    <small class="text-muted">Verifyable digital certificate</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp" id="curriculum">
+                <div class="content-card animated fadeInUp" style="animation-delay: 0.1s;">
                     <h3 class="section-title">Course Curriculum</h3>
-                    <p class="text-muted mb-4">Step-by-step 3 Month Journey</p>
-                    
-                    <div class="accordion accordion-ultra" id="courseAccordion">
+                    <div class="accordion accordion-ultra mt-3" id="courseAccordion">
                         
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Month 1: The Foundation (HTML, CSS, JS)
+                                    <span class="me-3 fw-bold text-muted">01</span> Month 1: The Foundation
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> HTML5 Semantic Structure</li>
-                                        <li><i class="fas fa-play-circle"></i> CSS3 Styling & Layouts</li>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-play-circle"></i> HTML5 Semantic Structure & SEO</li>
+                                        <li><i class="fas fa-play-circle"></i> CSS3, Flexbox & Grid Mastery</li>
                                         <li><i class="fas fa-play-circle"></i> JavaScript Logic Fundamentals</li>
-                                        <li><i class="fas fa-play-circle"></i> Building Static Websites</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Personal Portfolio Site</li>
+                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Project: Personal Portfolio Website</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
+                            <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    Month 2: Advanced Frontend (ES6+, React)
+                                    <span class="me-3 fw-bold text-muted">02</span> Month 2: Advanced Frontend
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Modern JavaScript (ES6+)</li>
-                                        <li><i class="fas fa-play-circle"></i> Responsive Design (Flexbox, Grid)</li>
-                                        <li><i class="fas fa-play-circle"></i> DOM Manipulation</li>
-                                        <li><i class="fas fa-play-circle"></i> Git & GitHub Version Control</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: E-commerce Website UI</li>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-play-circle"></i> Modern JS (ES6+, Async/Await)</li>
+                                        <li><i class="fas fa-play-circle"></i> React.js Components & Hooks</li>
+                                        <li><i class="fas fa-play-circle"></i> State Management (Context API)</li>
+                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Project: Dynamic E-commerce UI</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
+                            <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    Month 3: Deployment & Career
+                                    <span class="me-3 fw-bold text-muted">03</span> Month 3: Career Launch
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Deployment (Netlify, Vercel)</li>
-                                        <li><i class="fas fa-play-circle"></i> API Consumption & Backend Basics</li>
-                                        <li><i class="fas fa-play-circle"></i> Upwork/Fiverr Profile Optimization</li>
-                                        <li><i class="fas fa-play-circle"></i> Mock Interviews & Resume Building</li>
-                                        <li><i class="fas fa-laptop-code"></i> Final Capstone Project</li>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-play-circle"></i> API Consumption & Deployment</li>
+                                        <li><i class="fas fa-play-circle"></i> Upwork Profile Optimization</li>
+                                        <li><i class="fas fa-play-circle"></i> Client Communication Skills</li>
+                                        <li class="bg-white border border-primary text-primary"><i class="fas fa-trophy"></i> Final: Full Stack Integration Project</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Your Instructor</h3>
-                    <div class="d-flex align-items-start mt-3">
-                        <img src="img/team-1.png" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Instructor">
-                        <div class="ms-4">
-                            <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary small mb-3">Senior Frontend Engineer</p>
-                            <p class="text-muted small">
-                                Junayed has 3+ years of experience in building scalable web applications. A CSE graduate from Daffodil International University, he specializes in React, Node.js, and AI integration in web apps.
-                            </p>
-                            <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark">React</span>
-                                <span class="badge bg-light text-dark">Node.js</span>
-                                <span class="badge bg-light text-dark">SEO</span>
-                            </div>
-                        </div>
+                <div class="content-card animated fadeInUp" id="payment-section" style="animation-delay: 0.2s;">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="section-title m-0">Easy Installments</h3>
+                        <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">0% Interest</span>
                     </div>
-                </div>
-
-                <div class="content-card animated fadeInUp" id="payment">
-                    <h3 class="section-title">Flexible Payment Plans</h3>
-                    <p class="text-muted">No credit card? No problem. Use our installment system.</p>
                     
                     <div class="emi-box">
-                        <h5><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h5>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <label class="form-label">Course Fee: <strong>৳ 15,000</strong></label>
-                                <input type="range" class="form-range" id="courseFee" min="15000" max="15000" value="15000" disabled>
+                        <div class="row align-items-center">
+                            <div class="col-md-7 mb-4 mb-md-0">
+                                <label class="text-muted fw-bold small text-uppercase mb-2">Adjust Duration</label>
+                                <div class="d-flex justify-content-between mb-2 fw-bold">
+                                    <span>1 Month</span>
+                                    <span class="text-primary" id="monthDisplay">3 Months</span>
+                                </div>
+                                <input type="range" id="installments" min="1" max="3" step="1" value="3">
+                                <div class="d-flex gap-2 mt-3">
+                                    <img src="https://securepay.sslcommerz.com/public/image/bkash.png" height="30" alt="">
+                                    <img src="https://securepay.sslcommerz.com/public/image/nagad.png" height="30" alt="">
+                                    <img src="https://securepay.sslcommerz.com/public/image/rocket.png" height="30" alt="">
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Installments: <strong id="monthDisplay">3 Months</strong></label>
-                                <input type="range" class="form-range" id="installments" min="1" max="3" step="1" value="3">
+                            <div class="col-md-5 text-center text-md-end">
+                                <p class="mb-0 text-muted">You Pay Monthly</p>
+                                <h2 class="display-6 fw-bold text-dark mb-0" id="emiAmount">৳ 5,000</h2>
+                                <small class="text-muted">Total: ৳ 15,000</small>
                             </div>
-                        </div>
-                        <div class="alert alert-primary mt-3 d-flex justify-content-between align-items-center">
-                            <span>Monthly Payment:</span>
-                            <h4 class="mb-0 fw-bold" id="emiAmount">৳ 5,000</h4>
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <h6>Supported Payment Methods:</h6>
-                        <div class="d-flex gap-3 mt-2 flex-wrap">
-                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-danger"></i>Bkash</span>
-                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-warning"></i>Nagad</span>
-                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-primary"></i>Rocket</span>
-                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-university me-2 text-secondary"></i>Bank Transfer</span>
                         </div>
                     </div>
                 </div>
@@ -428,60 +512,73 @@
             <div class="col-lg-4">
                 <div class="course-sidebar">
                     <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
-                        <img src="img/course-02.png" alt="Preview">
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <img src="img/course-02.png" alt="Course Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play" style="margin-left: 4px;"></i>
+                        </div>
                     </div>
-                    <div class="sidebar-content">
-                        <div class="price-big mb-3">
-                            ৳ 15,000 <small>৳ 20,000</small>
+
+                    <div class="p-4 sidebar-desktop-only">
+                        <div class="d-flex align-items-end gap-2 mb-3">
+                            <h2 class="fw-bold text-dark m-0">৳ 15,000</h2>
+                            <h5 class="text-muted text-decoration-line-through mb-1">৳ 25,000</h5>
                         </div>
                         
-                        <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo</button>
+                        <div class="alert alert-warning d-flex align-items-center p-2 small mb-4">
+                            <i class="fas fa-clock me-2"></i> Offer ends in 2 days!
+                        </div>
 
-                        <h6 class="fw-bold mb-3">Course Includes:</h6>
-                        <ul class="list-unstyled text-muted small">
-                            <li class="mb-2"><i class="fas fa-clock me-2 text-primary"></i> 3 Months Duration</li>
-                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 15+ Live Classes</li>
-                            <li class="mb-2"><i class="fas fa-project-diagram me-2 text-primary"></i> 4 Capstone Projects</li>
-                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Lifetime Access</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Premium Certificate</li>
-                        </ul>
+                        <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                            Enroll Now <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
                         
-                        <hr>
-                        <h6 class="fw-bold mb-2">Share this course:</h6>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-whatsapp"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">
+                            Book Free Demo Class
+                        </button>
+
+                        <div class="border-top pt-4">
+                            <h6 class="fw-bold mb-3">This Course Includes:</h6>
+                            <ul class="list-unstyled small text-muted">
+                                <li class="mb-3 d-flex"><i class="fas fa-video text-primary me-3 mt-1"></i> 30+ Live Zoom Classes</li>
+                                <li class="mb-3 d-flex"><i class="fas fa-folder-open text-primary me-3 mt-1"></i> Source Code Access</li>
+                                <li class="mb-3 d-flex"><i class="fab fa-discord text-primary me-3 mt-1"></i> Private Discord Community</li>
+                                <li class="mb-3 d-flex"><i class="fas fa-infinity text-primary me-3 mt-1"></i> Lifetime Access to Videos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+    </div>
+
+    <div class="mobile-bottom-nav">
+        <div>
+            <span class="d-block text-muted small text-decoration-line-through">৳ 25,000</span>
+            <span class="d-block fw-bold text-dark h5 m-0">৳ 15,000</span>
+        </div>
+        <button class="btn btn-ultra py-2 px-4 w-50" data-bs-toggle="modal" data-bs-target="#paymentModal">
+            Enroll Now
+        </button>
     </div>
 
     <div class="modal fade" id="demoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Book Free Demo Class</h5>
+                    <h5 class="modal-title fw-bold">Book Free Class</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-3">Experience our live teaching style before you commit.</p>
+                <div class="modal-body p-4">
                     <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control rounded-pill px-3" placeholder="Your Name" required>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control rounded-3" id="floatingName" placeholder="Name">
+                            <label for="floatingName">Your Name</label>
                         </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address" required>
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control rounded-3" id="floatingPhone" placeholder="Phone">
+                            <label for="floatingPhone">Phone Number</label>
                         </div>
-                        <div class="mb-3">
-                            <input type="tel" class="form-control rounded-pill px-3" placeholder="Phone Number" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Confirm Booking</button>
+                        <button class="btn btn-ultra w-100">Confirm Booking</button>
                     </form>
                 </div>
             </div>
@@ -490,106 +587,96 @@
 
     <div class="modal fade" id="paymentModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Complete Enrollment</h5>
+            <div class="modal-content border-0 rounded-4 shadow-lg">
+                <div class="modal-header border-0 bg-light rounded-top-4">
+                    <h5 class="modal-title fw-bold">Secure Checkout</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body pt-0">
-                    <div class="alert alert-success mb-3">
-                        <div class="d-flex justify-content-between">
-                            <strong>Total Payable:</strong>
-                            <strong>৳ 15,000</strong>
-                        </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded-3">
+                        <span class="text-muted">Total Payable</span>
+                        <span class="h4 fw-bold m-0 text-primary">৳ 15,000</span>
                     </div>
+                    
                     <form>
-                        <h6 class="fw-bold mb-3">Student Details</h6>
                         <div class="row g-2 mb-3">
-                            <div class="col-6"><input type="text" class="form-control" placeholder="Full Name"></div>
-                            <div class="col-6"><input type="tel" class="form-control" placeholder="Phone"></div>
+                            <div class="col-6"><input type="text" class="form-control p-3 bg-light border-0" placeholder="Full Name"></div>
+                            <div class="col-6"><input type="tel" class="form-control p-3 bg-light border-0" placeholder="Phone"></div>
                         </div>
-                        <label class="form-label small fw-bold">Payment Method</label>
-                        <select class="form-select mb-4">
-                            <option selected>Select Option</option>
-                            <option value="bkash">Bkash</option>
-                            <option value="nagad">Nagad</option>
-                            <option value="one-time">Full Payment (10% Off)</option>
-                            <option value="install">Installment (3 Months)</option>
-                        </select>
-                        <button type="submit" class="btn btn-ultra">Proceed to Payment</button>
+                        
+                        <label class="fw-bold small mb-2">Select Payment Method</label>
+                        <div class="d-grid gap-2 mb-4">
+                            <input type="radio" class="btn-check" name="options" id="bkash" autocomplete="off" checked>
+                            <label class="btn btn-outline-danger d-flex justify-content-between align-items-center" for="bkash">
+                                <span><i class="fas fa-mobile-alt me-2"></i> Bkash</span>
+                                <i class="fas fa-check-circle"></i>
+                            </label>
+                            
+                            <input type="radio" class="btn-check" name="options" id="nagad" autocomplete="off">
+                            <label class="btn btn-outline-warning d-flex justify-content-between align-items-center" for="nagad">
+                                <span><i class="fas fa-mobile-alt me-2"></i> Nagad</span>
+                                <i class="fas fa-circle text-light"></i>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-ultra w-100">Pay Now</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Quick Links</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="courses.html">All Courses</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
-                    <p><a class="text-light" href="#">Privacy Policy</a></p>
-                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Contact Information</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe</h4>
-                    <p>Get the latest updates and offers.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
         <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold text-primary mb-3">Junayed Academy</h4>
+                    <p class="text-white-50">Empowering the next generation of Bangladeshi developers with world-class tech education.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Mirpur, Dhaka</li>
+                        <li><i class="fas fa-phone me-2"></i> +880 1893 255503</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Socials</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
+            <hr class="border-secondary mt-5">
+            <div class="text-center text-white-50 small">
+                &copy; 2025 Junayed Academy. All rights reserved.
+            </div>
         </div>
-    </div>
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // EMI Calculator Logic
-        const installmentSlider = document.getElementById('installments');
+        // Smooth EMI Calculator
+        const slider = document.getElementById('installments');
         const emiDisplay = document.getElementById('emiAmount');
         const monthDisplay = document.getElementById('monthDisplay');
-        const totalFee = 15000;
+        const totalAmount = 15000;
 
-        installmentSlider.addEventListener('input', function() {
-            const months = parseInt(this.value);
-            const monthlyPayment = Math.ceil(totalFee / months);
+        slider.addEventListener('input', (e) => {
+            const months = e.target.value;
+            const amount = Math.ceil(totalAmount / months);
             
-            monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
-            emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
+            // Text Update
+            monthDisplay.innerText = `${months} Month${months > 1 ? 's' : ''}`;
+            emiDisplay.innerText = `৳ ${amount.toLocaleString()}`;
+            
+            // Animation for text
+            emiDisplay.classList.remove('animate__fadeIn');
+            void emiDisplay.offsetWidth; // trigger reflow
+            emiDisplay.classList.add('animate__animated', 'animate__fadeIn');
         });
     </script>
 </body>
-
 </html>
