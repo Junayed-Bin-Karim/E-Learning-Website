@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Tech Courses Catalog - Programming, AI, Web Development</title>
+    <title>Junayed Academy | Premium Course Catalog</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy courses, programming courses Bangladesh, AI training">
-    <meta name="description" content="Explore Junayed Academy's comprehensive tech courses catalog.">
+    <meta name="keywords" content="Junayed Academy, Programming, AI, Web Development, Bangladesh">
+    <meta name="description" content="Explore Junayed Academy's comprehensive tech courses catalog. Master in-demand skills.">
     
     <link href="img/icon.png" rel="icon">
 
@@ -26,14 +26,14 @@
 
     <style>
         /* =========================================
-           ULTRA PREMIUM DESIGN SYSTEM (Courses Page)
+           ULTRA PREMIUM DESIGN SYSTEM
            ========================================= */
         :root {
             --primary: #fb873f;
             --primary-dark: #e0691e;
             --dark-bg: #0f172a;
             --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(255, 255, 255, 0.6);
             --shadow-card: 0 15px 35px rgba(0,0,0,0.05);
             --shadow-hover: 0 25px 50px rgba(251, 135, 63, 0.15);
@@ -45,30 +45,27 @@
             background-color: #f8f9fa;
         }
 
-        /* --- Smooth Scrolling --- */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         /* --- Page Header --- */
         .page-header-ultra {
             background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('img/carousel-1.jpg');
             background-size: cover;
             background-position: center;
-            padding: 100px 0;
+            padding: 120px 0 100px 0;
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         /* --- Glassmorphism Search Bar --- */
         .glass-filter-bar {
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid white;
             border-radius: 20px;
             padding: 30px;
             box-shadow: var(--shadow-card);
-            margin-top: -80px;
+            margin-top: -90px;
             position: relative;
             z-index: 10;
         }
@@ -86,7 +83,7 @@
             box-shadow: 0 0 0 5px rgba(251, 135, 63, 0.1);
         }
 
-        /* --- Category Pills (Premium) --- */
+        /* --- Category Pills --- */
         .category-tag {
             display: inline-block;
             background: white;
@@ -102,32 +99,20 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
-        .category-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .category-tag.active {
+        .category-tag:hover, .category-tag.active {
             background: var(--gradient-ultra);
             color: white;
             border-color: transparent;
             box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+            transform: translateY(-3px);
         }
 
         .course-count {
             background: rgba(255,255,255,0.2);
-            color: inherit;
             padding: 2px 8px;
             border-radius: 10px;
             font-size: 0.75rem;
             margin-left: 8px;
-        }
-        
-        .category-tag.active .course-count {
-            background: rgba(255,255,255,0.3);
-            color: white;
         }
 
         /* --- Course Cards (Ultra) --- */
@@ -138,9 +123,9 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(0,0,0,0.05);
             height: 100%;
-            position: relative;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .course-card-ultra:hover {
@@ -152,7 +137,7 @@
         .course-image-wrapper {
             position: relative;
             overflow: hidden;
-            height: 220px;
+            height: 200px;
         }
 
         .course-image {
@@ -162,9 +147,7 @@
             transition: transform 0.6s ease;
         }
 
-        .course-card-ultra:hover .course-image {
-            transform: scale(1.1);
-        }
+        .course-card-ultra:hover .course-image { transform: scale(1.1); }
 
         .course-badge {
             position: absolute;
@@ -175,13 +158,12 @@
             font-weight: 700;
             font-size: 0.75rem;
             z-index: 2;
-            letter-spacing: 0.5px;
             backdrop-filter: blur(5px);
+            letter-spacing: 0.5px;
         }
-
-        .badge-free { background: rgba(251, 135, 63, 0.9); color: white; }
-        .badge-paid { background: rgba(14, 212, 76, 0.9); color: white; }
-        .badge-coming { background: rgba(108, 117, 125, 0.9); color: white; }
+        .badge-free { background: rgba(251, 135, 63, 0.95); color: white; }
+        .badge-paid { background: rgba(14, 212, 76, 0.95); color: white; }
+        .badge-coming { background: rgba(108, 117, 125, 0.95); color: white; }
 
         .course-content {
             padding: 25px;
@@ -190,19 +172,13 @@
             flex-direction: column;
         }
 
-        .meta-tags {
-            margin-bottom: 15px;
-        }
-
         .level-badge {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             padding: 4px 10px;
             border-radius: 6px;
-            letter-spacing: 0.5px;
         }
-        
         .level-beginner { background: #e8f5e9; color: #2e7d32; }
         .level-intermediate { background: #fff8e1; color: #f57f17; }
         .level-advanced { background: #ffebee; color: #c62828; }
@@ -217,14 +193,14 @@
         }
 
         .price-text {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             background: var(--gradient-ultra);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* --- Ultra Buttons --- */
+        /* --- Buttons --- */
         .btn-ultra-sm {
             background: var(--gradient-ultra);
             color: white;
@@ -233,27 +209,31 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.85rem;
-            transition: 0.3s;
             position: relative;
             overflow: hidden;
+            transition: 0.3s;
         }
+        .btn-ultra-sm:hover { color: white; box-shadow: 0 5px 15px rgba(251, 135, 63, 0.4); transform: translateY(-2px); }
 
-        .btn-ultra-sm::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
+        /* --- Pagination --- */
+        .pagination .page-link {
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            font-weight: 700;
+            color: #555;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
-
-        .btn-ultra-sm:hover::after { left: 100%; }
-        .btn-ultra-sm:hover {
+        .pagination .page-link.active, .pagination .page-link:hover {
+            background: var(--gradient-ultra);
             color: white;
-            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.4);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         /* --- Stats Bar --- */
@@ -265,11 +245,13 @@
             margin-bottom: 40px;
             border: 1px solid rgba(0,0,0,0.03);
         }
-        
         .stat-item { padding: 10px; border-right: 1px solid #eee; }
         .stat-item:last-child { border-right: none; }
         .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
         .stat-txt { font-size: 0.85rem; color: #777; font-weight: 600; text-transform: uppercase; }
+
+        /* Hide logic for JS */
+        .course-item { display: none; } 
 
         @media (max-width: 768px) {
             .glass-filter-bar { margin-top: -40px; padding: 20px; }
@@ -284,6 +266,7 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <p class="m-0 fw-bold" style="font-size: 24px;">
@@ -291,7 +274,7 @@
                 Junayed<span style="color: #fb873f;">Academy</span>
             </p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -314,6 +297,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container-fluid page-header-ultra">
         <div class="container py-5 text-center">
             <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">Premium Content</span>
@@ -321,6 +305,7 @@
             <p class="lead text-white-50 mb-0 animated slideInUp">Master in-demand tech skills with industry-relevant curriculum</p>
         </div>
     </div>
+
     <div class="container-xxl">
         <div class="container">
             <div class="glass-filter-bar animated fadeInUp">
@@ -330,7 +315,7 @@
                             <span class="input-group-text bg-white border-0 ps-4" style="border-radius: 50px 0 0 50px;">
                                 <i class="fas fa-search text-primary"></i>
                             </span>
-                            <input type="text" class="form-control border-0 py-3 ps-2" id="courseSearch" placeholder="What do you want to learn today?" style="border-radius: 0 50px 50px 0;">
+                            <input type="text" class="form-control border-0 py-3 ps-2" id="courseSearch" placeholder="Search courses (e.g., 'Python', 'Web Development')" style="border-radius: 0 50px 50px 0;">
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -352,7 +337,7 @@
             <div class="stats-island animated fadeInUp">
                 <div class="row text-center">
                     <div class="col-md-3 col-6 stat-item">
-                        <div class="stat-val">12+</div>
+                        <div class="stat-val">16+</div>
                         <div class="stat-txt">Courses</div>
                     </div>
                     <div class="col-md-3 col-6 stat-item">
@@ -372,37 +357,31 @@
 
             <div class="text-center mb-5 animated fadeInUp">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
-                    <span class="category-tag active" data-category="all">All <span class="course-count">12</span></span>
-                    <span class="category-tag" data-category="web">Web Dev <span class="course-count">4</span></span>
-                    <span class="category-tag" data-category="programming">Programming <span class="course-count">5</span></span>
+                    <span class="category-tag active" data-category="all">All <span class="course-count">16</span></span>
+                    <span class="category-tag" data-category="web">Web Dev <span class="course-count">6</span></span>
+                    <span class="category-tag" data-category="programming">Programming <span class="course-count">7</span></span>
                     <span class="category-tag" data-category="ai">AI & ML <span class="course-count">2</span></span>
                     <span class="category-tag" data-category="academic">Academic <span class="course-count">3</span></span>
-                    <span class="category-tag" data-category="free">Free <span class="course-count">4</span></span>
-                    <span class="category-tag" data-category="paid">Premium <span class="course-count">8</span></span>
+                    <span class="category-tag" data-category="free">Free <span class="course-count">5</span></span>
+                    <span class="category-tag" data-category="paid">Premium <span class="course-count">11</span></span>
                 </div>
             </div>
 
             <div class="row g-4" id="courseGrid">
                 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="web free">
+                <div class="col-lg-3 col-md-6 course-item web free">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-1.jpg" alt="HTML">
                             <div class="course-badge badge-free">FREE</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-beginner">Beginner</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 2h</span>
                             </div>
                             <h5 class="fw-bold mb-2">HTML & CSS Fundamentals</h5>
-                            <p class="small text-muted mb-3">Build your first website with industry standard best practices.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.5</span>
-                                <span class="text-muted small ms-2">(500+)</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">Build your first website with best practices.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 0</span>
                                 <a href="single.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -411,25 +390,19 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="web paid">
+                <div class="col-lg-3 col-md-6 course-item web paid">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-02.png" alt="Frontend">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-intermediate">Intermediate</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 15h</span>
                             </div>
                             <h5 class="fw-bold mb-2">Front End Development</h5>
                             <p class="small text-muted mb-3">Master React, Tailwind, and modern JavaScript.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.8</span>
-                                <span class="text-muted small ms-2">(1.2k+)</span>
-                            </div>
-                            
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 15,000</span>
                                 <a href="course2.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -438,25 +411,19 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="ai paid">
+                <div class="col-lg-3 col-md-6 course-item ai paid">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-3.webp" alt="AI">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-advanced">Advanced</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 30h</span>
                             </div>
                             <h5 class="fw-bold mb-2">Machine Learning Mastery</h5>
-                            <p class="small text-muted mb-3">Python for Data Science, ML algorithms and Deployment.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.9</span>
-                                <span class="text-muted small ms-2">(1.1k+)</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">Python for Data Science, ML algorithms.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 15,000</span>
                                 <a href="course3.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -465,25 +432,19 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming paid">
+                <div class="col-lg-3 col-md-6 course-item programming paid">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-4.jpg" alt="Python">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-beginner">Beginner</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 10h</span>
                             </div>
                             <h5 class="fw-bold mb-2">Python Programming</h5>
-                            <p class="small text-muted mb-3">The most popular language for automation and backend.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.7</span>
-                                <span class="text-muted small ms-2">(500+)</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">Automation and backend logic basics.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 5,000</span>
                                 <a href="course4.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -492,25 +453,19 @@
                     </div>
                 </div>
 
-                 <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming paid">
+                <div class="col-lg-3 col-md-6 course-item programming paid">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-5.jpg" alt="DSA">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-intermediate">Intermediate</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 25h</span>
                             </div>
                             <h5 class="fw-bold mb-2">Data Structures & Algo</h5>
-                            <p class="small text-muted mb-3">Crack coding interviews with optimized problem solving.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.8</span>
-                                <span class="text-muted small ms-2">(850+)</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">Crack coding interviews efficiently.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 10,000</span>
                                 <a href="Course5.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -519,24 +474,19 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="ai free">
+                <div class="col-lg-3 col-md-6 course-item ai free">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-6.jpg" alt="ChatGPT">
                             <div class="course-badge badge-coming">SOON</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-beginner">Beginner</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 4.5h</span>
                             </div>
                             <h5 class="fw-bold mb-2">ChatGPT for Beginners</h5>
-                            <p class="small text-muted mb-3">Prompt engineering fundamentals for daily productivity.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-muted small"><i class="far fa-star"></i> New</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">Prompt engineering fundamentals.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">Free</span>
                                 <button class="btn btn-outline-secondary btn-sm rounded-pill" disabled>Waitlist</button>
@@ -545,25 +495,19 @@
                     </div>
                 </div>
 
-                 <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="academic paid">
+                <div class="col-lg-3 col-md-6 course-item academic paid">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-7.jpg" alt="SSC">
                             <div class="course-badge badge-paid">PREMIUM</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-beginner">Academic</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 3m</span>
                             </div>
                             <h5 class="fw-bold mb-2">SSC ICT Mastery</h5>
                             <p class="small text-muted mb-3">Complete preparation for SSC exams.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.9</span>
-                                <span class="text-muted small ms-2">(1.2k+)</span>
-                            </div>
-                            
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 20,000</span>
                                 <a href="Course7.html" class="btn btn-ultra-sm">Enroll Now</a>
@@ -572,27 +516,190 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 animated fadeInUp" data-category="programming free">
+                <div class="col-lg-3 col-md-6 course-item academic paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-8.jpg" alt="HSC">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-intermediate">Academic</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 3m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">HSC ICT Mastery</h5>
+                            <p class="small text-muted mb-3">Advanced ICT preparation for HSC.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 22,000</span>
+                                <a href="Course8.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item office free">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-9.jpg" alt="Excel">
+                            <div class="course-badge badge-free">FREE</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 1m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Introduction to Excel</h5>
+                            <p class="small text-muted mb-3">Formulas, data analysis and basics.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 0</span>
+                                <a href="Course9.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item academic paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-10.jpg" alt="JSC">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-beginner">Academic</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 3m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">JSC ICT Mastery</h5>
+                            <p class="small text-muted mb-3">Foundation ICT for junior school.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 20,000</span>
+                                <a href="Course10.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item programming free">
                     <div class="course-card-ultra">
                         <div class="course-image-wrapper">
                             <img class="course-image" src="img/course-11.jpg" alt="Java">
                             <div class="course-badge badge-free">FREE</div>
                         </div>
                         <div class="course-content">
-                            <div class="meta-tags">
+                            <div class="mb-2">
                                 <span class="level-badge level-beginner">Beginner</span>
                                 <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 1m</span>
                             </div>
                             <h5 class="fw-bold mb-2">Java Programming</h5>
-                            <p class="small text-muted mb-3">OOP concepts and building robust applications.</p>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="text-warning small"><i class="fas fa-star"></i> 4.4</span>
-                            </div>
-                            
+                            <p class="small text-muted mb-3">OOP concepts and building apps.</p>
                             <div class="course-price-wrapper">
                                 <span class="price-text">৳ 0</span>
                                 <a href="Course11.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item programming paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-12.png" alt="C">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 3m</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">C for Beginners</h5>
+                            <p class="small text-muted mb-3">Pointers, memory management & logic.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 5,000</span>
+                                <a href="course12.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item web paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-13.jpg" alt="Marketing">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-intermediate">Intermediate</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 20h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Digital Marketing Pro</h5>
+                            <p class="small text-muted mb-3">SEO, Social Media & Analytics mastery.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 8,000</span>
+                                <a href="course13.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item programming paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-14.jpg" alt="Security">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-advanced">Advanced</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 40h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Ethical Hacking</h5>
+                            <p class="small text-muted mb-3">Network security & penetration testing.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 18,000</span>
+                                <a href="course14.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item programming paid">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-15.jpg" alt="Flutter">
+                            <div class="course-badge badge-paid">PREMIUM</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-intermediate">Intermediate</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 35h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Flutter App Dev</h5>
+                            <p class="small text-muted mb-3">Build native iOS and Android apps.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 12,000</span>
+                                <a href="course15.html" class="btn btn-ultra-sm">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 course-item web free">
+                    <div class="course-card-ultra">
+                        <div class="course-image-wrapper">
+                            <img class="course-image" src="img/course-16.jpg" alt="UI/UX">
+                            <div class="course-badge badge-free">FREE</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="mb-2">
+                                <span class="level-badge level-beginner">Beginner</span>
+                                <span class="text-muted ms-2 small"><i class="far fa-clock me-1"></i> 5h</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">UI/UX Design Basics</h5>
+                            <p class="small text-muted mb-3">Learn Figma & design principles.</p>
+                            <div class="course-price-wrapper">
+                                <span class="price-text">৳ 0</span>
+                                <a href="course16.html" class="btn btn-ultra-sm">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -611,11 +718,10 @@
                 <div class="col-12 d-flex justify-content-center">
                     <nav>
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#"><i class="fas fa-chevron-left"></i></a></li>
-                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm bg-primary text-white" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#"><i class="fas fa-chevron-right"></i></a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#" onclick="changePage(1)"><i class="fas fa-chevron-left"></i></a></li>
+                            <li class="page-item"><a class="page-link active rounded-circle mx-1 border-0 shadow-sm" id="page1-btn" href="#" onclick="changePage(1)">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" id="page2-btn" href="#" onclick="changePage(2)">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle mx-1 border-0 shadow-sm text-dark" href="#" onclick="changePage(2)"><i class="fas fa-chevron-right"></i></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -679,72 +785,106 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
     <script src="js/main.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const courseCards = document.querySelectorAll('#courseGrid .col-lg-3');
+            // Initial Page Load - Show Page 1
+            changePage(1);
+
+            // Filter Logic
+            const courseCards = document.querySelectorAll('.course-item');
             const categoryTags = document.querySelectorAll('.category-tag');
             const searchInput = document.getElementById('courseSearch');
             const noCoursesMessage = document.getElementById('noCoursesMessage');
             
-            // --- Category Filtering with Smooth Scroll ---
+            // Category Click
             categoryTags.forEach(tag => {
-                tag.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Toggle active state
+                tag.addEventListener('click', function() {
+                    // Update Active State
                     categoryTags.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
                     const category = this.getAttribute('data-category');
-                    
-                    // Filter Logic
-                    let visible = 0;
+                    let visibleCount = 0;
+
+                    // Filter
                     courseCards.forEach(card => {
                         const cardCats = card.getAttribute('data-category');
                         if (category === 'all' || cardCats.includes(category)) {
                             card.style.display = 'block';
-                            card.classList.add('animated', 'fadeInUp'); // Re-trigger animation
-                            visible++;
+                            card.classList.add('animate__animated', 'animate__fadeInUp');
+                            visibleCount++;
                         } else {
                             card.style.display = 'none';
                         }
                     });
 
-                    // Show/Hide Empty State
-                    noCoursesMessage.style.display = visible === 0 ? 'block' : 'none';
-
-                    // Smooth Scroll to Grid
-                    document.getElementById('courseGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    noCoursesMessage.style.display = visibleCount === 0 ? 'block' : 'none';
                 });
             });
 
-            // --- Search Functionality ---
+            // Search
             searchInput.addEventListener('keyup', function() {
                 const term = this.value.toLowerCase();
-                let visible = 0;
+                let visibleCount = 0;
                 
                 courseCards.forEach(card => {
                     const title = card.querySelector('h5').textContent.toLowerCase();
                     if (title.includes(term)) {
                         card.style.display = 'block';
-                        visible++;
+                        visibleCount++;
                     } else {
                         card.style.display = 'none';
                     }
                 });
                 
-                noCoursesMessage.style.display = visible === 0 ? 'block' : 'none';
+                noCoursesMessage.style.display = visibleCount === 0 ? 'block' : 'none';
             });
-            
-            // --- Reset ---
+
+            // Reset
             document.getElementById('resetFilters').addEventListener('click', function(){
                 searchInput.value = '';
+                // Trigger 'All' click
                 document.querySelector('[data-category="all"]').click();
             });
         });
+
+        // Pagination Logic
+        function changePage(pageNum) {
+            const courses = document.querySelectorAll('.course-item');
+            const totalCourses = courses.length; // 16
+            const itemsPerPage = 8;
+
+            const startIndex = (pageNum - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+
+            courses.forEach((course, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    course.style.display = 'block';
+                    course.classList.add('animate__animated', 'animate__fadeInUp');
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+
+            // Update Active Button
+            document.getElementById('page1-btn').classList.remove('active', 'bg-primary', 'text-white');
+            document.getElementById('page1-btn').classList.add('text-dark');
+            
+            document.getElementById('page2-btn').classList.remove('active', 'bg-primary', 'text-white');
+            document.getElementById('page2-btn').classList.add('text-dark');
+
+            const activeBtn = document.getElementById('page' + pageNum + '-btn');
+            activeBtn.classList.add('active', 'bg-primary', 'text-white');
+            activeBtn.classList.remove('text-dark');
+
+            // Scroll Top
+            const grid = document.getElementById('courseGrid');
+            const yOffset = -150; 
+            const y = grid.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
     </script>
 </body>
 
