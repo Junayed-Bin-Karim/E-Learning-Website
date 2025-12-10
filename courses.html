@@ -136,6 +136,7 @@
         
         .badge-premium.free { color: var(--primary); border-left: 3px solid var(--primary); }
         .badge-premium.paid { color: #0ed44c; border-left: 3px solid #0ed44c; }
+        .badge-premium.soon { color: #6c757d; border-left: 3px solid #6c757d; }
 
         .course-body {
             padding: 25px;
@@ -231,8 +232,8 @@
             box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
         }
 
-        /* Hide logic */
-        .course-item { display: none; } /* Hidden by default for JS to handle */
+        /* Hide logic for JS */
+        .course-item { display: none; } 
     </style>
 </head>
 
@@ -426,7 +427,7 @@
                     <div class="course-card">
                         <div class="course-img-wrapper">
                             <img src="img/course-6.jpg" alt="ChatGPT">
-                            <span class="badge-premium free">Free</span>
+                            <span class="badge-premium soon">Soon</span>
                         </div>
                         <div class="course-body">
                             <div class="course-meta">
@@ -564,7 +565,7 @@
                             <div class="course-meta">
                                 <span><i class="fas fa-signal me-1"></i> Beginner</span>
                                 <span class="meta-divider">•</span>
-                                <span><i class="far fa-clock me-1"></i> 15 Classes</span>
+                                <span><i class="far fa-clock me-1"></i> 2m</span>
                             </div>
                             <h5 class="course-title">C for Beginners</h5>
                             <p class="course-desc">Understand pointers, memory management, and low-level logic.</p>
