@@ -5,143 +5,273 @@
     <meta charset="utf-8">
     <title>Junayed Academy | Contact Us - Get in Touch for Tech Education</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy contact, tech courses Bangladesh, programming courses contact, AI training inquiry, web development classes">
-    <meta name="description" content="Contact Junayed Academy for information about our tech courses, admissions, partnerships, and career guidance. Get personalized support for your educational journey.">
+    <meta name="keywords" content="Junayed Academy contact, tech courses Bangladesh">
+    <meta name="description" content="Contact Junayed Academy for information about our tech courses.">
     
-    <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        .contact-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            border-radius: 15px;
+        /* =========================================
+           ULTRA PREMIUM CONTACT PAGE STYLES
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* --- Hero Section --- */
+        .page-header-ultra {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('img/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax */
+            padding: 150px 0 100px 0;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        /* --- Floating Contact Island --- */
+        .contact-island {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
             overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .contact-sidebar {
+            background: var(--dark-bg);
+            padding: 50px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-sidebar::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(251, 135, 63, 0.15) 0%, transparent 70%);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        /* --- Tabs --- */
+        .contact-tabs {
+            border: none;
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 50px;
+            display: inline-flex;
+        }
+
+        .contact-tabs .nav-link {
+            border: none;
+            border-radius: 50px;
+            color: #666;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact-tabs .nav-link.active {
+            background: var(--gradient-ultra);
+            color: white;
+            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.3);
+        }
+
+        /* --- Forms --- */
+        .form-control-ultra {
+            background: #fcfcfc;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            transition: 0.3s;
+        }
+
+        .form-control-ultra:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.1);
+            background: white;
+        }
+
+        /* --- Ultra Buttons --- */
+        .btn-ultra {
+            background: var(--gradient-ultra);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+            width: 100%;
+        }
+
+        .btn-ultra::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
         }
-        
-        .contact-card:hover {
+
+        .btn-ultra:hover::after { left: 100%; }
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+
+        /* --- Contact Cards (Grid) --- */
+        .contact-card-ultra {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-card-ultra:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(251, 135, 63, 0.15);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
         }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #fb873f, #ff9e5c);
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(251, 135, 63, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
             margin: 0 auto 20px;
-            color: white;
-            font-size: 1.8rem;
+            transition: 0.4s;
         }
-        
-        .contact-form {
-            background: white;
+
+        .contact-card-ultra:hover .icon-circle {
+            background: var(--gradient-ultra);
+            color: white;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* --- Map --- */
+        .map-frame {
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 40px;
-        }
-        
-        .form-control:focus {
-            border-color: #fb873f;
-            box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
-        }
-        
-        .map-container {
-            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 400px;
+            box-shadow: var(--shadow-soft);
+            height: 450px;
+            width: 100%;
+            border: 5px solid white;
         }
-        
-        .business-hours {
-            background: linear-gradient(135deg, #fb873f, #ff9e5c);
-            border-radius: 15px;
-            padding: 30px;
-            color: white;
-            height: 100%;
-        }
-        
-        .hours-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .hours-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .hours-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .faq-accordion .accordion-button:not(.collapsed) {
-            background-color: rgba(251, 135, 63, 0.1);
-            color: #fb873f;
-        }
-        
-        .faq-accordion .accordion-button:focus {
-            box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
-        }
-        
-        .contact-type-tabs {
-            border-bottom: 3px solid #eee;
-            margin-bottom: 30px;
-        }
-        
-        .contact-type-tabs .nav-link {
-            color: #666;
+
+        /* --- FAQ Accordion --- */
+        .accordion-ultra .accordion-item {
             border: none;
-            border-bottom: 3px solid transparent;
-            padding: 10px 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        
-        .contact-type-tabs .nav-link.active {
-            color: #fb873f;
-            border-bottom-color: #fb873f;
-            background: transparent;
+
+        .accordion-ultra .accordion-button {
+            background: white;
+            color: #333;
+            font-weight: 600;
+            padding: 20px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .accordion-ultra .accordion-button:not(.collapsed) {
+            background: rgba(251, 135, 63, 0.05);
+            color: var(--primary);
+        }
+
+        .accordion-ultra .accordion-button:focus { box-shadow: none; }
+
+        @media (max-width: 991px) {
+            .contact-sidebar { padding: 30px; }
+            .contact-island { margin-top: -50px; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="Junayed Academy Logo" height="40px">Junayed<span style="color: #fb873f;">Academy</span></p>
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="40px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" style="border: none;">
             <span class="navbar-toggler-icon"></span>
@@ -159,377 +289,211 @@
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link active">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
                 <a href="#" class="nav-item nav-link">
                     <div id="google_translate_element"></div>
                 </a>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Contact Us</h1>
-                    <p class="lead text-white mb-4">Get personalized guidance for your tech education journey</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div class="container-fluid page-header-ultra">
+        <div class="container py-5 text-center">
+            <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">24/7 Support</span>
+            <h1 class="display-3 text-white animated slideInDown fw-bolder">Get in Touch</h1>
+            <p class="lead text-white-50 mb-0 animated slideInUp">We're here to help you start your tech journey.</p>
         </div>
     </div>
-    <!-- Header End -->
 
-    <!-- Contact Options Tabs -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl pb-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="text-primary mb-3">How Can We Help You?</h2>
-                <p class="lead">Choose your preferred method to connect with our team</p>
-            </div>
-            
-            <ul class="nav nav-pills contact-type-tabs justify-content-center" id="contactTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">
-                        <i class="fas fa-info-circle me-2"></i>General Inquiry
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button" role="tab">
-                        <i class="fas fa-graduation-cap me-2"></i>Admission Inquiry
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="technical-tab" data-bs-toggle="tab" data-bs-target="#technical" type="button" role="tab">
-                        <i class="fas fa-laptop-code me-2"></i>Technical Support
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="corporate-tab" data-bs-toggle="tab" data-bs-target="#corporate" type="button" role="tab">
-                        <i class="fas fa-handshake me-2"></i>Corporate Partnership
-                    </button>
-                </li>
-            </ul>
-            
-            <div class="tab-content" id="contactTabContent">
-                <!-- General Inquiry Tab -->
-                <div class="tab-pane fade show active" id="general" role="tabpanel">
-                    <div class="row g-5">
-                        <div class="col-lg-5">
-                            <div class="contact-form">
-                                <h4 class="mb-4 text-primary">Send Us a Message</h4>
+            <div class="contact-island animated fadeInUp">
+                <div class="row g-0">
+                    
+                    <div class="col-lg-5 contact-sidebar">
+                        <h3 class="fw-bold mb-4">Contact Information</h3>
+                        <p class="text-white-50 mb-5">Have questions? Reach out directly via phone, email, or visit our main campus.</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Our Location</h6>
+                                <p class="text-white-50 mb-0">Mirpur, Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Phone Number</h6>
+                                <p class="text-white-50 mb-0">+880 1893 255503</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Email Address</h6>
+                                <p class="text-white-50 mb-0">info@junayedacademy.com</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-top border-secondary">
+                            <h6 class="fw-bold mb-3">Follow Us</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; padding: 0; display:flex; align-items:center; justify-content:center;"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; padding: 0; display:flex; align-items:center; justify-content:center;"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; padding: 0; display:flex; align-items:center; justify-content:center;"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 p-5 bg-white">
+                        <div class="text-center mb-4">
+                            <ul class="nav nav-pills contact-tabs" id="contactTab" role="tablist">
+                                <li class="nav-item"><button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button">General</button></li>
+                                <li class="nav-item"><button class="nav-link" id="admission-tab" data-bs-toggle="tab" data-bs-target="#admission" type="button">Admission</button></li>
+                                <li class="nav-item"><button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support" type="button">Support</button></li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="general">
                                 <form id="generalContactForm">
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="generalName" placeholder="Your Name" required>
-                                                <label for="generalName"><i class="fas fa-user me-2"></i>Your Name</label>
+                                                <input type="text" class="form-control form-control-ultra" id="name" placeholder="Name" required>
+                                                <label for="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="generalEmail" placeholder="Your Email" required>
-                                                <label for="generalEmail"><i class="fas fa-envelope me-2"></i>Email Address</label>
+                                                <input type="email" class="form-control form-control-ultra" id="email" placeholder="Email" required>
+                                                <label for="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="generalSubject" placeholder="Subject" required>
-                                                <label for="generalSubject"><i class="fas fa-tag me-2"></i>Subject</label>
+                                                <input type="text" class="form-control form-control-ultra" id="subject" placeholder="Subject">
+                                                <label for="subject">Subject</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Your Message" id="generalMessage" style="height: 150px" required></textarea>
-                                                <label for="generalMessage"><i class="fas fa-comment me-2"></i>Your Message</label>
+                                                <textarea class="form-control form-control-ultra" placeholder="Message" id="message" style="height: 150px" required></textarea>
+                                                <label for="message">Message</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">
-                                                <i class="fas fa-paper-plane me-2"></i>Send Message
-                                            </button>
+                                            <button class="btn btn-ultra" type="submit">Send Message</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="contact-card bg-white shadow p-4 text-center">
-                                        <div class="contact-icon">
-                                            <i class="fas fa-phone-alt"></i>
-                                        </div>
-                                        <h5>Call Us</h5>
-                                        <p class="mb-3">Speak directly with our admission counselors</p>
-                                        <a href="tel:+8801893255503" class="btn btn-outline-primary">
-                                            <i class="fas fa-phone me-2"></i>+880 1893 255503
-                                        </a>
-                                        <p class="small text-muted mt-3">Available: 9 AM - 6 PM (Sun-Thu)</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-card bg-white shadow p-4 text-center">
-                                        <div class="contact-icon">
-                                            <i class="fas fa-comments"></i>
-                                        </div>
-                                        <h5>Live Chat</h5>
-                                        <p class="mb-3">Instant support through WhatsApp</p>
-                                        <a href="https://wa.me/8801893255503" target="_blank" class="btn btn-outline-success">
-                                            <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
-                                        </a>
-                                        <p class="small text-muted mt-3">Response time: Within 30 minutes</p>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="business-hours">
-                                        <h4 class="mb-4"><i class="fas fa-clock me-2"></i>Business Hours</h4>
-                                        <ul class="hours-list">
-                                            <li>
-                                                <span class="float-start">Saturday - Thursday</span>
-                                                <span class="float-end">9:00 AM - 6:00 PM</span>
-                                            </li>
-                                            <li>
-                                                <span class="float-start">Friday</span>
-                                                <span class="float-end">10:00 AM - 4:00 PM</span>
-                                            </li>
-                                            <li>
-                                                <span class="float-start">Emergency Support</span>
-                                                <span class="float-end">24/7 via Email</span>
-                                            </li>
-                                        </ul>
-                                        <div class="mt-4">
-                                            <p class="mb-2"><i class="fas fa-exclamation-circle me-2"></i>Response Time:</p>
-                                            <p class="small">Phone: Immediate<br>Email: Within 24 hours<br>WhatsApp: Within 30 minutes</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
                     </div>
+
                 </div>
-                
-                <!-- Other tabs would have similar structure with different forms -->
             </div>
         </div>
     </div>
 
-    <!-- Contact Information Section -->
     <div class="container-xxl py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="text-primary mb-3">Our Contact Information</h2>
-                <p class="lead">Multiple ways to reach our dedicated support team</p>
-            </div>
-            
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card bg-white shadow p-5 text-center h-100">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4 class="mb-3">Visit Our Office</h4>
-                        <p class="mb-4">
-                            Mirpur, Dhaka<br>
-                            Bangladesh
-                        </p>
-                        <a href="https://maps.google.com/?q=Mirpur+Dhaka+Bangladesh" target="_blank" class="btn btn-primary">
-                            <i class="fas fa-directions me-2"></i>Get Directions
-                        </a>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="contact-card-ultra">
+                        <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                        <h5 class="fw-bold">Chat Support</h5>
+                        <p class="text-muted">Instant replies via WhatsApp</p>
+                        <a href="https://wa.me/8801893255503" class="btn btn-outline-success rounded-pill px-4">Chat Now</a>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card bg-white shadow p-5 text-center h-100">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4 class="mb-3">Email Addresses</h4>
-                        <div class="mb-4">
-                            <p class="mb-2"><strong>Admissions:</strong></p>
-                            <p class="mb-3"><a href="mailto:admissions@junayedacademy.com">admissions@junayedacademy.com</a></p>
-                            
-                            <p class="mb-2"><strong>General Inquiries:</strong></p>
-                            <p class="mb-3"><a href="mailto:info@junayedacademy.com">info@junayedacademy.com</a></p>
-                            
-                            <p class="mb-2"><strong>Technical Support:</strong></p>
-                            <p><a href="mailto:support@junayedacademy.com">support@junayedacademy.com</a></p>
-                        </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="contact-card-ultra">
+                        <div class="icon-circle"><i class="fas fa-phone-volume"></i></div>
+                        <h5 class="fw-bold">Call Center</h5>
+                        <p class="text-muted">Speak to an advisor</p>
+                        <a href="tel:+8801893255503" class="btn btn-outline-primary rounded-pill px-4">Call Now</a>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="contact-card bg-white shadow p-5 text-center h-100">
-                        <div class="contact-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h4 class="mb-3">Support Channels</h4>
-                        <div class="mb-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-success text-white rounded-circle p-2 me-3">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="text-start">
-                                    <p class="mb-0 fw-bold">WhatsApp Support</p>
-                                    <p class="mb-0">+880 1893 255503</p>
-                                </div>
-                            </div>
-                            
-                            
-                            
-                            <div class="d-flex align-items-center">
-                                <div class="bg-info text-white rounded-circle p-2 me-3">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="text-start">
-                                    <p class="mb-0 fw-bold">Helpline</p>
-                                    <p class="mb-0">+880 1893 255503</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="contact-card-ultra">
+                        <div class="icon-circle"><i class="fas fa-map-marked-alt"></i></div>
+                        <h5 class="fw-bold">Visit Us</h5>
+                        <p class="text-muted">Get directions to campus</p>
+                        <a href="#" class="btn btn-outline-dark rounded-pill px-4">Get Directions</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Map & Location -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6">
-                    <h3 class="text-primary mb-4">Find Our Location</h3>
-                    <p class="mb-4">
-                        Visit our main office in Mirpur, Dhaka for in-person consultations, course counseling, and admission procedures. Our friendly staff is always ready to assist you with your educational journey.
-                    </p>
-                    <div class="mb-4">
-                        <h5 class="mb-3"><i class="fas fa-directions text-primary me-2"></i>How to Reach Us</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-bus text-primary me-2"></i><strong>By Bus:</strong> Mirpur 10, 11, 12 bus stops are within walking distance</li>
-                            <li class="mb-2"><i class="fas fa-subway text-primary me-2"></i><strong>By Metro:</strong> Mirpur 10 Metro Station (Coming Soon)</li>
-                            <li class="mb-2"><i class="fas fa-car text-primary me-2"></i><strong>By Car:</strong> Ample parking space available</li>
-                            <li><i class="fas fa-bicycle text-primary me-2"></i><strong>By CNG/Rickshaw:</strong> Easily accessible from all nearby areas</li>
-                        </ul>
-                    </div>
-                    <div class="bg-light p-4 rounded">
-                        <h5 class="mb-3"><i class="fas fa-info-circle text-primary me-2"></i>Visitor Information</h5>
-                        <p class="mb-0">
-                            <strong>Note:</strong> We recommend scheduling an appointment before visiting to ensure dedicated time with our counselors. Walk-ins are welcome, but appointments receive priority.
-                        </p>
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h3 class="fw-bold mb-4 text-primary">Find Us Here</h3>
+                    <div class="map-frame">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8372415655847!2d90.36726831533432!3d23.79416749290083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0b8b4b1b5a5%3A0x8b5b1b5b5b5b5b5b!2sMirpur%2C%20Dhaka%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1649876543210!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="map-container">
-                        <!-- Google Maps Embed -->
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8372415655847!2d90.36726831533432!3d23.79416749290083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0b8b4b1b5a5%3A0x8b5b1b5b5b5b5b5b!2sMirpur%2C%20Dhaka%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1649876543210!5m2!1sen!2sbd"
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <h3 class="fw-bold mb-4 text-primary">Common Questions</h3>
+                    <div class="accordion accordion-ultra" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What are the admission requirements?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-muted">
+                                    Simply fill out the online form or visit our office. You'll need a valid ID and a recent photograph.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Do you offer online classes?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-muted">
+                                    Yes, all our courses are available in both live online and recorded formats for flexibility.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Is financial aid available?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-muted">
+                                    We offer scholarships based on merit and financial need. Contact our admissions team for details.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="text-primary mb-3">Frequently Asked Questions</h2>
-                <p class="lead">Quick answers to common questions</p>
-            </div>
-            
-            <div class="accordion faq-accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                            What is the typical response time for emails?
-                        </button>
-                    </h2>
-                    <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We strive to respond to all emails within 24 hours during business days. Admissions-related inquiries receive priority and are typically answered within 4-6 hours.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                            Do you offer online consultations?
-                        </button>
-                    </h2>
-                    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we offer free online consultations via Zoom or Google Meet. You can schedule a consultation through our WhatsApp or by calling our helpline.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                            What documents do I need for admission?
-                        </button>
-                    </h2>
-                    <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Typically, you'll need a copy of your national ID, recent photograph, and academic certificates. Specific requirements vary by course. Our admission counselors can provide detailed checklists.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-                            Is there any scholarship available?
-                        </button>
-                    </h2>
-                    <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we offer merit-based and need-based scholarships. For detailed information and application procedures, please contact our admissions office directly.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <p class="mb-4">Still have questions? Don't hesitate to reach out!</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="tel:+8801893255503" class="btn btn-primary btn-lg">
-                        <i class="fas fa-phone me-2"></i>Call Now
-                    </a>
-                    <a href="mailto:info@junayedacademy.com" class="btn btn-outline-primary btn-lg">
-                        <i class="fas fa-envelope me-2"></i>Email Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Links</h4>
                     <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="courses.html">All Courses</a></p>
                     <p><a class="text-light" href="contact.html">Contact Us</a></p>
                     <p><a class="text-light" href="#">Privacy Policy</a></p>
                     <p><a class="text-light" href="#">Terms & Conditions</a></p>
-                    <p><a class="text-light" href="#">FAQ & Help Center</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Contact Information</h4>
@@ -544,13 +508,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe to Our Newsletter</h4>
-                    <p>Stay updated with latest courses, tech trends, and career opportunities.</p>
+                    <h4 class="text-white mb-3">Stay Updated</h4>
+                    <p>Subscribe to get notified about new courses, updates, and special offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" aria-label="Email address">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
                     </div>
-                    <p class="small mt-3 text-muted">By subscribing, you agree to our Privacy Policy</p>
                 </div>
             </div>
         </div>
@@ -559,21 +522,17 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
-                        <br><small class="text-muted">Registered Educational Institution, Bangladesh</small>
+                        <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <small>Your success is our priority</small>
+                        <small>Designed for the Junayed Academy</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -581,38 +540,25 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
-        // Form submission handling
+        // Form Handler
         document.getElementById('generalContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
             
-            // Get form data
-            const name = document.getElementById('generalName').value;
-            const email = document.getElementById('generalEmail').value;
-            const subject = document.getElementById('generalSubject').value;
-            const message = document.getElementById('generalMessage').value;
-            
-            // Create mailto link
             const mailtoLink = `mailto:junayedacademy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            // Open email client
             window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Your email client will open. Please send the pre-filled email to contact us.');
         });
-        
-        // Tab switching animation
-        document.querySelectorAll('.contact-type-tabs .nav-link').forEach(tab => {
+
+        // Tab Animation
+        document.querySelectorAll('.contact-tabs button').forEach(tab => {
             tab.addEventListener('click', function() {
-                // Remove active from all tabs
-                document.querySelectorAll('.contact-type-tabs .nav-link').forEach(t => {
-                    t.classList.remove('active');
-                });
-                // Add active to clicked tab
+                document.querySelectorAll('.contact-tabs button').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
             });
         });
