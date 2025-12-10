@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    <title>Junayed Academy | Premier Tech Education Platform in Bangladesh</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy, tech courses Bangladesh, programming courses, AI training">
+    <title>Junayed Academy | Premier Tech Education</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="keywords" content="Junayed Academy, tech courses Bangladesh">
     <meta name="description" content="Junayed Academy - Bangladesh's leading tech education platform.">
     
     <link href="img/icon.png" rel="icon">
@@ -22,20 +22,22 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PREMIUM DESIGN SYSTEM
+           ULTRA PRO DESIGN SYSTEM
            ========================================= */
         :root {
             --primary: #fb873f;
-            --primary-glow: rgba(251, 135, 63, 0.5);
+            --primary-dark: #e0691e;
             --dark-bg: #0f172a;
-            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(255, 255, 255, 0.6);
             --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-            --shadow-ultra: 0 20px 40px -10px rgba(251, 135, 63, 0.3);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-hover: 0 25px 50px rgba(251, 135, 63, 0.15);
             --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
@@ -45,24 +47,81 @@
             overflow-x: hidden;
         }
 
-        html { scroll-behavior: smooth; }
+        /* --- 1. ULTRA NAVBAR FIXES & STYLING --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
 
-        /* --- Ultra Buttons --- */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .brand-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        
+        .brand-highlight { color: var(--primary); }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 10;
+            box-shadow: none !important;
+        }
+
+        /* Mobile Layout Fix - Keeps Logo & Menu on same line */
+        .navbar .container-fluid, .navbar .container {
+            display: flex;
+            flex-wrap: nowrap; 
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Mobile Specific Overrides */
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 10px 0;
+            }
+            .brand-text {
+                font-size: 1.15rem; /* Reduced size for mobile */
+            }
+            .navbar-brand img {
+                height: 32px !important; /* Smaller logo for mobile */
+            }
+            .navbar-brand {
+                gap: 8px;
+            }
+        }
+
+        /* --- 2. ULTRA BUTTONS --- */
         .btn-ultra {
             position: relative;
-            padding: 16px 40px;
+            padding: 14px 35px;
             background: var(--gradient-ultra);
             border: none;
             border-radius: 12px;
             color: white;
             font-weight: 700;
             font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            box-shadow: var(--shadow-ultra);
-            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
         }
 
         .btn-ultra::after {
@@ -74,36 +133,20 @@
         }
 
         .btn-ultra:hover::after { left: 100%; }
-        .btn-ultra:hover { transform: translateY(-5px); box-shadow: 0 30px 60px -12px rgba(251, 135, 63, 0.5); color: white; }
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(251, 135, 63, 0.4); color: white; }
 
         .btn-ultra-outline {
-            padding: 14px 38px;
+            padding: 12px 33px;
             background: transparent;
             border: 2px solid rgba(255, 255, 255, 0.8);
             border-radius: 12px;
             color: white;
             font-weight: 700;
-            position: relative;
-            overflow: hidden;
             transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
         }
-
         .btn-ultra-outline:hover { background: white; color: var(--primary); border-color: white; }
 
-        /* --- Glassmorphism Cards --- */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            transition: transform 0.4s ease;
-            height: 100%;
-        }
-
-        /* --- Hero Section --- */
+        /* --- 3. HERO SECTION --- */
         .hero-overlay {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(24, 29, 56, 0.7) 100%);
         }
@@ -120,29 +163,67 @@
             font-size: 0.75rem;
             display: inline-block;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
-        /* --- Stats Island --- */
+        /* --- 4. GLASS CARDS --- */
+        .glass-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+
+        /* --- 5. STATS ISLAND --- */
         .stats-island {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(25px);
-            border-radius: 30px;
+            border-radius: 24px;
             padding: 40px 20px;
             margin-top: -80px;
             position: relative;
             z-index: 10;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255,255,255,1);
         }
 
-        .stat-item { position: relative; }
-        .stat-item::after {
-            content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px;
-            background: linear-gradient(to bottom, transparent, #ddd, transparent);
+        .stat-number { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            background: var(--gradient-ultra); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
-        .stat-item:last-child::after { display: none; }
-        .stat-number { font-size: 2.5rem; font-weight: 800; background: var(--gradient-ultra); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
+        /* Mobile Scroll Views (Netflix Style) */
+        @media (max-width: 768px) {
+            .mobile-scroll-view {
+                display: flex;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 10px 5px 30px 5px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+            .mobile-scroll-view > div {
+                min-width: 85vw;
+                flex: 0 0 auto;
+                scroll-snap-align: center;
+            }
+            .stats-island { margin-top: -40px; padding: 30px 15px; }
+            .display-3 { font-size: 2rem !important; }
+        }
+        
         /* --- Course Cards --- */
         .course-card-ultra {
             background: white;
@@ -151,76 +232,14 @@
             height: 100%;
             border: 1px solid #f0f0f0;
             transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
         }
-        
-        .course-img-box { position: relative; overflow: hidden; border-radius: 20px; margin: 10px; }
-        .course-img-box img { border-radius: 15px; }
-        .price-tag { background: var(--dark-bg); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
-        .text-gradient { background: var(--gradient-ultra); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        /* =========================================
-           MOBILE OPTIMIZATIONS (The Secret Sauce)
-           ========================================= */
-        @media (max-width: 768px) {
-            /* 1. Hero Adjustments */
-            .display-3 { font-size: 2.2rem !important; line-height: 1.3 !important; }
-            .hero-overlay { align-items: center !important; padding-top: 40px; text-align: center; }
-            .hero-overlay .d-flex { justify-content: center !important; }
-            .btn-ultra, .btn-ultra-outline { width: 100%; display: block; margin-bottom: 10px; }
-
-            /* 2. Horizontal Swipe Containers (Netflix Style) */
-            .mobile-scroll-view {
-                display: flex;
-                overflow-x: auto;
-                gap: 20px;
-                padding-bottom: 30px; /* Space for shadow */
-                padding-left: 5px; 
-                padding-right: 20px;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
-            }
-            .mobile-scroll-view::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-            .mobile-scroll-view > div {
-                min-width: 85vw; /* Card width on mobile */
-                flex: 0 0 auto;
-                scroll-snap-align: center;
-            }
-            
-            /* Category Pills Scroll */
-            .mobile-cat-scroll {
-                display: flex;
-                overflow-x: auto;
-                gap: 10px;
-                padding-bottom: 10px;
-                flex-wrap: nowrap !important;
-            }
-            .mobile-cat-scroll .glass-card { min-width: 140px; }
-
-            /* 3. Stats Grid Mobile */
-            .stats-island { 
-                margin-top: -30px; 
-                padding: 20px 10px; 
-                border-radius: 20px;
-            }
-            .stats-island .row {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .stat-item {
-                border-right: none;
-                border-bottom: 1px solid #f0f0f0;
-                padding: 15px 0;
-            }
-            .stat-item::after { display: none; }
-            .stat-item:nth-last-child(1), .stat-item:nth-last-child(2) { border-bottom: none; }
-            
-            /* 4. General Spacing */
-            .py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-            .mb-5 { margin-bottom: 2rem !important; }
-        }
+        .course-card-ultra:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .course-img-box { position: relative; overflow: hidden; height: 200px; }
+        .course-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .course-card-ultra:hover .course-img-box img { transform: scale(1.1); }
     </style>
 </head>
 
@@ -231,33 +250,35 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;">
-                <img src="img/icon.png" alt="Logo" height="45px">
-                Junayed<span style="color: #fb873f;">Academy</span>
-            </p>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top">
+        <div class="container-fluid px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/icon.png" alt="Logo" style="height: 40px;">
+                <p class="brand-text">Junayed<span class="brand-highlight">Academy</span></p>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="courses.html" class="nav-item nav-link">Courses</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu fade-down m-0 border-0 shadow-sm rounded-3">
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                        </div>
                     </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user me-1"></i> Login</a>
+                    <a href="#" class="nav-item nav-link">
+                        <div id="google_translate_element"></div>
+                    </a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
-                </a>
             </div>
         </div>
     </nav>
@@ -280,12 +301,12 @@
                                 <p class="text-white lead mb-5 animated slideInDown" style="opacity: 0.9;">
                                     Premium content, expert mentorship, and career-defining projects await you.
                                 </p>
-                                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                <div class="d-flex flex-wrap gap-3">
                                     <a href="courses.html" class="btn btn-ultra animated slideInLeft">
                                         Explore Courses
                                     </a>
                                     <a href="signup.html" class="btn btn-ultra-outline animated slideInRight">
-                                        Start For Free
+                                        Start Free
                                     </a>
                                 </div>
                             </div>
@@ -310,9 +331,9 @@
                                 <p class="text-white lead mb-5 animated slideInDown" style="opacity: 0.9;">
                                     Create a portfolio that demands attention. Learn by doing.
                                 </p>
-                                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                                <div class="d-flex flex-wrap gap-3">
                                     <a href="about.html" class="btn btn-ultra animated slideInLeft">
-                                        How We Teach
+                                        Our Methodology
                                     </a>
                                 </div>
                             </div>
@@ -326,32 +347,24 @@
     <div class="container-xxl position-relative">
         <div class="container">
             <div class="stats-island">
-                <div class="row text-center">
+                <div class="row text-center gy-4">
                     <div class="col-6 col-md-3 stat-item">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-2 shadow-sm" style="width: 50px; height: 50px;">
-                            <i class="fas fa-user-graduate text-primary fs-5"></i>
-                        </div>
+                        <i class="fas fa-user-graduate text-primary fs-3 mb-2"></i>
                         <h2 class="fw-bolder mb-0 stat-number" data-target="2500" data-suffix="+">0</h2>
                         <p class="text-muted fw-bold small text-uppercase">Students</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-2 shadow-sm" style="width: 50px; height: 50px;">
-                            <i class="fas fa-chalkboard-teacher text-primary fs-5"></i>
-                        </div>
+                        <i class="fas fa-chalkboard-teacher text-primary fs-3 mb-2"></i>
                         <h2 class="fw-bolder mb-0 stat-number" data-target="10" data-suffix="+">0</h2>
                         <p class="text-muted fw-bold small text-uppercase">Mentors</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-2 shadow-sm" style="width: 50px; height: 50px;">
-                            <i class="fas fa-star text-primary fs-5"></i>
-                        </div>
+                        <i class="fas fa-star text-primary fs-3 mb-2"></i>
                         <h2 class="fw-bolder mb-0 stat-number" data-target="96" data-suffix="%">0</h2>
                         <p class="text-muted fw-bold small text-uppercase">Success</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-2 shadow-sm" style="width: 50px; height: 50px;">
-                            <i class="fas fa-layer-group text-primary fs-5"></i>
-                        </div>
+                        <i class="fas fa-layer-group text-primary fs-3 mb-2"></i>
                         <h2 class="fw-bolder mb-0 stat-number" data-target="15" data-suffix="+">0</h2>
                         <p class="text-muted fw-bold small text-uppercase">Courses</p>
                     </div>
@@ -369,39 +382,39 @@
             
             <div class="row g-4 mobile-scroll-view">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="glass-card h-100 p-4 text-center">
+                    <div class="glass-card h-100">
                         <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
                             <i class="fas fa-globe fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold mb-3">Global Access</h5>
-                        <p class="text-muted mb-0 small">Learn from anywhere with our ultra-fast cloud LMS.</p>
+                        <h5 class="fw-bold mb-2">Global Access</h5>
+                        <p class="text-muted mb-0 small">Learn from anywhere with our cloud LMS.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="glass-card h-100 p-4 text-center">
+                    <div class="glass-card h-100">
                         <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
                             <i class="fas fa-medal fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold mb-3">Certified Pro</h5>
-                        <p class="text-muted mb-0 small">Earn certificates recognized by top tech companies.</p>
+                        <h5 class="fw-bold mb-2">Certified Pro</h5>
+                        <p class="text-muted mb-0 small">Earn verified certificates for your CV.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="glass-card h-100 p-4 text-center">
+                    <div class="glass-card h-100">
                         <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
                             <i class="fas fa-briefcase fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold mb-3">Career Ready</h5>
-                        <p class="text-muted mb-0 small">Direct pipelines to internships and job placements.</p>
+                        <h5 class="fw-bold mb-2">Career Ready</h5>
+                        <p class="text-muted mb-0 small">Direct pipelines to job placements.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="glass-card h-100 p-4 text-center">
+                    <div class="glass-card h-100">
                         <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
                             <i class="fas fa-headset fa-2x"></i>
                         </div>
-                        <h5 class="fw-bold mb-3">Elite Support</h5>
-                        <p class="text-muted mb-0 small">Priority response times and 1-on-1 mentorship.</p>
+                        <h5 class="fw-bold mb-2">Elite Support</h5>
+                        <p class="text-muted mb-0 small">Priority response times and mentorship.</p>
                     </div>
                 </div>
             </div>
@@ -426,13 +439,13 @@
                                 Beginner
                             </div>
                         </div>
-                        <div class="p-4 pt-2">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="price-tag bg-success">FREE</span>
+                                <span class="badge bg-success">FREE</span>
                                 <div class="text-warning small"><i class="fas fa-star"></i> 4.8</div>
                             </div>
                             <h5 class="fw-bold mb-2">HTML & CSS Masterclass</h5>
-                            <p class="text-muted small mb-4">The foundation of the web. Build responsive sites.</p>
+                            <p class="text-muted small mb-4 flex-grow-1">Build beautiful, responsive sites from scratch.</p>
                             <a href="single.html" class="btn btn-outline-dark w-100 rounded-pill fw-bold btn-sm">Enroll Now</a>
                         </div>
                     </div>
@@ -446,13 +459,13 @@
                                 Advanced
                             </div>
                         </div>
-                        <div class="p-4 pt-2">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="price-tag">৳ 15,000</span>
+                                <span class="fw-bold text-primary">৳ 15,000</span>
                                 <div class="text-warning small"><i class="fas fa-star"></i> 4.9</div>
                             </div>
                             <h5 class="fw-bold mb-2">Full Stack Engineering</h5>
-                            <p class="text-muted small mb-4">Complete MERN stack roadmap with projects.</p>
+                            <p class="text-muted small mb-4 flex-grow-1">MERN stack roadmap with large scale projects.</p>
                             <a href="course2.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm btn-sm">Get Premium</a>
                         </div>
                     </div>
@@ -466,19 +479,19 @@
                                 Trending
                             </div>
                         </div>
-                        <div class="p-4 pt-2">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="price-tag">৳ 15,000</span>
+                                <span class="fw-bold text-primary">৳ 15,000</span>
                                 <div class="text-warning small"><i class="fas fa-star"></i> 5.0</div>
                             </div>
                             <h5 class="fw-bold mb-2">Machine Learning & AI</h5>
-                            <p class="text-muted small mb-4">Python basics to Neural Networks & Deep Learning.</p>
+                            <p class="text-muted small mb-4 flex-grow-1">Python basics to Neural Networks & Deep Learning.</p>
                             <a href="course3.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm btn-sm">Get Premium</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                
+                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="course-card-ultra">
                         <div class="course-img-box">
                             <img class="img-fluid w-100" src="img/course-5.jpg" alt="DSA" style="height: 200px; object-fit: cover;">
@@ -486,13 +499,13 @@
                                 Essential
                             </div>
                         </div>
-                        <div class="p-4 pt-2">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="price-tag">৳ 10,000</span>
+                                <span class="fw-bold text-primary">৳ 10,000</span>
                                 <div class="text-warning small"><i class="fas fa-star"></i> 4.7</div>
                             </div>
                             <h5 class="fw-bold mb-2">Data Structures (DSA)</h5>
-                            <p class="text-muted small mb-4">Master algorithms and crack FAANG interviews.</p>
+                            <p class="text-muted small mb-4 flex-grow-1">Master algorithms and crack FAANG interviews.</p>
                             <a href="Course5.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm btn-sm">Get Premium</a>
                         </div>
                     </div>
@@ -509,7 +522,7 @@
 
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="position-relative rounded-3 overflow-hidden p-5 wow fadeInUp" data-wow-delay="0.1s" style="background: var(--dark-bg); box-shadow: var(--shadow-ultra);">
+            <div class="position-relative rounded-3 overflow-hidden p-5 wow fadeInUp" data-wow-delay="0.1s" style="background: var(--dark-bg); box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
                 <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: linear-gradient(90deg, transparent, rgba(251, 135, 63, 0.2)); clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);"></div>
                 
                 <div class="row align-items-center position-relative" style="z-index: 2;">
@@ -519,75 +532,8 @@
                         <p class="text-white-50 lead mb-4">Share your expertise on the most premium platform. Build your brand and earn revenue.</p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="instructor.html" class="btn btn-ultra">Apply Now</a>
-                            <a href="team.html" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold">Meet Team</a>
+                            <a href="team.html" class="btn btn-ultra-outline" style="border: 1px solid white; color: white;">Meet Team</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 40px;">
-                <h6 class="text-primary text-uppercase fw-bold ls-2">Success Stories</h6>
-                <h1 class="display-6 fw-bolder">Trusted by <span class="text-gradient">Innovators</span></h1>
-            </div>
-            
-            <div class="row g-4 mobile-scroll-view">
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="glass-card p-4 h-100 position-relative">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary p-1" width="50" height="50" alt="">
-                            <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Rajon Mahmud</h6>
-                                <small class="text-primary fw-bold">ML Engineer</small>
-                            </div>
-                        </div>
-                        <p class="text-muted fst-italic mb-0 small">"The quality of content is unmatched. The premium production value helped me switch careers seamlessly."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="glass-card p-4 h-100 position-relative">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-primary p-1" width="50" height="50" alt="">
-                            <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Parui Rahman</h6>
-                                <small class="text-primary fw-bold">Frontend Dev</small>
-                            </div>
-                        </div>
-                        <p class="text-muted fst-italic mb-0 small">"Worth every penny. The project-based learning approach gave me a portfolio that impressed interviewers."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="glass-card p-4 h-100 position-relative">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-primary p-1" width="50" height="50" alt="">
-                            <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Lailatul Chowa</h6>
-                                <small class="text-primary fw-bold">Full Stack Dev</small>
-                            </div>
-                        </div>
-                        <p class="text-muted fst-italic mb-0 small">"I've tried other platforms, but the mentorship here is elite. You get real answers from real experts."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="bg-white rounded-3 shadow-lg p-5 border-start border-5 border-primary wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="fw-bold">Stay Ahead of the Curve</h3>
-                        <p class="text-muted mb-0">Get exclusive tech insights and course discounts.</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <form class="d-flex gap-2">
-                            <input class="form-control form-control-lg rounded-pill border-2 fs-6" type="email" placeholder="Enter email">
-                            <button class="btn btn-dark rounded-pill px-4 fw-bold">Subscribe</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -612,18 +558,16 @@
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Office Hours</h4>
-                    <p class="mb-2"><i class="fas fa-clock me-2"></i>Saturday - Thursday: 9:00 AM - 6:00 PM</p>
-                    <p class="mb-4"><i class="fas fa-clock me-2"></i>Friday: 10:00 AM - 4:00 PM</p>
+                    <h4 class="text-white mb-3">Subscribe</h4>
+                    <p>Get the latest updates and offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" aria-label="Email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -632,11 +576,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
-                        <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <small>Designed for the Junayed Academy</small>
+                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -674,36 +614,30 @@
         // Stats Counter Animation
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll(".stat-number");
-            const animateCounter = (el) => {
-                const target = parseInt(el.dataset.target);
-                const suffix = el.dataset.suffix || "";
-                const duration = 1500;
-                const startTime = performance.now();
-
-                const update = (now) => {
-                    const progress = Math.min((now - startTime) / duration, 1);
-                    const eased = progress * (2 - progress);
-                    const value = Math.floor(eased * target);
-                    el.textContent = value.toLocaleString() + suffix;
-                    if (progress < 1) requestAnimationFrame(update);
-                };
-                requestAnimationFrame(update);
-            };
-
-            const observer = new IntersectionObserver(
-                (entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateCounter(entry.target);
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                },
-                { threshold: 0.5 }
-            );
-            counters.forEach(counter => observer.observe(counter));
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'));
+                        const suffix = el.getAttribute('data-suffix');
+                        let count = 0;
+                        const increment = target / 50; 
+                        
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = Math.floor(count) + suffix;
+                        }, 30);
+                        
+                        obs.unobserve(el);
+                    }
+                });
+            }, {threshold: 0.5});
+            counters.forEach(c => observer.observe(c));
         });
     </script>
 </body>
-
 </html>
