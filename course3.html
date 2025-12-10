@@ -306,6 +306,36 @@
             .course-header { padding: 80px 0; }
         }
 
+/* Mobile-first improvements */
+.content-card .mentor-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Make image slightly smaller on small devices */
+.content-card .mentor-wrapper img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+/* Restore row layout on medium+ screens */
+@media (min-width: 768px) {
+    .content-card .mentor-wrapper {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .content-card .mentor-wrapper img {
+        margin-bottom: 0;
+        margin-right: 20px;
+        width: 140px;
+        height: 140px;
+    }
+}
 
 
         
@@ -584,24 +614,28 @@
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Your Mentor</h3>
-                    <div class="d-flex align-items-start mt-4">
-                        <img src="img/team-1.png" class="rounded-3 shadow-sm" style="width: 140px; height: 140px; object-fit: cover;" alt="Instructor">
-                        <div class="ms-4">
-                            <h4 class="fw-bold mb-1">Junayed Bin Karim</h4>
-                            <p class="text-primary fw-bold mb-3 small text-uppercase ls-1">AI Specialist & Researcher</p>
-                            <p class="text-muted small lh-lg">
-                                Junayed has extensive experience in Artificial Intelligence and Software Engineering. He has published research papers on AI applications and is dedicated to mentoring the next generation of Data Scientists in Bangladesh. His teaching style focuses on mathematical intuition combined with practical coding.
-                            </p>
-                            <div class="d-flex gap-2 mt-3">
-                                <span class="badge bg-light text-dark border">Python</span>
-                                <span class="badge bg-light text-dark border">TensorFlow</span>
-                                <span class="badge bg-light text-dark border">Scikit-Learn</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="content-card animated fadeInUp">
+    <h3 class="section-title">Your Mentor</h3>
+
+    <div class="mentor-wrapper mt-4">
+        <img src="img/team-1.png" class="rounded-3 shadow-sm"
+             style="object-fit: cover;" alt="Instructor">
+
+        <div>
+            <h4 class="fw-bold mb-1">Junayed Bin Karim</h4>
+            <p class="text-primary fw-bold mb-3 small text-uppercase ls-1">AI Specialist & Researcher</p>
+            <p class="text-muted small lh-lg">
+                Junayed has extensive experience in Artificial Intelligence and Software Engineering...
+            </p>
+            <div class="d-flex gap-2 mt-3 justify-content-center justify-content-md-start">
+                <span class="badge bg-light text-dark border">Python</span>
+                <span class="badge bg-light text-dark border">TensorFlow</span>
+                <span class="badge bg-light text-dark border">Scikit-Learn</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                 <div class="content-card animated fadeInUp" id="payment">
                     <h3 class="section-title">Flexible Payment Options</h3>
