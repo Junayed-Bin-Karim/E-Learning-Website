@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -27,245 +27,221 @@
 
     <style>
         /* =========================================
-           PREMIUM UI OVERRIDES
+           ULTRA PREMIUM DESIGN SYSTEM
            ========================================= */
         :root {
             --primary: #fb873f;
-            --primary-dark: #e0691e;
-            --secondary: #181d38;
-            --light: #f0fbfc;
-            --gradient-main: linear-gradient(135deg, #fb873f 0%, #ff6b6b 100%);
-            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 20px 40px rgba(251, 135, 63, 0.2);
+            --primary-glow: rgba(251, 135, 63, 0.5);
+            --dark-bg: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --shadow-ultra: 0 20px 40px -10px rgba(251, 135, 63, 0.3);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: #fcfcfc;
-            font-family: 'Nunito', sans-serif;
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
         }
 
-        /* --- Premium Buttons --- */
-        .btn-premium {
-            background: var(--gradient-main);
+        /* --- Smooth Scroll Behavior --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Ultra Buttons (The "Liquid" Effect) --- */
+        .btn-ultra {
+            position: relative;
+            padding: 16px 40px;
+            background: var(--gradient-ultra);
             border: none;
+            border-radius: 12px;
             color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
             font-weight: 700;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
             overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: var(--shadow-ultra);
             z-index: 1;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(251, 135, 63, 0.4);
         }
 
-        .btn-premium::before {
+        .btn-ultra::after {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: #181d38;
-            transition: width 0.4s ease;
-            z-index: -1;
-            border-radius: 50px;
-        }
-
-        .btn-premium:hover::before {
+            left: -100%;
             width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
         }
 
-        .btn-premium:hover {
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(24, 29, 56, 0.3);
+        .btn-ultra:hover::after {
+            left: 100%;
         }
 
-        .btn-premium-outline {
+        .btn-ultra:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(251, 135, 63, 0.5);
+            color: white;
+        }
+
+        .btn-ultra-outline {
+            padding: 14px 38px;
             background: transparent;
-            border: 2px solid #fb873f;
-            color: #fb873f;
-            padding: 10px 28px;
-            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            color: white;
             font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .btn-premium-outline:hover {
-            background: var(--gradient-main);
-            border-color: transparent;
-            color: white;
-            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.3);
-        }
-
-        /* --- Hero Badge --- */
-        .hero-badge {   
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 8px 25px;
-            border-radius: 30px;
-            display: inline-block;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* --- Glassmorphism Stats --- */
-        .stats-counter {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px 20px;
-            margin-top: -70px;
             position: relative;
-            z-index: 10;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            border-bottom: 4px solid var(--primary);
-            backdrop-filter: blur(10px);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: var(--gradient-main);
+
+        .btn-ultra-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- Glassmorphism Cards --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--primary);
+        }
+
+        /* --- Typography Gradients --- */
+        .text-gradient {
+            background: var(--gradient-ultra);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
+            background-clip: text;
+        }
+
+        /* --- Hero Section Revamp --- */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(24, 29, 56, 0.7) 100%);
+        }
+
+        .hero-badge-ultra {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #fb873f;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Stats Floating Island --- */
+        .stats-island {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            border-radius: 30px;
+            padding: 50px 30px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .stat-item {
+            position: relative;
         }
         
-        .stat-label {
-            color: #555;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #ddd, transparent);
         }
+        
+        .stat-item:last-child::after { display: none; }
 
-        /* --- Feature Cards (Modern Minimal) --- */
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
-            border: 1px solid #eee;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: transparent;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(251, 135, 63, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: var(--primary);
-            font-size: 2rem;
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            background: var(--gradient-main);
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        /* --- Course Cards (Premium) --- */
-        .course-card {
+        /* --- Course Cards Ultra --- */
+        .course-card-ultra {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.03);
             height: 100%;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
-        .course-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-hover);
+        .course-card-ultra:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
-        .course-image-wrapper {
+        .course-img-box {
             position: relative;
             overflow: hidden;
+            border-radius: 20px;
+            margin: 10px;
         }
 
-        .course-image-wrapper img {
-            transition: transform 0.5s ease;
+        .course-img-box img {
+            border-radius: 15px;
+            transition: transform 0.6s ease;
         }
 
-        .course-card:hover .course-image-wrapper img {
+        .course-card-ultra:hover .course-img-box img {
             transform: scale(1.1);
         }
 
-        .course-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            padding: 6px 16px;
-            border-radius: 30px;
+        .price-tag {
+            background: var(--dark-bg);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 700;
-            font-size: 0.75rem;
-            z-index: 2;
-            letter-spacing: 1px;
         }
 
-        .badge-free { background: #fb873f; color: white; box-shadow: 0 4px 10px rgba(251, 135, 63, 0.4); }
-        .badge-paid { background: #0ed44c; color: white; box-shadow: 0 4px 10px rgba(14, 212, 76, 0.4); }
-
-        .course-price {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        /* --- Section Titles --- */
-        .section-header {
-            position: relative;
-            margin-bottom: 3rem;
+        /* --- Animations --- */
+        .reveal-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 1, 0.2, 1) forwards;
         }
         
-        .section-header::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--gradient-main);
-            margin: 15px auto 0;
-            border-radius: 2px;
+        @keyframes shine {
+            100% { left: 125%; }
         }
 
-        /* --- CTA Section --- */
-        .cta-section {
-            background: url('img/overlay-bottom.png'), var(--gradient-main);
-            background-size: cover;
-            border-radius: 30px;
-            padding: 80px 50px;
-            color: white;
-            box-shadow: 0 20px 60px rgba(251, 135, 63, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* --- Footer & Nav (Keeping original logic, just ensuring compatibility) --- */
-        .navbar-light .navbar-nav .nav-link {
-            font-weight: 600;
-            transition: .3s;
+        /* Mobile Fixes */
+        @media (max-width: 768px) {
+            .stat-item::after { display: none; }
+            .stats-island { margin-top: -30px; padding: 30px 15px; }
+            .display-3 { font-size: 2.5rem; }
+            .btn-ultra { width: 100%; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -310,23 +286,26 @@
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="Junayed Academy Tech Learning Platform">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay" style="background: linear-gradient(rgba(24, 29, 56, 0.85), rgba(24, 29, 56, 0.7));">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <span class="hero-badge">Bangladesh's #1 E-Learning Platform</span>
-                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bold">
-                                    Unlock Your Potential with <span style="color: #fb873f;">Premium</span> Tech Skills
+                                <div class="hero-badge-ultra animated slideInDown">
+                                    <i class="fas fa-star me-2"></i> #1 Tech Platform
+                                </div>
+                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bolder" style="line-height: 1.2;">
+                                    Master The Future <br>
+                                    <span style="color: transparent; -webkit-text-stroke: 1px #fff;">With</span> <span style="color: #fb873f;">Ultra Skills</span>
                                 </h1>
-                                <p class="text-white lead mb-4 opacity-75">
-                                    Join 2,500+ learners. Learn from industry experts, build real projects, and launch your dream career.
+                                <p class="text-white lead mb-5 animated slideInDown" style="opacity: 0.9; max-width: 600px;">
+                                    Experience learning redefined. Premium content, expert mentorship, and career-defining projects await you.
                                 </p>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <a href="courses.html" class="btn btn-premium py-3 px-5 animated slideInLeft">
+                                <div class="d-flex flex-wrap gap-4">
+                                    <a href="courses.html" class="btn btn-ultra animated slideInLeft">
                                         Explore Courses <i class="fas fa-arrow-right ms-2"></i>
                                     </a>
-                                    <a href="signup.html" class="btn btn-outline-light py-3 px-5 animated slideInRight rounded-pill fw-bold">
-                                        Start Free Trial
+                                    <a href="signup.html" class="btn btn-ultra-outline animated slideInRight">
+                                        Start For Free
                                     </a>
                                 </div>
                             </div>
@@ -334,26 +313,26 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-2.jpg" alt="Hands-on Learning Experience">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay" style="background: linear-gradient(rgba(24, 29, 56, 0.85), rgba(24, 29, 56, 0.7));">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="Project Based Learning">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center hero-overlay">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <span class="hero-badge">Project-Based Learning</span>
-                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bold">
-                                    Learn by Building <br> Real-World Projects
+                                <div class="hero-badge-ultra animated slideInDown">
+                                    <i class="fas fa-laptop-code me-2"></i> Hands-on Coding
+                                </div>
+                                <h1 class="display-3 text-white animated slideInDown mb-4 fw-bolder">
+                                    Don't Just Watch. <br>
+                                    <span style="color: #fb873f;">Build & Deploy.</span>
                                 </h1>
-                                <p class="text-white lead mb-4 opacity-75">
-                                    Theory is not enough. Build a portfolio that gets you hired with our capstone projects.
+                                <p class="text-white lead mb-5 animated slideInDown" style="opacity: 0.9;">
+                                    Our curriculum is built around real-world application. Create a portfolio that demands attention.
                                 </p>
-                                <div class="d-flex flex-wrap gap-3">
-                                    <a href="about.html" class="btn btn-premium py-3 px-5 animated slideInLeft">
-                                        How We Teach
-                                    </a>
-                                    <a href="testimonial.html" class="btn btn-outline-light py-3 px-5 animated slideInRight rounded-pill fw-bold">
-                                        Success Stories
+                                <div class="d-flex flex-wrap gap-4">
+                                    <a href="about.html" class="btn btn-ultra animated slideInLeft">
+                                        Our Methodology
                                     </a>
                                 </div>
                             </div>
@@ -364,25 +343,37 @@
         </div>
     </div>
 
-    <div class="container-xxl">
+    <div class="container-xxl position-relative">
         <div class="container">
-            <div class="stats-counter">
+            <div class="stats-island">
                 <div class="row text-center">
-                    <div class="col-md-3 col-6 mb-4 mb-md-0 border-end border-light">
-                        <h3 class="stat-number" data-target="2500" data-suffix="+">0</h3>
-                        <p class="stat-label">Students Trained</p>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0 stat-item">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="fas fa-user-graduate text-primary fs-4"></i>
+                        </div>
+                        <h2 class="fw-bolder mb-0 stat-number" data-target="2500" data-suffix="+">0</h2>
+                        <p class="text-muted fw-bold small text-uppercase ls-1">Students</p>
                     </div>
-                    <div class="col-md-3 col-6 mb-4 mb-md-0 border-end border-light">
-                        <h3 class="stat-number" data-target="10" data-suffix="+">0</h3>
-                        <p class="stat-label">Industry Experts</p>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0 stat-item">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="fas fa-chalkboard-teacher text-primary fs-4"></i>
+                        </div>
+                        <h2 class="fw-bolder mb-0 stat-number" data-target="10" data-suffix="+">0</h2>
+                        <p class="text-muted fw-bold small text-uppercase ls-1">Mentors</p>
                     </div>
-                    <div class="col-md-3 col-6 mb-md-0 border-end border-light">
-                        <h3 class="stat-number" data-target="96" data-suffix="%">0</h3>
-                        <p class="stat-label">Success Rate</p>
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="fas fa-star text-primary fs-4"></i>
+                        </div>
+                        <h2 class="fw-bolder mb-0 stat-number" data-target="96" data-suffix="%">0</h2>
+                        <p class="text-muted fw-bold small text-uppercase ls-1">Success</p>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <h3 class="stat-number" data-target="12" data-suffix="+">0</h3>
-                        <p class="stat-label">Tech Courses</p>
+                    <div class="col-md-3 col-6 stat-item">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-3 shadow-sm" style="width: 60px; height: 60px;">
+                            <i class="fas fa-layer-group text-primary fs-4"></i>
+                        </div>
+                        <h2 class="fw-bolder mb-0 stat-number" data-target="15" data-suffix="+">0</h2>
+                        <p class="text-muted fw-bold small text-uppercase ls-1">Courses</p>
                     </div>
                 </div>
             </div>
@@ -391,101 +382,146 @@
 
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold">Why Choose Us</h6>
-                <h1 class="mb-5">Experience The <span style="color:#fb873f;">Premium</span> Difference</h1>
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 60px;">
+                <h6 class="text-primary text-uppercase fw-bold ls-2">Why We Are Different</h6>
+                <h1 class="mb-4 display-5 fw-bolder">The <span class="text-gradient">Premium</span> Learning Experience</h1>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe"></i>
+                    <div class="glass-card h-100 p-4 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
+                            <i class="fas fa-globe fa-2x"></i>
                         </div>
-                        <h5 class="mb-3 fw-bold">Flexible Learning</h5>
-                        <p class="mb-0 text-muted">Access high-quality content anytime, anywhere, on any device.</p>
+                        <h5 class="fw-bold mb-3">Global Access</h5>
+                        <p class="text-muted mb-0">Learn from anywhere with our ultra-fast cloud learning management system.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-certificate"></i>
+                    <div class="glass-card h-100 p-4 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
+                            <i class="fas fa-medal fa-2x"></i>
                         </div>
-                        <h5 class="mb-3 fw-bold">Verified Certificates</h5>
-                        <p class="mb-0 text-muted">Earn industry-recognized certificates to validate your skills.</p>
+                        <h5 class="fw-bold mb-3">Certified Pro</h5>
+                        <p class="text-muted mb-0">Earn certificates that are recognized by top tech companies worldwide.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-project-diagram"></i>
+                    <div class="glass-card h-100 p-4 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
+                            <i class="fas fa-briefcase fa-2x"></i>
                         </div>
-                        <h5 class="mb-3 fw-bold">Real Projects</h5>
-                        <p class="mb-0 text-muted">Build a professional portfolio with hands-on capstone projects.</p>
+                        <h5 class="fw-bold mb-3">Career Ready</h5>
+                        <p class="text-muted mb-0">Direct pipelines to internships and job placements for top performers.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
+                    <div class="glass-card h-100 p-4 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle bg-light text-primary">
+                            <i class="fas fa-headset fa-2x"></i>
                         </div>
-                        <h5 class="mb-3 fw-bold">24/7 Support</h5>
-                        <p class="mb-0 text-muted">Get unstuck quickly with our dedicated mentor support system.</p>
+                        <h5 class="fw-bold mb-3">Elite Support</h5>
+                        <p class="text-muted mb-0">Priority response times and dedicated 1-on-1 mentorship sessions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold">Explore Topics</h6>
-                <h1 class="mb-5">Master In-Demand Skills</h1>
+    <div class="container-xxl py-5 bg-light position-relative overflow-hidden">
+        <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(251, 135, 63, 0.05); border-radius: 50%; blur(100px);"></div>
+        
+        <div class="container position-relative">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 50px;">
+                <h6 class="text-primary text-uppercase fw-bold ls-2">Featured Courses</h6>
+                <h1 class="display-5 fw-bolder">Unlock <span class="text-gradient">Potential</span></h1>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
-                        <div class="category-icon mb-3">
-                            <img src="img/cat1.png" alt="Excel" style="width: 50px;">
+                    <div class="course-card-ultra">
+                        <div class="course-img-box">
+                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3 px-3 py-1 bg-primary text-white rounded-pill small fw-bold shadow-sm">
+                                Beginner
+                            </div>
                         </div>
-                        <h5 class="fw-bold">Microsoft Excel</h5>
-                        <span class="badge bg-light text-dark mb-2">Data Analysis</span>
+                        <div class="p-4 pt-2">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price-tag bg-success">FREE</span>
+                                <div class="text-warning small"><i class="fas fa-star"></i> 4.8</div>
+                            </div>
+                            <h5 class="fw-bold mb-2">HTML & CSS Masterclass</h5>
+                            <p class="text-muted small mb-4">The foundation of the web. Build beautiful, responsive sites.</p>
+                            <a href="single.html" class="btn btn-outline-dark w-100 rounded-pill fw-bold" style="border-width: 2px;">Enroll Now</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
-                        <div class="category-icon mb-3">
-                            <img src="img/cat2.png" alt="AWS" style="width: 50px;">
+                    <div class="course-card-ultra">
+                        <div class="course-img-box">
+                            <img class="img-fluid w-100" src="img/course-02.png" alt="MERN" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3 px-3 py-1 bg-dark text-white rounded-pill small fw-bold shadow-sm">
+                                Advanced
+                            </div>
                         </div>
-                        <h5 class="fw-bold">AWS Cloud</h5>
-                        <span class="badge bg-light text-dark mb-2">Cloud Computing</span>
+                        <div class="p-4 pt-2">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price-tag">৳ 15,000</span>
+                                <div class="text-warning small"><i class="fas fa-star"></i> 4.9</div>
+                            </div>
+                            <h5 class="fw-bold mb-2">Full Stack Engineering</h5>
+                            <p class="text-muted small mb-4">Complete MERN stack roadmap with large scale projects.</p>
+                            <a href="course2.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm">Get Premium</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
-                        <div class="category-icon mb-3">
-                            <img src="img/cat3.png" alt="Python" style="width: 50px;">
+                    <div class="course-card-ultra">
+                        <div class="course-img-box">
+                            <img class="img-fluid w-100" src="img/course-3.webp" alt="AI" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3 px-3 py-1 bg-dark text-white rounded-pill small fw-bold shadow-sm">
+                                Trending
+                            </div>
                         </div>
-                        <h5 class="fw-bold">Python</h5>
-                        <span class="badge bg-light text-dark mb-2">AI & Data Science</span>
+                        <div class="p-4 pt-2">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price-tag">৳ 15,000</span>
+                                <div class="text-warning small"><i class="fas fa-star"></i> 5.0</div>
+                            </div>
+                            <h5 class="fw-bold mb-2">Machine Learning & AI</h5>
+                            <p class="text-muted small mb-4">From Python basics to Neural Networks and Deep Learning.</p>
+                            <a href="course3.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm">Get Premium</a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="category-card bg-white p-4 rounded-3 text-center shadow-sm h-100 border border-1 border-light">
-                        <div class="category-icon mb-3">
-                            <img src="img/cat4.png" alt="Java" style="width: 50px;">
+                    <div class="course-card-ultra">
+                        <div class="course-img-box">
+                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="DSA" style="height: 220px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3 px-3 py-1 bg-dark text-white rounded-pill small fw-bold shadow-sm">
+                                Essential
+                            </div>
                         </div>
-                        <h5 class="fw-bold">Java</h5>
-                        <span class="badge bg-light text-dark mb-2">Software Dev</span>
+                        <div class="p-4 pt-2">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="price-tag">৳ 10,000</span>
+                                <div class="text-warning small"><i class="fas fa-star"></i> 4.7</div>
+                            </div>
+                            <h5 class="fw-bold mb-2">Data Structures (DSA)</h5>
+                            <p class="text-muted small mb-4">Master algorithms and crack FAANG interviews.</p>
+                            <a href="Course5.html" class="btn btn-primary w-100 rounded-pill fw-bold shadow-sm">Get Premium</a>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5">
-                <a href="courses.html" class="btn btn-premium-outline">
-                    Browse All Categories <i class="fas fa-layer-group ms-2"></i>
+            <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
+                <a href="courses.html" class="btn btn-outline-primary rounded-pill py-3 px-5 fw-bold" style="border-width: 2px;">
+                    View Complete Catalog
                 </a>
             </div>
         </div>
@@ -493,136 +529,17 @@
 
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold">Our Courses</h6>
-                <h1 class="mb-5">Top Rated Premium Courses</h1>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-card">
-                        <div class="course-image-wrapper">
-                            <img class="img-fluid w-100" src="img/course-1.jpg" alt="HTML" style="height: 200px; object-fit: cover;">
-                            <div class="course-badge badge-free">FREE ACCESS</div>
-                        </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex justify-content-between mb-2">
-                                <small class="text-muted"><i class="fa fa-users me-1"></i> 2.5k+</small>
-                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.5</small>
-                            </div>
-                            <h5 class="mb-2 fw-bold">HTML & CSS Fundamentals</h5>
-                            <p class="small text-muted flex-grow-1">Master web development basics with hands-on projects.</p>
-                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
-                                <span class="course-price">৳ 0</span>
-                                <a href="single.html" class="btn btn-sm btn-primary rounded-pill px-3">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-card">
-                        <div class="course-image-wrapper">
-                            <img class="img-fluid w-100" src="img/course-02.png" alt="MERN" style="height: 200px; object-fit: cover;">
-                            <div class="course-badge badge-paid">PREMIUM</div>
-                        </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex justify-content-between mb-2">
-                                <small class="text-muted"><i class="fa fa-users me-1"></i> 1.2k+</small>
-                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.7</small>
-                            </div>
-                            <h5 class="mb-2 fw-bold">Full Stack Development</h5>
-                            <p class="small text-muted flex-grow-1">MERN Stack: React, Node.js, Express & MongoDB.</p>
-                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="course-price">৳ 15k</span>
-                                    <small class="text-muted text-decoration-line-through ms-1">20k</small>
-                                </div>
-                                <a href="course2.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-card">
-                        <div class="course-image-wrapper">
-                            <img class="img-fluid w-100" src="img/course-3.webp" alt="AI" style="height: 200px; object-fit: cover;">
-                            <div class="course-badge badge-paid">PREMIUM</div>
-                        </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex justify-content-between mb-2">
-                                <small class="text-muted"><i class="fa fa-users me-1"></i> 1.5k+</small>
-                                <small class="text-warning"><i class="fa fa-star me-1"></i> 5.0</small>
-                            </div>
-                            <h5 class="mb-2 fw-bold">Machine Learning & AI</h5>
-                            <p class="small text-muted flex-grow-1">Build intelligent systems with Python & TensorFlow.</p>
-                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="course-price">৳ 15k</span>
-                                    <small class="text-muted text-decoration-line-through ms-1">18k</small>
-                                </div>
-                                <a href="course3.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="course-card">
-                        <div class="course-image-wrapper">
-                            <img class="img-fluid w-100" src="img/course-5.jpg" alt="DSA" style="height: 200px; object-fit: cover;">
-                            <div class="course-badge badge-paid">PREMIUM</div>
-                        </div>
-                        <div class="p-4 d-flex flex-column flex-grow-1">
-                            <div class="d-flex justify-content-between mb-2">
-                                <small class="text-muted"><i class="fa fa-users me-1"></i> 850+</small>
-                                <small class="text-warning"><i class="fa fa-star me-1"></i> 4.5</small>
-                            </div>
-                            <h5 class="mb-2 fw-bold">Data Structures (DSA)</h5>
-                            <p class="small text-muted flex-grow-1">Crack coding interviews with efficient problem solving.</p>
-                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center">
-                                <div>
-                                    <span class="course-price">৳ 10k</span>
-                                    <small class="text-muted text-decoration-line-through ms-1">12k</small>
-                                </div>
-                                <a href="Course5.html" class="btn btn-sm btn-premium px-3" style="font-size: 0.8rem;">Enroll</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="courses.html" class="btn btn-premium-outline btn-lg">
-                    View All Courses <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="cta-section wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 mb-4 mb-lg-0">
-                        <span class="badge bg-light text-primary mb-3">Join Our Community</span>
-                        <h2 class="mb-3 fw-bold">Share Your Knowledge, Become an Instructor</h2>
-                        <p class="mb-4 text-white-50 lead">
-                            Join our team of expert instructors. Share your industry experience, mentor the next generation, and earn while you teach.
-                        </p>
+            <div class="position-relative rounded-3 overflow-hidden p-5 wow fadeInUp" data-wow-delay="0.1s" style="background: var(--dark-bg); box-shadow: var(--shadow-ultra);">
+                <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: linear-gradient(90deg, transparent, rgba(251, 135, 63, 0.2)); clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);"></div>
+                
+                <div class="row align-items-center position-relative" style="z-index: 2;">
+                    <div class="col-lg-8">
+                        <span class="text-primary fw-bold text-uppercase ls-2">Join the Elite</span>
+                        <h2 class="text-white display-5 fw-bold mb-4 mt-2">Become an Instructor</h2>
+                        <p class="text-white-50 lead mb-4">Share your expertise on the most premium platform in Bangladesh. Build your personal brand and earn substantial revenue.</p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="instructor.html" class="btn btn-light py-3 px-5 rounded-pill fw-bold text-primary shadow">
-                                <i class="fas fa-chalkboard-teacher me-2"></i>Apply Now
-                            </a>
-                            <a href="team.html" class="btn btn-outline-light py-3 px-5 rounded-pill fw-bold">
-                                Meet Team
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="position-relative">
-                             <i class="fas fa-rocket display-1 text-white opacity-25" style="transform: rotate(-45deg);"></i>
+                            <a href="instructor.html" class="btn btn-ultra">Apply Now</a>
+                            <a href="team.html" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold">Meet Team</a>
                         </div>
                     </div>
                 </div>
@@ -630,51 +547,48 @@
         </div>
     </div>
 
-    <div class="container-xxl py-5 bg-light">
+    <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center section-header wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase fw-bold">Testimonials</h6>
-                <h1 class="mb-5">Trusted by Students</h1>
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 50px;">
+                <h6 class="text-primary text-uppercase fw-bold ls-2">Success Stories</h6>
+                <h1 class="display-5 fw-bolder">Trusted by <span class="text-gradient">Innovators</span></h1>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
-                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
-                        <p class="mb-4 text-muted fst-italic">"Junayed Academy's ML course transformed my career. Within 3 months, I went from a biology graduate to a machine learning engineer."</p>
-                        <div class="d-flex align-items-center mt-auto">
-                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Rajon">
+                    <div class="glass-card p-4 h-100 position-relative">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="">
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Rajon Mahmud</h6>
-                                <small class="text-primary">ML Engineer</small>
+                                <h6 class="fw-bold mb-0">Rajon Mahmud</h6>
+                                <small class="text-primary fw-bold">ML Engineer</small>
                             </div>
                         </div>
+                        <p class="text-muted fst-italic mb-0">"The quality of content at Junayed Academy is unmatched. The premium production value and deep-dive curriculum helped me switch careers seamlessly."</p>
                     </div>
                 </div>
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
-                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
-                        <p class="mb-4 text-muted fst-italic">"The practical approach and real projects gave me the confidence to start freelancing. Now I earn 3x more."</p>
-                        <div class="d-flex align-items-center mt-auto">
-                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Parui">
+                    <div class="glass-card p-4 h-100 position-relative">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="">
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Parui Rahman</h6>
-                                <small class="text-primary">Full Stack Dev</small>
+                                <h6 class="fw-bold mb-0">Parui Rahman</h6>
+                                <small class="text-primary fw-bold">Frontend Dev</small>
                             </div>
                         </div>
+                        <p class="text-muted fst-italic mb-0">"Worth every penny. The project-based learning approach gave me a portfolio that actually impressed interviewers. Highly recommended."</p>
                     </div>
                 </div>
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-white p-4 rounded-3 shadow-sm h-100 position-relative border border-light">
-                        <i class="fas fa-quote-left fa-2x text-primary mb-3 opacity-25"></i>
-                        <p class="mb-4 text-muted fst-italic">"Coming from a non-tech background, I was skeptical. But the supportive community made my transition smooth."</p>
-                        <div class="d-flex align-items-center mt-auto">
-                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-primary" width="50" height="50" alt="Chowa">
+                    <div class="glass-card p-4 h-100 position-relative">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="">
                             <div class="ms-3">
-                                <h6 class="mb-0 fw-bold">Lailatul F. Chowa</h6>
-                                <small class="text-primary">Frontend Dev</small>
+                                <h6 class="fw-bold mb-0">Lailatul Chowa</h6>
+                                <small class="text-primary fw-bold">Full Stack Dev</small>
                             </div>
                         </div>
+                        <p class="text-muted fst-italic mb-0">"I've tried other platforms, but the mentorship here is elite. You get real answers from real experts, not just automated responses."</p>
                     </div>
                 </div>
             </div>
@@ -683,18 +597,16 @@
 
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="bg-white rounded-3 p-5 shadow-lg border-top border-5 border-primary wow fadeInUp" data-wow-delay="0.1s">
+            <div class="bg-white rounded-3 shadow-lg p-5 border-start border-5 border-primary wow fadeInUp" data-wow-delay="0.1s">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="mb-2 fw-bold">Stay Updated with Tech Trends</h3>
-                        <p class="mb-0 text-muted">Subscribe to our newsletter for course updates and insights.</p>
+                        <h3 class="fw-bold">Stay Ahead of the Curve</h3>
+                        <p class="text-muted mb-0">Get exclusive tech insights and course discounts delivered to your inbox.</p>
                     </div>
                     <div class="col-lg-6">
-                        <form class="position-relative">
-                            <input class="form-control border-2 rounded-pill w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" style="border-color: #eee;">
-                            <button type="button" class="btn btn-premium position-absolute top-0 end-0 mt-1 me-1 py-2 px-4">
-                                Subscribe
-                            </button>
+                        <form class="d-flex gap-2">
+                            <input class="form-control form-control-lg rounded-pill border-2 fs-6" type="email" placeholder="Enter email address">
+                            <button class="btn btn-dark rounded-pill px-4 fw-bold">Subscribe</button>
                         </form>
                     </div>
                 </div>
