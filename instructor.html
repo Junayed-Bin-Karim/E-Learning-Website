@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Instructor</title>
+    <title>Become an Instructor | Junayed Academy</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -32,315 +32,512 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- Custom Styles for Instructor Page -->
+    <!-- Modern Instructor Page Styles -->
     <style>
+        /* Modern Color Scheme */
         :root {
-            --primary-color: #fb873f;
-            --secondary-color: #1a237e;
-            --light-bg: #f8f9fa;
-            --dark-bg: #121212;
-            --text-dark: #333;
-            --text-light: #666;
-            --border-color: #e0e0e0;
-            --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --primary: #fb873f;
+            --primary-light: #ffe8d9;
+            --secondary: #1a237e;
+            --dark: #2d3748;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #28a745;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s ease;
         }
-        
-        /* Instructor Page Specific Styles */
+
+        /* General Styles */
+        .instructor-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        /* Hero Section */
         .instructor-hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
-            color: white;
-            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
-        
-        .instructor-hero::before {
+
+        .instructor-hero:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(251, 135, 63, 0.1) 0%, rgba(251, 135, 63, 0.05) 100%);
+            border-radius: 50%;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Stats Cards */
+        .stats-container {
+            margin: -50px 0 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid var(--light-gray);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+            border-color: var(--primary-light);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .stat-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Benefits Cards */
+        .benefit-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--box-shadow-light);
+            transition: var(--transition);
+            height: 100%;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+            border-color: var(--primary);
+        }
+
+        .benefit-card:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 5px;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23fb873f' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
+            background: var(--primary);
         }
-        
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        .btn-instructor-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .btn-instructor-primary:hover {
-            background-color: #e6732f;
-            border-color: #e6732f;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.2);
-        }
-        
-        .btn-instructor-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .btn-instructor-outline:hover {
-            background-color: white;
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        .stats-section {
-            background-color: var(--light-bg);
-            padding: 60px 0;
-            margin: 40px 0;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .benefit-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            height: 100%;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary-color);
-        }
-        
+
         .benefit-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(251, 135, 63, 0.1) 0%, rgba(251, 135, 63, 0.05) 100%);
+            background: var(--primary-light);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
-        
+
         .benefit-icon i {
             font-size: 1.8rem;
-            color: var(--primary-color);
+            color: var(--primary);
         }
-        
+
+        .benefit-card h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0;
+        }
+
         .process-step {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            margin-bottom: 3rem;
             position: relative;
-            padding: 20px;
         }
-        
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 80px;
+            width: 2px;
+            height: calc(100% + 3rem);
+            background: var(--light-gray);
+            z-index: 1;
+        }
+
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-right: 2rem;
+            flex-shrink: 0;
             z-index: 2;
-        }
-        
-        .expectation-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.8rem;
             position: relative;
         }
-        
-        .expectation-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.1rem;
+
+        .step-content {
+            flex: 1;
         }
-        
+
+        .step-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .step-content p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, #283593 100%);
+            border-radius: var(--border-radius);
+            padding: 4rem;
             color: white;
-            border-radius: 16px;
-            padding: 3rem;
-            margin: 4rem 0;
+            margin: 100px 0;
             position: relative;
             overflow: hidden;
         }
-        
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
         .cta-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
-        
-        .instructor-quote {
-            background-color: var(--light-bg);
-            border-left: 4px solid var(--primary-color);
-            padding: 2rem;
-            border-radius: 0 12px 12px 0;
-            margin: 3rem 0;
-            font-style: italic;
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
         }
-        
-        .instructor-quote cite {
-            display: block;
-            margin-top: 1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            font-style: normal;
-        }
-        
-        .faq-accordion .accordion-item {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        
-        .faq-accordion .accordion-button {
-            font-weight: 600;
-            padding: 1.2rem 1.5rem;
-        }
-        
-        .faq-accordion .accordion-button:not(.collapsed) {
-            background-color: rgba(251, 135, 63, 0.1);
-            color: var(--primary-color);
-        }
-        
-        .modal-content {
-            border-radius: 16px;
-            overflow: hidden;
+
+        /* Button Styles */
+        .btn-primary-custom {
+            background: var(--primary);
             border: none;
-        }
-        
-        .modal-header {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #283593 100%);
             color: white;
-            border-bottom: none;
-            padding: 1.5rem 2rem;
-        }
-        
-        .form-control, .form-select {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color);
+            padding: 0.875rem 2rem;
+            font-weight: 600;
             border-radius: 8px;
             transition: var(--transition);
         }
-        
+
+        .btn-primary-custom:hover {
+            background: #e6732f;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.2);
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Requirements Section */
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirement-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .requirement-icon i {
+            color: var(--primary);
+        }
+
+        .requirement-content h5 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .requirement-content p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow-light);
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            font-size: 5rem;
+            color: var(--primary-light);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+
+        .author-info h6 {
+            font-weight: 600;
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--box-shadow-light);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: var(--border-radius);
+            border: none;
+            box-shadow: var(--box-shadow);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #283593 100%);
+            color: white;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            border: none;
+            padding: 1.5rem 2rem;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid var(--light-gray);
+            padding: 0.75rem 1rem;
+            transition: var(--transition);
+        }
+
         .form-control:focus, .form-select:focus {
-            border-color: var(--primary-color);
+            border-color: var(--primary);
             box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
         }
-        
-        .form-check-input:checked {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .img-modern {
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-        
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
+
+        /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .cta-section {
-                padding: 2rem;
+                padding: 3rem 1.5rem;
+            }
+            
+            .process-step:not(:last-child):after {
+                display: none;
             }
         }
     </style>
@@ -348,7 +545,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start (Unchanged) -->
+    <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -360,8 +557,9 @@
     <!-- Navbar Start (Unchanged) -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-<p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
-                    style="color: #fb873f;">Academy</span></p>        </a>
+            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
+                    style="color: #fb873f;">Academy</span></p>
+        </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             style="border: none;">
             <span class="navbar-toggler-icon"></span>
@@ -376,7 +574,6 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                       
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -404,192 +601,232 @@
     </div>
     <!-- Header End -->
 
-    <!-- ========== START OF MODERN CONTENT ========== -->
-    
+    <!-- ========== MODERN INSTRUCTOR PAGE CONTENT ========== -->
+
     <!-- Hero Section -->
     <div class="instructor-hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h1 class="hero-title animate-fade-in">Share Your Expertise, Shape Futures</h1>
-                    <p class="hero-subtitle animate-fade-in">Join Junayed Academy's elite community of instructors and teach thousands of eager learners across Bangladesh. Earn competitive income while making a real impact.</p>
-                    <div class="d-flex gap-3 mt-4 animate-fade-in">
-                        <button type="button" class="btn btn-instructor-outline" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
-                        <a href="#benefits" class="btn btn-instructor-primary">Learn More</a>
+                <div class="col-lg-7">
+                    <h1 class="hero-title">Share Your Knowledge. Shape Futures. Earn with Purpose.</h1>
+                    <p class="hero-subtitle">Join Junayed Academy's community of expert instructors and teach thousands of eager learners across Bangladesh. Create meaningful impact while building your teaching career.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#applicationModal">
+                            <i class="fas fa-paper-plane me-2"></i>Start Teaching
+                        </button>
+                        <a href="#benefits" class="btn btn-outline-secondary">
+                            <i class="fas fa-play-circle me-2"></i>Watch Demo
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fas fa-chalkboard-teacher" style="font-size: 10rem; opacity: 0.8;"></i>
+                <div class="col-lg-5">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                             alt="Instructor Teaching" 
+                             class="img-fluid rounded-3 shadow" 
+                             style="max-height: 400px; object-fit: cover;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Stats Section -->
-    <div class="stats-section">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number">5,000+</div>
-                        <div class="stat-label">Active Students</div>
+    <div class="container stats-container">
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-text">Active Learners</div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number">200+</div>
-                        <div class="stat-label">Expert Instructors</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
                     </div>
+                    <div class="stat-number">250+</div>
+                    <div class="stat-text">Expert Instructors</div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Courses Published</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book-open"></i>
                     </div>
+                    <div class="stat-number">300+</div>
+                    <div class="stat-text">Courses Available</div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
                     </div>
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-text">Average Rating</div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Benefits Section -->
-    <div class="container-xxl py-5" id="benefits">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Why Teach With Us?</h2>
-                <p class="fs-5 text-muted">Join our community of educators and enjoy a rewarding teaching experience</p>
+    <div class="container instructor-section" id="benefits">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title center">Why Teach With Junayed Academy?</h2>
+                <p class="section-subtitle text-center">Join a platform designed for success, with tools and support to help you excel as an online educator.</p>
             </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-globe-asia"></i>
-                        </div>
-                        <h5>Global Reach, Local Impact</h5>
-                        <p>Connect with diverse learners across Bangladesh and make a meaningful impact on their personal and professional lives.</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-wallet"></i>
                     </div>
+                    <h4>Competitive Earnings</h4>
+                    <p>Earn up to 80% revenue share with our transparent pricing model. Top instructors earn $5,000+ monthly.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h5>Advanced Technology</h5>
-                        <p>Utilize our modern e-learning ecosystem designed to create seamless and engaging learning experiences.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-asia"></i>
                     </div>
+                    <h4>Reach Millions</h4>
+                    <p>Teach students across Bangladesh and beyond with our localized platform and marketing support.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h5>Flexible Teaching</h5>
-                        <p>Create and manage courses on your schedule, balancing professional and personal commitments effortlessly.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
+                    <h4>Powerful Tools</h4>
+                    <p>Access our advanced course creation tools, analytics dashboard, and interactive teaching features.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h5>Competitive Earnings</h5>
-                        <p>Benefit from a transparent and rewarding compensation structure that values your expertise.</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
+                    <h4>Dedicated Support</h4>
+                    <p>Get 1-on-1 support from our instructor success team and join our community of educators.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- How It Works Section -->
-    <div class="container-xxl py-5 bg-light">
+    <!-- Process Section -->
+    <div class="process-section">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">How It Works</h2>
-                <p class="fs-5 text-muted">Your journey to becoming an instructor in four simple steps</p>
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title center">Become an Instructor in 4 Steps</h2>
+                    <p class="section-subtitle text-center">Simple, straightforward process to start your teaching journey with us.</p>
+                </div>
             </div>
             
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
                     <div class="process-step">
                         <div class="step-number">1</div>
-                        <h5>Apply</h5>
-                        <p>Submit your application with details about your skills, teaching approach, and course ideas.</p>
+                        <div class="step-content">
+                            <h4>Submit Your Application</h4>
+                            <p>Fill out our instructor application form with your details, qualifications, and course ideas. We review applications within 3-5 business days.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                    
                     <div class="process-step">
                         <div class="step-number">2</div>
-                        <h5>Create Content</h5>
-                        <p>Develop high-quality course content with guidance from our instructional design team.</p>
+                        <div class="step-content">
+                            <h4>Course Development</h4>
+                            <p>Work with our instructional design team to create high-quality, engaging course content. We provide templates and best practices.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                    
                     <div class="process-step">
                         <div class="step-number">3</div>
-                        <h5>Go Live</h5>
-                        <p>Launch your courses on our platform and start reaching students worldwide.</p>
+                        <div class="step-content">
+                            <h4>Launch Your Course</h4>
+                            <p>Publish your course on our platform. We handle marketing and promotion to reach our student community.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                    
                     <div class="process-step">
                         <div class="step-number">4</div>
-                        <h5>Engage & Grow</h5>
-                        <p>Connect with students through discussions, live Q&A sessions, and build a supportive learning community.</p>
+                        <div class="step-content">
+                            <h4>Engage & Earn</h4>
+                            <p>Interact with students, collect feedback, and earn revenue. Track your success through our detailed analytics dashboard.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Instructor Expectations -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid img-modern" src="img/instructor-2.jpg" alt="Instructor teaching">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="section-title section-title-left mb-4">What We Expect from Instructors</h2>
-                    <ul class="expectation-list">
-                        <li><strong>Passion for Teaching:</strong> A genuine interest in sharing knowledge and facilitating student learning journeys.</li>
-                        <li><strong>Subject Matter Expertise:</strong> Proven proficiency in your field, supported by relevant qualifications and experience.</li>
-                        <li><strong>Communication Skills:</strong> Ability to explain complex concepts clearly and effectively to diverse learners.</li>
-                        <li><strong>Innovation:</strong> Willingness to adopt innovative teaching methodologies and technologies to enhance learning.</li>
-                        <li><strong>Commitment:</strong> Dedication to creating high-quality educational content and supporting student success.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonial -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="instructor-quote animate-fade-in">
-                <p class="fs-5">"Teaching with Junayed Academy has been one of the most rewarding experiences of my career. The platform's intuitive tools and supportive community have allowed me to reach thousands of eager learners across Bangladesh while doing what I love most – sharing knowledge."</p>
-                <cite>– Dr. Sarah Ahmed, Computer Science Instructor (3+ years with Junayed Academy)</cite>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="container-xxl">
-        <div class="container">
-            <div class="cta-section animate-fade-in">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h2 class="cta-title">Ready to Share Your Knowledge?</h2>
-                        <p class="mb-4">Join thousands of instructors who are transforming lives through education. Start your teaching journey today!</p>
+    <!-- Requirements Section -->
+    <div class="container instructor-section">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title">What Makes a Great Instructor?</h2>
+                <p class="mb-4">We're looking for passionate educators who want to make a difference. Here's what successful instructors on our platform have:</p>
+                
+                <div class="requirement-item">
+                    <div class="requirement-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <button type="button" class="btn btn-instructor-outline me-3" data-bs-toggle="modal" data-bs-target="#applicationModal">Apply Now</button>
-                        <a href="#faq" class="btn btn-instructor-primary">View FAQ</a>
+                    <div class="requirement-content">
+                        <h5>Expertise & Experience</h5>
+                        <p>Deep knowledge in your field with practical experience to share</p>
+                    </div>
+                </div>
+                
+                <div class="requirement-item">
+                    <div class="requirement-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h5>Communication Skills</h5>
+                        <p>Ability to explain complex concepts clearly and engagingly</p>
+                    </div>
+                </div>
+                
+                <div class="requirement-item">
+                    <div class="requirement-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h5>Technical Readiness</h5>
+                        <p>Basic equipment for creating quality video content (we'll help!)</p>
+                    </div>
+                </div>
+                
+                <div class="requirement-item">
+                    <div class="requirement-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="requirement-content">
+                        <h5>Passion for Teaching</h5>
+                        <p>Genuine desire to help others learn and succeed</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Teaching with Junayed Academy transformed my career. The support team helped me create my first course, and within 3 months, I was earning more than my full-time job. The best part? Seeing my students succeed."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Sarah Ahmed">
+                        <div class="author-info">
+                            <h6>Sarah Ahmed</h6>
+                            <p>Web Development Instructor • 2,500+ Students</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -597,52 +834,74 @@
     </div>
 
     <!-- FAQ Section -->
-    <div class="container-xxl py-5" id="faq">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="container instructor-section">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title center">Frequently Asked Questions</h2>
+                <p class="section-subtitle text-center">Find answers to common questions about teaching with us.</p>
             </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="accordion faq-accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    What qualifications do I need to become an instructor?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We look for instructors with proven expertise in their field. While formal qualifications are beneficial, practical experience, industry recognition, and a passion for teaching are equally important.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    How much can I earn as an instructor?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Earnings vary based on course popularity, pricing, and student enrollment. Our competitive revenue share model ensures you're rewarded for your efforts. Top instructors earn significant monthly incomes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    What support do you provide for course creation?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Our instructional design team provides comprehensive support including course planning, video production guidance, content review, and platform training to help you create engaging, high-quality courses.
-                                </div>
-                            </div>
-                        </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>How much can I earn as an instructor?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                    <div class="faq-answer">
+                        <p>Instructors typically earn between $1,000 to $10,000+ per month, depending on course popularity, pricing, and marketing efforts. We offer up to 80% revenue share and provide tools to help maximize your earnings.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What equipment do I need to get started?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can start with basic equipment: a computer, a good microphone, and a webcam. We provide detailed guides on setting up your recording space and offer recommendations for affordable equipment upgrades.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much time does it take to create a course?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most instructors spend 40-80 hours creating their first course. We provide templates and support to streamline the process. Once created, courses can generate passive income for years.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need teaching experience?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While teaching experience is helpful, it's not required. We provide training and resources to help you become an effective online instructor. What matters most is your expertise and passion for your subject.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container">
+        <div class="cta-section">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title">Ready to Start Your Teaching Journey?</h2>
+                    <p class="cta-subtitle">Join thousands of instructors who are changing lives through education. Apply today and our team will help you every step of the way.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <button class="btn btn-outline-custom me-3" data-bs-toggle="modal" data-bs-target="#applicationModal">
+                        <i class="fas fa-paper-plane me-2"></i>Apply Now
+                    </button>
+                    <a href="contact.html" class="btn btn-primary-custom">
+                        <i class="fas fa-question-circle me-2"></i>Ask Questions
+                    </a>
                 </div>
             </div>
         </div>
@@ -653,11 +912,11 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="applicationModalLabel">Instructor Application</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="applicationModalLabel">Become an Instructor</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <h5 class="mb-4">Join Junayed Academy's Teaching Community</h5>
+                    <h5 class="mb-4">Join Our Community of Educators</h5>
                     <form id="instructorApplicationForm">
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -676,7 +935,7 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Email Address</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -689,29 +948,27 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <select class="form-select" id="educationLevel" required>
-                                        <option value="" selected disabled>Select your highest education</option>
+                                        <option value="" selected disabled>Select highest education</option>
                                         <option value="High School">High School</option>
-                                        <option value="Undergraduate">Undergraduate</option>
-                                        <option value="Graduate">Graduate</option>
-                                        <option value="Post-Graduate">Post-Graduate</option>
-                                        <option value="Professional Certification">Professional Certification</option>
+                                        <option value="Bachelor's">Bachelor's Degree</option>
+                                        <option value="Master's">Master's Degree</option>
+                                        <option value="PhD">PhD</option>
+                                        <option value="Professional">Professional Certification</option>
                                     </select>
-                                    <label for="educationLevel">Highest Education Level</label>
+                                    <label for="educationLevel">Highest Education</label>
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <select class="form-select" id="teachingSubject" required>
-                                        <option value="" selected disabled>Select your teaching subject</option>
-                                        <option value="Technology">Technology</option>
-                                        <option value="Business">Business</option>
+                                        <option value="" selected disabled>Select teaching subject</option>
+                                        <option value="Technology">Technology & Programming</option>
+                                        <option value="Business">Business & Finance</option>
                                         <option value="Marketing">Marketing</option>
-                                        <option value="Design">Design</option>
-                                        <option value="Personal Development">Personal Development</option>
-                                        <option value="Languages">Languages</option>
-                                        <option value="Academic Subjects">Academic Subjects</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Design">Design & Creative</option>
+                                        <option value="Language">Language Learning</option>
+                                        <option value="Academic">Academic Subjects</option>
                                     </select>
                                     <label for="teachingSubject">Teaching Subject</label>
                                 </div>
@@ -719,23 +976,23 @@
                             
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Tell us about your teaching experience and course ideas" id="experience" style="height: 120px" required></textarea>
+                                    <textarea class="form-control" placeholder="Tell us about your experience and course ideas" id="experience" style="height: 120px" required></textarea>
                                     <label for="experience">Teaching Experience & Course Ideas</label>
                                 </div>
                             </div>
                             
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="linkedin" placeholder="LinkedIn Profile (Optional)">
-                                    <label for="linkedin">LinkedIn Profile (Optional)</label>
+                                    <input type="text" class="form-control" id="portfolio" placeholder="Portfolio/LinkedIn">
+                                    <label for="portfolio">Portfolio or LinkedIn Profile (Optional)</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <div class="form-check mb-3">
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="termsCheck" required>
                                     <label class="form-check-label" for="termsCheck">
-                                        I confirm that the information provided is accurate. I have read, understood, and agree to the Terms of Service. I acknowledge that all transactions are final with no refunds.
+                                        I agree to the Terms of Service and Privacy Policy. I confirm that all information provided is accurate.
                                     </label>
                                 </div>
                             </div>
@@ -743,14 +1000,14 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" form="instructorApplicationForm" class="btn btn-instructor-primary">Submit Application</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" form="instructorApplicationForm" class="btn btn-primary-custom">Submit Application</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ========== END OF MODERN CONTENT ========== -->
+    <!-- ========== END MODERN CONTENT ========== -->
 
     <!-- Footer Start (Unchanged) -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -816,35 +1073,76 @@
 
     <!-- Custom Script for Instructor Page -->
     <script>
-        // Form submission handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const applicationForm = document.getElementById('instructorApplicationForm');
-            if (applicationForm) {
-                applicationForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your application! We will review your submission and get back to you within 5-7 business days.');
-                    $('#applicationModal').modal('hide');
-                    this.reset();
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // Close other FAQ items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent) {
+                        otherItem.classList.remove('active');
                     }
                 });
             });
         });
+
+        // Form Submission
+        document.getElementById('instructorApplicationForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your application! We will review it and get back to you within 3 business days.');
+            
+            // Close modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('applicationModal'));
+            modal.hide();
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on scroll
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Add animation to cards
+            document.querySelectorAll('.benefit-card, .stat-card, .process-step').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initAnimations);
     </script>
 </body>
 
