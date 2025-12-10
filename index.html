@@ -35,7 +35,44 @@
 
     <style>
         /* Hero Section Enhancement */
-     
+     .hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("your-image.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);        /* main blur */
+    transform: scale(1.1);    /* prevents blur edges */
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(24, 29, 56, 0.9),
+        rgba(251, 135, 63, 0.7)
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;   /* keeps text readable */
+}
+
+
+
+
+        
         
         /* Stats Counter */
         .stats-counter {
