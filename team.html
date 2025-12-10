@@ -170,11 +170,39 @@
         }
 .stats-wrapper {
     background-color: #FB873F;
-    padding: 60px 10px;      /* taller vertical space */
+    padding: 100px 20px;      /* tall by default */
     border-radius: 50px;
     margin: 40px auto;
-    max-width: 100px;
+    max-width: 1200px;
+    min-height: 350px;        /* ensures it looks tall */
 }
+
+/* Medium screens — a bit shorter */
+@media (max-width: 992px) {
+    .stats-wrapper {
+        padding: 80px 20px;
+        min-height: 300px;
+    }
+}
+
+/* Small screens — compact */
+@media (max-width: 768px) {
+    .stats-wrapper {
+        padding: 60px 15px;
+        min-height: 250px;
+        border-radius: 40px;   /* smaller radius for mobile */
+    }
+}
+
+/* Extra small — very compact */
+@media (max-width: 480px) {
+    .stats-wrapper {
+        padding: 40px 10px;
+        min-height: 200px;
+        border-radius: 30px;
+    }
+}
+
 
 
     </style>
