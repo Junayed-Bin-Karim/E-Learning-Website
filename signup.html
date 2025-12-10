@@ -3,285 +3,297 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Register for Tech Courses & Learning</title>
+    <title>Junayed Academy | Create Premium Account</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy signup, register for courses, tech education Bangladesh, programming courses registration, AI training signup">
-    <meta name="description" content="Create your Junayed Academy account to access premium tech courses, track your learning progress, and join our community of tech learners.">
+    <meta name="keywords" content="Junayed Academy signup, register, tech education">
+    <meta name="description" content="Join Junayed Academy's premium tech community.">
     
-    <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        .signup-container {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* =========================================
+           ULTRA PREMIUM SIGNUP STYLES
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
         }
-        
-        .signup-card {
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* --- Header --- */
+        .page-header-ultra {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('img/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax */
+            padding: 120px 0 100px 0;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        /* --- Signup Wrapper --- */
+        .signup-section-wrapper {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 80px;
+        }
+
+        .signup-card-ultra {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(251, 135, 63, 0.15);
+            border-radius: 30px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: transform 0.3s ease;
-            max-width: 1000px;
-            width: 100%;
+            display: flex;
+            min-height: 700px;
         }
-        
-        .signup-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .signup-left {
-            background: linear-gradient(135deg, #fb873f, #ff9e5c);
-            color: white;
-            padding: 50px;
+
+        /* Left Side (Visuals) */
+        .signup-visual-side {
+            flex: 0 0 40%;
+            background: var(--dark-bg);
+            padding: 60px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-        }
-        
-        .signup-right {
-            padding: 50px;
-        }
-        
-        .signup-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .form-control:focus {
-            border-color: #fb873f;
-            box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
-        }
-        
-        .btn-signup {
-            background: linear-gradient(135deg, #fb873f, #ff9e5c);
-            border: none;
+            justify-content: space-between;
             color: white;
-            padding: 12px 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-signup:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
-            color: white;
-        }
-        
-        .social-signup-btn {
-            border: 2px solid #eee;
-            border-radius: 10px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .social-signup-btn:hover {
-            border-color: #fb873f;
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .signup-feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .feature-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        .password-strength {
-            height: 5px;
-            border-radius: 5px;
-            margin-top: 5px;
-            background: #eee;
+            position: relative;
             overflow: hidden;
         }
-        
-        .strength-meter {
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s ease, background 0.3s ease;
-        }
-        
-        .strength-weak { background: #dc3545; }
-        .strength-medium { background: #ffc107; }
-        .strength-strong { background: #28a745; }
-        
-        .strength-text {
-            font-size: 0.85rem;
-            margin-top: 5px;
-        }
-        
-        .terms-check {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .form-check-input:checked {
-            background-color: #fb873f;
-            border-color: #fb873f;
-        }
-        
-        .password-toggle {
+
+        .signup-visual-side::before {
+            content: '';
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #666;
-            cursor: pointer;
-            z-index: 10;
+            top: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(251, 135, 63, 0.15) 0%, transparent 70%);
         }
-        
+
+        .benefit-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        /* Right Side (Form) */
+        .signup-form-side {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Progress Steps --- */
         .step-indicator {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             position: relative;
+            padding: 0 20px;
         }
-        
-        .step-indicator:before {
+
+        .step-indicator::before {
             content: '';
             position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
+            top: 15px;
+            left: 30px;
+            right: 30px;
             height: 2px;
             background: #eee;
             z-index: 1;
         }
-        
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        .step-item {
             position: relative;
             z-index: 2;
-            flex: 1;
+            text-align: center;
+            background: white;
+            padding: 0 10px;
         }
-        
+
         .step-circle {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             background: #eee;
+            color: #aaa;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            margin: 0 auto 5px;
+            transition: 0.4s;
         }
-        
-        .step.active .step-circle {
-            background: #fb873f;
+
+        .step-item.active .step-circle {
+            background: var(--gradient-ultra);
+            color: white;
+            box-shadow: 0 0 0 5px rgba(251, 135, 63, 0.1);
+        }
+
+        .step-item.completed .step-circle {
+            background: #28a745;
             color: white;
         }
-        
-        .step-label {
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        .step.active .step-label {
-            color: #fb873f;
-            font-weight: 500;
-        }
-        
-        .step-content {
+
+        .step-text { font-size: 0.8rem; font-weight: 600; color: #888; }
+        .step-item.active .step-text { color: var(--primary); }
+
+        /* --- Form Steps --- */
+        .form-step {
             display: none;
-        }
-        
-        .step-content.active {
-            display: block;
             animation: fadeIn 0.5s ease;
         }
-        
+        .form-step.active { display: block; }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        .form-navigation {
+
+        /* --- Ultra Inputs --- */
+        .form-floating-ultra > .form-control {
+            border: 2px solid #f1f1f1;
+            border-radius: 12px;
+            padding-left: 20px;
+        }
+
+        .form-floating-ultra > .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.1);
+        }
+
+        .form-floating-ultra > label { padding-left: 20px; color: #888; }
+
+        /* --- Password Strength --- */
+        .strength-meter {
+            height: 4px;
+            background: #eee;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
         }
         
-        @media (max-width: 768px) {
-            .signup-left {
-                padding: 30px;
-            }
-            .signup-right {
-                padding: 30px;
-            }
+        .strength-bar {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s, background-color 0.3s;
+        }
+
+        /* --- Ultra Buttons --- */
+        .btn-ultra {
+            background: var(--gradient-ultra);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+            width: 100%;
+        }
+
+        .btn-ultra::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-ultra:hover::after { left: 100%; }
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+
+        .btn-outline-ultra {
+            border: 2px solid #eee;
+            color: #555;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            background: transparent;
+            transition: 0.3s;
+        }
+        .btn-outline-ultra:hover { border-color: var(--primary); color: var(--primary); background: #fff5f0; }
+
+        @media (max-width: 991px) {
+            .signup-visual-side { display: none; }
+            .signup-card-ultra { min-height: auto; }
+            .signup-form-side { padding: 40px 20px; }
+            .page-header-ultra { padding: 100px 0 60px 0; }
+            .signup-section-wrapper { margin-top: -30px; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
 
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="Junayed Academy Logo" height="45px">Junayed<span style="color: #fb873f;">Academy</span></p>
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="40px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -304,460 +316,209 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
+    <div class="container-fluid page-header-ultra">
+        <div class="container py-5 text-center">
+            <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">New Account</span>
+            <h1 class="display-3 text-white animated slideInDown fw-bolder">Join The Academy</h1>
+            <p class="lead text-white-50 mb-0 animated slideInUp">Start your journey to becoming a top-tier tech professional.</p>
+        </div>
+    </div>
+
+    <div class="container-xxl signup-section-wrapper">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Join Junayed Academy</h1>
-                    <p class="lead text-white mb-4">Start your tech journey with Bangladesh's premier tech education platform</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Signup</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-
-    <!-- Signup Container -->
-    <div class="container-xxl py-5 signup-container">
-        <div class="container">
-            <div class="signup-card">
-                <div class="row g-0">
-                    <!-- Left Side - Benefits & Info -->
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="signup-left">
-                            <div class="text-center mb-4">
-                                <div class="signup-icon">
-                                    <i class="fas fa-user-plus"></i>
-                                </div>
-                                <h3 class="mb-3">Why Join Junayed Academy?</h3>
-                                <p>Unlock your potential with our comprehensive tech courses</p>
+                <div class="col-xl-11">
+                    <div class="signup-card-ultra animated fadeInUp">
+                        
+                        <div class="signup-visual-side">
+                            <div>
+                                <h3 class="fw-bold mb-4">Why Sign Up?</h3>
+                                <p class="text-white-50 mb-5">Access premium tools and join a community of innovators.</p>
                             </div>
-                            
+
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <i class="fas fa-rocket benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Career Fast-Track</h6>
+                                        <small class="text-white-50">Industry-aligned curriculum designed for jobs.</small>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-certificate benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Verified Certificates</h6>
+                                        <small class="text-white-50">Earn credentials recognized by top companies.</small>
+                                    </div>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-users benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Expert Mentorship</h6>
+                                        <small class="text-white-50">Get guidance from 10+ years experienced pros.</small>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="mt-4">
-                                <h5 class="mb-4">Membership Benefits:</h5>
-                                
-                                <div class="signup-feature">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-book-open"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Access to All Courses</h6>
-                                        <p class="mb-0 small">Learn from 12+ industry-relevant tech courses</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="signup-feature">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Personalized Dashboard</h6>
-                                        <p class="mb-0 small">Track progress, set goals, and manage learning</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="signup-feature">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-certificate"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Industry Certificates</h6>
-                                        <p class="mb-0 small">Earn recognized certificates upon completion</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="signup-feature">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Community Support</h6>
-                                        <p class="mb-0 small">Join 2,500+ learners in our community</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="signup-feature">
-                                    <div class="feature-icon">
-                                        <i class="fas fa-briefcase"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1">Career Guidance</h6>
-                                        <p class="mb-0 small">Get career advice and job placement support</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-5">
-                                <div class="alert alert-light" role="alert">
-                                    <i class="fas fa-clock me-2 text-primary"></i>
-                                    <strong>Start Free:</strong> Get 7-day free access to select courses
-                                </div>
+                                <small class="text-white-50">Already have an account? <a href="login.html" class="text-primary fw-bold text-decoration-none">Log In</a></small>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Right Side - Signup Form -->
-                    <div class="col-lg-6">
-                        <div class="signup-right">
-                            <div class="text-center mb-4">
-                                <h3 class="text-primary">Create Your Account</h3>
-                                <p class="text-muted">Join thousands of learners transforming their careers</p>
+
+                        <div class="signup-form-side">
+                            <div class="text-center mb-5">
+                                <h3 class="fw-bold text-dark">Create Account</h3>
                             </div>
-                            
-                            <!-- Step Indicator -->
+
                             <div class="step-indicator">
-                                <div class="step active" data-step="1">
+                                <div class="step-item active" id="step-ind-1">
                                     <div class="step-circle">1</div>
-                                    <div class="step-label">Account</div>
+                                    <span class="step-text">Account</span>
                                 </div>
-                                <div class="step" data-step="2">
+                                <div class="step-item" id="step-ind-2">
                                     <div class="step-circle">2</div>
-                                    <div class="step-label">Profile</div>
+                                    <span class="step-text">Profile</span>
                                 </div>
-                                <div class="step" data-step="3">
+                                <div class="step-item" id="step-ind-3">
                                     <div class="step-circle">3</div>
-                                    <div class="step-label">Preferences</div>
+                                    <span class="step-text">Confirm</span>
                                 </div>
                             </div>
-                            
-                            <!-- Multi-step Form -->
+
                             <form id="signupForm" class="needs-validation" novalidate>
-                                <!-- Step 1: Account Information -->
-                                <div class="step-content active" id="step1">
-                                    <h5 class="mb-4">Account Information</h5>
-                                    
-                                    <div class="mb-4">
-                                        <label for="fullName" class="form-label">Full Name *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-light">
-                                                <i class="fas fa-user text-muted"></i>
-                                            </span>
-                                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                                            <div class="invalid-feedback">
-                                                Please enter your full name.
-                                            </div>
-                                        </div>
+                                
+                                <div class="form-step active" id="step-1">
+                                    <div class="form-floating form-floating-ultra mb-3">
+                                        <input type="text" class="form-control" id="fullname" placeholder="John Doe" required>
+                                        <label for="fullname">Full Name</label>
                                     </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="email" class="form-label">Email Address *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-light">
-                                                <i class="fas fa-envelope text-muted"></i>
-                                            </span>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
-                                            <div class="invalid-feedback">
-                                                Please enter a valid email address.
-                                            </div>
-                                        </div>
+                                    <div class="form-floating form-floating-ultra mb-3">
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                                        <label for="email">Email Address</label>
                                     </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="password" class="form-label">Password *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-light">
-                                                <i class="fas fa-lock text-muted"></i>
-                                            </span>
-                                            <input type="password" class="form-control" id="password" placeholder="Create a strong password" required>
-                                            <button type="button" class="password-toggle" id="togglePassword1">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                            <div class="invalid-feedback">
-                                                Please enter a password.
-                                            </div>
-                                        </div>
-                                        <div class="password-strength mt-2">
-                                            <div class="strength-meter" id="passwordStrength"></div>
-                                        </div>
-                                        <div class="strength-text" id="passwordStrengthText"></div>
-                                        <div class="form-text">
-                                            Password must be at least 8 characters with uppercase, lowercase, number, and special character.
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-light">
-                                                <i class="fas fa-lock text-muted"></i>
-                                            </span>
-                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
-                                            <button type="button" class="password-toggle" id="togglePassword2">
-                                                <i class="fas fa-eye"></i>
-                                            </button>
-                                            <div class="invalid-feedback">
-                                                Passwords must match.
-                                            </div>
-                                        </div>
-                                        <div id="passwordMatch" class="form-text"></div>
-                                    </div>
-                                    
-                                    <div class="form-navigation">
-                                        <div></div>
-                                        <button type="button" class="btn btn-signup next-step" data-next="2">
-                                            Continue <i class="fas fa-arrow-right ms-2"></i>
+                                    <div class="form-floating form-floating-ultra mb-3">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                        <label for="password">Password</label>
+                                        <button type="button" class="btn btn-link text-muted position-absolute top-50 end-0 translate-middle-y me-3" id="togglePass">
+                                            <i class="fas fa-eye"></i>
                                         </button>
                                     </div>
-                                </div>
-                                
-                                <!-- Step 2: Profile Information -->
-                                <div class="step-content" id="step2">
-                                    <h5 class="mb-4">Profile Information</h5>
+                                    <div class="mb-4">
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted" id="pass-text">Password Strength</small>
+                                        </div>
+                                        <div class="strength-meter">
+                                            <div class="strength-bar" id="strength-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="button" class="btn btn-ultra" onclick="nextStep(2)">Continue <i class="fas fa-arrow-right ms-2"></i></button>
+                                    </div>
                                     
-                                    <div class="row mb-4">
+                                    <div class="text-center mt-4">
+                                        <span class="text-muted small">Or sign up with</span>
+                                        <div class="d-flex justify-content-center gap-3 mt-2">
+                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px;"><i class="fab fa-google"></i></button>
+                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-step" id="step-2">
+                                    <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label for="phone" class="form-label">Phone Number</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text bg-light">
-                                                    <i class="fas fa-phone text-muted"></i>
-                                                </span>
+                                            <div class="form-floating form-floating-ultra">
                                                 <input type="tel" class="form-control" id="phone" placeholder="+880">
+                                                <label for="phone">Phone Number</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="dob" class="form-label">Date of Birth</label>
-                                            <input type="date" class="form-control" id="dob">
+                                            <div class="form-floating form-floating-ultra">
+                                                <input type="date" class="form-control" id="dob">
+                                                <label for="dob">Date of Birth</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="education" class="form-label">Education Level</label>
-                                        <select class="form-select" id="education">
-                                            <option value="">Select your education level</option>
-                                            <option value="school">High School</option>
-                                            <option value="college">College</option>
-                                            <option value="undergraduate">Undergraduate</option>
-                                            <option value="graduate">Graduate</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <label class="form-label">Account Type *</label>
-                                        <div class="d-flex gap-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="accountType" id="student" value="student" checked>
-                                                <label class="form-check-label" for="student">
-                                                    <i class="fas fa-user-graduate me-2"></i>Student
-                                                </label>
+                                        <div class="col-12">
+                                            <div class="form-floating form-floating-ultra">
+                                                <select class="form-select" id="interest">
+                                                    <option selected>Select Interest</option>
+                                                    <option value="1">Web Development</option>
+                                                    <option value="2">Data Science & AI</option>
+                                                    <option value="3">Cyber Security</option>
+                                                    <option value="4">Digital Marketing</option>
+                                                </select>
+                                                <label for="interest">Interested Course</label>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="accountType" id="professional" value="professional">
-                                                <label class="form-check-label" for="professional">
-                                                    <i class="fas fa-briefcase me-2"></i>Professional
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="accountType" id="instructor" value="instructor">
-                                                <label class="form-check-label" for="instructor">
-                                                    <i class="fas fa-chalkboard-teacher me-2"></i>Instructor
-                                                </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label text-muted small fw-bold">I am a:</label>
+                                            <div class="d-flex gap-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="role" id="student" checked>
+                                                    <label class="form-check-label" for="student">Student</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="role" id="professional">
+                                                    <label class="form-check-label" for="professional">Professional</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="form-navigation">
-                                        <button type="button" class="btn btn-outline-secondary prev-step" data-prev="1">
-                                            <i class="fas fa-arrow-left me-2"></i>Back
-                                        </button>
-                                        <button type="button" class="btn btn-signup next-step" data-next="3">
-                                            Continue <i class="fas fa-arrow-right ms-2"></i>
-                                        </button>
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <button type="button" class="btn btn-outline-ultra" onclick="nextStep(1)">Back</button>
+                                        <button type="button" class="btn btn-ultra" style="width: auto;" onclick="nextStep(3)">Next <i class="fas fa-arrow-right ms-2"></i></button>
                                     </div>
                                 </div>
-                                
-                                <!-- Step 3: Preferences & Terms -->
-                                <div class="step-content" id="step3">
-                                    <h5 class="mb-4">Preferences & Terms</h5>
-                                    
-                                    <div class="mb-4">
-                                        <label for="interests" class="form-label">Course Interests</label>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="webDev" value="web">
-                                                <label class="form-check-label" for="webDev">Web Development</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="aiMl" value="ai">
-                                                <label class="form-check-label" for="aiMl">AI & Machine Learning</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="dataScience" value="data">
-                                                <label class="form-check-label" for="dataScience">Data Science</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="mobileDev" value="mobile">
-                                                <label class="form-check-label" for="mobileDev">Mobile Development</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="cybersecurity" value="security">
-                                                <label class="form-check-label" for="cybersecurity">Cybersecurity</label>
-                                            </div>
+
+                                <div class="form-step" id="step-3">
+                                    <div class="text-center mb-4">
+                                        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                            <i class="fas fa-check-circle text-success fa-3x"></i>
                                         </div>
+                                        <h5>Almost There!</h5>
+                                        <p class="text-muted small">Please review our terms before creating your account.</p>
                                     </div>
-                                    
-                                    <div class="mb-4">
-                                        <label class="form-label">Communication Preferences</label>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" id="emailUpdates" checked>
-                                            <label class="form-check-label" for="emailUpdates">
-                                                Receive course updates and announcements
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" id="promotionalEmails">
-                                            <label class="form-check-label" for="promotionalEmails">
-                                                Receive promotional offers and discounts
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="newsletter" checked>
-                                            <label class="form-check-label" for="newsletter">
-                                                Subscribe to our tech newsletter
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="terms-check">
-                                        <input class="form-check-input mt-1" type="checkbox" id="terms" required>
-                                        <label class="form-check-label" for="terms">
-                                            I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a> and <a href="#" class="text-primary text-decoration-none">Privacy Policy</a>. I understand that my data will be processed in accordance with Junayed Academy's policies.
+
+                                    <div class="form-check mb-3 bg-light p-3 rounded">
+                                        <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                                        <label class="form-check-label small text-muted" for="terms">
+                                            I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a>.
                                         </label>
-                                        <div class="invalid-feedback">
-                                            You must agree to the terms and conditions.
-                                        </div>
                                     </div>
-                                    
-                                    <div class="form-navigation">
-                                        <button type="button" class="btn btn-outline-secondary prev-step" data-prev="2">
-                                            <i class="fas fa-arrow-left me-2"></i>Back
-                                        </button>
-                                        <button type="submit" class="btn btn-signup">
-                                            <i class="fas fa-user-plus me-2"></i>Create Account
-                                        </button>
+
+                                    <div class="form-check mb-4 bg-light p-3 rounded">
+                                        <input class="form-check-input" type="checkbox" value="" id="newsletter" checked>
+                                        <label class="form-check-label small text-muted" for="newsletter">
+                                            Receive educational emails and course updates.
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <button type="button" class="btn btn-outline-ultra" onclick="nextStep(2)">Back</button>
+                                        <button type="submit" class="btn btn-ultra" style="width: auto;">Create Account</button>
                                     </div>
                                 </div>
+
                             </form>
-                            
-                            <!-- Divider -->
-                            <div class="position-relative text-center my-4">
-                                <hr>
-                                <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted">
-                                    Or sign up with
-                                </span>
-                            </div>
-                            
-                            <!-- Social Signup -->
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-6">
-                                    <a href="#" class="social-signup-btn">
-                                        <i class="fab fa-google text-danger"></i>
-                                        <span>Continue with Google</span>
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="#" class="social-signup-btn">
-                                        <i class="fab fa-facebook text-primary"></i>
-                                        <span>Continue with Facebook</span>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Login Link -->
-                            <div class="text-center mt-4">
-                                <p class="mb-2">Already have an account?</p>
-                                <a href="login.html" class="btn btn-outline-primary">
-                                    <i class="fas fa-sign-in-alt me-2"></i>Login to Your Account
-                                </a>
-                            </div>
-                            
-                            <!-- Support Info -->
-                            <div class="alert alert-light mt-4" role="alert">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0">
-                                        <i class="fas fa-shield-alt text-primary"></i>
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <small class="text-muted">
-                                            <strong>Secure Registration:</strong> Your information is protected with industry-standard encryption. We never share your personal data with third parties.
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Success Stories Section -->
-    <div class="container-xxl py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h3 class="text-primary mb-3">Join Our Community of Successful Learners</h3>
-                <p class="lead">See what our students have achieved</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card border-0 bg-white shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;">
-                                <i class="fas fa-user-graduate fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">2,500+ Students</h5>
-                            <p class="mb-0">Join our growing community of tech learners from across Bangladesh.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card border-0 bg-white shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;">
-                                <i class="fas fa-briefcase fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Career Success</h5>
-                            <p class="mb-0">85% of our graduates report career advancement within 6 months.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card border-0 bg-white shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary text-white rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px;">
-                                <i class="fas fa-star fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">4.8/5 Rating</h5>
-                            <p class="mb-0">Consistently rated excellent by our students for course quality.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Links</h4>
                     <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="courses.html">All Courses</a></p>
                     <p><a class="text-light" href="contact.html">Contact Us</a></p>
                     <p><a class="text-light" href="#">Privacy Policy</a></p>
                     <p><a class="text-light" href="#">Terms & Conditions</a></p>
-                    <p><a class="text-light" href="#">FAQ & Help Center</a></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Contact Information</h4>
@@ -772,13 +533,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe to Our Newsletter</h4>
-                    <p>Stay updated with latest courses, tech trends, and career opportunities.</p>
+                    <h4 class="text-white mb-3">Subscribe</h4>
+                    <p>Get the latest updates and offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address" aria-label="Email address">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
-                    <p class="small mt-3 text-muted">By subscribing, you agree to our Privacy Policy</p>
                 </div>
             </div>
         </div>
@@ -787,21 +547,17 @@
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="index.html">Junayed Academy</a>, All Rights Reserved.
-                        <br><small class="text-muted">Registered Educational Institution, Bangladesh</small>
+                        <br><small class="text-muted">Empowering Bangladesh through tech education since 2024</small>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <small>Start your tech journey today</small>
+                        <small>Designed for the Junayed Academy</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -809,185 +565,70 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
-        // Multi-step form functionality
-        const steps = document.querySelectorAll('.step');
-        const stepContents = document.querySelectorAll('.step-content');
-        
-        function goToStep(stepNumber) {
-            // Update step indicator
-            steps.forEach(step => {
-                if (parseInt(step.dataset.step) === stepNumber) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
+        // Multi-Step Logic
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            // Show target step
+            document.getElementById('step-' + step).classList.add('active');
+
+            // Update Indicator
+            document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active'));
             
-            // Update step content
-            stepContents.forEach(content => {
-                if (content.id === `step${stepNumber}`) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        }
-        
-        // Next step buttons
-        document.querySelectorAll('.next-step').forEach(button => {
-            button.addEventListener('click', function() {
-                const nextStep = parseInt(this.dataset.next);
-                goToStep(nextStep);
-            });
-        });
-        
-        // Previous step buttons
-        document.querySelectorAll('.prev-step').forEach(button => {
-            button.addEventListener('click', function() {
-                const prevStep = parseInt(this.dataset.prev);
-                goToStep(prevStep);
-            });
-        });
-        
-        // Password toggle visibility
-        document.getElementById('togglePassword1').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            const icon = this.querySelector('i');
-            togglePasswordVisibility(passwordInput, icon);
-        });
-        
-        document.getElementById('togglePassword2').addEventListener('click', function() {
-            const passwordInput = document.getElementById('confirmPassword');
-            const icon = this.querySelector('i');
-            togglePasswordVisibility(passwordInput, icon);
-        });
-        
-        function togglePasswordVisibility(input, icon) {
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                input.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
+            // Mark previous as completed
+            for(let i=1; i<step; i++) {
+                document.getElementById('step-ind-' + i).classList.add('completed');
             }
+            // Mark current as active
+            document.getElementById('step-ind-' + step).classList.add('active');
         }
-        
-        // Password strength checker
-        document.getElementById('password').addEventListener('input', function() {
-            const password = this.value;
-            const strengthMeter = document.getElementById('passwordStrength');
-            const strengthText = document.getElementById('passwordStrengthText');
-            
+
+        // Password Logic
+        const passInput = document.getElementById('password');
+        const toggleBtn = document.getElementById('togglePass');
+        const strengthBar = document.getElementById('strength-bar');
+
+        toggleBtn.addEventListener('click', () => {
+            const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passInput.setAttribute('type', type);
+            toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+
+        passInput.addEventListener('input', function() {
+            const val = passInput.value;
             let strength = 0;
-            let feedback = '';
-            
-            // Check password strength
-            if (password.length >= 8) strength++;
-            if (/[A-Z]/.test(password)) strength++;
-            if (/[a-z]/.test(password)) strength++;
-            if (/[0-9]/.test(password)) strength++;
-            if (/[^A-Za-z0-9]/.test(password)) strength++;
-            
-            // Update strength meter
-            const width = strength * 20;
-            strengthMeter.style.width = width + '%';
-            
-            // Update strength class and text
-            if (password.length === 0) {
-                strengthMeter.className = 'strength-meter';
-                strengthText.textContent = '';
-                strengthText.className = 'strength-text';
-            } else if (strength <= 2) {
-                strengthMeter.className = 'strength-meter strength-weak';
-                strengthText.textContent = 'Weak password';
-                strengthText.className = 'strength-text text-danger';
-            } else if (strength <= 4) {
-                strengthMeter.className = 'strength-meter strength-medium';
-                strengthText.textContent = 'Medium strength';
-                strengthText.className = 'strength-text text-warning';
-            } else {
-                strengthMeter.className = 'strength-meter strength-strong';
-                strengthText.textContent = 'Strong password';
-                strengthText.className = 'strength-text text-success';
-            }
+            if(val.length > 5) strength += 25;
+            if(val.length > 8) strength += 25;
+            if(/[A-Z]/.test(val)) strength += 25;
+            if(/[0-9!@#$%^&*]/.test(val)) strength += 25;
+
+            strengthBar.style.width = strength + '%';
+            if(strength < 50) strengthBar.style.backgroundColor = '#dc3545';
+            else if(strength < 75) strengthBar.style.backgroundColor = '#ffc107';
+            else strengthBar.style.backgroundColor = '#28a745';
         });
-        
-        // Password confirmation check
-        document.getElementById('confirmPassword').addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-            const matchElement = document.getElementById('passwordMatch');
-            
-            if (confirmPassword.length === 0) {
-                matchElement.textContent = '';
-                matchElement.className = 'form-text';
-            } else if (password === confirmPassword) {
-                matchElement.textContent = 'Passwords match ✓';
-                matchElement.className = 'form-text text-success';
-            } else {
-                matchElement.textContent = 'Passwords do not match';
-                matchElement.className = 'form-text text-danger';
-            }
-        });
-        
-        // Form submission
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Check if all required fields are filled
-            if (!this.checkValidity()) {
-                event.stopPropagation();
+
+        // Form Submit
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if(!this.checkValidity()) {
+                e.stopPropagation();
                 this.classList.add('was-validated');
                 return;
             }
             
-            // Check terms agreement
-            const terms = document.getElementById('terms');
-            if (!terms.checked) {
-                terms.classList.add('is-invalid');
-                return;
-            }
-            
-            // Check password match
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating Account...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Creating...';
+            btn.disabled = true;
+
             setTimeout(() => {
-                // Here you would typically make an API call
-                // For demo purposes, we'll simulate success
-                alert('Account created successfully! Welcome to Junayed Academy.');
-                window.location.href = 'dashboard.html';
-                
-                // Reset button state
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+                alert("Account Created! Redirecting to Dashboard...");
+                window.location.href = 'login.html';
             }, 2000);
-        });
-        
-        // Social signup simulation
-        document.querySelectorAll('.social-signup-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const platform = this.querySelector('span').textContent.replace('Continue with ', '');
-                alert(`Redirecting to ${platform} authentication...\n\nNote: This is a demo. In production, you would integrate with ${platform} OAuth.`);
-            });
         });
     </script>
 </body>
