@@ -257,6 +257,84 @@
             .glass-filter-bar { margin-top: -40px; padding: 20px; }
             .stat-item { border-right: none; border-bottom: 1px solid #eee; margin-bottom: 10px; }
         }
+
+
+
+        /* =========================================
+   ULTRA PREMIUM NAVBAR (MOBILE FIX)
+   ========================================= */
+
+/* 1. Glassmorphism Effect */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important; /* Slight transparency */
+    backdrop-filter: blur(15px); /* Premium Blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* 2. Force Logo and Toggler to stay on same line */
+.mobile-nav-wrapper {
+    display: flex;
+    flex-wrap: nowrap !important; /* CRITICAL: Prevents wrapping */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. Logo Sizing */
+.nav-logo {
+    height: 45px;
+    transition: height 0.3s ease;
+}
+
+/* 4. Brand Text Sizing */
+.brand-text {
+    font-size: 24px;
+    white-space: nowrap; /* Prevents text breaking */
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    transition: font-size 0.3s ease;
+}
+
+/* 5. Toggler Button (Hamburger) Styling */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px; /* Space between text and button */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important; /* Removes ugly blue outline */
+}
+
+/* 6. MOBILE SPECIFIC ADJUSTMENTS (The Fix) */
+@media (max-width: 576px) {
+    /* Shrink padding on mobile */
+    .container-fluid.px-3 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Resize Logo for small screens */
+    .nav-logo {
+        height: 32px !important;
+    }
+
+    /* Resize Text for small screens */
+    .brand-text {
+        font-size: 18px !important; /* Perfectly fits iPhone/Android */
+    }
+
+    /* Adjust Toggler size */
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
     </style>
 </head>
 
