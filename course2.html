@@ -3,887 +3,681 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    </meta>
-
-    <title>Junayed Academy : Frontend Development Course</title>
+    <title>Junayed Academy | HTML Course for Beginners</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
+    <meta name="keywords" content="HTML Course, Web Development, Coding for Beginners">
+    <meta name="description" content="Master the foundations of web development with our premium HTML course.">
+    
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-   
+
+    <style>
+        /* =========================================
+           ULTRA PREMIUM COURSE DETAIL STYLES
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-dark: #e0691e;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* --- Page Header --- */
+        .course-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        /* --- Sticky Sidebar Card --- */
+        .course-sidebar {
+            position: sticky;
+            top: 100px; /* Stays fixed while scrolling */
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+
+        .video-preview {
+            position: relative;
+            height: 200px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .video-preview:hover img { opacity: 0.5; }
+
+        .play-btn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .sidebar-content { padding: 30px; }
+
+        .price-big {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-big small {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        /* --- Main Content Styling --- */
+        .content-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--gradient-ultra);
+            border-radius: 2px;
+        }
+
+        /* --- Curriculum Accordion --- */
+        .accordion-ultra .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .accordion-ultra .accordion-button {
+            background: #f8f9fa;
+            color: #333;
+            font-weight: 700;
+            padding: 20px;
+            box-shadow: none;
+        }
+
+        .accordion-ultra .accordion-button:not(.collapsed) {
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+        }
+
+        .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+        .accordion-body li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .accordion-body li:last-child { border-bottom: none; }
+        .accordion-body li i { margin-right: 15px; color: var(--primary); width: 20px; }
+
+        /* --- Ultra Buttons --- */
+        .btn-ultra {
+            background: var(--gradient-ultra);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
+        }
+        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
+
+        /* --- Feature Pills --- */
+        .feature-pill {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin: 5px 5px 5px 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- Payment Plan Cards --- */
+        .plan-card {
+            border: 2px solid #eee;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            background: white;
+        }
+        .plan-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .plan-card.recommended { border-color: var(--primary); background: #fffbf8; }
+        .badge-rec {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Mobile Fix */
+        @media (max-width: 991px) {
+            .course-sidebar { position: static; margin-top: 30px; }
+            .course-header { padding: 60px 0; }
+        }
+    </style>
 </head>
-<style>
-    .tabs ul li {
-        list-style-type: none;
-    }
-
-    .tabs ul li a {
-        font-size: 25px;
-        color: #4e4e4e !important;
-        font-weight: 500;
-    }
-
-    .tabs ul li a.active {
-        color: #f69050 !important;
-    }
-
-    .tabs ul li a:hover {
-        color: #f69050 !important;
-    }
-
-    #more {
-        display: none;
-    }
-
-    button {
-        border: none;
-        color: #f69050;
-    }
-    
-    .curriculum-week {
-        background-color: #f8f9fa;
-        border-radius: 5px;
-        padding: 15px;
-        margin-bottom: 15px;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    .curriculum-week:hover {
-        background-color: #e9ecef;
-    }
-    
-    .week-content {
-        display: none;
-        padding: 15px;
-        background-color: white;
-        border-radius: 5px;
-        margin-top: 10px;
-        border-left: 3px solid #fb873f;
-    }
-    
-    .payment-plan-card {
-        border: 2px solid #e9ecef;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        transition: all 0.3s;
-        position: relative;
-        height: 100%;
-    }
-    
-    .payment-plan-card:hover {
-        border-color: #fb873f;
-        box-shadow: 0 5px 15px rgba(251, 135, 63, 0.1);
-    }
-    
-    .payment-plan-card.recommended {
-        border-color: #fb873f;
-        background-color: #fff9f5;
-    }
-    
-    .recommended-badge {
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #fb873f;
-        color: white;
-        padding: 5px 20px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: bold;
-    }
-    
-    .price-highlight {
-        font-size: 28px;
-        font-weight: bold;
-        color: #fb873f;
-    }
-    
-    .payment-feature {
-        margin: 5px 0;
-    }
-    
-    .payment-feature i {
-        color: #28a745;
-        margin-right: 8px;
-    }
-    
-    .emi-calculator {
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 30px;
-    }
-    
-    .pricing-badge {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(10%, -30%);
-    }
-    
-    .benefit-card {
-        border-radius: 10px;
-        padding: 20px;
-        height: 100%;
-        transition: transform 0.3s;
-    }
-    
-    .benefit-card:hover {
-        transform: translateY(-5px);
-    }
-</style>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
 
-
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="" height="45px">Junayed<span
-                    style="color: #fb873f;">Academy</span></p>
+            <p class="m-0 fw-bold" style="font-size: 24px;">
+                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                Junayed<span style="color: #fb873f;">Academy</span>
+            </p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="courses.html" class="nav-item nav-link active">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-
+                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
                 <a href="#" class="nav-item nav-link">
-
-                <div id="google_translate_element">
-                </div>
-
-
+                    <div id="google_translate_element"></div>
                 </a>
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 text-center">
-                        <h1 class="display-3 text-white animated slideInDown">Course</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a class="text-white" href="courses.html">Course</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">Frontend Web Development - 3 Month Complete Program</li>
-                            </ol>
-                        </nav>
+    <div class="course-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Beginner Friendly</span>
+                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">Web Development</span>
+                    </div>
+                    <h1 class="display-4 fw-bold text-white mb-3">HTML Course for Beginners</h1>
+                    <p class="lead text-white-50 mb-4">Master the skeleton of the internet. A complete step-by-step guide to building web structures from scratch.</p>
+                    
+                    <div class="d-flex align-items-center gap-4 text-white-50 small">
+                        <span><i class="fas fa-star text-warning me-1"></i> 4.8 (3.5k+ Ratings)</span>
+                        <span><i class="fas fa-user-graduate me-1"></i> 5,000+ Enrolled</span>
+                        <span><i class="fas fa-globe me-1"></i> English / Bengali</span>
+                        <span><i class="fas fa-clock me-1"></i> Last Updated: Dec 2025</span>
+                    </div>
+
+                    <div class="d-flex align-items-center mt-4">
+                        <img src="img/team-1.png" class="rounded-circle border border-2 border-white" width="50" height="50" alt="Instructor">
+                        <div class="ms-3">
+                            <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
+                            <small class="text-white-50">Senior Web Instructor</small>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-    <!-- Header End -->
 
-<!-- Course Detail Start -->
-<div class="container-xxl py-2">
-    <div class="container">
+    <div class="container pb-5">
         <div class="row">
-            <div class="col-lg-9 wow fadeInUp">
+            
+            <div class="col-lg-8">
+                
+                <div class="content-card animated fadeInUp">
+                    <h3 class="section-title">Course Overview</h3>
+                    <p class="text-muted mb-4">
+                        Fun Fact: Every website uses HTML—even this one. HTML is the critical first tool in every web developer's toolkit. Using HTML elements and tags, you can create text, images, videos, forms, and much more. Learning HTML basics is the first critical step in your web development journey.
+                    </p>
+                    
+                    <h5 class="fw-bold mb-3">What you'll learn</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Structure web pages with HTML5</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Work with Tables & Lists</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> SEO Friendly Coding</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Forms & Validations</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Embedding Audio/Video</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Build a Portfolio Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="container">
-                    <div class="row g-5 justify-content-center">
-
-                        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
-                            <h2>Front End Development</h2>
-                            <p>এই 3 মাসের কোর্স শুধু ওয়েব ডেভেলপমেন্ট নয়, বরং ফ্রিল্যান্সিং ক্যারিয়ারে সফল হওয়ার পূর্ণ প্রস্তুতি দেবে।</p>
-                            <div class="d-flex">
-                                <small><i class="fa fa-star text-warning"></i>
-                                    4.8</small>
-                                <small style="margin-left: 15px;"><i class="fa fa-user-graduate"></i> 1,200+ শিক্ষার্থী
-                                </small>
-                                <small style="margin-left: 15px;"><i class="fa fa-user"></i>শুরু থেকে উন্নত পর্যায়</small>
-                                <small style="margin-left: 15px;"><i class="fa fa-clock me-2"></i> 3 মাস</small>
+                <div class="content-card animated fadeInUp" id="curriculum">
+                    <h3 class="section-title">Course Curriculum</h3>
+                    <p class="text-muted mb-4">4 Weeks of Intensive Training</p>
+                    
+                    <div class="accordion accordion-ultra" id="courseAccordion">
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Week 1: Introduction & Basics
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> What is HTML & How the Web Works</li>
+                                        <li><i class="fas fa-play-circle"></i> Setup VS Code Environment</li>
+                                        <li><i class="fas fa-play-circle"></i> Creating your first HTML File</li>
+                                        <li><i class="fas fa-code"></i> Basic Tags: Headings, Paragraphs, Line Breaks</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Simple Personal Bio</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="image-div text-left mt-3">
-                                <img src="img/testimonial-2.png" alt=""
-                                    style="height: 40px; width: 40px; border-radius: 50%;">
-                                <span style="margin-left: 10px;"><b>Instructor Name</b> - Junayed Bin Karim</span>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Week 2: Formatting & Links
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> Text Formatting Tags (Bold, Italic, etc.)</li>
+                                        <li><i class="fas fa-play-circle"></i> Creating Ordered & Unordered Lists</li>
+                                        <li><i class="fas fa-play-circle"></i> Hyperlinks & Anchor Tags</li>
+                                        <li><i class="fas fa-play-circle"></i> Working with Images</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Recipe Page</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Week 3: Forms & Media
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> Understanding Forms & Input Types</li>
+                                        <li><i class="fas fa-play-circle"></i> Labels, Placeholders & Validation</li>
+                                        <li><i class="fas fa-play-circle"></i> Embedding YouTube Videos & Audio</li>
+                                        <li><i class="fas fa-play-circle"></i> Using Iframes</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: Build a Contact Form</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Week 4: Semantic HTML & Final Project
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><i class="fas fa-play-circle"></i> Semantic Elements (Header, Footer, Nav)</li>
+                                        <li><i class="fas fa-play-circle"></i> HTML5 Best Practices</li>
+                                        <li><i class="fas fa-play-circle"></i> Introduction to SEO</li>
+                                        <li><i class="fas fa-project-diagram"></i> Final Project: Personal Portfolio Structure</li>
+                                        <li><i class="fas fa-certificate"></i> Certification Exam</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content-card animated fadeInUp" id="pricing">
+                    <h3 class="section-title">Select Your Plan</h3>
+                    <p class="text-muted mb-4">Start for free or upgrade for certification and mentorship.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="plan-card">
+                                <h5 class="fw-bold">Free Access</h5>
+                                <h2 class="text-dark fw-bold my-3">৳ 0</h2>
+                                <hr>
+                                <ul class="list-unstyled text-start text-muted small mb-4">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> All Video Content</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Community Access</li>
+                                    <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
+                                </ul>
+                                <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-outline-dark rounded-pill w-100">Start Free</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="plan-card recommended">
+                                <div class="badge-rec">Recommended</div>
+                                <h5 class="fw-bold text-primary">Certified</h5>
+                                <h2 class="text-dark fw-bold my-3">৳ 1,500</h2>
+                                <small class="text-muted text-decoration-line-through">৳ 2,000</small>
+                                <hr>
+                                <ul class="list-unstyled text-start text-muted small mb-4">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Everything in Free</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Verified Certificate</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Project Reviews</li>
+                                </ul>
+                                <button class="btn btn-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Choose</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="plan-card">
+                                <h5 class="fw-bold">Mentorship</h5>
+                                <h2 class="text-dark fw-bold my-3">৳ 3,000</h2>
+                                <small class="text-muted text-decoration-line-through">৳ 5,000</small>
+                                <hr>
+                                <ul class="list-unstyled text-start text-muted small mb-4">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Premium Certificate</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1:1 Mentorship</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Job Support</li>
+                                </ul>
+                                <button class="btn btn-outline-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full">Choose</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="container-fluid wow fadeInUp mt-5 tabs">
-                    <!-- Tab panes -->
-                    <div class="tab-content mt-4">
-
-                        <div class="tab-pane container active" id="Overview">
-                            <h2>কোর্স সম্পর্কে</h2>
-                            <p>এই 3 মাসের কোর্সে আপনি শিখবেন HTML, CSS, JavaScript এবং আধুনিক ফ্রন্টএন্ড ডেভেলপমেন্টের সকল প্রয়োজনীয় টুল ও টেকনোলজি। হাতে-কলমে প্রজেক্টের মাধ্যমে শেখার এই কোর্স আপনাকে প্রস্তুত করবে ফ্রিল্যান্সিং marketplace যেমন Upwork, Fiverr এ কাজ পেতে এবং সফল ক্যারিয়ার গড়তে।</p>
-
-                            <div class="row mt-4">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card benefit-card shadow-sm">
-                                        <div class="card-body text-center">
-                                            <i class="fa fa-calendar-alt text-primary mb-3" style="font-size: 2rem;"></i>
-                                            <h5>সময়কাল</h5>
-                                            <p>৩ মাস (১৫ ক্লাস)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card benefit-card shadow-sm">
-                                        <div class="card-body text-center">
-                                            <i class="fa fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
-                                            <h5>শিডিউল</h5>
-                                            <p>মাসে ৫ দিন, ৩ ঘন্টা/সেশন</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card benefit-card shadow-sm">
-                                        <div class="card-body text-center">
-                                            <i class="fa fa-laptop text-primary mb-3" style="font-size: 2rem;"></i>
-                                            <h5>ফরম্যাট</h5>
-                                            <p>লাইভ অনলাইন ক্লাস + প্রজেক্ট</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2 class="mt-5">কোর্স হাইলাইটস</h2>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><i class="fa fa-check-circle text-primary"></i> লাইভ অনলাইন ক্লাস</p>
-                                    <p><i class="fa fa-check-circle text-primary"></i>মাসে মোট ক্লাস: ৫</p>
-                                    <p><i class="fa fa-check-circle text-primary"></i> ক্লাস প্রতি ৩ ঘন্টা</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><i class="fa fa-check-circle text-primary"></i> রিয়েল-ওয়ার্ল্ড প্রজেক্ট</p>
-                                    <p><i class="fa fa-check-circle text-primary"></i> GitHub ও Netlify ব্যবহার শেখা</p>
-                                    <p><i class="fa fa-check-circle text-primary"></i> ফ্রিল্যান্সিং গাইডেন্স</p>
-                                </div>
-                            </div>
-
-                            <h2 class="mt-4">আপনি যা শিখবেন</h2>
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">HTML & CSS</span>
-
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">JavaScript (ES6+)</span>
-
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">রেসপন্সিভ ডিজাইন</span>
-                                
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">Git & GitHub</span>
-                                
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">Netlify ডিপ্লয়মেন্ট</span>
-                                
-                            <span class="badge rounded-pill text-white bg-primary px-4 py-2 m-2"
-                                style="font-size: 15px; font-weight: normal;">ফ্রিল্যান্সিং কৌশল</span>
-                        </div>
-
-                        <!-- Payment Plan Section Added -->
-                        <div class="container" id="PaymentPlan">
-                            <h2 class="mt-4">ইজি পেমেন্ট প্ল্যান</h2>
-                            <p>আপনার সুবিধামতো পেমেন্ট পদ্ধতি বেছে নিন। কোনো অতিরিক্ত চার্জ বা সুদ নেই!</p>
-                            
-                            <div class="row mt-4">
-                                <!-- One-time Payment -->
-                                <div class="col-md-4 mb-4">
-                                    <div class="payment-plan-card">
-                                        <h4 class="text-center mb-3">ওয়ান-টাইম পেমেন্ট</h4>
-                                        <div class="text-center mb-3">
-                                            <span class="price-highlight">৳ ১৫,০০০</span>
-                                            <p class="text-muted"><del>৳ ২০,০০০</del> ২৫% ছাড়</p>
-                                        </div>
-                                        <div class="payment-features">
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সম্পূর্ণ একবারে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সর্বোচ্চ সাশ্রয়ী</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> কোর্স অ্যাক্সেস অবিলম্বে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> ১০% এক্সট্রা ডিস্কাউন্ট</p>
-                                        </div>
-                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="one-time">সিলেক্ট করুন</button>
-                                    </div>
-                                </div>
-                                
-                                <!-- 2 Installments -->
-                                <div class="col-md-4 mb-4">
-                                    <div class="payment-plan-card recommended">
-                                        <div class="recommended-badge">সবচেয়ে জনপ্রিয়</div>
-                                        <h4 class="text-center mb-3">২ কিস্তিতে</h4>
-                                        <div class="text-center mb-3">
-                                            <span class="price-highlight">মাসে ৳ ৭,৮০০</span>
-                                            <p class="text-muted">মোট: ৳ ১৫,৬০০</p>
-                                        </div>
-                                        <div class="payment-features">
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রথম কিস্তি: কোর্স শুরুতে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> দ্বিতীয় কিস্তি: ২য় মাসে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> লাইফটাইম অ্যাক্সেস</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সার্টিফিকেট অন্তর্ভুক্ত</p>
-                                        </div>
-                                        <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="two-installments">সিলেক্ট করুন</button>
-                                    </div>
-                                </div>
-                                
-                                <!-- 3 Installments -->
-                                <div class="col-md-4 mb-4">
-                                    <div class="payment-plan-card">
-                                        <h4 class="text-center mb-3">৩ কিস্তিতে</h4>
-                                        <div class="text-center mb-3">
-                                            <span class="price-highlight">মাসে ৳ ৫,৫০০</span>
-                                            <p class="text-muted">মোট: ৳ ১৬,৫০০</p>
-                                        </div>
-                                        <div class="payment-features">
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> প্রথম কিস্তি: কোর্স শুরুতে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> দ্বিতীয় কিস্তি: ২য় মাসে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> তৃতীয় কিস্তি: ৩য় মাসে</p>
-                                            <p class="payment-feature"><i class="fa fa-check-circle"></i> সহজ এবং নমনীয়</p>
-                                        </div>
-                                        <button class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="three-installments">সিলেক্ট করুন</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- EMI Calculator -->
-                            <div class="emi-calculator">
-                                <h5><i class="fa fa-calculator text-primary"></i> EMI ক্যালকুলেটর</h5>
-                                <p>জানুন আপনার মাসিক কিস্তি কত হবে:</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">টোটাল কোর্স ফি</label>
-                                            <input type="range" class="form-range" id="courseFee" min="15000" max="20000" step="1000" value="15000">
-                                            <div class="d-flex justify-content-between">
-                                                <span>৳ ১৫,০০০</span>
-                                                <span id="feeDisplay">৳ ১৫,০০০</span>
-                                                <span>৳ ২০,০০০</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">কিস্তির সংখ্যা</label>
-                                            <input type="range" class="form-range" id="installments" min="1" max="6" step="1" value="3">
-                                            <div class="d-flex justify-content-between">
-                                                <span>১</span>
-                                                <span id="installmentDisplay">৩</span>
-                                                <span>৬</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="alert alert-info mt-3">
-                                    <h6 class="mb-2">আপনার মাসিক কিস্তি:</h6>
-                                    <h4 id="emiAmount" class="text-primary mb-0">৳ ৫,০০০</h4>
-                                    <small class="text-muted">কোনো অতিরিক্ত চার্জ বা সুদ নেই</small>
-                                </div>
-                            </div>
-                            
-                            <!-- Payment Methods -->
-                            <div class="mt-4">
-                                <h5>সাপোর্টেড পেমেন্ট মেথডস</h5>
-                                <div class="d-flex flex-wrap gap-3 mt-3">
-                                    <span class="badge bg-success p-3"><i class="fa fa-mobile-alt me-2"></i>বিকাশ</span>
-                                    <span class="badge bg-info p-3"><i class="fa fa-credit-card me-2"></i>নগদ</span>
-                                    <span class="badge bg-warning p-3"><i class="fa fa-rocket me-2"></i>রকেট</span>
-                                    <span class="badge bg-secondary p-3"><i class="fa fa-university me-2"></i>ব্যাংক ট্রান্সফার</span>
-                                    <span class="badge bg-primary p-3"><i class="fa fa-credit-card me-2"></i>ক্রেডিট/ডেবিট কার্ড</span>
-                                </div>
+                <div class="content-card animated fadeInUp">
+                    <h3 class="section-title">Your Instructor</h3>
+                    <div class="d-flex align-items-start mt-3">
+                        <img src="img/team-1.png" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Instructor">
+                        <div class="ms-4">
+                            <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
+                            <p class="text-primary small mb-3">Founder & Senior Web Developer</p>
+                            <p class="text-muted small">
+                                With over 3 years of experience in Full Stack Development, Junayed specializes in modern web technologies. He is passionate about making tech education accessible in Bangladesh.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-light text-dark">HTML5</span>
+                                <span class="badge bg-light text-dark">CSS3</span>
+                                <span class="badge bg-light text-dark">JavaScript</span>
                             </div>
                         </div>
-
-                        <div class="container" id="Curriculum">
-    <h2 class="mt-4">কোর্স কারিকুলাম</h2>
-    <p>3 মাস ব্যাপক ফ্রন্টএন্ড ডেভেলপমেন্ট ট্রেনিং</p>
-
-    <div class="accordion accordion-flush" id="curriculumAccordion">
-        <!-- মাস ১ -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth1" aria-expanded="false" aria-controls="collapseMonth1">
-                    মাস ১: ফ্রন্টএন্ড ডেভেলপমেন্টের মূল ভিত্তি
-                </button>
-            </h2>
-            <div id="collapseMonth1" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> HTML & CSS বেসিক</li>
-                        <li><i class="fa fa-video text-danger"></i> ওয়েবসাইট লেআউট তৈরি</li>
-                        <li><i class="fa fa-video text-danger"></i> JavaScript এর বেসিক ধারণা</li>
-                        <li><i class="fa fa-video text-danger"></i> স্ট্যাটিক ওয়েবসাইট তৈরি</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: পার্সোনাল পোর্টফোলিও সাইট</li>
-                    </ul>
+                    </div>
                 </div>
+
             </div>
-        </div>
 
-        <!-- মাস ২ -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth2" aria-expanded="false" aria-controls="collapseMonth2">
-                    মাস ২: উন্নত ফ্রন্টএন্ড স্কিল
-                </button>
-            </h2>
-            <div id="collapseMonth2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> আধুনিক JavaScript (ES6+)</li>
-                        <li><i class="fa fa-video text-danger"></i> রেসপন্সিভ ডিজাইন (Flexbox, Grid)</li>
-                        <li><i class="fa fa-video text-danger"></i> DOM ম্যানিপুলেশন ও ইভেন্ট হ্যান্ডলিং</li>
-                        <li><i class="fa fa-video text-danger"></i> GitHub-এ প্রজেক্ট আপলোড</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: ই-কমার্স ওয়েবসাইট</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- মাস ৩ -->
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonth3" aria-expanded="false" aria-controls="collapseMonth3">
-                    মাস ৩: ডিপ্লয়মেন্ট ও ক্যারিয়ার প্রস্তুতি
-                </button>
-            </h2>
-            <div id="collapseMonth3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
-                <div class="accordion-body">
-                    <ul>
-                        <li><i class="fa fa-video text-danger"></i> Git ও GitHub এর কাজ</li>
-                        <li><i class="fa fa-video text-danger"></i> Netlify ও GitHub Pages-এ ডিপ্লয়</li>
-                        <li><i class="fa fa-video text-danger"></i> ভার্সন কন্ট্রোল সিস্টেম</li>
-                        <li><i class="fa fa-video text-danger"></i> টিম কলাবোরেশন</li>
-                        <li><i class="fa fa-video text-danger"></i> Upwork, Fiverr প্রোফাইল তৈরি & কাজ পাওয়ার কৌশল</li>
-                        <li><i class="fa fa-video text-danger"></i> ব্যাকএন্ডের প্রাথমিক ধারণা (API, ডেটাবেস)</li>
-                        <li><i class="fa fa-video text-danger"></i> ফুলস্ট্যাক প্রজেক্ট তৈরি</li>
-                        <li><i class="fa fa-video text-danger"></i> ক্যারিয়ার গাইডেন্স ও ইন্টারভিউ প্রস্তুতি</li>
-                        <li><i class="fa fa-video text-danger"></i> প্রজেক্ট: ক্লায়েন্ট ওয়েবসাইট ডিপ্লয়</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                        <div class="container" id="Instructor">
-                            <h2 class="mt-4">প্রশিক্ষক সম্পর্কে</h2>
-                            <div class="image-div text-left mt-4">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-6">
-                                        <img src="img/testimonial-2.png" alt=""
-                                            style="height: 150px; width: 150px; border-radius: 50%;">
-                                    </div>
-                                    <div class="col-lg-9 col-md-6 mt-2">
-                                        <h5>Junayed Bin Karim </h5>
-                                        <p>ফ্রন্টএন্ড ওয়েব ডেভেলপমেন্ট ইনস্ট্রাক্টর</p>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p><i class="fa fa-star"></i>
-                                                    4.87 প্রশিক্ষক রেটিং</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p><i class="fa fa-check"></i>
-                                                    1,533 রিভিউ</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p><i class="fa fa-user"></i>
-                                                    1,200+ শিক্ষার্থী</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <p><i class="fa fa-video"></i>
-                                                    12 কোর্স</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="des mt-4 mb-5">
-                                    Junayed Bin Karim একজন উৎসাহী ফ্রন্টএন্ড ওয়েব ডেভেলপার যার ৩ বছরের বেশি ব্যবহারিক অভিজ্ঞতা রয়েছে HTML, CSS, এবং JavaScript ব্যবহার করে রেসপন্সিভ ওয়েবসাইট ও ওয়েব অ্যাপ্লিকেশন ডিজাইন, ডেভেলপ এবং ডিপ্লয় করার। বর্তমানে ড্যাফোডিল ইন্টারন্যাশনাল ইউনিভার্সিটিতে (DIU) ৪র্থ বর্ষের শিক্ষার্থী, তিনি আধুনিক, ব্যবহারকারী-বান্ধব এবং দৃষ্টিনন্দন ওয়েব ইন্টারফেস তৈরিতে বিশেষজ্ঞ। ওয়েব ডেভেলপমেন্টে তার দক্ষতার পাশাপাশি, তিনি আর্টিফিশিয়াল ইন্টেলিজেন্স (AI), মেশিন লার্নিং (ML), এবং ডিপ লার্নিং (DL) এ তার দক্ষতা বৃদ্ধি করছেন বুদ্ধিমান, ডেটা-চালিত এবং উদ্ভাবনী ডিজিটাল সমাধান তৈরি করার জন্য।
-                                </div>
-                            </div>
+            <div class="col-lg-4">
+                <div class="course-sidebar">
+                    <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
+                        <img src="img/course-1.jpg" alt="Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="sidebar-content">
+                        <div class="price-big mb-3">
+                            ৳ 0 <small>Free Access</small>
                         </div>
                         
-                    </div>
-                </div>
+                        <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-ultra mb-3">Enroll for Free</a>
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Upgrade for Certificate</button>
 
-            </div>
-            <div class="col-lg-3 col-md-6 shadow wow fadeInUp" data-wow-delay="0.3s">
-                <div class="position-relative">
-                    <div class="image text-center">
-                        <img class="img-fluid mt-2" src="img/course-02.png" alt="" height="200px" width="500px">
-                    </div>
-                    <span class="pricing-badge badge bg-danger">Early Bird Discount</span>
-                </div>
-                
-<h4 class="mt-2 p-2">
-    <del>৳ 20,000</del> ৳ 15,000 <small>(সম্পূর্ণ কোর্স)</small>
-</h4>
-                
-                <p class="text-success p-2"><i class="fa fa-gift"></i> <strong>বিশেষ অফার!</strong> ইজি পেমেন্ট প্ল্যান উপলব্ধ</p>
-
-                <div class="buttons">
-                    <a href="https://forms.gle/eUFiPfnLJvaucTU4A" class="text-decoration-none text-white btn btn-primary p-3 w-100 mb-2">এনরোল করুন</a>
-                    <a href="#demoClass" class="text-decoration-none text-white btn btn-outline-primary p-3 w-100 mb-2" data-bs-toggle="modal">ডেমো ক্লাস বুক করুন</a>
-                    <a href="#PaymentPlan" class="text-decoration-none text-white btn btn-success p-3 w-100 mb-2">ইজি পেমেন্ট প্ল্যান দেখুন</a>
-                </div>
-
-                <div class="list mt-2">
-                    <div class="list1 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-clock"></i> সময়কাল</p>
-                        <p>3 মাস</p>
-                    </div>
-                    <div class="list2 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-book"></i> মোট ক্লাস</p>
-                        <p>15</p>
-                    </div>
-                    <div class="list3 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-bolt"></i> ভর্তি</p>
-                        <p>1,200+ শিক্ষার্থী</p>
-                    </div>
-                    <div class="list4 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-google-translate"></i> ভাষা</p>
-                        <p>বাংলা</p>
-                    </div>
-                    <div class="list5 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-list"></i> দক্ষতা স্তর</p>
-                        <p>শুরু থেকে উন্নত</p>
-                    </div>
-                    <div class="list6 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-list"></i> সময়সীমা</p>
-                        <p>লাইফটাইম এক্সেস</p>
-                    </div>
-                    <div class="list7 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-certificate"></i> সার্টিফিকেট</p>
-                        <p>হ্যাঁ</p>
-                    </div>
-                    <div class="list8 d-flex justify-content-between pt-2 border-bottom">
-                        <p><i class="fa fa-credit-card"></i> পেমেন্ট প্ল্যান</p>
-                        <p>৩ টি অপশন</p>
-                    </div>
-                    <div class="button pt-4 text-center mb-4">
-                        <i class="fa fa-share"></i><a href=""> এই কোর্স শেয়ার করুন</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Course Detail End -->
-
-<!-- Demo Class Modal -->
-<div class="modal fade" id="demoClass" tabindex="-1" aria-labelledby="demoClassLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="demoClassLabel">ফ্রি ডেমো ক্লাস বুক করুন</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>আমাদের শিক্ষণ শৈলী এবং কোর্সের গুণগত মান অনুভব করতে একটি ফ্রি ডেমো ক্লাস বুক করুন। কোনো বাধ্যবাধকতা নেই!</p>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">আপনার নাম</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">আপনার ইমেইল</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">আপনার ফোন নম্বর</label>
-                        <input type="tel" class="form-control" id="phone" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">বুক নাও</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Payment Plan Selection Modal -->
-<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="paymentModalLabel">পেমেন্ট প্ল্যান সিলেক্ট করুন</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div id="paymentPlanDetails">
-                    <!-- Plan details will be loaded here dynamically -->
-                </div>
-                <div class="mt-4">
-                    <h6>পেমেন্ট সম্পূর্ণ করুন:</h6>
-                    <form id="paymentForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">পূর্ণ নাম</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">ইমেইল</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">ফোন নম্বর</label>
-                                <input type="tel" class="form-control" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">পেমেন্ট মেথড</label>
-                                <select class="form-control" required>
-                                    <option value="">সিলেক্ট করুন</option>
-                                    <option value="bkash">বিকাশ</option>
-                                    <option value="nagad">নগদ</option>
-                                    <option value="rocket">রকেট</option>
-                                    <option value="bank">ব্যাংক ট্রান্সফার</option>
-                                    <option value="card">ক্রেডিট/ডেবিট কার্ড</option>
-                                </select>
-                            </div>
+                        <h6 class="fw-bold mb-3">This course includes:</h6>
+                        <ul class="list-unstyled text-muted small">
+                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 8 hours on-demand video</li>
+                            <li class="mb-2"><i class="fas fa-file-download me-2 text-primary"></i> 5 downloadable resources</li>
+                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Full lifetime access</li>
+                            <li class="mb-2"><i class="fas fa-mobile-alt me-2 text-primary"></i> Access on mobile and TV</li>
+                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Certificate (Premium only)</li>
+                        </ul>
+                        
+                        <hr>
+                        <h6 class="fw-bold mb-2">Share this course:</h6>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-twitter"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-whatsapp"></i></button>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">কনফার্ম ও পেমেন্ট করুন</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="demoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Free Demo Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-3">Book a live demo slot to experience our teaching style.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control rounded-pill px-3" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control rounded-pill px-3" placeholder="Phone Number" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Book Demo</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">দ্রুত লিঙ্ক</h4>
-                <p><a class="text-light" href="about.html">আমাদের সম্পর্কে</a></p>
-                <p><a class="text-light" href="contact.html">যোগাযোগ করুন</a></p>
-                <p><a class="text-light" href="">গোপনীয়তা নীতি</a></p>
-                <p><a class="text-light" href="">শর্তাবলী</a></p>
-                <p><a class="text-light" href="">প্রশ্নোত্তর ও সাহায্য</a></p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">যোগাযোগ</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedbinkarim@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">Upgrade Your Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
-                <p>এখনই সাবস্ক্রাইব করুন এবং আমাদের বৃদ্ধিশীল শিক্ষার্থী কমিউনিটিতে যোগ দিন!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="আপনার ইমেইল">
-                    <button type="button"
-                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">সাবস্ক্রাইব</button>
+                <div class="modal-body" id="paymentDetails">
+                    </div>
+                <div class="modal-body pt-0">
+                    <form>
+                        <h6 class="fw-bold mb-3">Payment Details</h6>
+                        <div class="row g-2 mb-3">
+                            <div class="col-6"><input type="text" class="form-control" placeholder="Name"></div>
+                            <div class="col-6"><input type="tel" class="form-control" placeholder="Phone"></div>
+                        </div>
+                        <select class="form-select mb-3">
+                            <option selected>Select Payment Method</option>
+                            <option value="bkash">Bkash</option>
+                            <option value="nagad">Nagad</option>
+                            <option value="rocket">Rocket</option>
+                            <option value="card">Credit Card</option>
+                        </select>
+                        <button type="submit" class="btn btn-ultra">Proceed to Pay</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Junayed Academy</a>, সর্বস্বত্ব সংরক্ষিত।
+
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="courses.html">All Courses</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="#">Privacy Policy</a></p>
+                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact Information</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe</h4>
+                    <p>Get the latest updates and offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
-
-<!-- Payment Plan JavaScript -->
-<script>
-    // EMI Calculator
-    document.addEventListener('DOMContentLoaded', function() {
-        const courseFeeSlider = document.getElementById('courseFee');
-        const installmentSlider = document.getElementById('installments');
-        const feeDisplay = document.getElementById('feeDisplay');
-        const installmentDisplay = document.getElementById('installmentDisplay');
-        const emiAmount = document.getElementById('emiAmount');
-        
-        function calculateEMI() {
-            const fee = parseInt(courseFeeSlider.value);
-            const installments = parseInt(installmentSlider.value);
-            const emi = Math.ceil(fee / installments);
-            
-            feeDisplay.textContent = '৳ ' + fee.toLocaleString();
-            installmentDisplay.textContent = installments;
-            emiAmount.textContent = '৳ ' + emi.toLocaleString();
-        }
-        
-        courseFeeSlider.addEventListener('input', calculateEMI);
-        installmentSlider.addEventListener('input', calculateEMI);
-        
-        // Initial calculation
-        calculateEMI();
-        
-        // Payment Plan Modal Handler
+    <script>
+        // Modal Logic for Dynamic Content
         const paymentModal = document.getElementById('paymentModal');
-        const paymentPlanDetails = document.getElementById('paymentPlanDetails');
-        
-        paymentModal.addEventListener('show.bs.modal', function(event) {
+        const paymentDetails = document.getElementById('paymentDetails');
+
+        paymentModal.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
             const plan = button.getAttribute('data-plan');
-            
-            let planDetails = '';
-            
-            switch(plan) {
-                case 'one-time':
-                    planDetails = `
-                        <h4>ওয়ান-টাইম পেমেন্ট</h4>
-                        <div class="alert alert-success">
-                            <h5>মোট পরিমাণ: ৳ ১৫,০০০</h5>
-                            <p class="mb-0">আপনি ২৫% ছাড় পাচ্ছেন (মূল মূল্য: ৳ ২০,০০০)</p>
-                        </div>
-                        <p><strong>বৈশিষ্ট্য:</strong></p>
-                        <ul>
-                            <li>সম্পূর্ণ কোর্স অ্যাক্সেস অবিলম্বে</li>
-                            <li>১০% অতিরিক্ত ডিস্কাউন্ট</li>
-                            <li>লাইফটাইম অ্যাক্সেস</li>
-                            <li>সার্টিফিকেট অন্তর্ভুক্ত</li>
-                        </ul>
-                    `;
-                    break;
-                    
-                case 'two-installments':
-                    planDetails = `
-                        <h4>২ কিস্তিতে পেমেন্ট</h4>
-                        <div class="alert alert-info">
-                            <h5>মাসিক কিস্তি: ৳ ৭,৮০০</h5>
-                            <p class="mb-0">মোট পরিমাণ: ৳ ১৫,৬০০ (২ কিস্তিতে)</p>
-                        </div>
-                        <p><strong>পেমেন্ট সিডিউল:</strong></p>
-                        <ul>
-                            <li>প্রথম কিস্তি: কোর্স শুরুতে - ৳ ৭,৮০০</li>
-                            <li>দ্বিতীয় কিস্তি: ২য় মাসে - ৳ ৭,৮০০</li>
-                        </ul>
-                        <p><strong>বৈশিষ্ট্য:</strong></p>
-                        <ul>
-                            <li>সম্পূর্ণ কোর্স অ্যাক্সেস</li>
-                            <li>কোনো অতিরিক্ত চার্জ নেই</li>
-                            <li>লাইফটাইম অ্যাক্সেস</li>
-                            <li>সার্টিফিকেট অন্তর্ভুক্ত</li>
-                        </ul>
-                    `;
-                    break;
-                    
-                case 'three-installments':
-                    planDetails = `
-                        <h4>৩ কিস্তিতে পেমেন্ট</h4>
-                        <div class="alert alert-warning">
-                            <h5>মাসিক কিস্তি: ৳ ৫,৫০০</h5>
-                            <p class="mb-0">মোট পরিমাণ: ৳ ১৬,৫০০ (৩ কিস্তিতে)</p>
-                        </div>
-                        <p><strong>পেমেন্ট সিডিউল:</strong></p>
-                        <ul>
-                            <li>প্রথম কিস্তি: কোর্স শুরুতে - ৳ ৫,৫০০</li>
-                            <li>দ্বিতীয় কিস্তি: ২য় মাসে - ৳ ৫,৫০০</li>
-                            <li>তৃতীয় কিস্তি: ৩য় মাসে - ৳ ৫,৫০০</li>
-                        </ul>
-                        <p><strong>বৈশিষ্ট্য:</strong></p>
-                        <ul>
-                            <li>সহজ এবং নমনীয় পেমেন্ট</li>
-                            <li>কোনো অতিরিক্ত চার্জ নেই</li>
-                            <li>লাইফটাইম অ্যাক্সেস</li>
-                            <li>সার্টিফিকেট অন্তর্ভুক্ত</li>
-                        </ul>
-                    `;
-                    break;
-            }
-            
-            paymentPlanDetails.innerHTML = planDetails;
-        });
-        
-        // Payment Form Submission
-        document.getElementById('paymentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('পেমেন্ট সফলভাবে সাবমিট হয়েছে! শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।');
-            // Here you would typically send the data to your server
-            const modal = bootstrap.Modal.getInstance(paymentModal);
-            modal.hide();
-        });
-        
-        // Smooth scroll to payment plan section
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#PaymentPlan') {
-                    e.preventDefault();
-                    document.querySelector('#PaymentPlan').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    });
-</script>
+            let content = '';
 
+            if (plan === 'premium') {
+                content = `
+                    <div class="alert alert-warning">
+                        <h5 class="fw-bold mb-1">Premium Certificate</h5>
+                        <p class="mb-0">Total: ৳ 1,500 <span class="text-muted text-decoration-line-through ms-2">৳ 2,000</span></p>
+                    </div>
+                    <p class="small text-muted">Includes: Verified Certificate, Project Reviews, Job Guidance.</p>
+                `;
+            } else {
+                content = `
+                    <div class="alert alert-primary">
+                        <h5 class="fw-bold mb-1">Full Mentorship Package</h5>
+                        <p class="mb-0">Total: ৳ 3,000 <span class="text-muted text-decoration-line-through ms-2">৳ 5,000</span></p>
+                    </div>
+                    <p class="small text-muted">Includes: 1:1 Mentorship, Personal Projects, Interview Prep.</p>
+                `;
+            }
+            paymentDetails.innerHTML = content;
+        });
+    </script>
 </body>
 
 </html>
