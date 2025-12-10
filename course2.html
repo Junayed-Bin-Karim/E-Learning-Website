@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | HTML Course for Beginners</title>
+    <title>Junayed Academy | Frontend Development Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="HTML Course, Web Development, Coding for Beginners">
-    <meta name="description" content="Master the foundations of web development with our premium HTML course.">
+    <meta name="keywords" content="Frontend Development, React, JavaScript, CSS, Freelancing">
+    <meta name="description" content="A complete 3-month roadmap to becoming a professional Frontend Developer.">
     
     <link href="img/icon.png" rel="icon">
 
@@ -48,18 +48,19 @@
 
         /* --- Page Header --- */
         .course-header {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-1.jpg');
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-02.png');
             background-size: cover;
             background-position: center;
-            padding: 80px 0;
+            padding: 100px 0;
             color: white;
             margin-bottom: 50px;
+            background-attachment: fixed;
         }
 
         /* --- Sticky Sidebar Card --- */
         .course-sidebar {
             position: sticky;
-            top: 100px; /* Stays fixed while scrolling */
+            top: 100px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
@@ -70,7 +71,7 @@
 
         .video-preview {
             position: relative;
-            height: 200px;
+            height: 220px;
             background: #000;
             display: flex;
             align-items: center;
@@ -200,43 +201,14 @@
         }
         .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
 
-        /* --- Feature Pills --- */
-        .feature-pill {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(251, 135, 63, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin: 5px 5px 5px 0;
-            font-weight: 600;
-            font-size: 0.9rem;
+        /* --- EMI Calculator --- */
+        .emi-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
         }
-
-        /* --- Payment Plan Cards --- */
-        .plan-card {
-            border: 2px solid #eee;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: 0.3s;
-            position: relative;
-            background: white;
-        }
-        .plan-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        .plan-card.recommended { border-color: var(--primary); background: #fffbf8; }
-        .badge-rec {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
+        .form-range::-webkit-slider-thumb { background: var(--primary); }
 
         /* Mobile Fix */
         @media (max-width: 991px) {
@@ -289,24 +261,23 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="mb-3">
-                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Beginner Friendly</span>
-                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">Web Development</span>
+                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Bestseller</span>
+                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">3 Months Program</span>
                     </div>
-                    <h1 class="display-4 fw-bold text-white mb-3">HTML Course for Beginners</h1>
-                    <p class="lead text-white-50 mb-4">Master the skeleton of the internet. A complete step-by-step guide to building web structures from scratch.</p>
+                    <h1 class="display-4 fw-bold text-white mb-3">Frontend Development Mastery</h1>
+                    <p class="lead text-white-50 mb-4">A complete roadmap to becoming a professional Frontend Developer. Master React, modern JavaScript, and start freelancing.</p>
                     
                     <div class="d-flex align-items-center gap-4 text-white-50 small">
-                        <span><i class="fas fa-star text-warning me-1"></i> 4.8 (3.5k+ Ratings)</span>
-                        <span><i class="fas fa-user-graduate me-1"></i> 5,000+ Enrolled</span>
-                        <span><i class="fas fa-globe me-1"></i> English / Bengali</span>
-                        <span><i class="fas fa-clock me-1"></i> Last Updated: Dec 2025</span>
+                        <span><i class="fas fa-star text-warning me-1"></i> 4.9 (1.2k+ Ratings)</span>
+                        <span><i class="fas fa-user-graduate me-1"></i> 1,200+ Enrolled</span>
+                        <span><i class="fas fa-globe me-1"></i> Bengali / English</span>
                     </div>
 
                     <div class="d-flex align-items-center mt-4">
                         <img src="img/team-1.png" class="rounded-circle border border-2 border-white" width="50" height="50" alt="Instructor">
                         <div class="ms-3">
                             <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
-                            <small class="text-white-50">Senior Web Instructor</small>
+                            <small class="text-white-50">Lead Instructor</small>
                         </div>
                     </div>
                 </div>
@@ -322,23 +293,23 @@
                 <div class="content-card animated fadeInUp">
                     <h3 class="section-title">Course Overview</h3>
                     <p class="text-muted mb-4">
-                        Fun Fact: Every website uses HTML—even this one. HTML is the critical first tool in every web developer's toolkit. Using HTML elements and tags, you can create text, images, videos, forms, and much more. Learning HTML basics is the first critical step in your web development journey.
+                        This 3-month comprehensive program is not just about coding; it's about building a career. You will learn HTML, CSS, JavaScript, and modern frontend frameworks. Through hands-on projects, you will be ready to tackle the freelance market on Upwork and Fiverr.
                     </p>
                     
-                    <h5 class="fw-bold mb-3">What you'll learn</h5>
+                    <h5 class="fw-bold mb-3">Why Choose This Course?</h5>
                     <div class="row g-3">
                         <div class="col-md-6">
                             <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Structure web pages with HTML5</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Work with Tables & Lists</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> SEO Friendly Coding</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Live Interactive Classes</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 4 Real-world Projects</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Freelance Marketplace Guide</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Forms & Validations</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Embedding Audio/Video</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Build a Portfolio Project</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Verified Certification</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Lifetime Access</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 24/7 Community Support</li>
                             </ul>
                         </div>
                     </div>
@@ -346,24 +317,24 @@
 
                 <div class="content-card animated fadeInUp" id="curriculum">
                     <h3 class="section-title">Course Curriculum</h3>
-                    <p class="text-muted mb-4">4 Weeks of Intensive Training</p>
+                    <p class="text-muted mb-4">Step-by-step 3 Month Journey</p>
                     
                     <div class="accordion accordion-ultra" id="courseAccordion">
                         
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Week 1: Introduction & Basics
+                                    Month 1: The Foundation (HTML, CSS, JS)
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> What is HTML & How the Web Works</li>
-                                        <li><i class="fas fa-play-circle"></i> Setup VS Code Environment</li>
-                                        <li><i class="fas fa-play-circle"></i> Creating your first HTML File</li>
-                                        <li><i class="fas fa-code"></i> Basic Tags: Headings, Paragraphs, Line Breaks</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Simple Personal Bio</li>
+                                        <li><i class="fas fa-play-circle"></i> HTML5 Semantic Structure</li>
+                                        <li><i class="fas fa-play-circle"></i> CSS3 Styling & Layouts</li>
+                                        <li><i class="fas fa-play-circle"></i> JavaScript Logic Fundamentals</li>
+                                        <li><i class="fas fa-play-circle"></i> Building Static Websites</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: Personal Portfolio Site</li>
                                     </ul>
                                 </div>
                             </div>
@@ -372,17 +343,17 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    Week 2: Formatting & Links
+                                    Month 2: Advanced Frontend (ES6+, React)
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> Text Formatting Tags (Bold, Italic, etc.)</li>
-                                        <li><i class="fas fa-play-circle"></i> Creating Ordered & Unordered Lists</li>
-                                        <li><i class="fas fa-play-circle"></i> Hyperlinks & Anchor Tags</li>
-                                        <li><i class="fas fa-play-circle"></i> Working with Images</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Recipe Page</li>
+                                        <li><i class="fas fa-play-circle"></i> Modern JavaScript (ES6+)</li>
+                                        <li><i class="fas fa-play-circle"></i> Responsive Design (Flexbox, Grid)</li>
+                                        <li><i class="fas fa-play-circle"></i> DOM Manipulation</li>
+                                        <li><i class="fas fa-play-circle"></i> Git & GitHub Version Control</li>
+                                        <li><i class="fas fa-laptop-code"></i> Project: E-commerce Website UI</li>
                                     </ul>
                                 </div>
                             </div>
@@ -391,93 +362,22 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    Week 3: Forms & Media
+                                    Month 3: Deployment & Career
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul>
-                                        <li><i class="fas fa-play-circle"></i> Understanding Forms & Input Types</li>
-                                        <li><i class="fas fa-play-circle"></i> Labels, Placeholders & Validation</li>
-                                        <li><i class="fas fa-play-circle"></i> Embedding YouTube Videos & Audio</li>
-                                        <li><i class="fas fa-play-circle"></i> Using Iframes</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Build a Contact Form</li>
+                                        <li><i class="fas fa-play-circle"></i> Deployment (Netlify, Vercel)</li>
+                                        <li><i class="fas fa-play-circle"></i> API Consumption & Backend Basics</li>
+                                        <li><i class="fas fa-play-circle"></i> Upwork/Fiverr Profile Optimization</li>
+                                        <li><i class="fas fa-play-circle"></i> Mock Interviews & Resume Building</li>
+                                        <li><i class="fas fa-laptop-code"></i> Final Capstone Project</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    Week 4: Semantic HTML & Final Project
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Semantic Elements (Header, Footer, Nav)</li>
-                                        <li><i class="fas fa-play-circle"></i> HTML5 Best Practices</li>
-                                        <li><i class="fas fa-play-circle"></i> Introduction to SEO</li>
-                                        <li><i class="fas fa-project-diagram"></i> Final Project: Personal Portfolio Structure</li>
-                                        <li><i class="fas fa-certificate"></i> Certification Exam</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="content-card animated fadeInUp" id="pricing">
-                    <h3 class="section-title">Select Your Plan</h3>
-                    <p class="text-muted mb-4">Start for free or upgrade for certification and mentorship.</p>
-                    
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h5 class="fw-bold">Free Access</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 0</h2>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> All Video Content</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Community Access</li>
-                                    <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
-                                </ul>
-                                <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-outline-dark rounded-pill w-100">Start Free</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="plan-card recommended">
-                                <div class="badge-rec">Recommended</div>
-                                <h5 class="fw-bold text-primary">Certified</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 1,500</h2>
-                                <small class="text-muted text-decoration-line-through">৳ 2,000</small>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Everything in Free</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Verified Certificate</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Project Reviews</li>
-                                </ul>
-                                <button class="btn btn-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Choose</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h5 class="fw-bold">Mentorship</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 3,000</h2>
-                                <small class="text-muted text-decoration-line-through">৳ 5,000</small>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Premium Certificate</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1:1 Mentorship</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Job Support</li>
-                                </ul>
-                                <button class="btn btn-outline-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full">Choose</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -487,15 +387,48 @@
                         <img src="img/team-1.png" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Instructor">
                         <div class="ms-4">
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary small mb-3">Founder & Senior Web Developer</p>
+                            <p class="text-primary small mb-3">Senior Frontend Engineer</p>
                             <p class="text-muted small">
-                                With over 3 years of experience in Full Stack Development, Junayed specializes in modern web technologies. He is passionate about making tech education accessible in Bangladesh.
+                                Junayed has 3+ years of experience in building scalable web applications. A CSE graduate from Daffodil International University, he specializes in React, Node.js, and AI integration in web apps.
                             </p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark">HTML5</span>
-                                <span class="badge bg-light text-dark">CSS3</span>
-                                <span class="badge bg-light text-dark">JavaScript</span>
+                                <span class="badge bg-light text-dark">React</span>
+                                <span class="badge bg-light text-dark">Node.js</span>
+                                <span class="badge bg-light text-dark">SEO</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card animated fadeInUp" id="payment">
+                    <h3 class="section-title">Flexible Payment Plans</h3>
+                    <p class="text-muted">No credit card? No problem. Use our installment system.</p>
+                    
+                    <div class="emi-box">
+                        <h5><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h5>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Course Fee: <strong>৳ 15,000</strong></label>
+                                <input type="range" class="form-range" id="courseFee" min="15000" max="15000" value="15000" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Installments: <strong id="monthDisplay">3 Months</strong></label>
+                                <input type="range" class="form-range" id="installments" min="1" max="3" step="1" value="3">
+                            </div>
+                        </div>
+                        <div class="alert alert-primary mt-3 d-flex justify-content-between align-items-center">
+                            <span>Monthly Payment:</span>
+                            <h4 class="mb-0 fw-bold" id="emiAmount">৳ 5,000</h4>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6>Supported Payment Methods:</h6>
+                        <div class="d-flex gap-3 mt-2 flex-wrap">
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-danger"></i>Bkash</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-warning"></i>Nagad</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-mobile-alt me-2 text-primary"></i>Rocket</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="fas fa-university me-2 text-secondary"></i>Bank Transfer</span>
                         </div>
                     </div>
                 </div>
@@ -505,33 +438,32 @@
             <div class="col-lg-4">
                 <div class="course-sidebar">
                     <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
-                        <img src="img/course-1.jpg" alt="Preview">
+                        <img src="img/course-02.png" alt="Preview">
                         <div class="play-btn"><i class="fas fa-play"></i></div>
                     </div>
                     <div class="sidebar-content">
                         <div class="price-big mb-3">
-                            ৳ 0 <small>Free Access</small>
+                            ৳ 15,000 <small>৳ 20,000</small>
                         </div>
                         
-                        <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-ultra mb-3">Enroll for Free</a>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Upgrade for Certificate</button>
+                        <button class="btn btn-ultra mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">Book Free Demo</button>
 
-                        <h6 class="fw-bold mb-3">This course includes:</h6>
+                        <h6 class="fw-bold mb-3">Course Includes:</h6>
                         <ul class="list-unstyled text-muted small">
-                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 8 hours on-demand video</li>
-                            <li class="mb-2"><i class="fas fa-file-download me-2 text-primary"></i> 5 downloadable resources</li>
-                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Full lifetime access</li>
-                            <li class="mb-2"><i class="fas fa-mobile-alt me-2 text-primary"></i> Access on mobile and TV</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Certificate (Premium only)</li>
+                            <li class="mb-2"><i class="fas fa-clock me-2 text-primary"></i> 3 Months Duration</li>
+                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 15+ Live Classes</li>
+                            <li class="mb-2"><i class="fas fa-project-diagram me-2 text-primary"></i> 4 Capstone Projects</li>
+                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Lifetime Access</li>
+                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Premium Certificate</li>
                         </ul>
                         
                         <hr>
                         <h6 class="fw-bold mb-2">Share this course:</h6>
                         <div class="d-flex gap-2">
                             <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-twitter"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
                             <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-whatsapp"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
                         </div>
                     </div>
                 </div>
@@ -544,11 +476,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Free Demo Class</h5>
+                    <h5 class="modal-title fw-bold">Book Free Demo Class</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-muted mb-3">Book a live demo slot to experience our teaching style.</p>
+                    <p class="text-muted mb-3">Experience our live teaching style before you commit.</p>
                     <form>
                         <div class="mb-3">
                             <input type="text" class="form-control rounded-pill px-3" placeholder="Your Name" required>
@@ -559,7 +491,7 @@
                         <div class="mb-3">
                             <input type="tel" class="form-control rounded-pill px-3" placeholder="Phone Number" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Book Demo</button>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Confirm Booking</button>
                     </form>
                 </div>
             </div>
@@ -570,26 +502,31 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Upgrade Your Plan</h5>
+                    <h5 class="modal-title fw-bold">Complete Enrollment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="paymentDetails">
-                    </div>
                 <div class="modal-body pt-0">
+                    <div class="alert alert-success mb-3">
+                        <div class="d-flex justify-content-between">
+                            <strong>Total Payable:</strong>
+                            <strong>৳ 15,000</strong>
+                        </div>
+                    </div>
                     <form>
-                        <h6 class="fw-bold mb-3">Payment Details</h6>
+                        <h6 class="fw-bold mb-3">Student Details</h6>
                         <div class="row g-2 mb-3">
-                            <div class="col-6"><input type="text" class="form-control" placeholder="Name"></div>
+                            <div class="col-6"><input type="text" class="form-control" placeholder="Full Name"></div>
                             <div class="col-6"><input type="tel" class="form-control" placeholder="Phone"></div>
                         </div>
-                        <select class="form-select mb-3">
-                            <option selected>Select Payment Method</option>
+                        <label class="form-label small fw-bold">Payment Method</label>
+                        <select class="form-select mb-4">
+                            <option selected>Select Option</option>
                             <option value="bkash">Bkash</option>
                             <option value="nagad">Nagad</option>
-                            <option value="rocket">Rocket</option>
-                            <option value="card">Credit Card</option>
+                            <option value="one-time">Full Payment (10% Off)</option>
+                            <option value="install">Installment (3 Months)</option>
                         </select>
-                        <button type="submit" class="btn btn-ultra">Proceed to Pay</button>
+                        <button type="submit" class="btn btn-ultra">Proceed to Payment</button>
                     </form>
                 </div>
             </div>
@@ -649,33 +586,18 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Modal Logic for Dynamic Content
-        const paymentModal = document.getElementById('paymentModal');
-        const paymentDetails = document.getElementById('paymentDetails');
+        // EMI Calculator Logic
+        const installmentSlider = document.getElementById('installments');
+        const emiDisplay = document.getElementById('emiAmount');
+        const monthDisplay = document.getElementById('monthDisplay');
+        const totalFee = 15000;
 
-        paymentModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const plan = button.getAttribute('data-plan');
-            let content = '';
-
-            if (plan === 'premium') {
-                content = `
-                    <div class="alert alert-warning">
-                        <h5 class="fw-bold mb-1">Premium Certificate</h5>
-                        <p class="mb-0">Total: ৳ 1,500 <span class="text-muted text-decoration-line-through ms-2">৳ 2,000</span></p>
-                    </div>
-                    <p class="small text-muted">Includes: Verified Certificate, Project Reviews, Job Guidance.</p>
-                `;
-            } else {
-                content = `
-                    <div class="alert alert-primary">
-                        <h5 class="fw-bold mb-1">Full Mentorship Package</h5>
-                        <p class="mb-0">Total: ৳ 3,000 <span class="text-muted text-decoration-line-through ms-2">৳ 5,000</span></p>
-                    </div>
-                    <p class="small text-muted">Includes: 1:1 Mentorship, Personal Projects, Interview Prep.</p>
-                `;
-            }
-            paymentDetails.innerHTML = content;
+        installmentSlider.addEventListener('input', function() {
+            const months = parseInt(this.value);
+            const monthlyPayment = Math.ceil(totalFee / months);
+            
+            monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
+            emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
         });
     </script>
 </body>
