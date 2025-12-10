@@ -3,44 +3,213 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | About Us - Transforming Tech Education in Bangladesh</title>
+    <title>Junayed Academy | About Us - Transforming Tech Education</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Junayed Academy, tech education Bangladesh, online learning, programming courses, AI training, web development, professional certification">
-    <meta name="description" content="Junayed Academy is revolutionizing tech education in Bangladesh through industry-aligned courses, practical learning, and career-focused programs. Learn about our mission, vision, and educational philosophy.">
+    <meta name="keywords" content="Junayed Academy, tech education Bangladesh, online learning">
+    <meta name="description" content="Junayed Academy is revolutionizing tech education in Bangladesh.">
     
-    <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           ULTRA PREMIUM DESIGN SYSTEM (Shared)
+           ========================================= */
+        :root {
+            --primary: #fb873f;
+            --primary-glow: rgba(251, 135, 63, 0.5);
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --shadow-ultra: 0 20px 40px -10px rgba(251, 135, 63, 0.3);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Ultra Buttons --- */
+        .btn-ultra {
+            position: relative;
+            padding: 16px 40px;
+            background: var(--gradient-ultra);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: var(--shadow-ultra);
+            z-index: 1;
+        }
+
+        .btn-ultra::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-ultra:hover::after {
+            left: 100%;
+        }
+
+        .btn-ultra:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(251, 135, 63, 0.5);
+            color: white;
+        }
+
+        .btn-ultra-outline {
+            padding: 14px 38px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ultra-outline:hover {
+            background: var(--gradient-ultra);
+            border-color: transparent;
+            color: white;
+            box-shadow: var(--shadow-ultra);
+        }
+
+        /* --- Text Gradient --- */
+        .text-gradient {
+            background: var(--gradient-ultra);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- Page Header with Gradient Overlay --- */
+        .page-header-ultra {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(24, 29, 56, 0.9) 100%), url('img/carousel-1.jpg');
+            background-position: center center;
+            background-size: cover;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- Glass Cards (About Specific) --- */
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card-light:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(251, 135, 63, 0.15);
+        }
+
+        /* --- Icon Squares --- */
+        .icon-square-ultra {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(251, 135, 63, 0.1) 0%, rgba(255, 94, 98, 0.1) 100%);
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .glass-card-light:hover .icon-square-ultra {
+            background: var(--gradient-ultra);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* --- Accordion Customization --- */
+        .accordion-item {
+            border: none;
+            background: white;
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: white;
+            color: #333;
+            font-weight: 700;
+            padding: 20px 25px;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(251, 135, 63, 0.05);
+            color: var(--primary);
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fb873f'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        /* --- Feature Box --- */
+        .feature-box-ultra {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #f0f0f0;
+            transition: 0.3s;
+        }
+        
+        .feature-box-ultra:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: transparent;
+            transform: translateY(-5px);
+        }
+
+    </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
            <p class="m-0 fw-bold" style="font-size: 24px;"><img src="img/icon.png" alt="Junayed Academy Logo" height="45px">Junayed<span style="color: #fb873f;">Academy</span></p>
@@ -68,235 +237,231 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">About Junayed Academy</h1>
-                    <p class="lead text-white mb-4">Pioneering the Future of Tech Education in Bangladesh</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div class="container-fluid page-header-ultra mb-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white fw-bold animated slideInDown mb-4">About Junayed Academy</h1>
+            <p class="lead text-white-50 mb-4 fw-light ls-1">Pioneering the Future of Tech Education in Bangladesh</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent p-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
+                </ol>
+            </nav>
         </div>
     </div>
-    <!-- Header End -->
-
-    <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
-                <!-- Introduction Section -->
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="text-center mb-5">
-                        <h6 class="section-title bg-white text-center text-primary px-3">Our Story</h6>
-                        <h1 class="mb-4">Empowering Bangladesh Through Accessible Tech Education</h1>
+                        <h6 class="text-primary text-uppercase fw-bold ls-2">Our Story</h6>
+                        <h1 class="mb-4 display-5 fw-bold">Empowering Bangladesh Through <br> <span class="text-gradient">Accessible Tech Education</span></h1>
                     </div>
                     
-                <!-- Executive Summary - Big Version -->
-<div class="card border-0 shadow-sm mb-5">
-    <div class="card-body p-5" style="padding:4rem 3rem;">
-        <h2 class="text-primary mb-4" style="font-size:2.5rem;">Executive Summary</h2>
-        <p class="lead mb-4" style="font-size:1.25rem; line-height:1.8;">
-            Founded in 2024 by Junayed Bin Karim, <strong>Junayed Academy</strong> is a premier e-learning platform dedicated to transforming technology education in Bangladesh. Our mission is to make high-quality, industry-relevant tech learning accessible to students from all backgrounds.
-        </p>
-        <p style="font-size:1rem; line-height:1.6;">
-            By combining interactive online courses, project-based learning, and expert mentorship, we bridge the gap between theoretical knowledge and real-world industry skills. Junayed Academy empowers learners to acquire the competencies needed to thrive in today’s rapidly evolving tech landscape.
-        </p>
-    </div>
-</div>
+                    <div class="glass-card-light p-5 mb-5 position-relative overflow-hidden">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(251, 135, 63, 0.1); border-radius: 50%; filter: blur(50px);"></div>
+                        
+                        <div class="position-relative z-index-1 text-center">
+                            <h2 class="text-primary mb-4 fw-bold">Executive Summary</h2>
+                            <p class="lead mb-4 text-dark" style="font-size: 1.25rem; line-height: 1.8;">
+                                Founded in 2024 by Junayed Bin Karim, <strong>Junayed Academy</strong> is a premier e-learning platform dedicated to transforming technology education in Bangladesh. Our mission is to make high-quality, industry-relevant tech learning accessible to students from all backgrounds.
+                            </p>
+                            <p class="text-muted" style="font-size: 1.1rem;">
+                                By combining interactive online courses, project-based learning, and expert mentorship, we bridge the gap between theoretical knowledge and real-world industry skills. Junayed Academy empowers learners to acquire the competencies needed to thrive in today’s rapidly evolving tech landscape.
+                            </p>
+                        </div>
+                    </div>
 
-
-                    <!-- Mission & Vision -->
                     <div class="row g-4 mb-5">
-                        <div class="col-lg-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="icon-square bg-primary text-white rounded-circle me-3">
-                                            <i class="fas fa-bullseye fa-2x"></i>
-                                        </div>
-                                        <h3 class="mb-0">Our Mission</h3>
+                        <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                            <div class="glass-card-light h-100 p-4 p-lg-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="icon-square-ultra me-4">
+                                        <i class="fas fa-bullseye"></i>
                                     </div>
-                                    <p class="card-text">
-                                        To empower every Bangladeshi learner with industry-relevant technical skills through innovative, accessible, and practical education that transforms careers and contributes to national digital growth.
-                                    </p>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Democratize quality tech education</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Bridge the industry-academia gap</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Foster practical, project-based learning</li>
-                                    </ul>
+                                    <h3 class="mb-0 fw-bold">Our Mission</h3>
                                 </div>
+                                <p class="text-muted mb-4">
+                                    To empower every Bangladeshi learner with industry-relevant technical skills through innovative, accessible, and practical education that transforms careers.
+                                </p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Democratize quality tech education</li>
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Bridge the industry-academia gap</li>
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Foster practical, project-based learning</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="icon-square bg-primary text-white rounded-circle me-3">
-                                            <i class="fas fa-eye fa-2x"></i>
-                                        </div>
-                                        <h3 class="mb-0">Our Vision</h3>
+                        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
+                            <div class="glass-card-light h-100 p-4 p-lg-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="icon-square-ultra me-4">
+                                        <i class="fas fa-eye"></i>
                                     </div>
-                                    <p class="card-text">
-                                        To become Bangladesh's leading catalyst for digital transformation by creating a generation of tech professionals who drive innovation, entrepreneurship, and economic growth.
-                                    </p>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Produce 10,000+ industry-ready professionals by 2026</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Establish partnerships with 100+ tech companies</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Expand to 5 major cities across Bangladesh</li>
-                                    </ul>
+                                    <h3 class="mb-0 fw-bold">Our Vision</h3>
                                 </div>
+                                <p class="text-muted mb-4">
+                                    To become Bangladesh's leading catalyst for digital transformation by creating a generation of tech professionals who drive innovation and economic growth.
+                                </p>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Produce 10,000+ industry-ready professionals</li>
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Partner with 100+ tech companies</li>
+                                    <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i>Expand to 5 major cities</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Core Values -->
-                    <div class="mb-5">
-                        <h2 class="text-center mb-4 text-primary">Our Core Values</h2>
+                    <div class="mb-5 pt-4">
+                        <h2 class="text-center mb-5 fw-bold">Our Core <span class="text-gradient">Values</span></h2>
                         <div class="row g-4">
-                            <div class="col-md-6 col-lg-3">
-                                <div class="text-center p-4 border rounded">
-                                    <div class="icon-square bg-light text-primary rounded-circle mx-auto mb-3">
-                                        <i class="fas fa-graduation-cap fa-2x"></i>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="glass-card-light text-center p-4 h-100">
+                                    <div class="icon-square-ultra mx-auto">
+                                        <i class="fas fa-graduation-cap"></i>
                                     </div>
-                                    <h5>Excellence in Education</h5>
-                                    <p class="small">Maintaining the highest academic standards through continuous curriculum updates and quality assurance.</p>
+                                    <h5 class="fw-bold mb-3">Excellence</h5>
+                                    <p class="small text-muted mb-0">Highest academic standards through continuous curriculum updates.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3">
-                                <div class="text-center p-4 border rounded">
-                                    <div class="icon-square bg-light text-primary rounded-circle mx-auto mb-3">
-                                        <i class="fas fa-hands-helping fa-2x"></i>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="glass-card-light text-center p-4 h-100">
+                                    <div class="icon-square-ultra mx-auto">
+                                        <i class="fas fa-hands-helping"></i>
                                     </div>
-                                    <h5>Student-Centric Approach</h5>
-                                    <p class="small">Prioritizing individual learning needs with personalized support and flexible learning pathways.</p>
+                                    <h5 class="fw-bold mb-3">Student-Centric</h5>
+                                    <p class="small text-muted mb-0">Prioritizing individual learning needs with personalized support.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3">
-                                <div class="text-center p-4 border rounded">
-                                    <div class="icon-square bg-light text-primary rounded-circle mx-auto mb-3">
-                                        <i class="fas fa-lightbulb fa-2x"></i>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="glass-card-light text-center p-4 h-100">
+                                    <div class="icon-square-ultra mx-auto">
+                                        <i class="fas fa-lightbulb"></i>
                                     </div>
-                                    <h5>Innovation & Adaptability</h5>
-                                    <p class="small">Embracing cutting-edge technologies and methodologies to stay ahead in the rapidly evolving tech landscape.</p>
+                                    <h5 class="fw-bold mb-3">Innovation</h5>
+                                    <p class="small text-muted mb-0">Embracing cutting-edge technologies to stay ahead.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3">
-                                <div class="text-center p-4 border rounded">
-                                    <div class="icon-square bg-light text-primary rounded-circle mx-auto mb-3">
-                                        <i class="fas fa-users fa-2x"></i>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="glass-card-light text-center p-4 h-100">
+                                    <div class="icon-square-ultra mx-auto">
+                                        <i class="fas fa-users"></i>
                                     </div>
-                                    <h5>Community Building</h5>
-                                    <p class="small">Fostering collaborative learning environments and professional networks that extend beyond the classroom.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Educational Philosophy -->
-                    <div class="mb-5">
-                        <h2 class="text-primary mb-4">Our Educational Philosophy</h2>
-                        <div class="accordion" id="philosophyAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <strong>Project-Based Learning</strong>
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#philosophyAccordion">
-                                    <div class="accordion-body">
-                                        <p>We believe in learning by doing. Every course includes real-world projects that simulate industry challenges, ensuring our students gain practical experience that directly translates to workplace competence.</p>
-                                        <ul class="mb-0">
-                                            <li>Hands-on coding exercises and assignments</li>
-                                            <li>Capstone projects for portfolio development</li>
-                                            <li>Industry-relevant case studies</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <strong>Industry-Aligned Curriculum</strong>
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#philosophyAccordion">
-                                    <div class="accordion-body">
-                                        <p>Our curriculum is continuously updated in collaboration with industry experts to ensure relevance and alignment with current market demands and emerging technologies.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <strong>Lifelong Learning Ecosystem</strong>
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#philosophyAccordion">
-                                    <div class="accordion-body">
-                                        <p>We cultivate a culture of continuous learning through alumni networks, advanced certification pathways, and ongoing professional development opportunities.</p>
-                                    </div>
+                                    <h5 class="fw-bold mb-3">Community</h5>
+                                    <p class="small text-muted mb-0">Fostering collaborative learning environments and networks.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Why Choose Junayed Academy -->
-                    <div class="card border-primary mb-5">
-                        <div class="card-header bg-primary text-white">
-                            <h3 class="mb-0">Why Choose Junayed Academy?</h3>
+                    <div class="mb-5 pt-4">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 mb-4 mb-lg-0 wow fadeInLeft" data-wow-delay="0.1s">
+                                <h6 class="text-primary text-uppercase fw-bold ls-2">How We Teach</h6>
+                                <h2 class="mb-4 fw-bold">Our Educational <span class="text-gradient">Philosophy</span></h2>
+                                <p class="text-muted mb-4">We move beyond traditional rote learning. Our approach is dynamic, interactive, and focused entirely on output and skill acquisition.</p>
+                                <a href="courses.html" class="btn btn-ultra-outline">See Courses</a>
+                            </div>
+                            <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.3s">
+                                <div class="accordion" id="philosophyAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Project-Based Learning
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#philosophyAccordion">
+                                            <div class="accordion-body text-muted">
+                                                We believe in learning by doing. Every course includes real-world projects that simulate industry challenges.
+                                                <ul class="mt-2 mb-0">
+                                                    <li>Hands-on coding exercises</li>
+                                                    <li>Capstone projects for portfolio</li>
+                                                    <li>Industry case studies</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Industry-Aligned Curriculum
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#philosophyAccordion">
+                                            <div class="accordion-body text-muted">
+                                                Our curriculum is continuously updated in collaboration with industry experts to ensure alignment with current market demands.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Lifelong Learning Ecosystem
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#philosophyAccordion">
+                                            <div class="accordion-body text-muted">
+                                                We cultivate a culture of continuous learning through alumni networks, advanced certification pathways, and ongoing development.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
+                    </div>
+
+                    <div class="mb-5 pt-4">
+                        <div class="bg-white rounded-3 p-5 border border-light shadow-sm">
+                            <h3 class="mb-5 text-center fw-bold">Why Choose <span class="text-primary">Junayed Academy?</span></h3>
                             <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="d-flex">
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="feature-box-ultra h-100">
                                         <div class="flex-shrink-0">
-                                            <i class="fas fa-chart-line text-primary fa-2x me-3"></i>
+                                            <div class="icon-square-ultra" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h5>Career Transformation</h5>
-                                            <p class="mb-0">Proven track record of graduates securing positions at leading tech companies and successful freelancing careers.</p>
+                                        <div class="ms-3">
+                                            <h5 class="fw-bold">Career Transformation</h5>
+                                            <p class="mb-0 text-muted small">Proven track record of graduates securing positions at leading tech companies.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex">
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="feature-box-ultra h-100">
                                         <div class="flex-shrink-0">
-                                            <i class="fas fa-users text-primary fa-2x me-3"></i>
+                                            <div class="icon-square-ultra" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                                <i class="fas fa-users"></i>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h5>Expert Instruction</h5>
-                                            <p class="mb-0">Learn from industry practitioners with real-world experience and proven teaching methodologies.</p>
+                                        <div class="ms-3">
+                                            <h5 class="fw-bold">Expert Instruction</h5>
+                                            <p class="mb-0 text-muted small">Learn from industry practitioners with real-world experience.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex">
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="feature-box-ultra h-100">
                                         <div class="flex-shrink-0">
-                                            <i class="fas fa-laptop-code text-primary fa-2x me-3"></i>
+                                            <div class="icon-square-ultra" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                                <i class="fas fa-laptop-code"></i>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h5>Modern Infrastructure</h5>
-                                            <p class="mb-0">State-of-the-art learning management system with interactive tools, resources, and support.</p>
+                                        <div class="ms-3">
+                                            <h5 class="fw-bold">Modern Infrastructure</h5>
+                                            <p class="mb-0 text-muted small">State-of-the-art LMS with interactive tools and resources.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="d-flex">
+                                <div class="col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="feature-box-ultra h-100">
                                         <div class="flex-shrink-0">
-                                            <i class="fas fa-handshake text-primary fa-2x me-3"></i>
+                                            <div class="icon-square-ultra" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                                <i class="fas fa-handshake"></i>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h5>Industry Partnerships</h5>
-                                            <p class="mb-0">Strategic collaborations with tech companies for internships, placements, and curriculum development.</p>
+                                        <div class="ms-3">
+                                            <h5 class="fw-bold">Industry Partnerships</h5>
+                                            <p class="mb-0 text-muted small">Strategic collaborations for internships and placements.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -304,22 +469,24 @@
                         </div>
                     </div>
 
-                    <!-- Call to Action -->
-                    <div class="text-center bg-light p-5 rounded">
-                        <h3 class="mb-4 text-primary">Join Our Growing Community of Learners</h3>
-                        <p class="lead mb-4">Become part of a movement that's shaping the future of tech in Bangladesh. Your journey towards professional excellence starts here.</p>
-                        <div class="d-flex justify-content-center gap-3">
-                            <a href="courses.html" class="btn btn-primary btn-lg px-5 py-3">Explore Courses</a>
-                            <a href="contact.html" class="btn btn-outline-primary btn-lg px-5 py-3">Talk to Advisor</a>
+                    <div class="position-relative overflow-hidden rounded-3 p-5 text-center wow fadeInUp" data-wow-delay="0.1s" style="background: var(--dark-bg);">
+                         <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: linear-gradient(90deg, transparent, rgba(251, 135, 63, 0.2)); clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);"></div>
+                        
+                        <div class="position-relative z-index-2">
+                            <h3 class="mb-3 text-white fw-bold">Join Our Growing Community</h3>
+                            <p class="lead mb-5 text-white-50 mx-auto" style="max-width: 700px;">
+                                Become part of a movement that's shaping the future of tech in Bangladesh. Your journey towards professional excellence starts here.
+                            </p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="courses.html" class="btn btn-ultra">Explore Courses</a>
+                                <a href="contact.html" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">Talk to Advisor</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
-
-    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -368,12 +535,8 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -381,28 +544,7 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <style>
-        .icon-square {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(251, 135, 63, 0.1);
-            color: #fb873f;
-        }
-        .accordion-button:focus {
-            box-shadow: 0 0 0 0.25rem rgba(251, 135, 63, 0.25);
-        }
-        .border-primary {
-            border-color: #fb873f !important;
-        }
-    </style>
 </body>
 
 </html>
