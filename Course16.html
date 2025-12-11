@@ -247,7 +247,89 @@
         }
         
         @keyframes spin { 100% { transform: rotate(360deg); } }
+       
+        
+        
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+    
+    /* =========================================
+   ULTRA PREMIUM NAVBAR (MOBILE FIX)
+========================================= */
+
+/* 1. Glassmorphism Effect */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* 2. Force Logo and Toggler to stay on same line */
+.mobile-nav-wrapper {
+    display: flex;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. Logo Sizing */
+.nav-logo {
+    height: 45px;
+    transition: height 0.3s ease;
+}
+
+/* 4. Brand Text */
+.brand-text {
+    font-size: 24px;
+    white-space: nowrap;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    transition: font-size 0.3s ease;
+}
+
+/* 5. Toggler Button Styling */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+/* 6. MOBILE ADJUSTMENTS */
+@media (max-width: 576px) {
+
+    /* Shrink padding */
+    .container-fluid.px-3 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Logo */
+    .nav-logo {
+        height: 32px !important;
+    }
+
+    /* Brand text */
+    .brand-text {
+        font-size: 18px !important;
+    }
+
+    /* Toggler icon */
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
+
+    
     </style>
 </head>
 
