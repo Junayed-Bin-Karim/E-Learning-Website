@@ -238,51 +238,51 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
 }
 
-/* -------------------------------------------
-   FIXING CONTENT VISIBILITY
-   (Since background is now dark, we must make elements light)
-   ------------------------------------------- */
+/* =========================================
+   WHITE THEME (Navigation & Footer)
+   ========================================= */
 
-/* 1. Make all Headings White */
-h1, h2, h3, h4, h5, h6, .text-heading {
-    color: #ffffff !important;
+body {
+    background-color: #ffffff !important;
+    color: var(--text-body) !important;
 }
 
-/* 2. Remove the white backgrounds from sections */
-.clean-hero, .founder-section, .section-padding {
-    background: #0C1927 !important;
-}
-
-/* 3. Make Cards slightly lighter than body to stand out */
-.soft-card, .quote-box {
-    background-color: #112435 !important; /* Slightly lighter navy */
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: none !important;
-}
-
-/* 4. Fix Navigation Bar (Optional - looks better dark) */
+/* Navbar - Pure White */
 .navbar {
-    background: rgba(12, 25, 39, 0.95) !important; /* Dark Navy with blur */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Soft shadow */
 }
 
-.nav-link {
-    color: #ffffff !important;
+/* Footer - White Background with Dark Text */
+.footer-premium, .footer-bottom {
+    background-color: #ffffff !important;
+    color: var(--text-body) !important;
+    border-top: 1px solid #f3f4f6; /* Very light border */
 }
 
-.brand-text {
-    color: #ffffff !important;
+.footer-heading {
+    color: var(--text-heading) !important;
+    font-weight: 700;
 }
 
-/* 5. Fix Stats Strip to blend in */
-.stats-strip {
-    background: #152b40 !important; /* Lighter navy */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+.footer-link {
+    color: #6b7280 !important; /* Gray text */
+    transition: 0.3s;
 }
 
-/* 6. Fix Icon Circles */
-.icon-circle {
-    background-color: rgba(251, 135, 63, 0.1) !important;
+.footer-link:hover {
+    color: var(--brand-primary) !important; /* Orange on hover */
+    padding-left: 5px;
+}
+
+.social-btn {
+    background: #f3f4f6;
+    color: var(--brand-secondary);
+}
+
+.social-btn:hover {
+    background: var(--brand-primary);
+    color: white;
 }
 
 
