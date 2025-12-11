@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +52,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Parallax */
-            padding: 120px 0 100px 0;
+            padding: 140px 0 120px 0;
             position: relative;
             margin-bottom: 0;
         }
@@ -272,202 +271,51 @@
 
         @media (max-width: 991px) {
             .signup-visual-side { display: none; }
-            .signup-card-ultra { min-height: auto; }
+            .signup-card-ultra { min-height: auto; flex-direction: column; }
             .signup-form-side { padding: 40px 20px; }
-            .page-header-ultra { padding: 100px 0 60px 0; }
+            .page-header-ultra { padding: 120px 0 60px 0; }
             .signup-section-wrapper { margin-top: -30px; }
         }
 
+        /* =========================================
+           ULTRA PREMIUM NAVBAR (MOBILE FIX)
+           ========================================= */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
 
-
+        @media (max-width: 576px) {
+            .container-fluid.px-3 { padding-left: 15px !important; padding-right: 15px !important; }
+            .nav-logo { height: 32px !important; }
+            .brand-text { font-size: 18px !important; }
+            .navbar-toggler-icon { width: 1.2em; height: 1.2em; }
+        }
 
         /* =========================================
-   ULTRA PREMIUM NAVBAR (MOBILE FIX)
-   ========================================= */
-
-/* 1. Glassmorphism Effect */
-.navbar {
-    background: rgba(255, 255, 255, 0.95) !important; /* Slight transparency */
-    backdrop-filter: blur(15px); /* Premium Blur */
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding: 10px 0;
-    transition: all 0.3s ease;
-}
-
-/* 2. Force Logo and Toggler to stay on same line */
-.mobile-nav-wrapper {
-    display: flex;
-    flex-wrap: nowrap !important; /* CRITICAL: Prevents wrapping */
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 3. Logo Sizing */
-.nav-logo {
-    height: 45px;
-    transition: height 0.3s ease;
-}
-
-/* 4. Brand Text Sizing */
-.brand-text {
-    font-size: 24px;
-    white-space: nowrap; /* Prevents text breaking */
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    transition: font-size 0.3s ease;
-}
-
-/* 5. Toggler Button (Hamburger) Styling */
-.navbar-toggler {
-    border: none !important;
-    outline: none !important;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px; /* Space between text and button */
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important; /* Removes ugly blue outline */
-}
-
-/* 6. MOBILE SPECIFIC ADJUSTMENTS (The Fix) */
-@media (max-width: 576px) {
-    /* Shrink padding on mobile */
-    .container-fluid.px-3 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    /* Resize Logo for small screens */
-    .nav-logo {
-        height: 32px !important;
-    }
-
-    /* Resize Text for small screens */
-    .brand-text {
-        font-size: 18px !important; /* Perfectly fits iPhone/Android */
-    }
-
-    /* Adjust Toggler size */
-    .navbar-toggler-icon {
-        width: 1.2em;
-        height: 1.2em;
-    }
-}
-
-        /* =========================================
-   PREMIUM LIGHT FOOTER STYLES
-   ========================================= */
-.footer-premium {
-    background-color: #f8f9fa !important; /* Soft Off-White for contrast */
-    color: #4b5563 !important;            /* Dark Gray text for readability */
-    border-top: 1px solid #e5e7eb;        /* Subtle top border */
-    padding-top: 80px;
-    margin-top: 0;
-}
-
-/* Brand Text in Footer */
-.footer-brand-text {
-    font-weight: 800;
-    font-size: 26px;
-    color: #111827; /* Darkest Black */
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-/* Column Headings */
-.footer-heading {
-    color: #111827 !important;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-/* Links */
-.footer-link {
-    color: #6b7280 !important; /* Medium Gray */
-    display: block;
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.footer-link:hover {
-    color: #fb873f !important; /* Brand Orange */
-    padding-left: 8px;         /* Slide effect */
-}
-
-/* Social Buttons */
-.social-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;       /* Pure white circle */
-    color: #1a237e;           /* Brand Blue */
-    border-radius: 50%;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Soft shadow */
-    border: 1px solid #e5e7eb;
-}
-
-.social-btn:hover {
-    background: #fb873f;
-    color: white;
-    transform: translateY(-3px);
-    border-color: #fb873f;
-}
-
-/* Newsletter Input */
-.footer-input-group {
-    display: flex;
-    background: #ffffff;
-    border-radius: 50px;
-    padding: 5px;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
-
-.footer-input {
-    border: none;
-    background: transparent;
-    padding: 10px 20px;
-    width: 100%;
-    outline: none;
-    color: #374151;
-}
-
-.footer-btn-sub {
-    background: #fb873f;
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.footer-btn-sub:hover {
-    background: #e67e39;
-    box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3);
-}
-
-/* Bottom Copyright Bar */
-.footer-bottom {
-    background-color: #f3f4f6 !important; /* Slightly darker gray */
-    padding: 25px 0;
-    margin-top: 60px;
-    border-top: 1px solid #e5e7eb;
-    font-size: 0.9rem;
-    color: #6b7280;
-}
+           PREMIUM LIGHT FOOTER STYLES
+           ========================================= */
+        .footer-premium {
+            background-color: #f8f9fa !important;
+            color: #4b5563 !important;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 80px;
+        }
+        .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; margin-bottom: 20px; display: flex; align-items: center; }
+        .footer-heading { color: #111827 !important; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; }
+        .footer-link { color: #6b7280 !important; display: block; margin-bottom: 12px; transition: all 0.3s ease; text-decoration: none; font-weight: 500; }
+        .footer-link:hover { color: #fb873f !important; padding-left: 8px; }
+        .social-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #ffffff; color: #1a237e; border-radius: 50%; margin-right: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+        .social-btn:hover { background: #fb873f; color: white; transform: translateY(-3px); border-color: #fb873f; }
+        .footer-input-group { display: flex; background: #ffffff; border-radius: 50px; padding: 5px; border: 1px solid #d1d5db; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .footer-input { border: none; background: transparent; padding: 10px 20px; width: 100%; outline: none; color: #374151; }
+        .footer-btn-sub { background: #fb873f; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .footer-btn-sub:hover { background: #e67e39; box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3); }
+        .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
     </style>
 </head>
 
@@ -477,94 +325,88 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;">
-                <img src="img/icon.png" alt="Junayed Academy Logo" height="40px">
-                Junayed<span style="color: #fb873f;">Academy</span>
-            </p>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+        <div class="container-fluid px-4 px-lg-5 mobile-nav-wrapper">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <p class="m-0 fw-bold brand-text" style="font-size: 24px;">
+                    <img src="img/icon.png" alt="Junayed Academy Logo" class="nav-logo" height="40px" style="margin-right: 10px;">
+                    Junayed<span style="color: #fb873f;">Academy</span>
+                </p>
+            </a>
+            <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="courses.html" class="nav-item nav-link">Courses</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                        </div>
                     </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link active"><i class="fa fa-user"></i> Login</a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
-                </a>
             </div>
         </div>
     </nav>
-
     <div class="container-fluid page-header-ultra">
-       <div class="container py-5 text-center">
-    <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">
-        Create Your Account
-    </span>
+        <div class="container py-5 text-center">
+            <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">
+                Create Your Account
+            </span>
 
-    <h1 class="display-3 text-white animated slideInDown fw-bolder">
-        Join Junayed Academy
-    </h1>
+            <h1 class="display-3 text-white animated slideInDown fw-bolder">
+                Join Junayed Academy
+            </h1>
 
-    <p class="lead text-white-50 mb-0 animated slideInUp">
-        Begin your journey toward advanced skills in AI, Web Development, and Modern Technologies.
-    </p>
-</div>
-
+            <p class="lead text-white-50 mb-0 animated slideInUp">
+                Begin your journey toward advanced skills in AI, Web Development, and Modern Technologies.
+            </p>
+        </div>
     </div>
-
     <div class="container-xxl signup-section-wrapper">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-11">
                     <div class="signup-card-ultra animated fadeInUp">
                         
-                      <div class="signup-visual-side">
-    <div>
-<h3 class="fw-bold mb-4" style="color: #fff;">Why Join Junayed Academy?</h3>
-        <p class="text-white-50 mb-5">Unlock project-based learning, real mentorship, and pathways to high-growth tech careers.</p>
-    </div>
+                        <div class="signup-visual-side">
+                            <div>
+                                <h3 class="fw-bold mb-4" style="color: #fff;">Why Join Junayed Academy?</h3>
+                                <p class="text-white-50 mb-5">Unlock project-based learning, real mentorship, and pathways to high-growth tech careers.</p>
+                            </div>
 
-    <div class="benefit-list">
-        <div class="benefit-item">
-            <i class="fas fa-rocket benefit-icon"></i>
-            <div>
-                <h6 class="fw-bold mb-1">Career-Focused Learning</h6>
-                <small class="text-white-50">AI & Web Development tracks built to match industry needs.</small>
-            </div>
-        </div>
+                            <div class="benefit-list">
+                                <div class="benefit-item">
+                                    <i class="fas fa-rocket benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Career-Focused Learning</h6>
+                                        <small class="text-white-50">AI & Web Development tracks built to match industry needs.</small>
+                                    </div>
+                                </div>
 
-        <div class="benefit-item">
-            <i class="fas fa-certificate benefit-icon"></i>
-            <div>
-                <h6 class="fw-bold mb-1">Industry-Recognized Certificates</h6>
-                <small class="text-white-50">Showcase verified credentials to stand out in job applications.</small>
-            </div>
-        </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-certificate benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Industry-Recognized Certificates</h6>
+                                        <small class="text-white-50">Showcase verified credentials to stand out in job applications.</small>
+                                    </div>
+                                </div>
 
-        <div class="benefit-item">
-            <i class="fas fa-users benefit-icon"></i>
-            <div>
-                <h6 class="fw-bold mb-1">1:1 Mentor Guidance</h6>
-                <small class="text-white-50">Learn directly from experts who’ve built real-world solutions.</small>
-            </div>
-        </div>
-    </div>
-</div>
-
+                                <div class="benefit-item">
+                                    <i class="fas fa-users benefit-icon"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">1:1 Mentor Guidance</h6>
+                                        <small class="text-white-50">Learn directly from experts who’ve built real-world solutions.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="mt-4">
                                 <small class="text-white-50">Already have an account? <a href="login.html" class="text-primary fw-bold text-decoration-none">Log In</a></small>
                             </div>
@@ -594,17 +436,17 @@
                                 
                                 <div class="form-step active" id="step-1">
                                     <div class="form-floating form-floating-ultra mb-3">
-                                        <input type="text" class="form-control" id="fullname" placeholder="John Doe" required>
+                                        <input type="text" class="form-control" id="fullname" placeholder="John Doe" autocomplete="name" required>
                                         <label for="fullname">Full Name</label>
                                     </div>
                                     <div class="form-floating form-floating-ultra mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com" autocomplete="email" required>
                                         <label for="email">Email Address</label>
                                     </div>
                                     <div class="form-floating form-floating-ultra mb-3">
                                         <input type="password" class="form-control" id="password" placeholder="Password" required>
                                         <label for="password">Password</label>
-                                        <button type="button" class="btn btn-link text-muted position-absolute top-50 end-0 translate-middle-y me-3" id="togglePass">
+                                        <button type="button" class="btn btn-link text-muted position-absolute top-50 end-0 translate-middle-y me-3" id="togglePass" style="text-decoration: none;">
                                             <i class="fas fa-eye"></i>
                                         </button>
                                     </div>
@@ -623,8 +465,8 @@
                                     <div class="text-center mt-4">
                                         <span class="text-muted small">Or sign up with</span>
                                         <div class="d-flex justify-content-center gap-3 mt-2">
-                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px;"><i class="fab fa-google"></i></button>
-                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></button>
+                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px; display:flex; align-items:center; justify-content:center;"><i class="fab fa-google"></i></button>
+                                            <button type="button" class="btn btn-outline-ultra rounded-circle p-2" style="width:40px; height:40px; display:flex; align-items:center; justify-content:center;"><i class="fab fa-facebook-f"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -633,7 +475,7 @@
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                             <div class="form-floating form-floating-ultra">
-                                                <input type="tel" class="form-control" id="phone" placeholder="+880">
+                                                <input type="tel" class="form-control" id="phone" placeholder="+880" autocomplete="tel">
                                                 <label for="phone">Phone Number</label>
                                             </div>
                                         </div>
@@ -646,7 +488,7 @@
                                         <div class="col-12">
                                             <div class="form-floating form-floating-ultra">
                                                 <select class="form-select" id="interest">
-                                                    <option selected>Select Interest</option>
+                                                    <option selected disabled>Select Interest</option>
                                                     <option value="1">Web Development</option>
                                                     <option value="2">Data Science & AI</option>
                                                     <option value="3">Cyber Security</option>
@@ -706,77 +548,73 @@
 
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-   <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer-brand-text">
-                    <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
-                    Junayed<span style="color: #fb873f;">Academy</span>
-                </div>
-                <p class="mb-4" style="line-height: 1.6;">
-                    Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.
-                </p>
-                <div class="d-flex pt-2">
-                    <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                    <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
-                    <a class="social-btn" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading">Academy</h5>
-                <a class="footer-link" href="about.html">About Us</a>
-                <a class="footer-link" href="courses.html">Our Courses</a>
-                <a class="footer-link" href="team.html">Instructors</a>
-                <a class="footer-link" href="testimonial.html">Success Stories</a>
-                <a class="footer-link" href="contact.html">Contact</a>
-            </div>
-
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading">Resources</h5>
-                <a class="footer-link" href="#">Help Center</a>
-                <a class="footer-link" href="#">Student Portal</a>
-                <a class="footer-link" href="#">Become a Mentor</a>
-                <a class="footer-link" href="#">Terms of Service</a>
-                <a class="footer-link" href="#">Privacy Policy</a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <h5 class="footer-heading">Stay Updated</h5>
-                <p class="mb-4">Get the latest course updates and tech news delivered to your inbox.</p>
-                <div class="footer-input-group">
-                    <input class="footer-input" type="text" placeholder="Your email address">
-                    <button type="button" class="footer-btn-sub">Join</button>
-                </div>
-                <div class="mt-4">
-                    <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #fb873f;"></i> +880 1893 255503</p>
-                    <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #fb873f;"></i> junayedacademy@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
+    <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <span style="color: #fb873f; font-weight: 600;">Junayed Academy</span>. All Rights Reserved.
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand-text">
+                        <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
+                        Junayed<span style="color: #fb873f;">Academy</span>
+                    </div>
+                    <p class="mb-4" style="line-height: 1.6;">
+                        Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.
+                    </p>
+                    <div class="d-flex pt-2">
+                        <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="social-btn" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="social-btn" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Academy</h5>
+                    <a class="footer-link" href="about.html">About Us</a>
+                    <a class="footer-link" href="courses.html">Our Courses</a>
+                    <a class="footer-link" href="team.html">Instructors</a>
+                    <a class="footer-link" href="testimonial.html">Success Stories</a>
+                    <a class="footer-link" href="contact.html">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Resources</h5>
+                    <a class="footer-link" href="#">Help Center</a>
+                    <a class="footer-link" href="#">Student Portal</a>
+                    <a class="footer-link" href="#">Become a Mentor</a>
+                    <a class="footer-link" href="#">Terms of Service</a>
+                    <a class="footer-link" href="#">Privacy Policy</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading">Stay Updated</h5>
+                    <p class="mb-4">Get the latest course updates and tech news delivered to your inbox.</p>
+                    <div class="footer-input-group">
+                        <input class="footer-input" type="text" placeholder="Your email address">
+                        <button type="button" class="footer-btn-sub">Join</button>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #fb873f;"></i> +880 1893 255503</p>
+                        <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #fb873f;"></i> junayedacademy@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <span style="color: #fb873f; font-weight: 600;">Junayed Academy</span>. All Rights Reserved.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -789,6 +627,23 @@
     <script>
         // Multi-Step Logic
         function nextStep(step) {
+            // Validate current step inputs before moving
+            if (step > 1) {
+                const currentStepId = 'step-' + (step - 1);
+                const currentStepElement = document.getElementById(currentStepId);
+                const inputs = currentStepElement.querySelectorAll('input[required], select[required]');
+                let valid = true;
+                
+                inputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        input.reportValidity();
+                        valid = false;
+                    }
+                });
+
+                if (!valid) return;
+            }
+
             // Hide all steps
             document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
             // Show target step
@@ -840,12 +695,11 @@
             }
             
             const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Creating...';
             btn.disabled = true;
 
             setTimeout(() => {
-                alert("Account Created! Redirecting to Dashboard...");
+                // Simulate success
                 window.location.href = 'login.html';
             }, 2000);
         });
