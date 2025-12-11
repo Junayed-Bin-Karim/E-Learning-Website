@@ -3,324 +3,244 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | HTML Course for Beginners</title>
+    <title>Junayed Academy | HTML5 Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="HTML Course, Web Development, Coding for Beginners">
-    <meta name="description" content="Master the foundations of web development with our premium HTML course.">
-    
     <link href="img/icon.png" rel="icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PREMIUM COURSE DETAIL STYLES
+           ULTRA PRO DESIGN SYSTEM (Shared)
            ========================================= */
         :root {
             --primary: #fb873f;
             --primary-dark: #e0691e;
-            --dark-bg: #0f172a;
-            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-            --glass-bg: rgba(255, 255, 255, 0.9);
-            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
-            --shadow-hover: 0 30px 60px rgba(251, 135, 63, 0.15);
-            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --secondary: #0f172a;
+            --bg-light: #f3f6f8;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --gradient-pro: linear-gradient(135deg, #fb873f 0%, #ff7e5f 100%);
+            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+            --radius-xl: 24px;
+            --radius-lg: 16px;
+            --font-head: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: var(--font-main);
-            background-color: #f8f9fa;
+            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
-        html { scroll-behavior: smooth; }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); letter-spacing: -0.02em; }
 
-        /* --- Page Header --- */
-        .course-header {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/course-1.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            color: white;
-            margin-bottom: 50px;
+        /* --- Navbar Fix --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+        @media (max-width: 576px) {
+            .nav-logo { height: 32px !important; }
+            .brand-text { font-size: 18px !important; }
         }
 
-        /* --- Sticky Sidebar Card --- */
-        .course-sidebar {
-            position: sticky;
-            top: 100px; /* Stays fixed while scrolling */
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
-            z-index: 100;
-        }
-
-        .video-preview {
+        /* --- ULTRA HERO SECTION --- */
+        .hero-ultra {
             position: relative;
-            height: 200px;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            padding: 80px 0 100px;
+            /* Darker Blue/Purple for Code Theme */
+            background: radial-gradient(circle at 10% 20%, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 90%);
+            color: white;
+            overflow: hidden;
         }
         
-        .video-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: 0.3s;
+        .hero-ultra::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: url('img/pattern.png');
+            opacity: 0.05;
+            animation: spin 100s linear infinite;
         }
 
-        .video-preview:hover img { opacity: 0.5; }
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fb873f;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
 
-        .play-btn {
-            position: absolute;
-            width: 60px;
-            height: 60px;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: -webkit-linear-gradient(0deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- CONTENT STYLING --- */
+        .pro-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .bento-item {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: var(--radius-lg);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+        .bento-item:hover {
+            background: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+        .bento-icon {
+            width: 50px; height: 50px;
+            background: rgba(251, 135, 63, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Accordion */
+        .accordion-pro .accordion-item {
+            border: none;
+            background: #fff;
+            border-radius: var(--radius-lg) !important;
+            margin-bottom: 15px;
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+        .accordion-pro .accordion-button {
             background: white;
+            padding: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            box-shadow: none;
+        }
+        .accordion-pro .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background: rgba(251, 135, 63, 0.03);
+        }
+        .accordion-pro .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fb873f'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        /* Sidebar & Pricing */
+        .sidebar-wrapper {
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+        }
+        .price-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .video-thumbnail {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: 25px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .video-thumbnail img { width: 100%; transition: 0.5s; }
+        .video-thumbnail:hover img { transform: scale(1.05); }
+        .play-icon-overlay {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,0.9);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             color: var(--primary);
             font-size: 1.5rem;
             animation: pulse 2s infinite;
         }
 
-        .sidebar-content { padding: 30px; }
-
-        .price-big {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        /* Pricing Tiers */
+        .tier-card {
+            border: 2px solid #f1f5f9;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
         }
+        .tier-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .tier-card.active { border-color: var(--primary); background: #fffaf6; }
 
-        .price-big small {
-            font-size: 1rem;
-            color: #999;
-            text-decoration: line-through;
-            font-weight: 500;
-        }
-
-        /* --- Main Content Styling --- */
-        .content-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .section-title {
-            font-weight: 800;
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 4px;
-            background: var(--gradient-ultra);
-            border-radius: 2px;
-        }
-
-        /* --- Curriculum Accordion --- */
-        .accordion-ultra .accordion-item {
-            border: none;
-            margin-bottom: 15px;
-            border-radius: 12px !important;
-            overflow: hidden;
-            background: #f8f9fa;
-        }
-
-        .accordion-ultra .accordion-button {
-            background: #f8f9fa;
-            color: #333;
-            font-weight: 700;
-            padding: 20px;
-            box-shadow: none;
-        }
-
-        .accordion-ultra .accordion-button:not(.collapsed) {
-            background: rgba(251, 135, 63, 0.1);
-            color: var(--primary);
-        }
-
-        .accordion-body ul { list-style: none; padding-left: 0; margin-bottom: 0; }
-        .accordion-body li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
-            color: #555;
-        }
-        .accordion-body li:last-child { border-bottom: none; }
-        .accordion-body li i { margin-right: 15px; color: var(--primary); width: 20px; }
-
-        /* --- Ultra Buttons --- */
-        .btn-ultra {
-            background: var(--gradient-ultra);
+        .btn-gradient {
+            background: var(--gradient-pro);
             color: white;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             width: 100%;
-            position: relative;
-            overflow: hidden;
-            transition: 0.4s;
-            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
-        }
-        .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
-
-        /* --- Feature Pills --- */
-        .feature-pill {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(251, 135, 63, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            margin: 5px 5px 5px 0;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* --- Payment Plan Cards --- */
-        .plan-card {
-            border: 2px solid #eee;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
+            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
             transition: 0.3s;
-            position: relative;
-            background: white;
         }
-        .plan-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        .plan-card.recommended { border-color: var(--primary); background: #fffbf8; }
-        .badge-rec {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
         }
 
-        /* Mobile Fix */
         @media (max-width: 991px) {
-            .course-sidebar { position: static; margin-top: 30px; }
-            .course-header { padding: 60px 0; }
+            .hero-title { font-size: 2.5rem; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .sidebar-wrapper { position: static; margin-top: 40px; }
         }
-
-
-
-        /* =========================================
-   ULTRA PREMIUM NAVBAR (MOBILE FIX)
-   ========================================= */
-
-/* 1. Glassmorphism Effect */
-.navbar {
-    background: rgba(255, 255, 255, 0.95) !important; /* Slight transparency */
-    backdrop-filter: blur(15px); /* Premium Blur */
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding: 10px 0;
-    transition: all 0.3s ease;
-}
-
-/* 2. Force Logo and Toggler to stay on same line */
-.mobile-nav-wrapper {
-    display: flex;
-    flex-wrap: nowrap !important; /* CRITICAL: Prevents wrapping */
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 3. Logo Sizing */
-.nav-logo {
-    height: 45px;
-    transition: height 0.3s ease;
-}
-
-/* 4. Brand Text Sizing */
-.brand-text {
-    font-size: 24px;
-    white-space: nowrap; /* Prevents text breaking */
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    transition: font-size 0.3s ease;
-}
-
-/* 5. Toggler Button (Hamburger) Styling */
-.navbar-toggler {
-    border: none !important;
-    outline: none !important;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px; /* Space between text and button */
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important; /* Removes ugly blue outline */
-}
-
-/* 6. MOBILE SPECIFIC ADJUSTMENTS (The Fix) */
-@media (max-width: 576px) {
-    /* Shrink padding on mobile */
-    .container-fluid.px-3 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    /* Resize Logo for small screens */
-    .nav-logo {
-        height: 32px !important;
-    }
-
-    /* Resize Text for small screens */
-    .brand-text {
-        font-size: 18px !important; /* Perfectly fits iPhone/Android */
-    }
-
-    /* Adjust Toggler size */
-    .navbar-toggler-icon {
-        width: 1.2em;
-        height: 1.2em;
-    }
-}
+        
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
     </style>
 </head>
 
@@ -362,86 +282,87 @@
         </div>
     </nav>
 
-    <div class="course-header">
-        <div class="container">
-            <div class="row">
+    <div class="hero-ultra">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="mb-3">
-                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fw-bold me-2">Beginner Friendly</span>
-                        <span class="badge bg-light text-dark rounded-pill px-3 py-2 fw-bold">Web Development</span>
+                    <div class="hero-badge animated slideInDown">
+                        <i class="fas fa-code me-2"></i> Web Development Starts Here
                     </div>
-                    <h1 class="display-4 fw-bold text-white mb-3">HTML Course for Beginners</h1>
-                    <p class="lead text-white-50 mb-4">Master the skeleton of the internet. A complete step-by-step guide to building web structures from scratch.</p>
+                    <h1 class="hero-title animated slideInDown">HTML5 Mastery <br> for Beginners</h1>
+                    <p class="lead text-light opacity-75 mb-4 animated slideInUp" style="max-width: 600px; font-weight: 300;">
+                        Master the skeleton of the internet. A complete 4-week step-by-step guide to building your first website from scratch.
+                    </p>
                     
-                    <div class="d-flex align-items-center gap-4 text-white-50 small">
-                        <span><i class="fas fa-star text-warning me-1"></i> 4.8 (3.5k+ Ratings)</span>
-                        <span><i class="fas fa-user-graduate me-1"></i> 5,000+ Enrolled</span>
-                        <span><i class="fas fa-globe me-1"></i> English / Bengali</span>
-                        <span><i class="fas fa-clock me-1"></i> Last Updated: Dec 2025</span>
-                    </div>
-
-                    <div class="d-flex align-items-center mt-4">
-                        <img src="img/team-1.png" class="rounded-circle border border-2 border-white" width="50" height="50" alt="Instructor">
-                        <div class="ms-3">
-                            <p class="text-white mb-0 fw-bold">Junayed Bin Karim</p>
-                            <small class="text-white-50">Senior Web Instructor</small>
-                        </div>
+                    <div class="d-flex flex-wrap gap-4 text-white-50 small animated slideInUp">
+                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.8 Rating</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-primary"></i> 5,000+ Enrolled</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-calendar-check me-2 text-primary"></i> 4 Weeks</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container pb-5">
+    <div class="container py-5 mt-3">
         <div class="row">
             
             <div class="col-lg-8">
                 
-                <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Course Overview</h3>
-                    <p class="text-muted mb-4">
-                        Fun Fact: Every website uses HTML—even this one. HTML is the critical first tool in every web developer's toolkit. Using HTML elements and tags, you can create text, images, videos, forms, and much more. Learning HTML basics is the first critical step in your web development journey.
+                <div class="pro-card animated fadeInUp">
+                    <h3 class="fw-bold text-dark mb-3">Course Overview</h3>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Every website on the internet is built on HTML. In this course, we strip away the complexity and focus on the raw building blocks. You will learn to structure content, handle media, and create SEO-friendly layouts.
                     </p>
-                    
-                    <h5 class="fw-bold mb-3">What you'll learn</h5>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Structure web pages with HTML5</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Work with Tables & Lists</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> SEO Friendly Coding</li>
-                            </ul>
+
+                    <div class="bento-grid">
+                        <div class="bento-item">
+                            <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h5 class="fw-bold mb-2">HTML5 Syntax</h5>
+                            <p class="small text-muted mb-0">Learn tags, attributes, and the modern DOM structure.</p>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled text-muted">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Forms & Validations</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Embedding Audio/Video</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Build a Portfolio Project</li>
-                            </ul>
+                        <div class="bento-item">
+                            <div class="bento-icon"><i class="fas fa-list-ul"></i></div>
+                            <h5 class="fw-bold mb-2">Tables & Lists</h5>
+                            <p class="small text-muted mb-0">Organize complex data cleanly and effectively.</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-icon"><i class="fas fa-edit"></i></div>
+                            <h5 class="fw-bold mb-2">Forms & Inputs</h5>
+                            <p class="small text-muted mb-0">Collect user data with validation and modern input types.</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-icon"><i class="fas fa-globe"></i></div>
+                            <h5 class="fw-bold mb-2">SEO Basics</h5>
+                            <p class="small text-muted mb-0">Write semantic code that Google loves to rank.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp" id="curriculum">
-                    <h3 class="section-title">Course Curriculum</h3>
-                    <p class="text-muted mb-4">4 Weeks of Intensive Training</p>
+                <div class="pro-card animated fadeInUp">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="fw-bold text-dark mb-0">Curriculum</h3>
+                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Beginner Friendly</span>
+                    </div>
                     
-                    <div class="accordion accordion-ultra" id="courseAccordion">
-                        
+
+                    <div class="accordion accordion-pro" id="courseAccordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Week 1: Introduction & Basics
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 1</span>
+                                        <span>Introduction & The DOM</span>
+                                    </div>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> What is HTML & How the Web Works</li>
-                                        <li><i class="fas fa-play-circle"></i> Setup VS Code Environment</li>
-                                        <li><i class="fas fa-play-circle"></i> Creating your first HTML File</li>
-                                        <li><i class="fas fa-code"></i> Basic Tags: Headings, Paragraphs, Line Breaks</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Simple Personal Bio</li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> How the Web Works</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Installing VS Code & First File</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Headings, Paragraphs & Formatting</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Your Digital Bio</li>
                                     </ul>
                                 </div>
                             </div>
@@ -450,17 +371,19 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    Week 2: Formatting & Links
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 2</span>
+                                        <span>Media & Links</span>
+                                    </div>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Text Formatting Tags (Bold, Italic, etc.)</li>
-                                        <li><i class="fas fa-play-circle"></i> Creating Ordered & Unordered Lists</li>
-                                        <li><i class="fas fa-play-circle"></i> Hyperlinks & Anchor Tags</li>
-                                        <li><i class="fas fa-play-circle"></i> Working with Images</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Create a Recipe Page</li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Hyperlinks & Anchors</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Images & Favicons</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Embedding Audio & Video (YouTube)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Multimedia Blog Post</li>
                                     </ul>
                                 </div>
                             </div>
@@ -469,17 +392,19 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    Week 3: Forms & Media
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 3</span>
+                                        <span>Forms & Tables</span>
+                                    </div>
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Understanding Forms & Input Types</li>
-                                        <li><i class="fas fa-play-circle"></i> Labels, Placeholders & Validation</li>
-                                        <li><i class="fas fa-play-circle"></i> Embedding YouTube Videos & Audio</li>
-                                        <li><i class="fas fa-play-circle"></i> Using Iframes</li>
-                                        <li><i class="fas fa-laptop-code"></i> Project: Build a Contact Form</li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Creating Tables with Headers</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Input Types (Text, Email, Date)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Form Validation & Buttons</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Registration Page</li>
                                     </ul>
                                 </div>
                             </div>
@@ -488,91 +413,69 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    Week 4: Semantic HTML & Final Project
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 4</span>
+                                        <span>Semantic HTML & Final Project</span>
+                                    </div>
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <ul>
-                                        <li><i class="fas fa-play-circle"></i> Semantic Elements (Header, Footer, Nav)</li>
-                                        <li><i class="fas fa-play-circle"></i> HTML5 Best Practices</li>
-                                        <li><i class="fas fa-play-circle"></i> Introduction to SEO</li>
-                                        <li><i class="fas fa-project-diagram"></i> Final Project: Personal Portfolio Structure</li>
-                                        <li><i class="fas fa-certificate"></i> Certification Exam</li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Semantic Tags (Nav, Main, Footer)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Meta Tags & SEO Basics</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Hosting on GitHub Pages</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Personal Portfolio</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <div class="content-card animated fadeInUp" id="pricing">
-                    <h3 class="section-title">Select Your Plan</h3>
-                    <p class="text-muted mb-4">Start for free or upgrade for certification and mentorship.</p>
-                    
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h5 class="fw-bold">Free Access</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 0</h2>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> All Video Content</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Community Access</li>
-                                    <li class="mb-2"><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
-                                </ul>
-                                <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-outline-dark rounded-pill w-100">Start Free</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="plan-card recommended">
-                                <div class="badge-rec">Recommended</div>
-                                <h5 class="fw-bold text-primary">Certified</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 1,500</h2>
-                                <small class="text-muted text-decoration-line-through">৳ 2,000</small>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Everything in Free</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Verified Certificate</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Project Reviews</li>
-                                </ul>
-                                <button class="btn btn-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Choose</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="plan-card">
-                                <h5 class="fw-bold">Mentorship</h5>
-                                <h2 class="text-dark fw-bold my-3">৳ 3,000</h2>
-                                <small class="text-muted text-decoration-line-through">৳ 5,000</small>
-                                <hr>
-                                <ul class="list-unstyled text-start text-muted small mb-4">
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Premium Certificate</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1:1 Mentorship</li>
-                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Job Support</li>
-                                </ul>
-                                <button class="btn btn-outline-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full">Choose</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-card animated fadeInUp">
-                    <h3 class="section-title">Your Instructor</h3>
-                    <div class="d-flex align-items-start mt-3">
-                        <img src="img/team-1.png" class="rounded-3" style="width: 120px; height: 120px; object-fit: cover;" alt="Instructor">
-                        <div class="ms-4">
+                <div class="pro-card animated fadeInUp">
+                    <div class="d-flex flex-column flex-md-row gap-4 align-items-center">
+                        <img src="img/team-1.png" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f8fafc;" alt="Instructor">
+                        <div>
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary small mb-3">Founder & Senior Web Developer</p>
-                            <p class="text-muted small">
-                                With over 3 years of experience in Full Stack Development, Junayed specializes in modern web technologies. He is passionate about making tech education accessible in Bangladesh.
-                            </p>
+                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">Senior Web Instructor</p>
+                            <p class="text-muted small mb-3">Passionate about simplifying code for beginners. Junayed has helped thousands of students launch their web development journey.</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark">HTML5</span>
-                                <span class="badge bg-light text-dark">CSS3</span>
-                                <span class="badge bg-light text-dark">JavaScript</span>
+                                <span class="badge bg-light text-dark border">HTML5</span>
+                                <span class="badge bg-light text-dark border">CSS3</span>
+                                <span class="badge bg-light text-dark border">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pro-card animated fadeInUp" id="payment">
+                    <h3 class="fw-bold text-dark mb-4">Choose Your Path</h3>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="tier-card" onclick="selectTier('free')">
+                                <h5 class="fw-bold text-muted">Self-Paced</h5>
+                                <h2 class="my-3">Free</h2>
+                                <ul class="list-unstyled small text-muted text-start mb-4">
+                                    <li><i class="fas fa-check text-success me-2"></i> Access to all videos</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Source Code</li>
+                                    <li><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
+                                </ul>
+                                <a href="https://youtube.com" target="_blank" class="btn btn-outline-dark rounded-pill w-100 btn-sm">Start Learning</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tier-card active" onclick="selectTier('paid')">
+                                <span class="badge bg-primary mb-2">Recommended</span>
+                                <h5 class="fw-bold text-dark">Certified</h5>
+                                <h2 class="my-3 text-primary">৳ 1,500</h2>
+                                <ul class="list-unstyled small text-muted text-start mb-4">
+                                    <li><i class="fas fa-check text-success me-2"></i> Everything in Free</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Verified Certificate</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Project Reviews</li>
+                                </ul>
+                                <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
                             </div>
                         </div>
                     </div>
@@ -581,35 +484,34 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="course-sidebar">
-                    <div class="video-preview" data-bs-toggle="modal" data-bs-target="#demoModal">
-                        <img src="img/course-1.jpg" alt="Preview">
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="sidebar-content">
-                        <div class="price-big mb-3">
-                            ৳ 0 <small>Free Access</small>
+                <div class="sidebar-wrapper">
+                    <div class="price-card">
+                        <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#demoModal">
+                            <img src="img/course-1.jpg" alt="Course Preview">
+                            <div class="play-icon-overlay"><i class="fas fa-play"></i></div>
                         </div>
-                        
-                        <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-ultra mb-3">Enroll for Free</a>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-2 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium">Upgrade for Certificate</button>
 
-                        <h6 class="fw-bold mb-3">This course includes:</h6>
-                        <ul class="list-unstyled text-muted small">
-                            <li class="mb-2"><i class="fas fa-video me-2 text-primary"></i> 8 hours on-demand video</li>
-                            <li class="mb-2"><i class="fas fa-file-download me-2 text-primary"></i> 5 downloadable resources</li>
-                            <li class="mb-2"><i class="fas fa-infinity me-2 text-primary"></i> Full lifetime access</li>
-                            <li class="mb-2"><i class="fas fa-mobile-alt me-2 text-primary"></i> Access on mobile and TV</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2 text-primary"></i> Certificate (Premium only)</li>
-                        </ul>
-                        
-                        <hr>
-                        <h6 class="fw-bold mb-2">Share this course:</h6>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-facebook-f"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-twitter"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-linkedin-in"></i></button>
-                            <button class="btn btn-sm btn-outline-secondary rounded-circle"><i class="fab fa-whatsapp"></i></button>
+                        <div class="d-flex justify-content-center align-items-baseline gap-2 mb-2">
+                            <span class="fs-1 fw-bold text-dark">৳ 1,500</span>
+                            <span class="text-decoration-line-through text-muted">৳ 2,500</span>
+                        </div>
+                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">Includes Certification</span>
+
+                        <button class="btn btn-gradient mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                            Enroll Now <i class="fas fa-arrow-right ms-2 small"></i>
+                        </button>
+                        <a href="https://forms.gle/dummy" target="_blank" class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4">
+                            Start for Free
+                        </a>
+
+                        <div class="text-start">
+                            <h6 class="fw-bold mb-3 small text-uppercase">Course Includes:</h6>
+                            <ul class="list-unstyled small text-muted">
+                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 8 Hours On-Demand Video</li>
+                                <li class="mb-2"><i class="fas fa-file-code text-primary me-2"></i> 4 Downloadable Projects</li>
+                                <li class="mb-2"><i class="fas fa-mobile-alt text-primary me-2"></i> Mobile Access</li>
+                                <li class="mb-2"><i class="fas fa-infinity text-primary me-2"></i> Lifetime Access</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -620,25 +522,13 @@
 
     <div class="modal fade" id="demoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content rounded-4 border-0 p-3">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Free Demo Class</h5>
+                    <h5 class="modal-title fw-bold">Watch Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-3">Book a live demo slot to experience our teaching style.</p>
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control rounded-pill px-3" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="tel" class="form-control rounded-pill px-3" placeholder="Phone Number" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Book Demo</button>
-                    </form>
+                <div class="modal-body ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Preview" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -646,33 +536,56 @@
 
     <div class="modal fade" id="paymentModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Upgrade Your Plan</h5>
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header border-0 bg-light rounded-top-4">
+                    <h5 class="modal-title fw-bold">Get Certified</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="paymentDetails">
-                    </div>
-                <div class="modal-body pt-0">
-                    <form>
-                        <h6 class="fw-bold mb-3">Payment Details</h6>
-                        <div class="row g-2 mb-3">
-                            <div class="col-6"><input type="text" class="form-control" placeholder="Name"></div>
-                            <div class="col-6"><input type="tel" class="form-control" placeholder="Phone"></div>
+                <div class="modal-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-primary bg-opacity-10 rounded-3 border border-primary border-opacity-10">
+                        <div>
+                            <small class="text-uppercase fw-bold text-primary">Total Payable</small>
+                            <div class="fs-4 fw-bold text-dark">৳ 1,500</div>
                         </div>
-                        <select class="form-select mb-3">
-                            <option selected>Select Payment Method</option>
-                            <option value="bkash">Bkash</option>
-                            <option value="nagad">Nagad</option>
-                            <option value="rocket">Rocket</option>
-                            <option value="card">Credit Card</option>
-                        </select>
-                        <button type="submit" class="btn btn-ultra">Proceed to Pay</button>
+                        <span class="badge bg-primary">HTML Certified</span>
+                    </div>
+                    
+                    <form>
+                        <h6 class="fw-bold mb-3 small text-uppercase">Your Details</h6>
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control py-2" placeholder="Full Name">
+                            </div>
+                            <div class="col-6">
+                                <input type="tel" class="form-control py-2" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        
+                        <h6 class="fw-bold mb-3 small text-uppercase mt-4">Payment Method</h6>
+                        <div class="list-group mb-4">
+                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
+                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="bkash" checked>
+                                <span class="d-flex align-items-center justify-content-between w-100">
+                                    <span>Bkash</span>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Bkash_logo_2.png" style="height: 20px;">
+                                </span>
+                            </label>
+                            <label class="list-group-item d-flex gap-3 align-items-center cursor-pointer">
+                                <input class="form-check-input flex-shrink-0" type="radio" name="paymentMethod" value="nagad">
+                                <span class="d-flex align-items-center justify-content-between w-100">
+                                    <span>Nagad</span>
+                                    <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" style="height: 20px;">
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-gradient w-100">Complete Payment</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -716,6 +629,7 @@
             </div>
         </div>
     </div>
+
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -725,37 +639,5 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-        // Modal Logic for Dynamic Content
-        const paymentModal = document.getElementById('paymentModal');
-        const paymentDetails = document.getElementById('paymentDetails');
-
-        paymentModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const plan = button.getAttribute('data-plan');
-            let content = '';
-
-            if (plan === 'premium') {
-                content = `
-                    <div class="alert alert-warning">
-                        <h5 class="fw-bold mb-1">Premium Certificate</h5>
-                        <p class="mb-0">Total: ৳ 1,500 <span class="text-muted text-decoration-line-through ms-2">৳ 2,000</span></p>
-                    </div>
-                    <p class="small text-muted">Includes: Verified Certificate, Project Reviews, Job Guidance.</p>
-                `;
-            } else {
-                content = `
-                    <div class="alert alert-primary">
-                        <h5 class="fw-bold mb-1">Full Mentorship Package</h5>
-                        <p class="mb-0">Total: ৳ 3,000 <span class="text-muted text-decoration-line-through ms-2">৳ 5,000</span></p>
-                    </div>
-                    <p class="small text-muted">Includes: 1:1 Mentorship, Personal Projects, Interview Prep.</p>
-                `;
-            }
-            paymentDetails.innerHTML = content;
-        });
-    </script>
 </body>
-
 </html>
