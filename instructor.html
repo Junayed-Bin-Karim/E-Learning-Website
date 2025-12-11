@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -26,181 +26,315 @@
 
     <style>
         /* =========================================
-           PREMIUM LUXE CSS - JUNAYED ACADEMY
+           ULTRA PREMIUM DARK/LIGHT HYBRID THEME
            ========================================= */
         
         :root {
-            --brand-gold: #fb873f;
-            --brand-dark: #0b0f19;
-            --brand-charcoal: #1a1f2c;
-            --brand-gray: #f4f4f4;
-            --text-dark: #1a1f2c;
-            --text-light: #6e7c91;
+            --brand-primary: #fb873f;
+            --brand-gradient: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --midnight-bg: #0b0f19;
+            --glass-white: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-hover-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #ffffff;
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8fafc;
             color: var(--text-dark);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif; /* Premium Serif Font */
-            color: var(--brand-dark);
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.03em;
         }
 
-        .text-gold {
-            color: var(--brand-gold) !important;
-        }
-
-        /* --- Premium Hero --- */
-        .premium-hero {
-            background-color: var(--brand-dark);
-            padding: 120px 0;
+        /* --- Ultra Dark Hero --- */
+        .ultra-hero {
+            background-color: var(--midnight-bg);
+            padding: 140px 0 100px;
             position: relative;
+            color: white;
             overflow: hidden;
-            color: white;
         }
 
-        .premium-hero::before {
-            content: '';
+        /* Animated Background Glow */
+        .glow-orb {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(251, 135, 63, 0.15) 0%, transparent 60%);
-        }
-
-        .hero-title-luxe {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .btn-luxe {
-            background: white;
-            color: var(--brand-dark);
-            padding: 15px 40px;
-            border-radius: 2px; /* Sharper corners for premium look */
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid white;
-            transition: all 0.4s ease;
-        }
-
-        .btn-luxe:hover {
-            background: var(--brand-gold);
-            border-color: var(--brand-gold);
-            color: white;
-        }
-
-        /* --- Stat Blocks (Clean & Minimal) --- */
-        .stat-block {
-            border-right: 1px solid rgba(0,0,0,0.1);
-            padding: 20px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 135, 63, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 10s ease-in-out infinite;
         }
         
-        .stat-block:last-child {
-            border-right: none;
-        }
+        .orb-1 { top: -200px; right: -100px; }
+        .orb-2 { bottom: -200px; left: -100px; background: radial-gradient(circle, rgba(63, 81, 181, 0.1) 0%, transparent 70%); }
 
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--brand-gold);
-            font-family: 'Outfit', sans-serif;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        /* --- Instructor Cards (High End) --- */
-        .instructor-card {
-            background: white;
-            border: 1px solid #eee;
-            transition: all 0.4s ease;
+        .hero-content {
             position: relative;
-            padding: 40px 30px;
-            height: 100%;
+            z-index: 2;
         }
 
-        .instructor-card:hover {
-            border-color: var(--brand-gold);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fb873f;
+            backdrop-filter: blur(10px);
+        }
+
+        /* --- Glass Cards in Hero --- */
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-stat-card:hover {
+            border-color: rgba(251, 135, 63, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             transform: translateY(-5px);
         }
 
-        .instructor-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 2px solid var(--brand-gold);
-            padding: 3px;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: #f8f9fa;
-            color: var(--brand-dark);
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            border: 1px solid #eee;
-        }
-
-        /* --- Gold Divider --- */
-        .divider-gold {
-            width: 60px;
-            height: 3px;
-            background: var(--brand-gold);
-            margin: 0 auto 30px;
-        }
-
-        .divider-gold-left {
-            width: 60px;
-            height: 3px;
-            background: var(--brand-gold);
-            margin: 0 0 30px 0;
-        }
-
-        /* --- Modal Styling --- */
-        .modal-content {
-            border-radius: 0;
-            border: none;
-        }
-        .modal-header {
-            background: var(--brand-dark);
+        .stat-val {
+            font-size: 2.5rem;
+            font-weight: 800;
             color: white;
-            border-radius: 0;
-        }
-        .form-control {
-            border-radius: 0;
-            padding: 15px;
-            background: #f9f9f9;
-            border: 1px solid #eee;
-        }
-        .form-control:focus {
-            background: white;
-            border-color: var(--brand-gold);
-            box-shadow: none;
+            line-height: 1;
+            margin-bottom: 5px;
         }
 
-        /* Responsive */
-        @media (max-width: 991px) {
-            .stat-block { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 30px; margin-bottom: 30px; }
-            .hero-title-luxe { font-size: 3rem; }
+        .stat-lbl {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
+
+        /* --- Mentor Cards (Ultra Clean) --- */
+        .section-padding { padding: 100px 0; }
+
+        .mentor-card-wrapper {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .mentor-card-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--brand-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .mentor-card-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        }
+
+        .mentor-card-wrapper:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mentor-avatar-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .mentor-avatar-box img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .tech-pill {
+            display: inline-block;
+            background: #f8fafc;
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-top: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* --- CTA --- */
+        .cta-ultra {
+            background: var(--midnight-bg);
+            border-radius: 30px;
+            padding: 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-btn {
+            background: var(--brand-gradient);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 100px;
+            font-weight: 700;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(251, 135, 63, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(251, 135, 63, 0.4);
+            color: white;
+        }
+
+        /* --- Animations --- */
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Modal Ultra */
+        .modal-content.ultra {
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+        }
+        
+        .form-control.ultra {
+            background: #f8fafc;
+            border: 2px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        
+        .form-control.ultra:focus {
+            background: white;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .hero-title { font-size: 3rem; }
+        }
+
+
+        /* =========================================
+   ULTRA PREMIUM NAVBAR (MOBILE FIX)
+========================================= */
+
+/* 1. Glassmorphism Effect */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* 2. Force Logo and Toggler to stay on same line */
+.mobile-nav-wrapper {
+    display: flex;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. Logo Sizing */
+.nav-logo {
+    height: 45px;
+    transition: height 0.3s ease;
+}
+
+/* 4. Brand Text */
+.brand-text {
+    font-size: 24px;
+    white-space: nowrap;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    transition: font-size 0.3s ease;
+}
+
+/* 5. Toggler Button Styling */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+/* 6. MOBILE ADJUSTMENTS */
+@media (max-width: 576px) {
+
+    /* Shrink padding */
+    .container-fluid.px-3 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Logo */
+    .nav-logo {
+        height: 32px !important;
+    }
+
+    /* Brand text */
+    .brand-text {
+        font-size: 18px !important;
+    }
+
+    /* Toggler icon */
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
+
     </style>
 </head>
 
@@ -249,177 +383,186 @@
             </div>
         </div>
     </div>
-    <section class="premium-hero">
+    <section class="ultra-hero">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="divider-gold-left"></div>
-                    <h1 class="hero-title-luxe text-white">Join the Elite Faculty.</h1>
-                    <p class="lead text-white-50 mb-5" style="font-weight: 300;">
-                        Junayed Academy is the home for industry leaders who wish to shape the future. Share your expertise on a platform built for excellence.
+                <div class="col-lg-6 hero-content wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="hero-badge">
+                        <i class="fas fa-crown me-2"></i> Distinguished Faculty Program
+                    </div>
+                    <h1 class="hero-title">Shape the Future<br>of Tech Education.</h1>
+                    <p class="text-white-50 lead mb-5" style="max-width: 500px;">
+                        Join Junayed Academy's premier network of industry experts. Empower the next generation while building your personal legacy.
                     </p>
-                    <button class="btn btn-luxe" data-bs-toggle="modal" data-bs-target="#applicationModal">
-                        Apply Now
-                    </button>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end wow fadeInRight" data-wow-delay="0.2s">
-                    <img src="img/about.jpg" alt="Premium Instructor" class="img-fluid" style="border: 1px solid rgba(255,255,255,0.2); max-height: 500px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container py-5" style="margin-top: -50px; background: white; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; z-index: 2;">
-        <div class="row text-center">
-            <div class="col-lg-3 col-md-6 stat-block wow fadeInUp" data-wow-delay="0.1s">
-                <div class="stat-number">2,500+</div>
-                <div class="stat-label">Students</div>
-            </div>
-            <div class="col-lg-3 col-md-6 stat-block wow fadeInUp" data-wow-delay="0.2s">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Mentors</div>
-            </div>
-            <div class="col-lg-3 col-md-6 stat-block wow fadeInUp" data-wow-delay="0.3s">
-                <div class="stat-number">96%</div>
-                <div class="stat-label">Success Rate</div>
-            </div>
-            <div class="col-lg-3 col-md-6 stat-block wow fadeInUp" data-wow-delay="0.4s">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Premium Courses</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 my-5">
-        <div class="container">
-            <div class="text-center mb-5 wow fadeInUp">
-                <div class="divider-gold"></div>
-                <h2 class="display-5 fw-bold mb-3">Distinguished Mentors</h2>
-                <p class="text-muted">Teach alongside the best minds in the industry.</p>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="instructor-card text-center">
-                        <img src="https://ui-avatars.com/api/?name=Sahariar+Nafis&background=fb873f&color=fff&size=200" alt="Sahariar Nafis Ovi" class="instructor-img">
-                        <h4 class="fw-bold mb-1">Sahariar Nafis Ovi</h4>
-                        <p class="text-primary fw-medium small text-uppercase mb-3">Senior Full Stack Instructor</p>
-                        <p class="text-muted mb-4 small">5+ years architecting scalable web solutions with MERN stack.</p>
-                        
-                        <div class="d-flex flex-wrap justify-content-center">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="instructor-card text-center">
-                        <img src="https://ui-avatars.com/api/?name=Reasedul+Alam&background=1a1f2c&color=fff&size=200" alt="Reasedul Alam" class="instructor-img" style="border-color: var(--brand-dark);">
-                        <h4 class="fw-bold mb-1">Reasedul Alam</h4>
-                        <p class="text-primary fw-medium small text-uppercase mb-3">Data Science Specialist</p>
-                        <p class="text-muted mb-4 small">Expert in statistical modeling and big data analytics.</p>
-                        
-                        <div class="d-flex flex-wrap justify-content-center">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">Big Data</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="instructor-card text-center">
-                        <img src="https://ui-avatars.com/api/?name=Irfan&background=6e7c91&color=fff&size=200" alt="Irfan" class="instructor-img" style="border-color: var(--text-light);">
-                        <h4 class="fw-bold mb-1">Irfan</h4>
-                        <p class="text-primary fw-medium small text-uppercase mb-3">Cybersecurity Expert</p>
-                        <p class="text-muted mb-4 small">Certified ethical hacker specializing in network defense.</p>
-                        
-                        <div class="d-flex flex-wrap justify-content-center">
-                            <span class="skill-tag">Ethical Hacking</span>
-                            <span class="skill-tag">Security</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInLeft">
-                    <div class="divider-gold-left"></div>
-                    <h2 class="display-5 fw-bold mb-4">A Platform for Impact</h2>
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-gold fs-3"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h5 class="fw-bold">Knowledge Sharing</h5>
-                            <p class="text-muted">Empower over 2,500 students waiting to learn from your experience.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <div class="me-4 text-gold fs-3"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h5 class="fw-bold">Professional Networking</h5>
-                            <p class="text-muted">Connect with other industry experts and grow your professional circle.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="me-4 text-gold fs-3"><i class="fas fa-check"></i></div>
-                        <div>
-                            <h5 class="fw-bold">Brand Building</h5>
-                            <p class="text-muted">Establish yourself as a thought leader in your domain.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight text-center">
-                    <div class="bg-white p-5 shadow-sm border">
-                        <h3 class="fw-bold mb-4">Ready to Start?</h3>
-                        <p class="text-muted mb-4">We are currently accepting applications for the upcoming semester.</p>
-                        <button class="btn btn-primary py-3 px-5 rounded-0 text-uppercase" data-bs-toggle="modal" data-bs-target="#applicationModal">
-                            Apply to Teach
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary py-3 px-5 rounded-pill fw-bold shadow" data-bs-toggle="modal" data-bs-target="#applicationModal">
+                            Apply Now
                         </button>
                     </div>
                 </div>
+                
+                <div class="col-lg-6 mt-5 mt-lg-0 hero-content wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="hero-stat-card">
+                                <div class="stat-val">2,500+</div>
+                                <div class="stat-lbl">Active Students</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="hero-stat-card" style="margin-top: 30px;">
+                                <div class="stat-val">10+</div>
+                                <div class="stat-lbl">Expert Mentors</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="hero-stat-card">
+                                <div class="stat-val">96%</div>
+                                <div class="stat-lbl">Success Rate</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="hero-stat-card" style="margin-top: 30px;">
+                                <div class="stat-val">15+</div>
+                                <div class="stat-lbl">Premium Courses</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center wow fadeInUp">
+                    <h6 class="text-primary text-uppercase fw-bold ls-2 mb-2">Our Faculty</h6>
+                    <h2 class="display-5 fw-bold mb-3">Meet The Experts</h2>
+                    <p class="text-muted">You'll be in good company. Our instructors are industry leaders.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="mentor-card-wrapper">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="mentor-avatar-box">
+                                <img src="https://ui-avatars.com/api/?name=Sahariar+Nafis&background=0b0f19&color=fff" alt="Sahariar">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-1">Sahariar Nafis Ovi</h5>
+                                <p class="text-primary small fw-bold text-uppercase mb-0">Senior Full Stack Instructor</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">5+ years architecting scalable web solutions with MERN stack. Passionate about clean code and architecture.</p>
+                        <div class="border-top pt-3">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="mentor-card-wrapper">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="mentor-avatar-box">
+                                <img src="https://ui-avatars.com/api/?name=Reasedul+Alam&background=fb873f&color=fff" alt="Reasedul">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-1">Reasedul Alam</h5>
+                                <p class="text-primary small fw-bold text-uppercase mb-0">Data Science Specialist</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">Expert in statistical modeling and big data analytics. Transforming raw data into actionable insights.</p>
+                        <div class="border-top pt-3">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">TensorFlow</span>
+                            <span class="tech-pill">Big Data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="mentor-card-wrapper">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="mentor-avatar-box">
+                                <img src="https://ui-avatars.com/api/?name=Irfan&background=64748b&color=fff" alt="Irfan">
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="fw-bold mb-1">Irfan</h5>
+                                <p class="text-primary small fw-bold text-uppercase mb-0">Cybersecurity Expert</p>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-4">Certified ethical hacker specializing in network defense. Securing digital infrastructures globally.</p>
+                        <div class="border-top pt-3">
+                            <span class="tech-pill">Ethical Hacking</span>
+                            <span class="tech-pill">Security</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-5">
+        <div class="cta-ultra wow zoomIn" data-wow-delay="0.1s">
+            <div class="glow-orb" style="width: 300px; height: 300px; top: -100px; left: -100px; opacity: 0.5;"></div>
+            <div class="glow-orb" style="width: 300px; height: 300px; bottom: -100px; right: -100px; opacity: 0.5; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);"></div>
+
+            <div class="position-relative z-index-2 text-white">
+                <h2 class="display-5 fw-bold mb-3 text-white">Your expertise deserves a premium stage.</h2>
+                <p class="lead text-white-50 mb-5">Join our Distinguished Faculty today.</p>
+                <button class="cta-btn" data-bs-toggle="modal" data-bs-target="#applicationModal">
+                    Apply to Become an Instructor <i class="fas fa-arrow-right ms-2"></i>
+                </button>
             </div>
         </div>
     </section>
 
     <div class="modal fade" id="applicationModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-white">Instructor Application</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content ultra p-4">
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold">Instructor Application</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-4">
+                <div class="modal-body pt-0">
+                    <p class="text-muted mb-4">Complete the form below to join our elite team.</p>
                     <form>
-                        <div class="mb-3">
-                            <label class="form-label text-uppercase small fw-bold">Full Name</label>
-                            <input type="text" class="form-control">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-uppercase text-gray">Full Name</label>
+                                <input type="text" class="form-control ultra" placeholder="e.g. John Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-uppercase text-gray">Email Address</label>
+                                <input type="email" class="form-control ultra" placeholder="name@example.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold small text-uppercase text-gray">Expertise</label>
+                                <select class="form-select ultra">
+                                    <option selected>Select your domain</option>
+                                    <option>Web Development</option>
+                                    <option>Data Science</option>
+                                    <option>Cybersecurity</option>
+                                    <option>UI/UX Design</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold small text-uppercase text-gray">LinkedIn / Portfolio</label>
+                                <input type="url" class="form-control ultra" placeholder="https://...">
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 fw-bold">Submit Application</button>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label text-uppercase small fw-bold">Email Address</label>
-                            <input type="email" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-uppercase small fw-bold">Area of Expertise</label>
-                            <select class="form-control">
-                                <option>Web Development</option>
-                                <option>Data Science</option>
-                                <option>Cybersecurity</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label text-uppercase small fw-bold">LinkedIn Profile</label>
-                            <input type="url" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-0 py-3 text-uppercase fw-bold">Submit Application</button>
                     </form>
                 </div>
             </div>
