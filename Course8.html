@@ -559,7 +559,7 @@
 
 <div class="pro-card animated fadeInUp" id="payment">
     <h3 class="fw-bold text-dark mb-4">Affordable Tuition</h3>
-
+    
     <div class="emi-dashboard">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h6 class="mb-0 fw-bold"><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h6>
@@ -573,36 +573,30 @@
             </div>
             <div class="col-6 text-end">
                 <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">You Pay Monthly</small>
-                <div class="fs-4 fw-bold text-primary" id="emiAmount">৳ 7,334</div>
+                <div class="fs-4 fw-bold text-primary" id="emiAmount">৳ 22,000</div>
             </div>
         </div>
 
-        <label class="form-label small text-muted mb-2">Select Duration: <span class="fw-bold text-dark" id="monthDisplay">3 Months</span></label>
-        <input type="range" class="range-slider" id="installments" min="1" max="3" step="1" value="3" oninput="calculateEMI()">
+        <label class="form-label small text-muted mb-2">
+            Select Duration: <span class="fw-bold text-dark" id="monthDisplay">1 Month</span>
+        </label>
         
+        <input type="range" class="range-slider w-100" id="installments" min="1" max="3" step="1" value="1" 
+               oninput="
+                   let total = 22000; 
+                   let months = this.value; 
+                   let monthly = Math.ceil(total / months);
+                   document.getElementById('emiAmount').innerText = '৳ ' + monthly.toLocaleString();
+                   document.getElementById('monthDisplay').innerText = months + (months > 1 ? ' Months' : ' Month');
+               ">
+               
         <div class="d-flex justify-content-between mt-2 small text-muted">
             <span>1 Month</span>
+            <span>2 Months</span>
             <span>3 Months</span>
         </div>
     </div>
 </div>
-
-<script>
-    function calculateEMI() {
-        // Define the total course fee
-        const totalFee = 22000;
-        
-        // Get the slider value (months)
-        const months = document.getElementById('installments').value;
-        
-        // Calculate monthly cost (rounded up)
-        const monthlyCost = Math.ceil(totalFee / months);
-        
-        // Update the textual displays
-        document.getElementById('monthDisplay').innerText = months + (months == 1 ? " Month" : " Months");
-        document.getElementById('emiAmount').innerText = '৳ ' + monthlyCost.toLocaleString();
-    }
-</script>
 
                 
 
