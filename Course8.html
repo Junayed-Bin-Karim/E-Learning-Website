@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | SSC ICT Mastery</title>
+    <title>Junayed Academy | HSC ICT Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/icon.png" rel="icon">
 
@@ -21,18 +21,17 @@
 
     <style>
         /* =========================================
-           ULTRA PRO DESIGN SYSTEM (SSC Theme)
+           ULTRA PRO DESIGN SYSTEM (HSC Theme)
            ========================================= */
         :root {
-            --primary: #6366f1; /* Indigo Course Theme */
-            --brand-orange: #fb873f; /* Fixed Logo Color */
-            --primary-dark: #4f46e5;
+            --primary: #0d9488; /* Teal */
+            --primary-dark: #0f766e;
             --secondary: #0f172a;
-            --bg-light: #eef2ff;
+            --bg-light: #f0fdfa; /* Light Teal Tint */
             --card-bg: #ffffff;
             --text-main: #334155;
-            --gradient-jsc: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --shadow-soft: 0 10px 40px -10px rgba(99, 102, 241, 0.15);
+            --gradient-hsc: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+            --shadow-soft: 0 10px 40px -10px rgba(13, 148, 136, 0.15);
             --radius-xl: 24px;
             --radius-lg: 16px;
             --font-head: 'Outfit', sans-serif;
@@ -64,8 +63,8 @@
         .hero-ultra {
             position: relative;
             padding: 80px 0 100px;
-            /* Violet/Indigo Gradient */
-            background: radial-gradient(circle at 10% 20%, rgb(30, 27, 75) 0%, rgb(79, 70, 229) 100%);
+            /* Teal to Deep Slate Gradient */
+            background: radial-gradient(circle at 10% 20%, rgb(15, 23, 42) 0%, rgb(13, 148, 136) 100%);
             color: white;
             overflow: hidden;
         }
@@ -81,7 +80,7 @@
         }
 
         .hero-badge {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             padding: 8px 20px;
@@ -98,7 +97,7 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
-            background: -webkit-linear-gradient(0deg, #fff, #c4b5fd);
+            background: -webkit-linear-gradient(0deg, #fff, #ccfbf1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -131,12 +130,12 @@
         .bento-item:hover {
             background: #fff;
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+            box-shadow: 0 10px 30px rgba(13, 148, 136, 0.15);
             transform: translateY(-5px);
         }
         .bento-icon {
             width: 50px; height: 50px;
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(13, 148, 136, 0.1);
             color: var(--primary);
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
@@ -163,11 +162,10 @@
         }
         .accordion-pro .accordion-button:not(.collapsed) {
             color: var(--primary);
-            background: rgba(99, 102, 241, 0.05);
+            background: rgba(13, 148, 136, 0.05);
         }
-        /* Custom Accordion Icon (Indigo) */
         .accordion-pro .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236366f1'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d9488'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
 
         /* Sidebar & Pricing */
@@ -218,27 +216,54 @@
             background: white;
         }
         .tier-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .tier-card.active { border-color: var(--primary); background: #eef2ff; }
+        .tier-card.active { border-color: var(--primary); background: #f0fdfa; }
         .badge-rec {
             position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
             background: var(--primary); color: white; padding: 4px 12px;
             border-radius: 20px; font-size: 0.75rem; font-weight: 700;
         }
 
+        /* EMI Calculator Pro */
+        .emi-dashboard {
+            background: #f0fdfa;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border: 1px solid #ccfbf1;
+        }
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ccfbf1;
+            outline: none;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+            transition: .2s;
+        }
+        .range-slider::-webkit-slider-thumb:hover { transform: scale(1.1); }
+
         .btn-gradient {
-            background: var(--gradient-jsc);
+            background: var(--gradient-hsc);
             color: white;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
             font-weight: 700;
             width: 100%;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
             transition: 0.3s;
         }
         .btn-gradient:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 15px 30px rgba(13, 148, 136, 0.4);
             color: white;
         }
 
@@ -251,7 +276,7 @@
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
 
-        /* Footer & Navbar Mobile Fixes */
+        /* Navbar & Footer Styling */
         .navbar-toggler { border: none !important; outline: none !important; }
         .footer-premium {
             background-color: #f8f9fa !important;
@@ -262,12 +287,12 @@
         .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; display: flex; align-items: center; }
         .footer-heading { color: #111827 !important; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; }
         .footer-link { color: #6b7280 !important; display: block; margin-bottom: 12px; transition: all 0.3s ease; text-decoration: none; font-weight: 500; }
-        .footer-link:hover { color: #6366f1 !important; padding-left: 8px; }
+        .footer-link:hover { color: #0d9488 !important; padding-left: 8px; }
         .social-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #ffffff; color: #1a237e; border-radius: 50%; margin-right: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
-        .social-btn:hover { background: #6366f1; color: white; transform: translateY(-3px); border-color: #6366f1; }
+        .social-btn:hover { background: #0d9488; color: white; transform: translateY(-3px); border-color: #0d9488; }
         .footer-input-group { display: flex; background: #ffffff; border-radius: 50px; padding: 5px; border: 1px solid #d1d5db; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         .footer-input { border: none; background: transparent; padding: 10px 20px; width: 100%; outline: none; color: #374151; }
-        .footer-btn-sub { background: #6366f1; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .footer-btn-sub { background: #0d9488; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
         .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
     </style>
 </head>
@@ -315,16 +340,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="hero-badge animated slideInDown">
-                        <i class="fas fa-graduation-cap me-2"></i> Class 9-10 / SSC 2025
+                        <i class="fas fa-graduation-cap me-2"></i> HSC Class 11-12
                     </div>
-                    <h1 class="hero-title animated slideInDown">SSC ICT Mastery <br> Program</h1>
+                    <h1 class="hero-title animated slideInDown">HSC ICT Mastery <br> Program 2025</h1>
                     <p class="lead text-light opacity-75 mb-4 animated slideInUp" style="max-width: 600px; font-weight: 300;">
-                        Complete syllabus coverage in 3 months. We guarantee an A+ in Board Exams through practical labs and clear theory.
+                        Master the hardest topics like C Programming, Web Design, and 2's Complement. We guarantee an A+ in your Board Exams.
                     </p>
                     
                     <div class="d-flex flex-wrap gap-4 text-white-50 small animated slideInUp">
                         <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 Rating</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 4,500+ Students</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 5,800+ Students</span>
                         <span class="d-flex align-items-center"><i class="fas fa-check-circle me-2 text-white"></i> Board Standard</span>
                     </div>
                 </div>
@@ -340,29 +365,29 @@
                 <div class="pro-card animated fadeInUp">
                     <h3 class="fw-bold text-dark mb-3">Course Overview</h3>
                     <p class="text-muted" style="line-height: 1.8;">
-                        SSC ICT lays the foundation for your digital future. From understanding how the Internet works to creating your first database, we cover all 6 chapters with hands-on projects.
+                        HSC ICT is critical for GPA 5.00. Our course covers the full syllabus from Data Communication to DBMS. We simplify complex programming logic with visual animations and practical projects.
                     </p>
 
                     <div class="bento-grid">
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-check-double"></i></div>
+                            <div class="bento-icon"><i class="fas fa-medal"></i></div>
                             <h5 class="fw-bold mb-2">A+ Guarantee</h5>
-                            <p class="small text-muted mb-0">Follow our roadmap, and an A+ is assured.</p>
+                            <p class="small text-muted mb-0">Structured roadmap for Board Exams.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-tasks"></i></div>
-                            <h5 class="fw-bold mb-2">800+ MCQs</h5>
-                            <p class="small text-muted mb-0">Chapter-wise quizzes for objective perfection.</p>
+                            <h5 class="fw-bold mb-2">1200+ MCQs</h5>
+                            <p class="small text-muted mb-0">Topic-wise quizzes to master the objective part.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h5 class="fw-bold mb-2">Practicals</h5>
-                            <p class="small text-muted mb-0">Labs on MS Word, Excel, PowerPoint & Access.</p>
+                            <h5 class="fw-bold mb-2">Practical Labs</h5>
+                            <p class="small text-muted mb-0">50+ Lab classes for HTML, C & SQL.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-file-alt"></i></div>
-                            <h5 class="fw-bold mb-2">Model Tests</h5>
-                            <p class="small text-muted mb-0">8 Full-length board standard exams.</p>
+                            <h5 class="fw-bold mb-2">CQ Mastery</h5>
+                            <p class="small text-muted mb-0">Techniques to answer Creative Questions.</p>
                         </div>
                     </div>
                 </div>
@@ -370,7 +395,7 @@
                 <div class="pro-card animated fadeInUp">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h3 class="fw-bold text-dark mb-0">Syllabus Breakdown</h3>
-                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Full Syllabus</span>
+                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">6 Chapters</span>
                     </div>
 
                     <div class="accordion accordion-pro" id="courseAccordion">
@@ -379,34 +404,17 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Month 1</span>
-                                        <span>ICT Basics & Maintenance</span>
+                                        <span>Communication & Networking</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    <div class="mb-3">
-                                        
-
-[Image of computer hardware components diagram]
-
-                                    </div>
-                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-2">
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-book text-primary me-2"></i> 
-                                            <strong>১ম অধ্যায়:</strong> তথ্য ও যোগাযোগ প্রযুক্তি এবং আমাদের বাংলাদেশ
-                                        </li>
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-shield-alt text-primary me-2"></i> 
-                                            <strong>২য় অধ্যায়:</strong> কম্পিউটার ও কম্পিউটার ব্যবহারকারীর নিরাপত্তা
-                                        </li>
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-globe text-primary me-2"></i> 
-                                            <strong>৩য় অধ্যায়:</strong> আমার শিক্ষায় ইন্টারনেট
-                                        </li>
-                                        <li class="py-2 pt-3 fw-bold text-dark">
-                                            <i class="fas fa-trophy text-warning me-2"></i> Exam: Chapters 1-3 MCQ
-                                        </li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 1:</strong> Global Village & Bangladesh Perspective</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 2:</strong> Data Communication Systems (Bandwidth)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Network Topologies (Bus, Ring, Star, Mesh)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Exam: Networking MCQ</li>
                                     </ul>
                                 </div>
                             </div>
@@ -417,7 +425,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Month 2</span>
-                                        <span>Office Tools & Multimedia</span>
+                                        <span>Number Systems & Web Design</span>
                                     </div>
                                 </button>
                             </h2>
@@ -425,19 +433,15 @@
                                 <div class="accordion-body">
                                     <div class="mb-3">
                                         
+
+[Image of logic gates symbols and truth tables]
+
                                     </div>
-                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-2">
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-file-word text-primary me-2"></i> 
-                                            <strong>৪র্থ অধ্যায়:</strong> আমার লেখালেখি ও হিসাব (Word & Spreadsheet)
-                                        </li>
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-photo-video text-primary me-2"></i> 
-                                            <strong>৫ম অধ্যায়:</strong> মাল্টিমিডিয়া ও গ্রাফিক্স (PowerPoint & Illustrator)
-                                        </li>
-                                        <li class="py-2 pt-3 fw-bold text-dark">
-                                            <i class="fas fa-trophy text-warning me-2"></i> Practical: Creating a Presentation
-                                        </li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 3:</strong> Number System (Binary, Octal, Hex)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> 2's Complement & Logic Gates</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 4:</strong> HTML5 Tags, Links & Images</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Practical: Designing Circuits & Webpages</li>
                                     </ul>
                                 </div>
                             </div>
@@ -448,7 +452,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Month 3</span>
-                                        <span>Database & Final Review</span>
+                                        <span>Programming & Database</span>
                                     </div>
                                 </button>
                             </h2>
@@ -456,22 +460,11 @@
                                 <div class="accordion-body">
                                     <div class="mb-3">
                                         
-
-[Image of database management system structure]
-
                                     </div>
-                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-2">
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-database text-primary me-2"></i> 
-                                            <strong>৬ষ্ঠ অধ্যায়:</strong> ডেটাবেজ-এর ব্যবহার (MS Access)
-                                        </li>
-                                        <li class="py-2 border-bottom border-light">
-                                            <i class="fas fa-search text-primary me-2"></i> 
-                                            Review: Solving Board Questions (2018-2024)
-                                        </li>
-                                        <li class="py-2 pt-3 fw-bold text-dark">
-                                            <i class="fas fa-trophy text-warning me-2"></i> Final: Full Marks Model Test
-                                        </li>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 5:</strong> C Programming (Loops, Arrays)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 6:</strong> DBMS (SQL Queries)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Creative Question (CQ) Mastery</li>
                                     </ul>
                                 </div>
                             </div>
@@ -484,11 +477,11 @@
                         <img src="img/testimonial-2.png" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f8fafc;" alt="Instructor">
                         <div>
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">SSC ICT Specialist</p>
-                            <p class="text-muted small mb-3">Has mentored 500+ students to achieve A+ in ICT. CSE Graduate from Daffodil International University.</p>
+                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">HSC ICT Specialist</p>
+                            <p class="text-muted small mb-3">CSE Graduate from Daffodil International University. Specialized in making Programming and Digital Logic easy for non-science students.</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark border">Database</span>
-                                <span class="badge bg-light text-dark border">Spreadsheet</span>
+                                <span class="badge bg-light text-dark border">C Programming</span>
+                                <span class="badge bg-light text-dark border">Web Design</span>
                             </div>
                         </div>
                     </div>
@@ -501,12 +494,12 @@
                         <div class="col-md-4">
                             <div class="tier-card" onclick="selectTier('regular-package')">
                                 <h5 class="fw-bold text-muted">Regular</h5>
-                                <h2 class="my-3">৳ 15,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 18,000</small>
+                                <h2 class="my-3">৳ 18,000</h2>
+                                <small class="text-decoration-line-through text-muted">৳ 22,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
                                     <li><i class="fas fa-check text-success me-2"></i> Full Syllabus</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 30 Live Classes</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 1000+ MCQs</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 36 Live Classes</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Lecture Sheets</li>
                                 </ul>
                                 <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="regular-package">Select</button>
                             </div>
@@ -516,12 +509,12 @@
                             <div class="tier-card active" onclick="selectTier('premium-package')">
                                 <div class="badge-rec">Most Popular</div>
                                 <h5 class="fw-bold text-primary">Premium</h5>
-                                <h2 class="my-3 text-primary">৳ 18,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 22,000</small>
+                                <h2 class="my-3 text-primary">৳ 22,000</h2>
+                                <small class="text-decoration-line-through text-muted">৳ 26,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
                                     <li><i class="fas fa-check text-success me-2"></i> <strong>A+ Guarantee</strong></li>
                                     <li><i class="fas fa-check text-success me-2"></i> Solved Test Papers</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 6 Model Tests</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 8 Model Tests</li>
                                 </ul>
                                 <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">Select</button>
                             </div>
@@ -530,15 +523,35 @@
                         <div class="col-md-4">
                             <div class="tier-card" onclick="selectTier('ultimate-package')">
                                 <h5 class="fw-bold text-dark">Ultimate</h5>
-                                <h2 class="my-3 text-dark">৳ 22,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 28,000</small>
+                                <h2 class="my-3 text-dark">৳ 28,000</h2>
+                                <small class="text-decoration-line-through text-muted">৳ 35,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
                                     <li><i class="fas fa-check text-success me-2"></i> 1:1 Care</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 10 Full Model Tests</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 12 Full Model Tests</li>
                                     <li><i class="fas fa-check text-success me-2"></i> Private Mentoring</li>
                                 </ul>
                                 <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="ultimate-package">Select</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pro-card animated fadeInUp mt-4">
+                    <h5 class="fw-bold text-dark mb-3">Installment Calculator</h5>
+                    <div class="emi-dashboard">
+                        <div class="row g-4 mb-4">
+                            <div class="col-6">
+                                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Total Fee (Premium)</small>
+                                <div class="fs-4 fw-bold text-dark">৳ 22,000</div>
+                            </div>
+                            <div class="col-6 text-end">
+                                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">You Pay Monthly</small>
+                                <div class="fs-4 fw-bold text-primary" id="emiAmount">৳ 7,333</div>
+                            </div>
+                        </div>
+                        <input type="range" class="range-slider" id="installments" min="1" max="4" step="1" value="3">
+                        <div class="d-flex justify-content-between mt-2 small text-muted">
+                            <span id="monthDisplay">3 Months</span>
                         </div>
                     </div>
                 </div>
@@ -554,10 +567,10 @@
                         </div>
 
                         <div class="d-flex justify-content-center align-items-baseline gap-2 mb-2">
-                            <span class="fs-1 fw-bold text-dark">৳ 18,000</span>
-                            <span class="text-decoration-line-through text-muted">৳ 22,000</span>
+                            <span class="fs-1 fw-bold text-dark">৳ 22,000</span>
+                            <span class="text-decoration-line-through text-muted">৳ 26,000</span>
                         </div>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">25% Scholarship Available</span>
+                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">HSC Special</span>
 
                         <button class="btn btn-gradient mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">
                             Enroll Now
@@ -569,8 +582,8 @@
                         <div class="text-start">
                             <h6 class="fw-bold mb-3 small text-uppercase">Course Includes:</h6>
                             <ul class="list-unstyled small text-muted">
-                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 40 Live Classes</li>
-                                <li class="mb-2"><i class="fas fa-file-alt text-primary me-2"></i> 10 Full Model Tests</li>
+                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 36 Live Classes</li>
+                                <li class="mb-2"><i class="fas fa-file-alt text-primary me-2"></i> 8 Full Model Tests</li>
                                 <li class="mb-2"><i class="fas fa-question-circle text-primary me-2"></i> 1000+ Question Bank</li>
                                 <li class="mb-2"><i class="fas fa-code text-primary me-2"></i> C Programming Labs</li>
                             </ul>
@@ -609,12 +622,12 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0">
                 <div class="modal-header border-0 bg-light rounded-top-4">
-                    <h5 class="modal-title fw-bold">Enroll in SSC ICT</h5>
+                    <h5 class="modal-title fw-bold">Enroll in HSC ICT</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <div id="modalPlanDetails" class="alert alert-primary mb-4" style="background-color: #eef2ff; border-color: #6366f1; color: #334155;">
-                          <h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 18,000</p>
+                    <div id="modalPlanDetails" class="alert alert-primary mb-4" style="background-color: #eef2ff; border-color: #0d9488; color: #134e4a;">
+                          <h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 22,000</p>
                      </div>
                     
                     <form>
@@ -699,8 +712,8 @@
                         <button type="button" class="footer-btn-sub">Join</button>
                     </div>
                     <div class="mt-4">
-                        <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #6366f1;"></i> +880 1893 255503</p>
-                        <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #6366f1;"></i> junayedacademy@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #0d9488;"></i> +880 1893 255503</p>
+                        <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #0d9488;"></i> junayedacademy@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -738,20 +751,32 @@
             let content = '';
 
             if (plan === 'premium-package') {
-                content = `<h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 18,000</p>`;
+                content = `<h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 22,000</p>`;
             } else if (plan === 'ultimate-package') {
-                content = `<h5 class="fw-bold">Ultimate Package</h5><p class="mb-0">Amount: ৳ 22,000</p>`;
+                content = `<h5 class="fw-bold">Ultimate Package</h5><p class="mb-0">Amount: ৳ 28,000</p>`;
             } else {
-                 content = `<h5 class="fw-bold">Regular Package</h5><p class="mb-0">Amount: ৳ 15,000</p>`;
+                 content = `<h5 class="fw-bold">Regular Package</h5><p class="mb-0">Amount: ৳ 18,000</p>`;
             }
             modalPlanDetails.innerHTML = content;
         });
 
-        // Simple function to highlight selected tier (optional for visual feedback before modal)
+        // Simple function to highlight selected tier
         function selectTier(planId) {
-            // Logic to highlight the clicked card could go here, 
-            // but the modal trigger handles the core functionality.
+            // Visual feedback logic
         }
+
+        // EMI Logic
+        const installmentSlider = document.getElementById('installments');
+        const emiDisplay = document.getElementById('emiAmount');
+        const monthDisplay = document.getElementById('monthDisplay');
+        const totalFee = 22000; 
+
+        installmentSlider.addEventListener('input', function() {
+            const months = parseInt(this.value);
+            const monthlyPayment = Math.ceil(totalFee / months);
+            monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
+            emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
+        });
     </script>
 </body>
 </html>
