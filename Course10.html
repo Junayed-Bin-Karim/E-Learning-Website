@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | JSC ICT Mastery</title>
+    <title>Junayed Academy | HSC ICT Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/icon.png" rel="icon">
 
@@ -21,7 +21,7 @@
 
     <style>
         /* =========================================
-           ULTRA PRO DESIGN SYSTEM (JSC Theme)
+           ULTRA PRO DESIGN SYSTEM (HSC Theme)
            ========================================= */
         :root {
             --primary: #6366f1; /* Indigo */
@@ -63,7 +63,7 @@
         .hero-ultra {
             position: relative;
             padding: 80px 0 100px;
-            /* Violet/Indigo Gradient for "Future Gen" feel */
+            /* Violet/Indigo Gradient */
             background: radial-gradient(circle at 10% 20%, rgb(30, 27, 75) 0%, rgb(79, 70, 229) 100%);
             color: white;
             overflow: hidden;
@@ -249,83 +249,26 @@
         
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
-   /* =========================================
-   ULTRA PREMIUM NAVBAR (MOBILE FIX)
-========================================= */
 
-/* 1. Glassmorphism Effect */
-.navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 10px 0;
-    transition: all 0.3s ease;
-}
-
-/* 2. Force Logo and Toggler to stay on same line */
-.mobile-nav-wrapper {
-    display: flex;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 3. Logo Sizing */
-.nav-logo {
-    height: 45px;
-    transition: height 0.3s ease;
-}
-
-/* 4. Brand Text */
-.brand-text {
-    font-size: 24px;
-    white-space: nowrap;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    transition: font-size 0.3s ease;
-}
-
-/* 5. Toggler Button Styling */
-.navbar-toggler {
-    border: none !important;
-    outline: none !important;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-/* 6. MOBILE ADJUSTMENTS */
-@media (max-width: 576px) {
-
-    /* Shrink padding */
-    .container-fluid.px-3 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    /* Logo */
-    .nav-logo {
-        height: 32px !important;
-    }
-
-    /* Brand text */
-    .brand-text {
-        font-size: 18px !important;
-    }
-
-    /* Toggler icon */
-    .navbar-toggler-icon {
-        width: 1.2em;
-        height: 1.2em;
-    }
-}
- </style>
+        /* Footer & Navbar Mobile Fixes */
+        .navbar-toggler { border: none !important; outline: none !important; }
+        .footer-premium {
+            background-color: #f8f9fa !important;
+            color: #4b5563 !important;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 80px;
+        }
+        .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; display: flex; align-items: center; }
+        .footer-heading { color: #111827 !important; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; }
+        .footer-link { color: #6b7280 !important; display: block; margin-bottom: 12px; transition: all 0.3s ease; text-decoration: none; font-weight: 500; }
+        .footer-link:hover { color: #6366f1 !important; padding-left: 8px; }
+        .social-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #ffffff; color: #1a237e; border-radius: 50%; margin-right: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+        .social-btn:hover { background: #6366f1; color: white; transform: translateY(-3px); border-color: #6366f1; }
+        .footer-input-group { display: flex; background: #ffffff; border-radius: 50px; padding: 5px; border: 1px solid #d1d5db; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .footer-input { border: none; background: transparent; padding: 10px 20px; width: 100%; outline: none; color: #374151; }
+        .footer-btn-sub { background: #6366f1; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
+    </style>
 </head>
 
 <body>
@@ -339,7 +282,7 @@
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <p class="m-0 fw-bold" style="font-size: 24px;">
                 <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
-                Junayed<span style="color: #fb873f;">Academy</span>
+                Junayed<span style="color: #6366f1;">Academy</span>
             </p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -371,17 +314,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="hero-badge animated slideInDown">
-                        <i class="fas fa-graduation-cap me-2"></i> Class 8 / JSC 2025
+                        <i class="fas fa-graduation-cap me-2"></i> HSC Class 11-12
                     </div>
-                    <h1 class="hero-title animated slideInDown">JSC ICT Mastery <br> Program 2025</h1>
+                    <h1 class="hero-title animated slideInDown">HSC ICT Mastery <br> Program 2025</h1>
                     <p class="lead text-light opacity-75 mb-4 animated slideInUp" style="max-width: 600px; font-weight: 300;">
-                        Complete ICT preparation for JSC/JDC students. We guarantee an A+ through practical labs and theory.
+                        Master the hardest topics like C Programming, HTML, and Digital Devices. We guarantee an A+ in your Board Exams.
                     </p>
                     
                     <div class="d-flex flex-wrap gap-4 text-white-50 small animated slideInUp">
                         <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 Rating</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 4,800+ Students</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-check-circle me-2 text-white"></i> A+ Guarantee</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 5,500+ Students</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-check-circle me-2 text-white"></i> Board Standard</span>
                     </div>
                 </div>
             </div>
@@ -396,37 +339,37 @@
                 <div class="pro-card animated fadeInUp">
                     <h3 class="fw-bold text-dark mb-3">Course Overview</h3>
                     <p class="text-muted" style="line-height: 1.8;">
-                        ICT is the key to the future. Our program covers everything from Networking to Spreadsheets. We combine theory with practicals so you don't just memorize, you understand.
+                        HSC ICT is often the most feared subject for students from Science, Arts, and Commerce. Our course demystifies binary numbers, logic gates, and coding with visual animations and practical projects.
                     </p>
 
                     <div class="bento-grid">
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-medal"></i></div>
                             <h5 class="fw-bold mb-2">A+ Guarantee</h5>
-                            <p class="small text-muted mb-0">Follow our plan, get A+, or join next batch free.</p>
+                            <p class="small text-muted mb-0">Proven track record of success in Dhaka & Rajshahi Board.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-tasks"></i></div>
-                            <h5 class="fw-bold mb-2">700+ MCQs</h5>
-                            <p class="small text-muted mb-0">Extensive question bank for objective perfection.</p>
+                            <h5 class="fw-bold mb-2">1000+ MCQs</h5>
+                            <p class="small text-muted mb-0">Topic-wise quizzes to master the objective part.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h5 class="fw-bold mb-2">Practicals</h5>
-                            <p class="small text-muted mb-0">25+ Lab projects on Word, Excel, and Email.</p>
+                            <h5 class="fw-bold mb-2">Practical Labs</h5>
+                            <p class="small text-muted mb-0">50+ Lab classes for HTML & C Programming.</p>
                         </div>
                         <div class="bento-item">
                             <div class="bento-icon"><i class="fas fa-file-alt"></i></div>
                             <h5 class="fw-bold mb-2">Model Tests</h5>
-                            <p class="small text-muted mb-0">6 Full-length board standard exams.</p>
+                            <p class="small text-muted mb-0">10 Full-length exams with written solution guides.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="pro-card animated fadeInUp">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h3 class="fw-bold text-dark mb-0">Syllabus</h3>
-                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">8 Weeks</span>
+                        <h3 class="fw-bold text-dark mb-0">Complete Syllabus</h3>
+                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">6 Chapters</span>
                     </div>
 
                     <div class="accordion accordion-pro" id="courseAccordion">
@@ -435,23 +378,17 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Month 1</span>
-                                        <span>ICT Basics & Office Applications</span>
+                                        <span>Communication & Networking</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    
-
-[Image of computer input and output devices]
-
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Introduction to ICT & Hardware</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Computer Networks (LAN, MAN, WAN)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> </li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Word Processing (Formatting, Tables)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> </li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Exam: Chapter 1 & 2 MCQ</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 1:</strong> Global Village & Bangladesh Perspective</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 2:</strong> Data Communication Systems</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Network Topologies (Bus, Ring, Star, Mesh)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Exam: Networking MCQ</li>
                                     </ul>
                                 </div>
                             </div>
@@ -462,20 +399,51 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Month 2</span>
-                                        <span>Spreadsheets & Internet</span>
+                                        <span>Number Systems & Digital Logic</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
-                                    
+                                    <div class="mb-3">
+                                        
+
+[Image of logic gates symbols and truth tables]
+
+                                    </div>
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Spreadsheet Analysis (Formulas, Functions)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Presentation Design (PowerPoint)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Using the Internet & Email</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Cyber Security & Ethics</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> </li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Full Model Test</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 3 (Part 1):</strong> Number System Conversion (Binary, Octal, Hex)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> 2's Complement & Binary Arithmetic</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 3 (Part 2):</strong> Logic Gates, Encoders, Decoders</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Practical: Designing Circuits with Simulators</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Month 3</span>
+                                        <span>Web Design & C Programming</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <div class="mb-3">
+                                        
+                                    </div>
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 4:</strong> HTML5 Tags, Links, Images & Tables</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Website Layout & Publishing</li>
+                                        <div class="my-3">
+                                            
+                                        </div>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 5:</strong> C Programming: Variables, Loops, Arrays</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> <strong>Chapter 6:</strong> DBMS (Database Management Systems)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Creative Question (CQ) Mastery</li>
                                     </ul>
                                 </div>
                             </div>
@@ -488,12 +456,12 @@
                         <img src="img/testimonial-2.png" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f8fafc;" alt="Instructor">
                         <div>
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">JSC ICT Specialist</p>
-                            <p class="text-muted small mb-3">Has mentored 300+ students to achieve A+ in ICT. Focuses on practical learning for young minds.</p>
+                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">HSC ICT Specialist</p>
+                            <p class="text-muted small mb-3">CSE Graduate from Daffodil International University. Specialized in making Programming and Digital Logic easy for non-science students.</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark border">Word</span>
-                                <span class="badge bg-light text-dark border">Excel</span>
-                                <span class="badge bg-light text-dark border">Internet</span>
+                                <span class="badge bg-light text-dark border">C Programming</span>
+                                <span class="badge bg-light text-dark border">Web Design</span>
+                                <span class="badge bg-light text-dark border">Logic</span>
                             </div>
                         </div>
                     </div>
@@ -507,11 +475,11 @@
                             <div class="tier-card" onclick="selectTier('regular-package')">
                                 <h5 class="fw-bold text-muted">Regular</h5>
                                 <h2 class="my-3">৳ 15,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 20,000</small>
+                                <small class="text-decoration-line-through text-muted">৳ 18,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
                                     <li><i class="fas fa-check text-success me-2"></i> Full Syllabus</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 24 Live Classes</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 700+ MCQs</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 30 Live Classes</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 1000+ MCQs</li>
                                 </ul>
                                 <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="regular-package">Select</button>
                             </div>
@@ -522,10 +490,10 @@
                                 <div class="badge-rec">Most Popular</div>
                                 <h5 class="fw-bold text-primary">Premium</h5>
                                 <h2 class="my-3 text-primary">৳ 18,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 25,000</small>
+                                <small class="text-decoration-line-through text-muted">৳ 22,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
                                     <li><i class="fas fa-check text-success me-2"></i> <strong>A+ Guarantee</strong></li>
-                                    <li><i class="fas fa-check text-success me-2"></i> Private Doubt Solving</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Solved Test Papers</li>
                                     <li><i class="fas fa-check text-success me-2"></i> 6 Model Tests</li>
                                 </ul>
                                 <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">Select</button>
@@ -536,10 +504,10 @@
                             <div class="tier-card" onclick="selectTier('ultimate-package')">
                                 <h5 class="fw-bold text-dark">Ultimate</h5>
                                 <h2 class="my-3 text-dark">৳ 22,000</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 30,000</small>
+                                <small class="text-decoration-line-through text-muted">৳ 28,000</small>
                                 <ul class="list-unstyled small text-muted text-start mb-4 mt-3">
-                                    <li><i class="fas fa-check text-success me-2"></i> 1:1 Personal Tutor</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 8 Full Model Tests</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 1:1 Care</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 10 Full Model Tests</li>
                                     <li><i class="fas fa-check text-success me-2"></i> Private Mentoring</li>
                                 </ul>
                                 <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="ultimate-package">Select</button>
@@ -559,8 +527,8 @@
                         </div>
 
                         <div class="d-flex justify-content-center align-items-baseline gap-2 mb-2">
-                            <span class="fs-1 fw-bold text-dark">৳ 15,000</span>
-                            <span class="text-decoration-line-through text-muted">৳ 20,000</span>
+                            <span class="fs-1 fw-bold text-dark">৳ 18,000</span>
+                            <span class="text-decoration-line-through text-muted">৳ 22,000</span>
                         </div>
                         <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">25% Scholarship Available</span>
 
@@ -574,10 +542,10 @@
                         <div class="text-start">
                             <h6 class="fw-bold mb-3 small text-uppercase">Course Includes:</h6>
                             <ul class="list-unstyled small text-muted">
-                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 24 Live Classes</li>
-                                <li class="mb-2"><i class="fas fa-file-alt text-primary me-2"></i> 6 Full Model Tests</li>
-                                <li class="mb-2"><i class="fas fa-question-circle text-primary me-2"></i> 700+ Question Bank</li>
-                                <li class="mb-2"><i class="fas fa-user-friends text-primary me-2"></i> Private Mentoring</li>
+                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 40 Live Classes</li>
+                                <li class="mb-2"><i class="fas fa-file-alt text-primary me-2"></i> 10 Full Model Tests</li>
+                                <li class="mb-2"><i class="fas fa-question-circle text-primary me-2"></i> 1000+ Question Bank</li>
+                                <li class="mb-2"><i class="fas fa-code text-primary me-2"></i> C Programming Labs</li>
                             </ul>
                         </div>
                     </div>
@@ -599,9 +567,9 @@
                         <input type="text" class="form-control rounded-pill bg-light border-0 py-3 mb-3 px-4" placeholder="Student Name" required>
                         <input type="tel" class="form-control rounded-pill bg-light border-0 py-3 mb-3 px-4" placeholder="Guardian Phone Number" required>
                         <select class="form-select rounded-pill bg-light border-0 py-3 mb-3 px-4">
-                            <option>Class 6</option>
-                            <option>Class 7</option>
-                            <option>Class 8 (JSC)</option>
+                            <option>HSC 1st Year</option>
+                            <option>HSC 2nd Year</option>
+                            <option>HSC Examinee 2025</option>
                         </select>
                         <button type="submit" class="btn btn-gradient">Confirm Booking</button>
                     </form>
@@ -614,12 +582,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0">
                 <div class="modal-header border-0 bg-light rounded-top-4">
-                    <h5 class="modal-title fw-bold">Enroll in JSC ICT</h5>
+                    <h5 class="modal-title fw-bold">Enroll in HSC ICT</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <div id="modalPlanDetails" class="alert alert-success mb-4">
-                         </div>
+                    <div id="modalPlanDetails" class="alert alert-primary mb-4" style="background-color: #eef2ff; border-color: #6366f1; color: #334155;">
+                          <h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 18,000</p>
+                     </div>
                     
                     <form>
                         <h6 class="fw-bold mb-3 small text-uppercase">Student Information</h6>
@@ -658,43 +627,63 @@
     </div>
 
 
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+    <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Quick Links</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="courses.html">All Courses</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
-                    <p><a class="text-light" href="#">Privacy Policy</a></p>
-                    <p><a class="text-light" href="#">Terms & Conditions</a></p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Contact Information</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mirpur, Dhaka, Bangladesh</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+880 1893 255503</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>junayedacademy@gmail.com</p>
+                    <div class="footer-brand-text">
+                        <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
+                        Junayed<span style="color: #6366f1;">Academy</span>
+                    </div>
+                    <p class="mb-4" style="line-height: 1.6;">
+                        Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.
+                    </p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="social-btn" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="social-btn" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Academy</h5>
+                    <a class="footer-link" href="about.html">About Us</a>
+                    <a class="footer-link" href="courses.html">Our Courses</a>
+                    <a class="footer-link" href="team.html">Instructors</a>
+                    <a class="footer-link" href="testimonial.html">Success Stories</a>
+                    <a class="footer-link" href="contact.html">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Resources</h5>
+                    <a class="footer-link" href="#">Help Center</a>
+                    <a class="footer-link" href="#">Student Portal</a>
+                    <a class="footer-link" href="#">Become a Mentor</a>
+                    <a class="footer-link" href="#">Terms of Service</a>
+                    <a class="footer-link" href="#">Privacy Policy</a>
+                </div>
+
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-white mb-3">Subscribe</h4>
-                    <p>Get the latest updates and offers.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email address">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <h5 class="footer-heading">Stay Updated</h5>
+                    <p class="mb-4">Get the latest course updates and tech news delivered to your inbox.</p>
+                    <div class="footer-input-group">
+                        <input class="footer-input" type="text" placeholder="Your email address">
+                        <button type="button" class="footer-btn-sub">Join</button>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #6366f1;"></i> +880 1893 255503</p>
+                        <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #6366f1;"></i> junayedacademy@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
+        
+        <div class="footer-bottom">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Junayed Academy</a>, All Rights Reserved.
+                        &copy; <span style="color: #6366f1; font-weight: 600;">Junayed Academy</span>. All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -712,7 +701,7 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Modal Logic
+        // Modal Logic for Pricing Tiers
         const paymentModal = document.getElementById('paymentModal');
         const modalPlanDetails = document.getElementById('modalPlanDetails');
 
@@ -730,6 +719,12 @@
             }
             modalPlanDetails.innerHTML = content;
         });
+
+        // Simple function to highlight selected tier (optional for visual feedback before modal)
+        function selectTier(planId) {
+            // Logic to highlight the clicked card could go here, 
+            // but the modal trigger handles the core functionality.
+        }
     </script>
 </body>
 </html>
