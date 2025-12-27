@@ -566,6 +566,135 @@ html, body {
 * {
     box-sizing: border-box;
 }
+
+
+
+        /* =========================================
+   MODERN HAMBURGER & OVERLAY MENU
+   ========================================= */
+
+/* 1. The Hamburger Button Container */
+.modern-hamburger {
+    width: 35px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10000; /* সবার উপরে থাকবে */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+
+/* 2. The Lines (Strokes) */
+.modern-hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: #0f172a; /* Dark Blue */
+    border-radius: 5px;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); /* Bouncy animation */
+    transform-origin: right;
+}
+
+/* 3. Animation State (When Active) */
+.modern-hamburger.active .line-1 {
+    transform: rotate(-45deg) translate(-2px, -3px);
+    width: 100%;
+    background-color: #fb873f; /* Orange when open */
+}
+
+.modern-hamburger.active .line-2 {
+    opacity: 0;
+    width: 0;
+}
+
+.modern-hamburger.active .line-3 {
+    transform: rotate(45deg) translate(-2px, 3px);
+    width: 100%;
+    background-color: #fb873f;
+}
+
+/* 4. Fullscreen Overlay Design */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px); /* Heavy Glass Effect */
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9990;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Animation Properties */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: all 0.4s ease-in-out;
+}
+
+/* 5. Active State for Overlay */
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* 6. Mobile Links Styling */
+.mobile-menu-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mobile-link {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+}
+
+/* Staggered Animation for Links */
+.mobile-menu-overlay.active .mobile-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay for each link to appear one by one */
+.mobile-menu-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
+.mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+
+.mobile-link:hover {
+    color: #fb873f;
+    letter-spacing: 2px;
+}
+
+.mobile-link.highlight {
+    background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+}
+
+/* Disable Scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
     </style>
 </head>
 
@@ -582,29 +711,33 @@ html, body {
                 Junayed<span style="color: #fb873f;">Academy</span>
             </p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
-                </a>
-            </div>
-        </div>
-    </nav>
+
+
+
+
+
+
+
+        <div class="modern-hamburger d-lg-none">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
+</div>
+
+<div class="mobile-menu-overlay">
+    <div class="mobile-menu-container">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="courses.html" class="mobile-link">Courses</a>
+        <a href="team.html" class="mobile-link">Our Team</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="login.html" class="mobile-link highlight">Login / Sign Up</a>
+    </div>
+</div>
+
+
+
+        
     <div class="container-fluid p-0 mb-4">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
@@ -1060,6 +1193,33 @@ html, body {
             );
             counters.forEach(counter => observer.observe(counter));
         });
+
+
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.modern-hamburger');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+        const body = document.body;
+        const links = document.querySelectorAll('.mobile-link');
+
+        // Toggle Menu Function
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when a link is clicked
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+    });
+</script>
     </script>
 </body>
 
