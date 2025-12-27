@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | Frontend Mastery</title>
+    <title>HTML5 Mastery | Junayed Academy</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="HTML5 Course, Web Development, Junayed Academy">
+    <meta name="description" content="Master HTML5 from scratch with Junayed Academy.">
+    
     <link href="img/icon.png" rel="icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,237 +19,214 @@
 
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PRO DESIGN SYSTEM
+           GLOBAL STYLES & FIXES
            ========================================= */
         :root {
             --primary: #fb873f;
             --primary-dark: #e0691e;
-            --secondary: #0f172a;
-            --bg-light: #f3f6f8;
-            --card-bg: #ffffff;
-            --text-main: #334155;
-            --gradient-pro: linear-gradient(135deg, #fb873f 0%, #ff7e5f 100%);
-            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
-            --radius-xl: 24px;
-            --radius-lg: 16px;
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
             --font-head: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
+            --radius-xl: 24px;
+            --radius-lg: 16px;
         }
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-light);
-            color: var(--text-main);
+            background-color: #f8f9fa;
+            overflow-x: hidden; /* Fixes right scroll issue */
+            color: #334155;
+        }
+
+        html {
+            scroll-behavior: smooth;
             overflow-x: hidden;
+            width: 100%;
         }
 
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); letter-spacing: -0.02em; }
 
-        /* --- Navbar Fix --- */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 10px 0;
-        }
+        /* Global Reset for layout */
+        .container-fluid.p-0 { padding: 0 !important; overflow: hidden; width: 100%; }
+        .row { margin-right: 0 !important; margin-left: 0 !important; }
+        * { box-sizing: border-box; }
+
+        /* =========================================
+           NAVBAR FIX (UNIVERSAL)
+           ========================================= */
+        .navbar .container-fluid { display: flex; flex-wrap: nowrap !important; align-items: center; justify-content: space-between; }
+        
+        .navbar { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; }
+        
+        .navbar-brand { display: flex; align-items: center; max-width: 85%; margin-right: 0 !important; overflow: hidden; }
+        .navbar-brand img { height: 45px; width: auto; margin-right: 8px; transition: all 0.3s ease; }
+        .navbar-brand p { margin: 0; line-height: 1; white-space: nowrap; display: flex; align-items: center; font-size: 24px !important; color: #1a1a1a; }
+
         @media (max-width: 576px) {
-            .nav-logo { height: 32px !important; }
-            .brand-text { font-size: 18px !important; }
+            .navbar-brand img { height: 32px !important; }
+            .navbar-brand p { font-size: 18px !important; }
+            .container-fluid.px-3 { padding-left: 15px !important; padding-right: 15px !important; }
+        }
+        @media (max-width: 380px) {
+            .navbar-brand img { height: 28px !important; margin-right: 5px; }
+            .navbar-brand p { font-size: 16px !important; }
         }
 
-        /* --- ULTRA HERO SECTION --- */
+        /* =========================================
+           SMALL HAMBURGER MENU (MOBILE)
+           ========================================= */
+        .modern-hamburger {
+            width: 28px; height: 22px; position: relative; cursor: pointer; z-index: 10000;
+            display: flex; flex-direction: column; justify-content: space-between; margin-left: 15px;
+        }
+        .modern-hamburger .line {
+            width: 100%; height: 2px; background-color: #0f172a; border-radius: 5px;
+            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); transform-origin: right;
+        }
+        .modern-hamburger.active .line-1 { transform: rotate(-45deg) translate(-2px, -2px); width: 100%; background-color: #fb873f; }
+        .modern-hamburger.active .line-2 { opacity: 0; width: 0; }
+        .modern-hamburger.active .line-3 { transform: rotate(45deg) translate(-2px, 2px); width: 100%; background-color: #fb873f; }
+
+        /* Fullscreen Overlay */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            z-index: 9990; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transform: scale(0.9); transition: all 0.4s ease-in-out;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; transform: scale(1); }
+
+        /* Menu Links */
+        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 18px; }
+        .mobile-link {
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0f172a;
+            text-decoration: none; position: relative; overflow: hidden; transition: 0.3s;
+            opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+        }
+        .mobile-menu-overlay.active .mobile-link { opacity: 1; transform: translateY(0); }
+        .mobile-menu-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(7) { transition-delay: 0.7s; }
+        .mobile-link:hover { color: #fb873f; letter-spacing: 2px; }
+        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; font-weight: 800; }
+        
+        body.menu-open { overflow: hidden; }
+
+        /* =========================================
+           SINGLE COURSE PAGE STYLES
+           ========================================= */
+        
+        /* Ultra Hero Section */
         .hero-ultra {
-            position: relative;
-            padding: 80px 0 100px;
-            /* React Blue & Deep Slate Gradient */
-            background: radial-gradient(circle at 10% 20%, rgb(15, 23, 42) 0%, rgb(14, 165, 233) 100%);
-            color: white;
-            overflow: hidden;
+            position: relative; padding: 140px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgb(17, 24, 39) 0%, rgb(88, 28, 135) 90%);
+            color: white; overflow: hidden;
         }
-        
         .hero-ultra::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: url('img/pattern.png');
-            opacity: 0.05;
-            animation: spin 100s linear infinite;
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: url('img/pattern.png'); opacity: 0.05; animation: spin 100s linear infinite;
         }
-
         .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #fff;
-            display: inline-block;
-            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 20px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: #fb873f;
+            display: inline-block; margin-bottom: 25px;
         }
-
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: -webkit-linear-gradient(0deg, #fff, #bae6fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+            background: -webkit-linear-gradient(0deg, #fff, #e2e8f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* --- CONTENT STYLING --- */
+        /* Content Styling */
         .pro-card {
-            background: var(--card-bg);
-            border-radius: var(--radius-xl);
-            padding: 40px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 30px;
-            border: 1px solid rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
+            background: white; border-radius: var(--radius-xl); padding: 40px;
+            box-shadow: var(--shadow-soft); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02);
         }
-        
+
         /* Bento Grid */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
+        .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
         .bento-item {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: var(--radius-lg);
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
+            background: #f8fafc; padding: 25px; border-radius: var(--radius-lg); border: 1px solid #e2e8f0; transition: 0.3s;
         }
         .bento-item:hover {
-            background: #fff;
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transform: translateY(-5px);
+            background: #fff; border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px);
         }
         .bento-icon {
-            width: 50px; height: 50px;
-            background: rgba(251, 135, 63, 0.1);
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            width: 50px; height: 50px; background: rgba(251, 135, 63, 0.1); color: var(--primary);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 15px;
         }
 
         /* Accordion */
         .accordion-pro .accordion-item {
-            border: none;
-            background: #fff;
-            border-radius: var(--radius-lg) !important;
-            margin-bottom: 15px;
-            border: 1px solid #f1f5f9;
-            overflow: hidden;
+            border: none; background: #fff; border-radius: var(--radius-lg) !important;
+            margin-bottom: 15px; border: 1px solid #f1f5f9; overflow: hidden;
         }
         .accordion-pro .accordion-button {
-            background: white;
-            padding: 25px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--secondary);
-            box-shadow: none;
+            background: white; padding: 25px; font-weight: 700; font-size: 1.1rem; color: #0f172a; box-shadow: none;
         }
         .accordion-pro .accordion-button:not(.collapsed) {
-            color: var(--primary);
-            background: rgba(251, 135, 63, 0.03);
-        }
-        .accordion-pro .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fb873f'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            color: var(--primary); background: rgba(251, 135, 63, 0.03);
         }
 
-        /* Sidebar & Pricing */
-        .sidebar-wrapper {
-            position: sticky;
-            top: 100px;
-            z-index: 10;
-        }
+        /* Sidebar */
+        .sidebar-wrapper { position: sticky; top: 100px; z-index: 10; }
         .price-card {
-            background: white;
-            padding: 30px;
-            border-radius: var(--radius-xl);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.03);
-            text-align: center;
+            background: white; padding: 30px; border-radius: var(--radius-xl);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.03); text-align: center;
         }
         .video-thumbnail {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            margin-bottom: 25px;
-            cursor: pointer;
+            position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 25px; cursor: pointer;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         .video-thumbnail img { width: 100%; transition: 0.5s; }
         .video-thumbnail:hover img { transform: scale(1.05); }
         .play-icon-overlay {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px; height: 60px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--primary);
-            font-size: 1.5rem;
-            animation: pulse 2s infinite;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 60px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--primary);
+            font-size: 1.5rem; animation: pulse 2s infinite;
         }
 
         /* EMI Calculator Pro */
         .emi-dashboard {
-            background: #f8fafc;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            border: 1px solid #e2e8f0;
+            background: #f8fafc; border-radius: var(--radius-lg); padding: 30px; border: 1px solid #e2e8f0;
         }
         .range-slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 8px;
-            border-radius: 5px;
-            background: #e2e8f0;
-            outline: none;
+            -webkit-appearance: none; width: 100%; height: 8px; border-radius: 5px; background: #e2e8f0; outline: none;
         }
         .range-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 24px; height: 24px;
-            border-radius: 50%;
-            background: var(--primary);
-            cursor: pointer;
-            box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.2);
-            transition: .2s;
+            -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%;
+            background: var(--primary); cursor: pointer; box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.2); transition: .2s;
         }
         .range-slider::-webkit-slider-thumb:hover { transform: scale(1.1); }
 
         .btn-gradient {
-            background: var(--gradient-pro);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            width: 100%;
-            box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3);
-            transition: 0.3s;
+            background: var(--gradient-ultra); color: white; border: none; padding: 15px 30px;
+            border-radius: 50px; font-weight: 700; width: 100%; box-shadow: 0 10px 20px rgba(251, 135, 63, 0.3); transition: 0.3s;
         }
-        .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4);
-            color: white;
+        .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(251, 135, 63, 0.4); color: white; }
+
+        /* Pricing Tiers */
+        .tier-card {
+            border: 2px solid #f1f5f9; border-radius: var(--radius-lg); padding: 25px; text-align: center;
+            transition: 0.3s; cursor: pointer;
         }
+        .tier-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .tier-card.active { border-color: var(--primary); background: #fffaf6; }
 
         @media (max-width: 991px) {
             .hero-title { font-size: 2.5rem; }
@@ -256,197 +236,22 @@
         
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
-    
-    
-    /* =========================================
-   ULTRA PREMIUM NAVBAR (MOBILE FIX)
-========================================= */
-
-/* 1. Glassmorphism Effect */
-.navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 10px 0;
-    transition: all 0.3s ease;
-}
-
-/* 2. Force Logo and Toggler to stay on same line */
-.mobile-nav-wrapper {
-    display: flex;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* 3. Logo Sizing */
-.nav-logo {
-    height: 45px;
-    transition: height 0.3s ease;
-}
-
-/* 4. Brand Text */
-.brand-text {
-    font-size: 24px;
-    white-space: nowrap;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    transition: font-size 0.3s ease;
-}
-
-/* 5. Toggler Button Styling */
-.navbar-toggler {
-    border: none !important;
-    outline: none !important;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-/* 6. MOBILE ADJUSTMENTS */
-@media (max-width: 576px) {
-
-    /* Shrink padding */
-    .container-fluid.px-3 {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    /* Logo */
-    .nav-logo {
-        height: 32px !important;
-    }
-
-    /* Brand text */
-    .brand-text {
-        font-size: 18px !important;
-    }
-
-    /* Toggler icon */
-    .navbar-toggler-icon {
-        width: 1.2em;
-        height: 1.2em;
-    }
-}
-
 
         /* =========================================
-   PREMIUM LIGHT FOOTER STYLES
-   ========================================= */
-.footer-premium {
-    background-color: #f8f9fa !important; /* Soft Off-White for contrast */
-    color: #4b5563 !important;            /* Dark Gray text for readability */
-    border-top: 1px solid #e5e7eb;        /* Subtle top border */
-    padding-top: 80px;
-    margin-top: 0;
-}
-
-/* Brand Text in Footer */
-.footer-brand-text {
-    font-weight: 800;
-    font-size: 26px;
-    color: #111827; /* Darkest Black */
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-/* Column Headings */
-.footer-heading {
-    color: #111827 !important;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-/* Links */
-.footer-link {
-    color: #6b7280 !important; /* Medium Gray */
-    display: block;
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.footer-link:hover {
-    color: #fb873f !important; /* Brand Orange */
-    padding-left: 8px;         /* Slide effect */
-}
-
-/* Social Buttons */
-.social-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;       /* Pure white circle */
-    color: #1a237e;           /* Brand Blue */
-    border-radius: 50%;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Soft shadow */
-    border: 1px solid #e5e7eb;
-}
-
-.social-btn:hover {
-    background: #fb873f;
-    color: white;
-    transform: translateY(-3px);
-    border-color: #fb873f;
-}
-
-/* Newsletter Input */
-.footer-input-group {
-    display: flex;
-    background: #ffffff;
-    border-radius: 50px;
-    padding: 5px;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
-
-.footer-input {
-    border: none;
-    background: transparent;
-    padding: 10px 20px;
-    width: 100%;
-    outline: none;
-    color: #374151;
-}
-
-.footer-btn-sub {
-    background: #fb873f;
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.footer-btn-sub:hover {
-    background: #e67e39;
-    box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3);
-}
-
-/* Bottom Copyright Bar */
-.footer-bottom {
-    background-color: #f3f4f6 !important; /* Slightly darker gray */
-    padding: 25px 0;
-    margin-top: 60px;
-    border-top: 1px solid #e5e7eb;
-    font-size: 0.9rem;
-    color: #6b7280;
-}
+           FOOTER STYLES
+           ========================================= */
+        .footer-premium { background-color: #f8f9fa !important; color: #4b5563 !important; border-top: 1px solid #e5e7eb; padding-top: 80px; margin-top: 0; }
+        .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; margin-bottom: 20px; display: flex; align-items: center; }
+        .footer-heading { color: #111827 !important; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; }
+        .footer-link { color: #6b7280 !important; display: block; margin-bottom: 12px; transition: all 0.3s ease; text-decoration: none; font-weight: 500; }
+        .footer-link:hover { color: #fb873f !important; padding-left: 8px; }
+        .social-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #ffffff; color: #1a237e; border-radius: 50%; margin-right: 10px; text-decoration: none; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+        .social-btn:hover { background: #fb873f; color: white; transform: translateY(-3px); border-color: #fb873f; }
+        .footer-input-group { display: flex; background: #ffffff; border-radius: 50px; padding: 5px; border: 1px solid #d1d5db; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .footer-input { border: none; background: transparent; padding: 10px 20px; width: 100%; outline: none; color: #374151; }
+        .footer-btn-sub { background: #fb873f; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .footer-btn-sub:hover { background: #e67e39; box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3); }
+        .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
     </style>
 </head>
 
@@ -458,52 +263,67 @@
     </div>
 
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 24px;">
-                <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
-                Junayed<span style="color: #fb873f;">Academy</span>
-            </p>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link active">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+        <div class="container-fluid px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand">
+                <p class="m-0 fw-bold brand-text">
+                    <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                    Junayed<span style="color: #fb873f;">Academy</span>
+                </p>
+            </a>
+
+            <div class="modern-hamburger d-lg-none">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="courses.html" class="nav-item nav-link active">Courses</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonials</a>
+                        </div>
                     </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
-                </a>
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="courses.html" class="mobile-link active" style="color: #fb873f;">Courses</a>
+            <a href="team.html" class="mobile-link">Our Team</a>
+            <a href="testimonial.html" class="mobile-link">Testimonials</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="login.html" class="mobile-link highlight">Login / Sign Up</a>
+        </div>
+    </div>
 
     <div class="hero-ultra">
         <div class="container position-relative z-1">
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="hero-badge animated slideInDown">
-                        <i class="fab fa-react me-2"></i> Professional Frontend Track
+                        <i class="fas fa-code me-2"></i> Web Development Starts Here
                     </div>
-                    <h1 class="hero-title animated slideInDown">Become a Modern <br> Frontend Engineer</h1>
+                    <h1 class="hero-title animated slideInDown">HTML5 Mastery <br> for Beginners</h1>
                     <p class="lead text-light opacity-75 mb-4 animated slideInUp" style="max-width: 600px; font-weight: 300;">
-                        From vanilla JavaScript to building complex React applications. Your complete 3-month roadmap to a high-paying career.
+                        Master the skeleton of the internet. A complete 4-week step-by-step guide to building your first website from scratch.
                     </p>
                     
                     <div class="d-flex flex-wrap gap-4 text-white-50 small animated slideInUp">
-                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 Rating</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-user-friends me-2 text-info"></i> 1,200+ Students</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-briefcase me-2 text-info"></i> Job Ready</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.8 Rating</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-primary"></i> 5,000+ Enrolled</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-calendar-check me-2 text-primary"></i> 4 Weeks</span>
                     </div>
                 </div>
             </div>
@@ -518,29 +338,29 @@
                 <div class="pro-card animated fadeInUp">
                     <h3 class="fw-bold text-dark mb-3">Course Overview</h3>
                     <p class="text-muted" style="line-height: 1.8;">
-                        This 3-month comprehensive program is not just about coding; it's about building a career. You will master the "Holy Trinity" of the web (HTML, CSS, JS) before diving deep into the React ecosystem.
+                        Every website on the internet is built on HTML. In this course, we strip away the complexity and focus on the raw building blocks. You will learn to structure content, handle media, and create SEO-friendly layouts.
                     </p>
 
                     <div class="bento-grid">
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fab fa-js-square"></i></div>
-                            <h5 class="fw-bold mb-2">Modern JavaScript</h5>
-                            <p class="small text-muted mb-0">ES6+, Async/Await, and functional programming.</p>
+                            <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h5 class="fw-bold mb-2">HTML5 Syntax</h5>
+                            <p class="small text-muted mb-0">Learn tags, attributes, and the modern DOM structure.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fab fa-react"></i></div>
-                            <h5 class="fw-bold mb-2">React Ecosystem</h5>
-                            <p class="small text-muted mb-0">Hooks, Context API, and State Management.</p>
+                            <div class="bento-icon"><i class="fas fa-list-ul"></i></div>
+                            <h5 class="fw-bold mb-2">Tables & Lists</h5>
+                            <p class="small text-muted mb-0">Organize complex data cleanly and effectively.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-paint-brush"></i></div>
-                            <h5 class="fw-bold mb-2">UI/UX Implementation</h5>
-                            <p class="small text-muted mb-0">Tailwind CSS, Bootstrap 5 & Animation libraries.</p>
+                            <div class="bento-icon"><i class="fas fa-edit"></i></div>
+                            <h5 class="fw-bold mb-2">Forms & Inputs</h5>
+                            <p class="small text-muted mb-0">Collect user data with validation and modern input types.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-dollar-sign"></i></div>
-                            <h5 class="fw-bold mb-2">Freelancing</h5>
-                            <p class="small text-muted mb-0">Guide to Upwork & Fiverr profile optimization.</p>
+                            <div class="bento-icon"><i class="fas fa-globe"></i></div>
+                            <h5 class="fw-bold mb-2">SEO Basics</h5>
+                            <p class="small text-muted mb-0">Write semantic code that Google loves to rank.</p>
                         </div>
                     </div>
                 </div>
@@ -548,26 +368,26 @@
                 <div class="pro-card animated fadeInUp">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h3 class="fw-bold text-dark mb-0">Curriculum</h3>
-                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">12 Weeks</span>
+                        <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Beginner Friendly</span>
                     </div>
-
+                    
                     <div class="accordion accordion-pro" id="courseAccordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                     <div class="d-flex flex-column">
-                                        <span class="text-uppercase small text-muted fw-bold mb-1">Month 1</span>
-                                        <span>The Foundation (HTML, CSS, JS)</span>
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 1</span>
+                                        <span>Introduction & The DOM</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Semantic HTML5 & SEO</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> CSS Grid & Flexbox Mastery</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> JavaScript Fundamentals & DOM</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Personal Portfolio Website</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> How the Web Works</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Installing VS Code & First File</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Headings, Paragraphs & Formatting</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Your Digital Bio</li>
                                     </ul>
                                 </div>
                             </div>
@@ -577,18 +397,18 @@
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                     <div class="d-flex flex-column">
-                                        <span class="text-uppercase small text-muted fw-bold mb-1">Month 2</span>
-                                        <span>Advanced React Development</span>
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 2</span>
+                                        <span>Media & Links</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> React Components & Props</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> React Hooks (useState, useEffect)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> API Integration (Fetch/Axios)</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: E-commerce UI Dashboard</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Hyperlinks & Anchors</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Images & Favicons</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Embedding Audio & Video (YouTube)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Multimedia Blog Post</li>
                                     </ul>
                                 </div>
                             </div>
@@ -598,18 +418,39 @@
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                     <div class="d-flex flex-column">
-                                        <span class="text-uppercase small text-muted fw-bold mb-1">Month 3</span>
-                                        <span>Deployment & Career Launch</span>
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 3</span>
+                                        <span>Forms & Tables</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Deployment (Vercel, Netlify)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Git & GitHub Collaboration</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Freelancing Guide (Upwork/Fiverr)</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Full Stack Integration Basics</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Creating Tables with Headers</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Input Types (Text, Email, Date)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Form Validation & Buttons</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Project: Registration Page</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    <div class="d-flex flex-column">
+                                        <span class="text-uppercase small text-muted fw-bold mb-1">Week 4</span>
+                                        <span>Semantic HTML & Final Project</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled text-muted small spacing-y-2 mb-0">
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Semantic Tags (Nav, Main, Footer)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Meta Tags & SEO Basics</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Hosting on GitHub Pages</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Personal Portfolio</li>
                                     </ul>
                                 </div>
                             </div>
@@ -622,86 +463,80 @@
                         <img src="img/team-1.png" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f8fafc;" alt="Instructor">
                         <div>
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">Senior Frontend Engineer</p>
-                            <p class="text-muted small mb-3">Specializes in React & Node.js. Junayed has helped 1000+ students transition from non-tech backgrounds to successful frontend careers.</p>
+                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">Senior Web Instructor</p>
+                            <p class="text-muted small mb-3">Passionate about simplifying code for beginners. Junayed has helped thousands of students launch their web development journey.</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark border">React Pro</span>
-                                <span class="badge bg-light text-dark border">UI/UX</span>
+                                <span class="badge bg-light text-dark border">HTML5</span>
+                                <span class="badge bg-light text-dark border">CSS3</span>
+                                <span class="badge bg-light text-dark border">JavaScript</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="pro-card animated fadeInUp" id="payment">
-                    <h3 class="fw-bold text-dark mb-4">Flexible Payment Plans</h3>
+                    <h3 class="fw-bold text-dark mb-4">Choose Your Path</h3>
                     
-                    <div class="emi-dashboard">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h6 class="mb-0 fw-bold"><i class="fas fa-calculator text-primary me-2"></i> Installment Calculator</h6>
-                            <span class="badge bg-white text-success border">0% Interest</span>
-                        </div>
-
-                        <div class="row g-4 mb-4">
-                            <div class="col-6">
-                                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">Total Fee</small>
-                                <div class="fs-4 fw-bold text-dark">৳ 15,000</div>
-                            </div>
-                            <div class="col-6 text-end">
-                                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.75rem;">You Pay Monthly</small>
-                                <div class="fs-4 fw-bold text-primary" id="emiAmount">৳ 5,000</div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="tier-card" onclick="selectTier('free')">
+                                <h5 class="fw-bold text-muted">Self-Paced</h5>
+                                <h2 class="my-3">Free</h2>
+                                <ul class="list-unstyled small text-muted text-start mb-4">
+                                    <li><i class="fas fa-check text-success me-2"></i> Access to all videos</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Source Code</li>
+                                    <li><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
+                                </ul>
+                                <a href="https://youtube.com" target="_blank" class="btn btn-outline-dark rounded-pill w-100 btn-sm">Start Learning</a>
                             </div>
                         </div>
-
-                        <label class="form-label small text-muted mb-2">Select Duration: <span class="fw-bold text-dark" id="monthDisplay">3 Months</span></label>
-                        <input type="range" class="range-slider" id="installments" min="1" max="3" step="1" value="3">
-                        <div class="d-flex justify-content-between mt-2 small text-muted">
-                            <span>1 Month</span>
-                            <span>3 Months</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 pt-3 border-top">
-                        <p class="small text-muted mb-2">We accept:</p>
-                        <div class="d-flex gap-3 align-items-center opacity-75">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Bkash_logo_2.png" height="30" alt="bkash">
-                            <img src="https://download.logo.wine/logo/Nagad/Nagad-Logo.wine.png" height="30" alt="nagad">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" height="20" alt="visa">
+                        <div class="col-md-6">
+                            <div class="tier-card active" onclick="selectTier('paid')">
+                                <span class="badge bg-primary mb-2">Recommended</span>
+                                <h5 class="fw-bold text-dark">Certified</h5>
+                                <h2 class="my-3 text-primary">৳ 1,500</h2>
+                                <ul class="list-unstyled small text-muted text-start mb-4">
+                                    <li><i class="fas fa-check text-success me-2"></i> Everything in Free</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Verified Certificate</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Project Reviews</li>
+                                </ul>
+                                <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal">Enroll Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="col-lg-4">
                 <div class="sidebar-wrapper">
                     <div class="price-card">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#demoModal">
-                            <img src="img/course-02.png" alt="Course Preview">
+                            <img src="img/course-1.jpg" alt="Course Preview">
                             <div class="play-icon-overlay"><i class="fas fa-play"></i></div>
                         </div>
 
                         <div class="d-flex justify-content-center align-items-baseline gap-2 mb-2">
-                            <span class="fs-1 fw-bold text-dark">৳ 15,000</span>
-                            <span class="text-decoration-line-through text-muted">৳ 20,000</span>
+                            <span class="fs-1 fw-bold text-dark">৳ 1,500</span>
+                            <span class="text-decoration-line-through text-muted">৳ 2,500</span>
                         </div>
-<span class="badge bg-success bg-opacity-10 rounded-pill px-3 py-2 mb-4" style="color: #fff;">
-    Early Bird: 25% OFF
-</span>
+                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">
+                            Includes Certification
+                        </span>
 
                         <button class="btn btn-gradient mb-3" data-bs-toggle="modal" data-bs-target="#paymentModal">
                             Enroll Now <i class="fas fa-arrow-right ms-2 small"></i>
                         </button>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#demoModal">
-                            Book Free Demo
-                        </button>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmeYJX4eQgGLDBwOf06lkPcKEvRLj1a3_tJEDS6gfXuDFN8g/viewform" target="_blank" class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4">
+                            Start for Free
+                        </a>
 
                         <div class="text-start">
                             <h6 class="fw-bold mb-3 small text-uppercase">Course Includes:</h6>
                             <ul class="list-unstyled small text-muted">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 20+ Live Interactive Classes</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 4 Real-world Projects</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Freelance Profile Review</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Certificate of Completion</li>
+                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 8 Hours On-Demand Video</li>
+                                <li class="mb-2"><i class="fas fa-file-code text-primary me-2"></i> 4 Downloadable Projects</li>
+                                <li class="mb-2"><i class="fas fa-mobile-alt text-primary me-2"></i> Mobile Access</li>
+                                <li class="mb-2"><i class="fas fa-infinity text-primary me-2"></i> Lifetime Access</li>
                             </ul>
                         </div>
                     </div>
@@ -712,19 +547,13 @@
     </div>
 
     <div class="modal fade" id="demoModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0 p-3">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold">Book Free Demo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 border-0 p-0 bg-dark">
+                <div class="modal-header border-0 position-absolute end-0 z-3">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <input type="text" class="form-control rounded-pill bg-light border-0 py-3 mb-3 px-4" placeholder="Full Name" required>
-                        <input type="email" class="form-control rounded-pill bg-light border-0 py-3 mb-3 px-4" placeholder="Email Address" required>
-                        <input type="tel" class="form-control rounded-pill bg-light border-0 py-3 mb-3 px-4" placeholder="Phone Number" required>
-                        <button type="submit" class="btn btn-gradient">Confirm Booking</button>
-                    </form>
+                <div class="modal-body p-0 ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/pQN-pnXPaVg" title="HTML Preview" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -734,20 +563,20 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0">
                 <div class="modal-header border-0 bg-light rounded-top-4">
-                    <h5 class="modal-title fw-bold">Enroll in Frontend</h5>
+                    <h5 class="modal-title fw-bold">Get Certified</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="d-flex justify-content-between align-items-center mb-4 p-3 bg-primary bg-opacity-10 rounded-3 border border-primary border-opacity-10">
                         <div>
                             <small class="text-uppercase fw-bold text-primary">Total Payable</small>
-                            <div class="fs-4 fw-bold text-dark">৳ 15,000</div>
+                            <div class="fs-4 fw-bold text-dark">৳ 1,500</div>
                         </div>
-                        <span class="badge bg-primary">3 Months</span>
+                        <span class="badge bg-primary">HTML Certified</span>
                     </div>
                     
                     <form>
-                        <h6 class="fw-bold mb-3 small text-uppercase">Student Information</h6>
+                        <h6 class="fw-bold mb-3 small text-uppercase">Your Details</h6>
                         <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <input type="text" class="form-control py-2" placeholder="Full Name">
@@ -782,76 +611,76 @@
         </div>
     </div>
 
-
     <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer-brand-text">
-                    <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
-                    Junayed<span style="color: #fb873f;">Academy</span>
-                </div>
-                <p class="mb-4" style="line-height: 1.6;">
-                    Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.
-                </p>
-                <div class="d-flex pt-2">
-                    <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
-                    <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
-                    <a class="social-btn" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading">Academy</h5>
-                <a class="footer-link" href="about.html">About Us</a>
-                <a class="footer-link" href="courses.html">Our Courses</a>
-                <a class="footer-link" href="team.html">Instructors</a>
-                <a class="footer-link" href="testimonial.html">Success Stories</a>
-                <a class="footer-link" href="contact.html">Contact</a>
-            </div>
-
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading">Resources</h5>
-                <a class="footer-link" href="#">Help Center</a>
-                <a class="footer-link" href="#">Student Portal</a>
-                <a class="footer-link" href="#">Become a Mentor</a>
-                <a class="footer-link" href="#">Terms of Service</a>
-                <a class="footer-link" href="#">Privacy Policy</a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <h5 class="footer-heading">Stay Updated</h5>
-                <p class="mb-4">Get the latest course updates and tech news delivered to your inbox.</p>
-                <div class="footer-input-group">
-                    <input class="footer-input" type="text" placeholder="Your email address">
-                    <button type="button" class="footer-btn-sub">Join</button>
-                </div>
-                <div class="mt-4">
-                    <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #fb873f;"></i> +880 1893 255503</p>
-                    <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #fb873f;"></i> junayedacademy@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <span style="color: #fb873f; font-weight: 600;">Junayed Academy</span>. All Rights Reserved.
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand-text">
+                        <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
+                        Junayed<span style="color: #fb873f;">Academy</span>
+                    </div>
+                    <p class="mb-4" style="line-height: 1.6;">
+                        Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.
+                    </p>
+                    <div class="d-flex pt-2">
+                        <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="social-btn" href="https://www.facebook.com/profile.php?id=61580371964705"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="social-btn" href="https://www.linkedin.com/company/junayed-academy"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-               
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Academy</h5>
+                    <a class="footer-link" href="about.html">About Us</a>
+                    <a class="footer-link" href="courses.html">Our Courses</a>
+                    <a class="footer-link" href="team.html">Instructors</a>
+                    <a class="footer-link" href="testimonial.html">Success Stories</a>
+                    <a class="footer-link" href="contact.html">Contact</a>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Resources</h5>
+                    <a class="footer-link" href="#">Help Center</a>
+                    <a class="footer-link" href="#">Student Portal</a>
+                    <a class="footer-link" href="#">Become a Mentor</a>
+                    <a class="footer-link" href="#">Terms of Service</a>
+                    <a class="footer-link" href="#">Privacy Policy</a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading">Stay Updated</h5>
+                    <p class="mb-4">Get the latest course updates and tech news delivered to your inbox.</p>
+                    <div class="footer-input-group">
+                        <input class="footer-input" type="text" placeholder="Your email address">
+                        <button type="button" class="footer-btn-sub">Join</button>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2"><i class="fa fa-phone-alt me-2" style="color: #fb873f;"></i> +880 1893 255503</p>
+                        <p class="mb-0"><i class="fa fa-envelope me-2" style="color: #fb873f;"></i> junayedacademy@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <span style="color: #fb873f; font-weight: 600;">Junayed Academy</span>. All Rights Reserved.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
     <script src="js/main.js"></script>
 
     <script>
@@ -861,17 +690,49 @@
         const monthDisplay = document.getElementById('monthDisplay');
         const totalFee = 15000;
 
-        installmentSlider.addEventListener('input', function() {
-            const months = parseInt(this.value);
-            const monthlyPayment = Math.ceil(totalFee / months);
-            
-            monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
-            emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
-            
-            // Add a small animation bump
-            emiDisplay.style.transform = "scale(1.1)";
-            setTimeout(() => { emiDisplay.style.transform = "scale(1)"; }, 150);
+        if (installmentSlider) {
+            installmentSlider.addEventListener('input', function() {
+                const months = parseInt(this.value);
+                const monthlyPayment = Math.ceil(totalFee / months);
+                
+                monthDisplay.textContent = months + " Month" + (months > 1 ? "s" : "");
+                emiDisplay.textContent = '৳ ' + monthlyPayment.toLocaleString();
+                
+                // Add a small animation bump
+                emiDisplay.style.transform = "scale(1.1)";
+                setTimeout(() => { emiDisplay.style.transform = "scale(1)"; }, 150);
+            });
+        }
+
+        function selectTier(type) {
+            document.querySelectorAll('.tier-card').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
+        // Modern Hamburger Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.modern-hamburger');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const body = document.body;
+            const links = document.querySelectorAll('.mobile-link');
+
+            if(hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                });
+
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        overlay.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    });
+                });
+            }
         });
     </script>
 </body>
+
 </html>
