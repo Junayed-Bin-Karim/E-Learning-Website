@@ -47,7 +47,7 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Fixes right scroll issue */
+            overflow-x: hidden;
             width: 100%;
         }
 
@@ -145,14 +145,12 @@
            ========================================= */
         .navbar .container-fluid { display: flex; flex-wrap: nowrap !important; align-items: center; justify-content: space-between; }
         
-        /* Navbar Glass Effect */
         .navbar { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; }
         
         .navbar-brand { display: flex; align-items: center; max-width: 85%; margin-right: 0 !important; overflow: hidden; }
         .navbar-brand img { height: 45px; width: auto; margin-right: 8px; transition: all 0.3s ease; }
         .navbar-brand p { margin: 0; line-height: 1; white-space: nowrap; display: flex; align-items: center; font-size: 24px !important; }
 
-        /* Responsive Logo/Text */
         @media (max-width: 576px) {
             .navbar-brand img { height: 32px !important; }
             .navbar-brand p { font-size: 18px !important; }
@@ -164,22 +162,19 @@
         }
 
         /* =========================================
-           MODERN HAMBURGER & OVERLAY MENU
+           SMALL HAMBURGER MENU (MOBILE)
            ========================================= */
-        /* Hamburger Container */
         .modern-hamburger {
-            width: 35px; height: 30px; position: relative; cursor: pointer; z-index: 10000;
+            width: 28px; height: 22px; position: relative; cursor: pointer; z-index: 10000;
             display: flex; flex-direction: column; justify-content: space-between; margin-left: 15px;
         }
-        /* Lines */
         .modern-hamburger .line {
-            width: 100%; height: 3px; background-color: #0f172a; border-radius: 5px;
+            width: 100%; height: 2px; background-color: #0f172a; border-radius: 5px;
             transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); transform-origin: right;
         }
-        /* Active Animation */
-        .modern-hamburger.active .line-1 { transform: rotate(-45deg) translate(-2px, -3px); width: 100%; background-color: #fb873f; }
+        .modern-hamburger.active .line-1 { transform: rotate(-45deg) translate(-2px, -2px); width: 100%; background-color: #fb873f; }
         .modern-hamburger.active .line-2 { opacity: 0; width: 0; }
-        .modern-hamburger.active .line-3 { transform: rotate(45deg) translate(-2px, 3px); width: 100%; background-color: #fb873f; }
+        .modern-hamburger.active .line-3 { transform: rotate(45deg) translate(-2px, 2px); width: 100%; background-color: #fb873f; }
 
         /* Fullscreen Overlay */
         .mobile-menu-overlay {
@@ -191,12 +186,12 @@
         }
         .mobile-menu-overlay.active { opacity: 1; visibility: visible; transform: scale(1); }
 
-        /* Links */
-        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 25px; }
+        /* Menu Links */
+        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 18px; }
         .mobile-link {
-            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0f172a;
             text-decoration: none; position: relative; overflow: hidden; transition: 0.3s;
-            opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+            opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
         }
         .mobile-menu-overlay.active .mobile-link { opacity: 1; transform: translateY(0); }
         .mobile-menu-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
@@ -205,13 +200,14 @@
         .mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
         .mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
         .mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(7) { transition-delay: 0.7s; }
         .mobile-link:hover { color: #fb873f; letter-spacing: 2px; }
-        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px; }
+        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; font-weight: 800; }
         
         body.menu-open { overflow: hidden; }
 
         /* =========================================
-           FOOTER STYLES
+           FOOTER & GLOBAL FIXES
            ========================================= */
         .footer-premium { background-color: #f8f9fa !important; color: #4b5563 !important; border-top: 1px solid #e5e7eb; padding-top: 80px; }
         .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; margin-bottom: 20px; display: flex; align-items: center; }
@@ -226,87 +222,9 @@
         .footer-btn-sub:hover { background: #e67e39; box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3); }
         .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
 
-        /* Global Overflow Fix */
         .container-fluid.p-0 { padding: 0 !important; overflow: hidden; width: 100%; }
         .row { margin-right: 0 !important; margin-left: 0 !important; }
         * { box-sizing: border-box; }
-    
-    /* =========================================
-   UPDATED: SMALLER HAMBURGER & MENU
-   ========================================= */
-
-/* ১. হ্যামবার্গার আইকন সাইজ ছোট করা হয়েছে */
-.modern-hamburger {
-    width: 28px;  /* আগে ৩৫ ছিল */
-    height: 22px; /* আগে ৩০ ছিল */
-    position: relative;
-    cursor: pointer;
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 15px;
-}
-
-/* লাইনগুলো একটু চিকন করা হয়েছে */
-.modern-hamburger .line {
-    width: 100%;
-    height: 2px; /* আগে ৩ ছিল */
-    background-color: #0f172a;
-    border-radius: 5px;
-    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    transform-origin: right;
-}
-
-/* ২. মেনু লিংকগুলোর সাইজ ছোট করা হয়েছে */
-.mobile-menu-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 18px; /* গ্যাপ ২৫ থেকে কমিয়ে ১৮ করা হয়েছে */
-}
-
-.mobile-link {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 18px; /* ফন্ট ২৪ থেকে কমিয়ে ১৮ করা হয়েছে */
-    font-weight: 600;
-    color: #0f172a;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
-}
-
-/* লগিন বাটন একটু হাইলাইট থাকবে কিন্তু ছোট */
-.mobile-link.highlight {
-    background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px; /* আগে ২৮ ছিল */
-    font-weight: 800;
-}
-
-/* ৩. অ্যানিমেশন ফিক্স */
-.modern-hamburger.active .line-1 {
-    transform: rotate(-45deg) translate(-2px, -2px); /* পজিশন এডজাস্টমেন্ট */
-    width: 100%;
-    background-color: #fb873f;
-}
-
-.modern-hamburger.active .line-2 {
-    opacity: 0;
-    width: 0;
-}
-
-.modern-hamburger.active .line-3 {
-    transform: rotate(45deg) translate(-2px, 2px); /* পজিশন এডজাস্টমেন্ট */
-    width: 100%;
-    background-color: #fb873f;
-}
-    
     </style>
 </head>
 
@@ -360,6 +278,7 @@
             <a href="about.html" class="mobile-link">About</a>
             <a href="courses.html" class="mobile-link">Courses</a>
             <a href="team.html" class="mobile-link">Our Team</a>
+            <a href="testimonial.html" class="mobile-link">Testimonials</a>
             <a href="contact.html" class="mobile-link">Contact</a>
             <a href="login.html" class="mobile-link highlight">Login / Sign Up</a>
         </div>
