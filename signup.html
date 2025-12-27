@@ -21,12 +21,11 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
 
     <style>
         /* =========================================
-           ULTRA PREMIUM SIGNUP STYLES
+           GLOBAL STYLES & FIXES
            ========================================= */
         :root {
             --primary: #fb873f;
@@ -41,231 +40,179 @@
         body {
             font-family: var(--font-main);
             background-color: #f8f9fa;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Fixes right scroll issue */
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
 
-        /* --- Header --- */
+        /* Global Reset for layout */
+        .container-fluid.p-0 { padding: 0 !important; overflow: hidden; width: 100%; }
+        .row { margin-right: 0 !important; margin-left: 0 !important; }
+        * { box-sizing: border-box; }
+
+        /* =========================================
+           NAVBAR FIX (UNIVERSAL)
+           ========================================= */
+        .navbar .container-fluid { display: flex; flex-wrap: nowrap !important; align-items: center; justify-content: space-between; }
+        
+        .navbar { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; }
+        
+        .navbar-brand { display: flex; align-items: center; max-width: 85%; margin-right: 0 !important; overflow: hidden; }
+        .navbar-brand img { height: 45px; width: auto; margin-right: 8px; transition: all 0.3s ease; }
+        .navbar-brand p { margin: 0; line-height: 1; white-space: nowrap; display: flex; align-items: center; font-size: 24px !important; color: #1a1a1a; }
+
+        @media (max-width: 576px) {
+            .navbar-brand img { height: 32px !important; }
+            .navbar-brand p { font-size: 18px !important; }
+            .container-fluid.px-3 { padding-left: 15px !important; padding-right: 15px !important; }
+        }
+        @media (max-width: 380px) {
+            .navbar-brand img { height: 28px !important; margin-right: 5px; }
+            .navbar-brand p { font-size: 16px !important; }
+        }
+
+        /* =========================================
+           SMALL HAMBURGER MENU (MOBILE)
+           ========================================= */
+        .modern-hamburger {
+            width: 28px; height: 22px; position: relative; cursor: pointer; z-index: 10000;
+            display: flex; flex-direction: column; justify-content: space-between; margin-left: 15px;
+        }
+        .modern-hamburger .line {
+            width: 100%; height: 2px; background-color: #0f172a; border-radius: 5px;
+            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); transform-origin: right;
+        }
+        .modern-hamburger.active .line-1 { transform: rotate(-45deg) translate(-2px, -2px); width: 100%; background-color: #fb873f; }
+        .modern-hamburger.active .line-2 { opacity: 0; width: 0; }
+        .modern-hamburger.active .line-3 { transform: rotate(45deg) translate(-2px, 2px); width: 100%; background-color: #fb873f; }
+
+        /* Fullscreen Overlay */
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            z-index: 9990; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transform: scale(0.9); transition: all 0.4s ease-in-out;
+        }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; transform: scale(1); }
+
+        /* Menu Links */
+        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 18px; }
+        .mobile-link {
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0f172a;
+            text-decoration: none; position: relative; overflow: hidden; transition: 0.3s;
+            opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+        }
+        .mobile-menu-overlay.active .mobile-link { opacity: 1; transform: translateY(0); }
+        .mobile-menu-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(7) { transition-delay: 0.7s; }
+        .mobile-link:hover { color: #fb873f; letter-spacing: 2px; }
+        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; font-weight: 800; }
+        
+        body.menu-open { overflow: hidden; }
+
+        /* =========================================
+           SIGNUP PAGE SPECIFIC STYLES
+           ========================================= */
+        
+        /* Header */
         .page-header-ultra {
             background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('img/carousel-1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Parallax */
-            padding: 140px 0 120px 0;
-            position: relative;
-            margin-bottom: 0;
+            background-size: cover; background-position: center; padding: 140px 0 120px 0;
+            position: relative; margin-bottom: 0;
         }
 
-        /* --- Signup Wrapper --- */
-        .signup-section-wrapper {
-            margin-top: -80px;
-            position: relative;
-            z-index: 10;
-            padding-bottom: 80px;
-        }
+        /* Signup Wrapper */
+        .signup-section-wrapper { margin-top: -80px; position: relative; z-index: 10; padding-bottom: 80px; }
 
         .signup-card-ultra {
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-            overflow: hidden;
-            display: flex;
-            min-height: 700px;
+            background: white; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            overflow: hidden; display: flex; min-height: 700px;
         }
 
-        /* Left Side (Visuals) */
+        /* Left Side */
         .signup-visual-side {
-            flex: 0 0 40%;
-            background: var(--dark-bg);
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            flex: 0 0 40%; background: var(--dark-bg); padding: 60px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            color: white; position: relative; overflow: hidden;
         }
-
         .signup-visual-side::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
+            content: ''; position: absolute; top: -10%; right: -10%; width: 500px; height: 500px;
             background: radial-gradient(circle, rgba(251, 135, 63, 0.15) 0%, transparent 70%);
         }
 
         .benefit-item {
-            display: flex;
-            align-items: start;
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
+            display: flex; align-items: start; margin-bottom: 30px; background: rgba(255,255,255,0.05);
+            padding: 20px; border-radius: 20px; backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
         }
+        .benefit-item:hover { background: rgba(255,255,255,0.1); transform: translateX(5px); border-color: var(--primary); }
+        .benefit-icon { font-size: 1.5rem; color: var(--primary); margin-right: 15px; margin-top: 2px; }
 
-        .benefit-item:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateX(5px);
-            border-color: var(--primary);
-        }
+        /* Right Side */
+        .signup-form-side { flex: 1; padding: 60px; display: flex; flex-direction: column; }
 
-        .benefit-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 2px;
-        }
-
-        /* Right Side (Form) */
-        .signup-form-side {
-            flex: 1;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* --- Progress Steps --- */
+        /* Progress Steps */
         .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            position: relative;
-            padding: 0 20px;
+            display: flex; justify-content: space-between; margin-bottom: 40px;
+            position: relative; padding: 0 20px;
         }
-
         .step-indicator::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 30px;
-            right: 30px;
-            height: 2px;
-            background: #eee;
-            z-index: 1;
+            content: ''; position: absolute; top: 15px; left: 30px; right: 30px;
+            height: 2px; background: #eee; z-index: 1;
         }
-
-        .step-item {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            background: white;
-            padding: 0 10px;
-        }
-
+        .step-item { position: relative; z-index: 2; text-align: center; background: white; padding: 0 10px; }
         .step-circle {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: #eee;
-            color: #aaa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin: 0 auto 5px;
-            transition: 0.4s;
+            width: 35px; height: 35px; border-radius: 50%; background: #eee; color: #aaa;
+            display: flex; align-items: center; justify-content: center; font-weight: 700;
+            margin: 0 auto 5px; transition: 0.4s;
         }
-
         .step-item.active .step-circle {
-            background: var(--gradient-ultra);
-            color: white;
-            box-shadow: 0 0 0 5px rgba(251, 135, 63, 0.1);
+            background: var(--gradient-ultra); color: white; box-shadow: 0 0 0 5px rgba(251, 135, 63, 0.1);
         }
-
-        .step-item.completed .step-circle {
-            background: #28a745;
-            color: white;
-        }
-
+        .step-item.completed .step-circle { background: #28a745; color: white; }
         .step-text { font-size: 0.8rem; font-weight: 600; color: #888; }
         .step-item.active .step-text { color: var(--primary); }
 
-        /* --- Form Steps --- */
-        .form-step {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
+        /* Form Steps */
+        .form-step { display: none; animation: fadeIn 0.5s ease; }
         .form-step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Ultra Inputs --- */
-        .form-floating-ultra > .form-control {
-            border: 2px solid #f1f1f1;
-            border-radius: 12px;
-            padding-left: 20px;
-        }
-
-        .form-floating-ultra > .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.1);
-        }
-
+        /* Inputs */
+        .form-floating-ultra > .form-control { border: 2px solid #f1f1f1; border-radius: 12px; padding-left: 20px; }
+        .form-floating-ultra > .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(251, 135, 63, 0.1); }
         .form-floating-ultra > label { padding-left: 20px; color: #888; }
 
-        /* --- Password Strength --- */
-        .strength-meter {
-            height: 4px;
-            background: #eee;
-            border-radius: 2px;
-            margin-top: 8px;
-            overflow: hidden;
-            display: flex;
-        }
-        
-        .strength-bar {
-            height: 100%;
-            width: 0;
-            transition: width 0.3s, background-color 0.3s;
-        }
+        /* Password Strength */
+        .strength-meter { height: 4px; background: #eee; border-radius: 2px; margin-top: 8px; overflow: hidden; display: flex; }
+        .strength-bar { height: 100%; width: 0; transition: width 0.3s, background-color 0.3s; }
 
-        /* --- Ultra Buttons --- */
+        /* Buttons */
         .btn-ultra {
-            background: var(--gradient-ultra);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            transition: 0.4s;
-            box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3);
-            width: 100%;
+            background: var(--gradient-ultra); color: white; border: none; padding: 15px 40px;
+            border-radius: 50px; font-weight: 700; font-size: 1rem; position: relative;
+            overflow: hidden; transition: 0.4s; box-shadow: 0 10px 25px rgba(251, 135, 63, 0.3); width: 100%;
         }
-
         .btn-ultra::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: 0.5s;
         }
-
         .btn-ultra:hover::after { left: 100%; }
         .btn-ultra:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(251, 135, 63, 0.4); color: white; }
 
         .btn-outline-ultra {
-            border: 2px solid #eee;
-            color: #555;
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 600;
-            background: transparent;
-            transition: 0.3s;
+            border: 2px solid #eee; color: #555; border-radius: 50px; padding: 12px 30px;
+            font-weight: 600; background: transparent; transition: 0.3s;
         }
         .btn-outline-ultra:hover { border-color: var(--primary); color: var(--primary); background: #fff5f0; }
 
@@ -278,33 +225,9 @@
         }
 
         /* =========================================
-           ULTRA PREMIUM NAVBAR (MOBILE FIX)
+           FOOTER STYLES
            ========================================= */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 10px 0;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 576px) {
-            .container-fluid.px-3 { padding-left: 15px !important; padding-right: 15px !important; }
-            .nav-logo { height: 32px !important; }
-            .brand-text { font-size: 18px !important; }
-            .navbar-toggler-icon { width: 1.2em; height: 1.2em; }
-        }
-
-        /* =========================================
-           PREMIUM LIGHT FOOTER STYLES
-           ========================================= */
-        .footer-premium {
-            background-color: #f8f9fa !important;
-            color: #4b5563 !important;
-            border-top: 1px solid #e5e7eb;
-            padding-top: 80px;
-        }
+        .footer-premium { background-color: #f8f9fa !important; color: #4b5563 !important; border-top: 1px solid #e5e7eb; padding-top: 80px; margin-top: 0; }
         .footer-brand-text { font-weight: 800; font-size: 26px; color: #111827; margin-bottom: 20px; display: flex; align-items: center; }
         .footer-heading { color: #111827 !important; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px; }
         .footer-link { color: #6b7280 !important; display: block; margin-bottom: 12px; transition: all 0.3s ease; text-decoration: none; font-weight: 500; }
@@ -325,17 +248,22 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <div class="container-fluid px-4 px-lg-5 mobile-nav-wrapper">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <p class="m-0 fw-bold brand-text" style="font-size: 24px;">
-                    <img src="img/icon.png" alt="Junayed Academy Logo" class="nav-logo" height="40px" style="margin-right: 10px;">
+        <div class="container-fluid px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand">
+                <p class="m-0 fw-bold brand-text">
+                    <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
                     Junayed<span style="color: #fb873f;">Academy</span>
                 </p>
             </a>
-            <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
+            <div class="modern-hamburger d-lg-none">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
@@ -354,21 +282,33 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-container">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="courses.html" class="mobile-link">Courses</a>
+            <a href="team.html" class="mobile-link">Our Team</a>
+            <a href="testimonial.html" class="mobile-link">Testimonials</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="login.html" class="mobile-link highlight">Login / Sign Up</a>
+        </div>
+    </div>
+
     <div class="container-fluid page-header-ultra">
         <div class="container py-5 text-center">
             <span class="badge bg-white text-primary rounded-pill px-3 py-2 mb-3 fw-bold animated slideInDown">
                 Create Your Account
             </span>
-
             <h1 class="display-3 text-white animated slideInDown fw-bolder">
                 Join Junayed Academy
             </h1>
-
             <p class="lead text-white-50 mb-0 animated slideInUp">
                 Begin your journey toward advanced skills in AI, Web Development, and Modern Technologies.
             </p>
         </div>
     </div>
+
     <div class="container-xxl signup-section-wrapper">
         <div class="container">
             <div class="row justify-content-center">
@@ -385,7 +325,7 @@
                                 <div class="benefit-item">
                                     <i class="fas fa-rocket benefit-icon"></i>
                                     <div>
-<h6 class="fw-bold mb-1" style="color: #fff;">Career-Focused Learning</h6>
+                                        <h6 class="fw-bold mb-1" style="color: #fff;">Career-Focused Learning</h6>
                                         <small class="text-white-50">AI & Web Development tracks built to match industry needs.</small>
                                     </div>
                                 </div>
@@ -393,7 +333,7 @@
                                 <div class="benefit-item">
                                     <i class="fas fa-certificate benefit-icon"></i>
                                     <div>
-<h6 class="fw-bold mb-1" style="color: #fff;">Industry-Recognized Certificates</h6>
+                                        <h6 class="fw-bold mb-1" style="color: #fff;">Industry-Recognized Certificates</h6>
                                         <small class="text-white-50">Showcase verified credentials to stand out in job applications.</small>
                                     </div>
                                 </div>
@@ -401,7 +341,7 @@
                                 <div class="benefit-item">
                                     <i class="fas fa-users benefit-icon"></i>
                                     <div>
-<h6 class="fw-bold mb-1" style="color: #fff;">1:1 Mentor Guidance</h6>
+                                        <h6 class="fw-bold mb-1" style="color: #fff;">1:1 Mentor Guidance</h6>
                                         <small class="text-white-50">Learn directly from experts who’ve built real-world solutions.</small>
                                     </div>
                                 </div>
@@ -553,6 +493,7 @@
             </div>
         </div>
     </div>
+
     <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5">
@@ -604,7 +545,7 @@
                 </div>
             </div>
         </div>
-        
+    
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -615,6 +556,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -665,25 +607,29 @@
         const toggleBtn = document.getElementById('togglePass');
         const strengthBar = document.getElementById('strength-bar');
 
-        toggleBtn.addEventListener('click', () => {
-            const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passInput.setAttribute('type', type);
-            toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
-        });
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passInput.setAttribute('type', type);
+                toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
 
-        passInput.addEventListener('input', function() {
-            const val = passInput.value;
-            let strength = 0;
-            if(val.length > 5) strength += 25;
-            if(val.length > 8) strength += 25;
-            if(/[A-Z]/.test(val)) strength += 25;
-            if(/[0-9!@#$%^&*]/.test(val)) strength += 25;
+        if(passInput) {
+            passInput.addEventListener('input', function() {
+                const val = passInput.value;
+                let strength = 0;
+                if(val.length > 5) strength += 25;
+                if(val.length > 8) strength += 25;
+                if(/[A-Z]/.test(val)) strength += 25;
+                if(/[0-9!@#$%^&*]/.test(val)) strength += 25;
 
-            strengthBar.style.width = strength + '%';
-            if(strength < 50) strengthBar.style.backgroundColor = '#dc3545';
-            else if(strength < 75) strengthBar.style.backgroundColor = '#ffc107';
-            else strengthBar.style.backgroundColor = '#28a745';
-        });
+                strengthBar.style.width = strength + '%';
+                if(strength < 50) strengthBar.style.backgroundColor = '#dc3545';
+                else if(strength < 75) strengthBar.style.backgroundColor = '#ffc107';
+                else strengthBar.style.backgroundColor = '#28a745';
+            });
+        }
 
         // Form Submit
         document.getElementById('signupForm').addEventListener('submit', function(e) {
@@ -702,6 +648,30 @@
                 // Simulate success
                 window.location.href = 'login.html';
             }, 2000);
+        });
+
+        // Modern Hamburger Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.modern-hamburger');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const body = document.body;
+            const links = document.querySelectorAll('.mobile-link');
+
+            if(hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                });
+
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        overlay.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    });
+                });
+            }
         });
     </script>
 </body>
