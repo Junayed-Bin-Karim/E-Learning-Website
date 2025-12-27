@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learn More | Junayed Academy</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <link href="img/icon.png" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #fb873f;
+            --primary-glow: rgba(251, 135, 63, 0.5);
+            --dark-bg: #0f172a;
+            --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
+            --shadow-ultra: 0 20px 40px -10px rgba(251, 135, 63, 0.3);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body { font-family: var(--font-main); background-color: #f8f9fa; overflow-x: hidden; }
+        
+        /* Ultra Buttons */
+        .btn-ultra {
+            padding: 16px 40px; background: var(--gradient-ultra); border: none; border-radius: 12px;
+            color: white; font-weight: 700; letter-spacing: 1px; transition: all 0.4s ease; box-shadow: var(--shadow-ultra);
+            position: relative; overflow: hidden;
+        }
+        .btn-ultra:hover { transform: translateY(-5px); color: white; box-shadow: 0 30px 60px -12px rgba(251, 135, 63, 0.5); }
+
+        /* Text Gradient */
+        .text-gradient { background: var(--gradient-ultra); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Navbar */
+        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); padding: 15px 0; }
+        .navbar-brand img { height: 45px; margin-right: 10px; }
+        .nav-item.nav-link { color: #0f172a; font-weight: 600; margin-left: 15px; transition: 0.3s; }
+        .nav-item.nav-link:hover, .nav-item.nav-link.active { color: #fb873f; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('img/carousel-1.jpg');
+            background-position: center center;
+            background-size: cover;
+            padding: 100px 0 60px 0;
+            margin-bottom: 0;
+        }
+
+        /* Glass Cards for Info */
+        .info-card {
+            background: white; border-radius: 20px; padding: 40px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #eee;
+            transition: all 0.4s; height: 100%;
+        }
+        .info-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .info-icon {
+            width: 70px; height: 70px; background: rgba(251, 135, 63, 0.1); 
+            color: var(--primary); display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; margin-bottom: 25px; font-size: 28px;
+        }
+
+        /* Timeline Section */
+        .timeline-step { position: relative; padding-left: 50px; margin-bottom: 40px; }
+        .timeline-step::before {
+            content: ''; position: absolute; left: 0; top: 0; width: 2px; height: 100%; 
+            background: #e5e7eb;
+        }
+        .timeline-step:last-child::before { display: none; }
+        .timeline-number {
+            position: absolute; left: -19px; top: 0; width: 40px; height: 40px;
+            background: var(--gradient-ultra); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: 800;
+            box-shadow: 0 5px 15px rgba(251, 135, 63, 0.4);
+        }
+
+        /* Tech Stack Grid */
+        .tech-item {
+            background: white; padding: 20px; border-radius: 15px; 
+            text-align: center; border: 1px solid #eee; transition: 0.3s;
+        }
+        .tech-item:hover { border-color: var(--primary); transform: scale(1.05); }
+        .tech-item i { font-size: 40px; margin-bottom: 10px; color: #0f172a; }
+
+        /* Footer (Same as Home) */
+        .footer-premium { background-color: #f8f9fa; border-top: 1px solid #e5e7eb; padding-top: 80px; }
+        .social-btn { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: white; border: 1px solid #ddd; color: #333; margin-right: 5px; transition: 0.3s; text-decoration: none;}
+        .social-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <div class="container px-4 px-lg-5">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <p class="m-0 fw-bold" style="font-size: 24px;">
+                    <img src="img/icon.png" alt="Logo"> Junayed<span style="color: #fb873f;">Academy</span>
+                </p>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="courses.html" class="nav-item nav-link">Courses</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link text-primary fw-bold">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid page-header mb-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white animated slideInDown mb-3 fw-bold">About Us</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Learn More</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-primary text-uppercase fw-bold ls-2">Who We Are</h6>
+                    <h1 class="display-5 fw-bolder mb-4">Transforming Education in <span class="text-gradient">Bangladesh</span></h1>
+                    <p class="mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+                        Junayed Academy isn't just another video course website. We are a community-driven ecosystem designed to bridge the gap between university theory and industry reality.
+                    </p>
+                    <p class="mb-4 text-muted" style="font-size: 1.1rem; line-height: 1.8;">
+                        Founded with a vision to make premium tech education accessible, we focus heavily on **Project-Based Learning (PBL)**. Our students don't just memorize syntax; they build real software that solves real problems.
+                    </p>
+                    
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
+                                <div class="ps-4">
+                                    <p class="mb-0">Years of</p>
+                                    <h6 class="text-uppercase mb-0">Experience</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                                <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
+                                <div class="ps-4">
+                                    <p class="mb-0">Real World</p>
+                                    <h6 class="text-uppercase mb-0">Projects</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="img-border">
+                        <img class="img-fluid rounded-3 shadow-lg" src="img/carousel-1.jpg" alt="About Junayed Academy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 50px;">
+                <h6 class="text-primary text-uppercase fw-bold">Our Pillars</h6>
+                <h1 class="display-5 fw-bolder">Built on <span class="text-gradient">Core Values</span></h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="info-card text-center">
+                        <div class="info-icon mx-auto"><i class="fas fa-hammer"></i></div>
+                        <h4 class="fw-bold">Practical Skills</h4>
+                        <p class="text-muted">We remove the fluff. Every lesson is designed to teach you something you can use in a job tomorrow.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="info-card text-center">
+                        <div class="info-icon mx-auto"><i class="fas fa-users"></i></div>
+                        <h4 class="fw-bold">Community First</h4>
+                        <p class="text-muted">Learning alone is hard. Join our Discord servers and study groups to grow together with peers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="info-card text-center">
+                        <div class="info-icon mx-auto"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="fw-bold">Innovation</h4>
+                        <p class="text-muted">We update our curriculum monthly to include the latest AI tools, frameworks, and best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-primary text-uppercase fw-bold">The Journey</h6>
+                    <h1 class="display-5 fw-bolder mb-5">From Beginner to <span class="text-gradient">Hired</span></h1>
+                    
+                    <div class="timeline-step">
+                        <div class="timeline-number">1</div>
+                        <h5 class="fw-bold">Foundation</h5>
+                        <p class="text-muted">Master the syntax and core logic. We ensure your basics in Python, JS, or C++ are rock solid.</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <div class="timeline-number">2</div>
+                        <h5 class="fw-bold">Deep Dive & Frameworks</h5>
+                        <p class="text-muted">Learn modern tools like React, Django, or Flutter. Understand how to structure large applications.</p>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="timeline-number">3</div>
+                        <h5 class="fw-bold">Capstone Projects</h5>
+                        <p class="text-muted">Build a "Clone" of Netflix, Uber, or an AI Chatbot. This is what you show recruiters.</p>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="timeline-number">4</div>
+                        <h5 class="fw-bold">Career Prep</h5>
+                        <p class="text-muted">Mock interviews, resume building, and direct referrals to our partner companies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-dark rounded-3 p-5 h-100 d-flex flex-column justify-content-center text-center">
+                        <h3 class="text-white mb-4">Ready to start your journey?</h3>
+                        <p class="text-white-50 mb-5">Join thousands of students who have already changed their lives through code.</p>
+                        <a href="courses.html" class="btn btn-ultra">Browse Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <img src="img/team-1.jpg" class="img-fluid rounded-circle shadow-lg mb-4" style="width: 250px; height: 250px; object-fit: cover; border: 5px solid white;" alt="Junayed">
+                </div>
+                <div class="col-md-8 wow fadeInUp" data-wow-delay="0.3s">
+                    <i class="fas fa-quote-left fa-3x text-primary mb-3 opacity-25"></i>
+                    <h2 class="fw-bold mb-3">A Note from the Founder</h2>
+                    <p class="lead text-dark fst-italic mb-4">
+                        "I started Junayed Academy with a simple belief: Talent is everywhere, but opportunity is not. In Bangladesh, we have brilliant minds waiting for the right guidance. My goal is to provide world-class tech education at a price that everyone can afford, empowering the next generation of engineers."
+                    </p>
+                    <h5 class="fw-bold">Md Junayed Bin Karim</h5>
+                    <p class="text-muted mb-0">Founder & Lead Instructor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-premium wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-4">
+                         <img src="img/icon.png" alt="Icon" height="35" style="margin-right: 10px;">
+                         <h4 class="m-0 fw-bold">Junayed<span style="color: #fb873f;">Academy</span></h4>
+                    </div>
+                    <p>Empowering the next generation of tech leaders in Bangladesh through accessible, project-based education.</p>
+                    <div class="d-flex pt-2">
+                        <a class="social-btn" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="mb-4 fw-bold">Quick Links</h5>
+                    <p><a class="text-muted text-decoration-none" href="about.html">About Us</a></p>
+                    <p><a class="text-muted text-decoration-none" href="courses.html">Our Courses</a></p>
+                    <p><a class="text-muted text-decoration-none" href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 fw-bold">Contact</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3 text-primary"></i>Dhaka, Bangladesh</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3 text-primary"></i>+880 1893 255503</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3 text-primary"></i>junayedacademy@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center py-4">
+            <p class="mb-0 text-muted">&copy; <span style="color: #fb873f;">Junayed Academy</span>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
