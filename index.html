@@ -438,6 +438,93 @@
     font-size: 0.9rem;
     color: #6b7280;
 }
+
+
+
+
+        /* =========================================
+   JUNAYED ACADEMY NAVBAR FIX (UNIVERSAL)
+   ========================================= */
+
+/* ১. ন্যাভিগেশন বার কন্টেইনার ফিক্স */
+.navbar .container-fluid {
+    display: flex;
+    flex-wrap: nowrap !important; /* কোনোভাবেই যেন নিচে না নামে */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ২. লোগো এবং টেক্সট এর এরিয়া */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    max-width: 85%; /* লোগোর জন্য ৮৫% জায়গা, বাকিটা বাটনের জন্য */
+    margin-right: 0 !important;
+    overflow: hidden; /* টেক্সট বড় হলে যেন বাইরে না যায় */
+}
+
+/* ৩. লোগো ইমেজ কন্ট্রোল */
+.navbar-brand img {
+    height: 45px; /* ল্যাপটপ/ডেস্কটপ সাইজ */
+    width: auto;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+/* ৪. টেক্সট কন্ট্রোল (Junayed Academy) */
+.navbar-brand p {
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap; /* টেক্সট ভাঙবে না */
+    display: flex;
+    align-items: center;
+    font-size: 24px !important; /* ল্যাপটপ সাইজ */
+}
+
+/* ৫. হ্যামবার্গার মেনু বাটন ফিক্স */
+.navbar-toggler {
+    flex-shrink: 0; /* বাটন কখনোই চ্যাপ্টা হবে না */
+    border: none !important;
+    padding: 0 5px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin-left: 10px;
+}
+
+/* =========================================
+   MOBILE DEVICE RESPONSIVENESS (Magic Fix)
+   ========================================= */
+
+/* সাধারণ মোবাইল (Phone) */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 32px !important; /* মোবাইলে লোগো ছোট হবে */
+    }
+
+    .navbar-brand p {
+        font-size: 18px !important; /* মোবাইলে টেক্সট ছোট হবে */
+    }
+    
+    .navbar-brand p span {
+        font-size: 18px !important;
+    }
+}
+
+/* খুব ছোট মোবাইল (Small Phones like Galaxy Fold/iPhone SE) */
+@media (max-width: 380px) {
+    .navbar-brand img {
+        height: 28px !important; /* আরো ছোট হবে */
+        margin-right: 5px;
+    }
+
+    .navbar-brand p {
+        font-size: 16px !important; /* টেক্সট আরো ছোট হবে */
+    }
+    
+    .navbar-brand p span {
+        font-size: 16px !important;
+    }
+}
     </style>
 </head>
 
