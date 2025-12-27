@@ -525,6 +525,47 @@
         font-size: 16px !important;
     }
 }
+
+
+
+        /* =========================================
+   FIX: RIGHT SIDE GAP REMOVER (MOBILE)
+   ========================================= */
+
+/* ১. পুরো বডি এবং HTML এর প্রস্থ লক করা */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important; /* ডানে বামে স্ক্রল বন্ধ */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* ২. বুটস্ট্র্যাপের 'row' এর কারণে হওয়া গ্যাপ ফিক্স */
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* ৩. কন্টেইনার বা সেকশন যেন বাইরে না যায় */
+.container, .container-fluid {
+    overflow-x: hidden;
+    padding-right: 15px; /* সেফটি প্যাডিং */
+    padding-left: 15px;
+}
+
+/* ৪. হিরো সেকশন বা ক্যারোজেল ফিক্স */
+.container-fluid.p-0 {
+    padding: 0 !important;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* ৫. এক্সট্রা বাটন বা ডেকোরেশন ফিক্স */
+* {
+    box-sizing: border-box;
+}
     </style>
 </head>
 
