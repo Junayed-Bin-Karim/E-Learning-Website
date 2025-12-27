@@ -249,6 +249,81 @@
         .container-fluid.p-0 { padding: 0 !important; overflow: hidden; width: 100%; }
         .row { margin-right: 0 !important; margin-left: 0 !important; }
         * { box-sizing: border-box; }
+    
+    
+    
+    
+    /* --- PREMIUM TESTIMONIAL CAROUSEL --- */
+        .testimonial-carousel .owl-stage-outer {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            overflow: visible; /* Allows shadow/glow to show */
+        }
+
+        .testimonial-item {
+            transition: all 0.4s ease-in-out;
+            transform: scale(0.9);
+            opacity: 0.5;
+            filter: blur(2px); /* Side items are blurred */
+        }
+
+        /* The Active Center Item */
+        .testimonial-carousel .center .testimonial-item {
+            transform: scale(1.05); /* Slightly bigger */
+            opacity: 1;
+            filter: blur(0px); /* Crystal clear */
+            z-index: 10;
+        }
+
+        /* Card Design Upgrade */
+        .testimonial-card-premium {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Orange Glow behind the Active Card */
+        .testimonial-carousel .center .testimonial-card-premium {
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(251, 135, 63, 0.15); /* Orange glow */
+            border-color: #fb873f;
+        }
+
+        /* Quote Icon Background */
+        .quote-bg {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 80px;
+            line-height: 1;
+            color: rgba(251, 135, 63, 0.05);
+            font-family: serif;
+        }
+
+        /* Dots Styling */
+        .testimonial-carousel .owl-dots {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .testimonial-carousel .owl-dot span {
+            width: 10px;
+            height: 10px;
+            background: #e2e8f0;
+            display: block;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        .testimonial-carousel .owl-dot.active span {
+            background: #fb873f;
+            width: 30px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -573,7 +648,12 @@
         </div>
     </div>
 
-    <div class="container-xxl py-5">
+
+
+
+
+
+<div class="container-xxl py-5" style="overflow: hidden;">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: 50px;">
                 <h6 class="text-primary text-uppercase fw-bold ls-2">Success Stories</h6>
@@ -583,60 +663,67 @@
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 
                 <div class="testimonial-item">
-                    <div class="glass-card p-4 h-100 position-relative">
+                    <div class="testimonial-card-premium">
+                        <i class="fas fa-quote-right quote-bg"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="Rajon">
+                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-white shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="Rajon">
                             <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Rajon Mahmud</h6>
-                                <small class="text-primary fw-bold">ML Engineer</small>
+                                <h5 class="fw-bold mb-0">Rajon Mahmud</h5>
+                                <span class="text-primary small fw-bold text-uppercase ls-1">ML Engineer</span>
                             </div>
                         </div>
-                        <p class="text-muted fst-italic mb-0">"The quality of content at Junayed Academy is unmatched. The premium production value and deep-dive curriculum helped me switch careers seamlessly."</p>
+                        <p class="text-muted mb-0" style="font-size: 1.05rem; line-height: 1.7;">"The quality of content at Junayed Academy is unmatched. The premium production value and deep-dive curriculum helped me switch careers seamlessly."</p>
                     </div>
                 </div>
 
                 <div class="testimonial-item">
-                    <div class="glass-card p-4 h-100 position-relative">
+                    <div class="testimonial-card-premium">
+                        <i class="fas fa-quote-right quote-bg"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="Parui">
+                            <img src="img/Parui-testimonial-2.jpg" class="rounded-circle border border-2 border-white shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="Parui">
                             <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Parui Rahman</h6>
-                                <small class="text-primary fw-bold">Frontend Dev</small>
+                                <h5 class="fw-bold mb-0">Parui Rahman</h5>
+                                <span class="text-primary small fw-bold text-uppercase ls-1">Frontend Dev</span>
                             </div>
                         </div>
-                        <p class="text-muted fst-italic mb-0">"Worth every penny. The project-based learning approach gave me a portfolio that actually impressed interviewers. Highly recommended."</p>
+                        <p class="text-muted mb-0" style="font-size: 1.05rem; line-height: 1.7;">"Worth every penny. The project-based learning approach gave me a portfolio that actually impressed interviewers. Highly recommended."</p>
                     </div>
                 </div>
 
                 <div class="testimonial-item">
-                    <div class="glass-card p-4 h-100 position-relative">
+                    <div class="testimonial-card-premium">
+                        <i class="fas fa-quote-right quote-bg"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="Chowa">
+                            <img src="img/Chowa-testimonial-4.jpg" class="rounded-circle border border-2 border-white shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="Chowa">
                             <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Lailatul Chowa</h6>
-                                <small class="text-primary fw-bold">Full Stack Dev</small>
+                                <h5 class="fw-bold mb-0">Lailatul Chowa</h5>
+                                <span class="text-primary small fw-bold text-uppercase ls-1">Full Stack Dev</span>
                             </div>
                         </div>
-                        <p class="text-muted fst-italic mb-0">"I've tried other platforms, but the mentorship here is elite. You get real answers from real experts, not just automated responses."</p>
+                        <p class="text-muted mb-0" style="font-size: 1.05rem; line-height: 1.7;">"I've tried other platforms, but the mentorship here is elite. You get real answers from real experts, not just automated responses."</p>
                     </div>
                 </div>
                 
                 <div class="testimonial-item">
-                    <div class="glass-card p-4 h-100 position-relative">
+                    <div class="testimonial-card-premium">
+                        <i class="fas fa-quote-right quote-bg"></i>
                         <div class="d-flex align-items-center mb-4">
-                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-primary p-1" width="60" height="60" alt="Student">
+                            <img src="img/rajon-testimonial-1.jpg" class="rounded-circle border border-2 border-white shadow-sm" style="width: 70px; height: 70px; object-fit: cover;" alt="Tanvir">
                             <div class="ms-3">
-                                <h6 class="fw-bold mb-0">Tanvir Ahmed</h6>
-                                <small class="text-primary fw-bold">Data Analyst</small>
+                                <h5 class="fw-bold mb-0">Tanvir Ahmed</h5>
+                                <span class="text-primary small fw-bold text-uppercase ls-1">Data Analyst</span>
                             </div>
                         </div>
-                        <p class="text-muted fst-italic mb-0">"The Data Structures course changed my perspective entirely. I felt prepared for every technical question in my recent job interview."</p>
+                        <p class="text-muted mb-0" style="font-size: 1.05rem; line-height: 1.7;">"The Data Structures course changed my perspective entirely. I felt prepared for every technical question in my recent job interview."</p>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+    
     <div class="container-xxl py-5">
         <div class="container">
             <div class="bg-white rounded-3 shadow-lg p-5 border-start border-5 border-primary wow fadeInUp" data-wow-delay="0.1s">
@@ -816,6 +903,31 @@
                 });
             }
         });
+
+
+
+
+        // Testimonial Carousel
+            $(".testimonial-carousel").owlCarousel({
+                autoplay: true,
+                smartSpeed: 1000,
+                center: true,      // This is crucial for the middle focus
+                margin: 25,
+                dots: true,
+                loop: true,
+                nav: false,
+                responsive: {
+                    0:{
+                        items:1
+                    },
+                    768:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            });
     </script>
 </body>
 
