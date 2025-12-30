@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Junayed Academy | C Programming Mastery</title>
+    <title>Junayed Academy | UI/UX Design Mastery</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/icon.png" rel="icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -24,19 +24,19 @@
            1. ULTRA PREMIUM DESIGN SYSTEM (Unified)
            ========================================= */
         :root {
-            /* Course Specific Theme (C Blue) */
-            --primary: #0284c7; 
-            --primary-dark: #0369a1;
-            --gradient-c: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+            /* Course Specific Theme (UI/UX Purple) */
+            --primary: #a855f7; 
+            --primary-dark: #7e22ce;
+            --gradient-design: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
             
             /* Standard System Colors (For Nav/Footer Consistency) */
             --brand-orange: #fb873f;
             --dark-bg: #0f172a;
-            --bg-light: #f0f9ff; /* Light Blue Tint */
+            --bg-light: #faf5ff; /* Light Purple Tint */
             --card-bg: #ffffff;
             --text-main: #334155;
             --gradient-ultra: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%);
-            --shadow-soft: 0 10px 40px -10px rgba(2, 132, 199, 0.15);
+            --shadow-soft: 0 10px 40px -10px rgba(168, 85, 247, 0.15);
             --radius-xl: 24px;
             --radius-lg: 16px;
             --font-head: 'Outfit', sans-serif;
@@ -52,17 +52,39 @@
 
         h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); letter-spacing: -0.02em; }
 
-        /* --- Navbar Styles (Glassmorphism & Modern) --- */
+        /* =========================================
+           UPDATED BRANDING & NAVBAR
+           ========================================= */
         .navbar .container-fluid { display: flex; flex-wrap: nowrap !important; align-items: center; justify-content: space-between; }
-        .navbar { background: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 10px 0; }
-        .navbar-brand { display: flex; align-items: center; max-width: 85%; margin-right: 0 !important; overflow: hidden; }
-        .navbar-brand img { height: 45px; width: auto; margin-right: 8px; transition: all 0.3s ease; }
-        .navbar-brand p { margin: 0; line-height: 1; white-space: nowrap; display: flex; align-items: center; font-size: 24px !important; }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+        }
 
+        .navbar-brand { display: flex; align-items: center; max-width: 85%; margin-right: 0 !important; text-decoration: none; overflow: hidden; }
+        
+        .navbar-brand img { height: 52px; width: auto; margin-right: 12px; transition: all 0.3s ease; }
+        
+        .navbar-brand p {
+            margin: 0; line-height: 1; white-space: nowrap; display: flex; align-items: center;
+            font-family: var(--font-main); font-size: 30px !important; font-weight: 800 !important;
+            color: #0f172a; letter-spacing: -0.5px;
+        }
+
+        /* Mobile Nav Adjustments */
+        @media (max-width: 991px) {
+            .navbar-brand img { height: 42px; }
+            .navbar-brand p { font-size: 26px !important; }
+        }
         @media (max-width: 576px) {
-            .navbar-brand img { height: 32px !important; }
-            .navbar-brand p { font-size: 18px !important; }
             .container-fluid.px-3 { padding-left: 15px !important; padding-right: 15px !important; }
+            .navbar-brand img { height: 38px !important; margin-right: 8px; }
+            .navbar-brand p { font-size: 22px !important; }
         }
 
         /* --- Modern Hamburger --- */
@@ -117,17 +139,26 @@
         .footer-btn-sub:hover { background: #e67e39; box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3); }
         .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
 
+        /* Mobile Footer Fixes */
+        @media (max-width: 768px) {
+            .footer-premium .col-lg-4:last-child { text-align: center; background: #ffffff; padding: 30px 20px; border-radius: 20px; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e5e7eb; }
+            .footer-input-group { width: 100%; max-width: 100%; margin: 0 auto 20px auto; padding: 6px; }
+            .footer-input { font-size: 16px !important; padding-left: 15px; text-align: left; }
+            .footer-btn-sub { padding: 12px 30px; width: auto; font-size: 16px; }
+            .footer-premium .mt-4 p { display: flex; align-items: center; justify-content: center; background: #f8f9fa; padding: 12px; border-radius: 10px; margin-bottom: 10px !important; font-weight: 600; border: 1px solid #eee; }
+            .footer-premium .mt-4 i { font-size: 18px; background: rgba(251, 135, 63, 0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-right: 12px !important; }
+        }
 
         /* =========================================
-           2. SPECIFIC COURSE STYLES (C LANGUAGE)
+           2. SPECIFIC COURSE STYLES (UI/UX)
            ========================================= */
 
         /* --- ULTRA HERO SECTION --- */
         .hero-ultra {
             position: relative;
             padding: 80px 0 100px;
-            /* C Blue Gradient */
-            background: radial-gradient(circle at 10% 20%, rgb(12, 74, 110) 0%, rgb(2, 132, 199) 100%);
+            /* Creative Dark Purple Gradient */
+            background: radial-gradient(circle at 10% 20%, rgb(19, 11, 43) 0%, rgb(88, 28, 135) 100%);
             color: white;
             overflow: hidden;
         }
@@ -143,14 +174,14 @@
         }
 
         .hero-badge {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
-            color: #fff;
+            color: #e9d5ff;
             display: inline-block;
             margin-bottom: 25px;
         }
@@ -160,7 +191,7 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
-            background: -webkit-linear-gradient(0deg, #fff, #bae6fd);
+            background: -webkit-linear-gradient(0deg, #fff, #f0abfc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -187,17 +218,17 @@
             background: #fff;
             padding: 25px;
             border-radius: var(--radius-lg);
-            border: 1px solid #e2e8f0;
+            border: 1px solid #f3e8ff;
             transition: 0.3s;
         }
         .bento-item:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
             transform: translateY(-5px);
         }
         .bento-icon {
             width: 50px; height: 50px;
-            background: rgba(2, 132, 199, 0.1);
+            background: rgba(168, 85, 247, 0.1);
             color: var(--primary);
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
@@ -211,7 +242,7 @@
             background: #fff;
             border-radius: var(--radius-lg) !important;
             margin-bottom: 15px;
-            border: 1px solid #f1f5f9;
+            border: 1px solid #f3e8ff;
             overflow: hidden;
         }
         .accordion-pro .accordion-button {
@@ -224,10 +255,10 @@
         }
         .accordion-pro .accordion-button:not(.collapsed) {
             color: var(--primary);
-            background: rgba(2, 132, 199, 0.05);
+            background: rgba(168, 85, 247, 0.05);
         }
         .accordion-pro .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230284c7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a855f7'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
 
         /* Sidebar & Pricing */
@@ -268,7 +299,7 @@
 
         /* Pricing Tiers */
         .tier-card {
-            border: 2px solid #f1f5f9;
+            border: 2px solid #f3e8ff;
             border-radius: var(--radius-lg);
             padding: 25px;
             text-align: center;
@@ -278,7 +309,7 @@
             background: white;
         }
         .tier-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .tier-card.active { border-color: var(--primary); background: #f0f9ff; }
+        .tier-card.active { border-color: var(--primary); background: #faf5ff; }
         .badge-rec {
             position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
             background: var(--primary); color: white; padding: 4px 12px;
@@ -286,19 +317,19 @@
         }
 
         .btn-gradient {
-            background: var(--gradient-c);
+            background: var(--gradient-design);
             color: white;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
             font-weight: 700;
             width: 100%;
-            box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3);
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
             transition: 0.3s;
         }
         .btn-gradient:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(2, 132, 199, 0.4);
+            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.4);
             color: white;
         }
 
@@ -310,90 +341,6 @@
         
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
-  
-    
-    /* =========================================
-   UPDATED BRANDING (Larger & User Friendly)
-   ========================================= */
-
-/* 1. Navbar Container */
-.navbar .container-fluid {
-    display: flex;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar {
-    background: rgba(255, 255, 255, 0.98) !important; /* Slightly more solid for better contrast */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 12px 0; /* More breathing room top/bottom */
-    transition: all 0.3s ease;
-}
-
-/* 2. Brand Link Area */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    max-width: 85%;
-    margin-right: 0 !important;
-    text-decoration: none;
-    overflow: hidden;
-}
-
-/* 3. Logo Image - Larger */
-.navbar-brand img {
-    height: 52px; /* Increased from 45px for better visibility */
-    width: auto;
-    margin-right: 12px; /* More space between icon and text */
-    transition: all 0.3s ease;
-}
-
-/* 4. Brand Text - BIGGER & BOLDER */
-.navbar-brand p {
-    margin: 0;
-    line-height: 1;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 30px !important; /* Much larger for Desktop */
-    font-weight: 800 !important; /* Extra Bold */
-    color: #0f172a; /* High contrast dark blue/black */
-    letter-spacing: -0.5px; /* Tighter, modern spacing */
-}
-
-/* 5. Mobile Responsiveness (The Fix) */
-@media (max-width: 991px) {
-    .navbar-brand img { height: 42px; }
-    .navbar-brand p { font-size: 26px !important; }
-}
-
-@media (max-width: 576px) {
-    .container-fluid.px-3 { 
-        padding-left: 15px !important; 
-        padding-right: 15px !important; 
-    }
-    
-    /* Mobile: Readable & Touch Friendly */
-    .navbar-brand img { 
-        height: 38px !important; 
-        margin-right: 8px;
-    }
-    
-    .navbar-brand p { 
-        font-size: 22px !important; /* Big enough to read easily on phone */
-    }
-}
-
-@media (max-width: 380px) {
-    /* Tiny screens (Fold/SE) */
-    .navbar-brand img { height: 32px !important; }
-    .navbar-brand p { font-size: 20px !important; } 
-}
-    
     </style>
 </head>
 
@@ -407,7 +354,7 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <div class="container-fluid px-4 px-lg-5">
             <a href="index.html" class="navbar-brand">
-                <p class="m-0 fw-bold">
+                <p class="m-0">
                     <img src="img/icon.png" alt="Junayed Academy Logo">
                     Junayed<span style="color: #fb873f;">Academy</span>
                 </p>
@@ -433,9 +380,6 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i> Login</a>
-                    <a href="#" class="nav-item nav-link">
-                        <div id="google_translate_element"></div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -458,17 +402,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="hero-badge animated slideInDown">
-                        <i class="fas fa-microchip me-2"></i> Free Learning Track
+                        <i class="fab fa-figma me-2"></i> Beginner Friendly
                     </div>
-                    <h1 class="hero-title animated slideInDown">Master the Mother of <br> All Languages: C</h1>
+                    <h1 class="hero-title animated slideInDown">UI/UX Design & <br> Figma Basics</h1>
                     <p class="lead text-light opacity-75 mb-4 animated slideInUp" style="max-width: 600px; font-weight: 300;">
-                        Understand how computers truly work. From memory management to building your first applications.
+                        Learn to design beautiful mobile apps and websites in just 4 weeks. No coding required. Master Figma tools and design principles.
                     </p>
                     
                     <div class="d-flex flex-wrap gap-4 text-white-50 small animated slideInUp">
-                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.7 Rating</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 2,300+ Students</span>
-                        <span class="d-flex align-items-center"><i class="fas fa-certificate me-2 text-white"></i> 4 Weeks</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-star text-warning me-2"></i> 4.9 Rating</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-user-graduate me-2 text-white"></i> 1,500+ Students</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-certificate me-2 text-white"></i> 1 Month</span>
                     </div>
                 </div>
             </div>
@@ -483,29 +427,29 @@
                 <div class="pro-card animated fadeInUp">
                     <h3 class="fw-bold text-dark mb-3">Course Overview</h3>
                     <p class="text-muted" style="line-height: 1.8;">
-                        C Programming is the foundation of modern computer science. Learning C gives you a deep understanding of how software interacts with hardware. This course is designed for absolute beginners to build a rock-solid coding foundation.
+                        UI (User Interface) is about how things look, and UX (User Experience) is about how they work. In this course, you will learn the fundamentals of digital design using **Figma**, the industry-standard tool.
                     </p>
 
                     <div class="bento-grid">
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-memory"></i></div>
-                            <h5 class="fw-bold mb-2">Memory Mgmt</h5>
-                            <p class="small text-muted mb-0">Learn Pointers, Stack vs. Heap memory allocation.</p>
+                            <div class="bento-icon"><i class="fab fa-figma"></i></div>
+                            <h5 class="fw-bold mb-2">Figma Mastery</h5>
+                            <p class="small text-muted mb-0">Learn frames, auto-layout, components & plugins.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-project-diagram"></i></div>
-                            <h5 class="fw-bold mb-2">Logic Building</h5>
-                            <p class="small text-muted mb-0">Master algorithms with flowcharts and pseudocode.</p>
+                            <div class="bento-icon"><i class="fas fa-pen-nib"></i></div>
+                            <h5 class="fw-bold mb-2">Visual Design</h5>
+                            <p class="small text-muted mb-0">Typography, Color Theory, and Spacing systems.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h5 class="fw-bold mb-2">Structured Code</h5>
-                            <p class="small text-muted mb-0">Write clean, modular code using Functions.</p>
+                            <div class="bento-icon"><i class="fas fa-layer-group"></i></div>
+                            <h5 class="fw-bold mb-2">Prototyping</h5>
+                            <p class="small text-muted mb-0">Turn static designs into clickable, interactive apps.</p>
                         </div>
                         <div class="bento-item">
-                            <div class="bento-icon"><i class="fas fa-gamepad"></i></div>
-                            <h5 class="fw-bold mb-2">Game Dev</h5>
-                            <p class="small text-muted mb-0">Create simple console games like Snake or Tic-Tac-Toe.</p>
+                            <div class="bento-icon"><i class="fas fa-briefcase"></i></div>
+                            <h5 class="fw-bold mb-2">Portfolio</h5>
+                            <p class="small text-muted mb-0">Build your first case study to show clients.</p>
                         </div>
                     </div>
                 </div>
@@ -522,17 +466,17 @@
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Week 1</span>
-                                        <span>Introduction & Environment</span>
+                                        <span>Introduction & Design Thinking</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> History of C & Why Learn it?</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Setting up Code::Blocks / VS Code</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Variables, Data Types & Constants</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Write your first "Hello World"</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> What is UI vs UX?</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> UX Laws (Jakob's Law, Fitts's Law)</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Wireframing Basics (Pen & Paper)</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Sketch a Login Screen</li>
                                     </ul>
                                 </div>
                             </div>
@@ -543,17 +487,17 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Week 2</span>
-                                        <span>Control Flow & Loops</span>
+                                        <span>Visual Design Fundamentals</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Conditional Logic (If-Else, Switch)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Loops Mastery (For, While, Do-While)</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Break & Continue Statements</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Build a Number Guessing Game</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Color Theory & Contrast</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Typography & Hierarchy</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Spacing & Grid Systems</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Create a Moodboard</li>
                                     </ul>
                                 </div>
                             </div>
@@ -564,17 +508,17 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Week 3</span>
-                                        <span>Arrays & Functions</span>
+                                        <span>Figma Tool Mastery</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> 1D & 2D Arrays</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> String Manipulation</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> User-Defined Functions</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Student Grade Calculator</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Frames, Shapes & Vector Tools</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Auto Layout & Constraints</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Components & Variants</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Task: Design a Mobile App Home Screen</li>
                                     </ul>
                                 </div>
                             </div>
@@ -585,17 +529,17 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
                                     <div class="d-flex flex-column">
                                         <span class="text-uppercase small text-muted fw-bold mb-1">Week 4</span>
-                                        <span>Pointers & File I/O</span>
+                                        <span>Prototyping & Portfolio</span>
                                     </div>
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
                                 <div class="accordion-body">
                                     <ul class="list-unstyled text-muted small spacing-y-2 mb-0 mt-3">
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Understanding Pointers & Addresses</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Structures & Unions</li>
-                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Reading & Writing Files</li>
-                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Library Management System</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Connecting Screens & Transitions</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Smart Animate Basics</li>
+                                        <li class="py-2 border-bottom border-light"><i class="fas fa-play-circle text-primary me-2"></i> Exporting Assets for Developers</li>
+                                        <li class="py-2 pt-3 fw-bold text-dark"><i class="fas fa-trophy text-warning me-2"></i> Final: Full Food Delivery App Design</li>
                                     </ul>
                                 </div>
                             </div>
@@ -608,11 +552,11 @@
                         <img src="img/testimonial-2.png" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #f8fafc;" alt="Instructor">
                         <div>
                             <h5 class="fw-bold mb-1">Junayed Bin Karim</h5>
-                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">C/C++ Specialist</p>
-                            <p class="text-muted small mb-3">Experienced instructor specializing in Low-level programming. Passionate about teaching the core logic of computer science.</p>
+                            <p class="text-primary fw-bold text-uppercase small ls-1 mb-2">Product Designer</p>
+                            <p class="text-muted small mb-3">Passionate about creating user-centric digital experiences. Expert in Figma, Adobe XD, and Design Systems.</p>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-light text-dark border">System Prog</span>
-                                <span class="badge bg-light text-dark border">Algorithms</span>
+                                <span class="badge bg-light text-dark border">Figma</span>
+                                <span class="badge bg-light text-dark border">UI Design</span>
                             </div>
                         </div>
                     </div>
@@ -624,11 +568,11 @@
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="tier-card" onclick="selectTier('free')">
-                                <h5 class="fw-bold text-muted">Learner</h5>
+                                <h5 class="fw-bold text-muted">Observer</h5>
                                 <h2 class="my-3">Free</h2>
                                 <ul class="list-unstyled small text-muted text-start mb-4">
-                                    <li><i class="fas fa-check text-success me-2"></i> All Video Lessons</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> Practice Codes</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Intro Videos</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Design Resources</li>
                                     <li><i class="fas fa-times text-danger me-2"></i> No Certificate</li>
                                 </ul>
                                 <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-outline-dark rounded-pill w-100 btn-sm">Start Free</a>
@@ -636,33 +580,33 @@
                         </div>
 
                         <div class="col-md-4">
-                            <div class="tier-card active" onclick="selectTier('basic-package')">
+                            <div class="tier-card active" onclick="selectTier('certified')">
                                 <div class="badge-rec">Recommended</div>
-                                <h5 class="fw-bold text-dark">Basic</h5>
-                                <h2 class="my-3 text-primary">৳ 4,500</h2>
-                                <small class="text-decoration-line-through text-muted">৳ 6,000</small>
+                                <h5 class="fw-bold text-dark">Certified</h5>
+                                <h2 class="my-3 text-primary">৳ 2,000</h2>
+                                <small class="text-decoration-line-through text-muted">৳ 3,000</small>
                                 <hr>
                                 <ul class="list-unstyled small text-muted text-start mb-4">
-                                    <li><i class="fas fa-check text-success me-2"></i> 8 Live Classes</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> Basic Certificate</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 4 Projects</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Live Classes</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Design Certificate</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Portfolio Review</li>
                                 </ul>
-                                <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="basic-package">Select</button>
+                                <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="certified">Get Certified</button>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <div class="tier-card" onclick="selectTier('premium-package')">
-                                <h5 class="fw-bold text-dark">Premium</h5>
+                            <div class="tier-card" onclick="selectTier('full')">
+                                <h5 class="fw-bold text-dark">Mentorship</h5>
                                 <h2 class="my-3 text-dark">৳ 5,000</h2>
                                 <small class="text-decoration-line-through text-muted">৳ 8,000</small>
                                 <hr>
                                 <ul class="list-unstyled small text-muted text-start mb-4">
-                                    <li><i class="fas fa-check text-success me-2"></i> Premium Certificate</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> 1:1 Code Review</li>
-                                    <li><i class="fas fa-check text-success me-2"></i> Job Guidance</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> 1:1 Design Critique</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Career Guidance</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Freelance Tips</li>
                                 </ul>
-                                <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="premium-package">Select</button>
+                                <button class="btn btn-outline-dark rounded-pill w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="full">Get Mentored</button>
                             </div>
                         </div>
                     </div>
@@ -674,7 +618,7 @@
                 <div class="sidebar-wrapper">
                     <div class="price-card">
                         <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#demoModal">
-                            <img src="img/course-12.png" alt="Course Preview">
+                            <img src="img/course-16.jpg" alt="Course Preview">
                             <div class="play-icon-overlay"><i class="fas fa-play"></i></div>
                         </div>
 
@@ -682,20 +626,20 @@
                             <span class="fs-1 fw-bold text-primary">FREE</span>
                             <span class="text-muted small">to Start</span>
                         </div>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">Join 2,300+ Learners</span>
+                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 mb-4">Join 1,500+ Designers</span>
 
                         <a href="https://forms.gle/eUFiPfnLJvaucTU4A" target="_blank" class="btn btn-gradient mb-3">
                             Start Free
                         </a>
-                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="basic-package">
-                            Upgrade to Live
+                        <button class="btn btn-outline-dark w-100 rounded-pill py-3 fw-bold mb-4" data-bs-toggle="modal" data-bs-target="#paymentModal" data-plan="certified">
+                            Upgrade Plan
                         </button>
 
                         <div class="text-start">
-                            <h6 class="fw-bold mb-3 small text-uppercase">Upgrade Benefits:</h6>
+                            <h6 class="fw-bold mb-3 small text-uppercase">Course Includes:</h6>
                             <ul class="list-unstyled small text-muted">
-                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 8 Live Classes</li>
-                                <li class="mb-2"><i class="fas fa-file-code text-primary me-2"></i> 50+ Source Files</li>
+                                <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> 8 Live Sessions</li>
+                                <li class="mb-2"><i class="fas fa-file-download text-primary me-2"></i> UI Kits & Files</li>
                                 <li class="mb-2"><i class="fas fa-mobile-alt text-primary me-2"></i> Mobile Access</li>
                                 <li class="mb-2"><i class="fas fa-infinity text-primary me-2"></i> Lifetime Access</li>
                             </ul>
@@ -852,12 +796,10 @@
             const plan = button.getAttribute('data-plan');
             let content = '';
 
-            if (plan === 'basic-package') {
-                content = `<h5 class="fw-bold">Basic Package</h5><p class="mb-0">Amount: ৳ 4,500</p>`;
-            } else if (plan === 'premium-package') {
-                content = `<h5 class="fw-bold">Premium Package</h5><p class="mb-0">Amount: ৳ 5,000</p>`;
-            } else if (plan === 'full-package') {
-                content = `<h5 class="fw-bold">Full Package</h5><p class="mb-0">Amount: ৳ 7,000</p>`;
+            if (plan === 'certified') {
+                content = `<h5 class="fw-bold">Premium Certificate</h5><p class="mb-0">Amount: ৳ 2,000</p>`;
+            } else if (plan === 'full') {
+                content = `<h5 class="fw-bold">Full Mentorship</h5><p class="mb-0">Amount: ৳ 5,000</p>`;
             } else {
                 content = `<h5 class="fw-bold">Course Enrollment</h5><p class="mb-0">Select a plan to continue</p>`;
             }
