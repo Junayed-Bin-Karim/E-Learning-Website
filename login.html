@@ -41,7 +41,7 @@
         body {
             font-family: var(--font-main);
             background-color: #f8f9fa;
-            overflow-x: hidden; /* Fixes right scroll issue */
+            overflow-x: hidden;
         }
 
         html {
@@ -77,19 +77,43 @@
         }
 
         /* =========================================
-           SMALL HAMBURGER MENU (MOBILE)
+           USER-FRIENDLY HAMBURGER MENU (MOBILE)
            ========================================= */
         .modern-hamburger {
-            width: 28px; height: 22px; position: relative; cursor: pointer; z-index: 10000;
-            display: flex; flex-direction: column; justify-content: space-between; margin-left: 15px;
+            width: 30px; 
+            height: 24px; 
+            position: relative; 
+            cursor: pointer; 
+            z-index: 10000; /* Stays on top */
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            margin-left: 15px;
         }
+        
+        /* The lines */
         .modern-hamburger .line {
-            width: 100%; height: 2px; background-color: #0f172a; border-radius: 5px;
-            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); transform-origin: right;
+            width: 100%; 
+            height: 3px; 
+            background-color: #0f172a; 
+            border-radius: 5px;
+            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); 
+            transform-origin: center;
         }
-        .modern-hamburger.active .line-1 { transform: rotate(-45deg) translate(-2px, -2px); width: 100%; background-color: #fb873f; }
-        .modern-hamburger.active .line-2 { opacity: 0; width: 0; }
-        .modern-hamburger.active .line-3 { transform: rotate(45deg) translate(-2px, 2px); width: 100%; background-color: #fb873f; }
+
+        /* Animation State: Active (X shape) */
+        .modern-hamburger.active .line-1 { 
+            transform: translateY(10px) rotate(45deg); 
+            background-color: #fb873f; 
+        }
+        .modern-hamburger.active .line-2 { 
+            opacity: 0; 
+            transform: scale(0); 
+        }
+        .modern-hamburger.active .line-3 { 
+            transform: translateY(-11px) rotate(-45deg); 
+            background-color: #fb873f; 
+        }
 
         /* Fullscreen Overlay */
         .mobile-menu-overlay {
@@ -101,23 +125,27 @@
         }
         .mobile-menu-overlay.active { opacity: 1; visibility: visible; transform: scale(1); }
 
-        /* Menu Links */
-        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 18px; }
+        /* Menu Links Animation */
+        .mobile-menu-container { text-align: center; display: flex; flex-direction: column; gap: 20px; }
+        
         .mobile-link {
-            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 600; color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 600; color: #0f172a;
             text-decoration: none; position: relative; overflow: hidden; transition: 0.3s;
-            opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+            opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
         }
+        
+        /* Staggered Animation for links */
         .mobile-menu-overlay.active .mobile-link { opacity: 1; transform: translateY(0); }
         .mobile-menu-overlay.active .mobile-link:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.5s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.6s; }
-        .mobile-menu-overlay.active .mobile-link:nth-child(7) { transition-delay: 0.7s; }
-        .mobile-link:hover { color: #fb873f; letter-spacing: 2px; }
-        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; font-weight: 800; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(6) { transition-delay: 0.35s; }
+        .mobile-menu-overlay.active .mobile-link:nth-child(7) { transition-delay: 0.4s; }
+        
+        .mobile-link:hover { color: #fb873f; transform: scale(1.1); }
+        .mobile-link.highlight { background: linear-gradient(135deg, #fb873f 0%, #ff5e62 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 22px; font-weight: 800; }
         
         body.menu-open { overflow: hidden; }
 
@@ -226,7 +254,7 @@
         <div class="container-fluid px-4 px-lg-5">
             <a href="index.html" class="navbar-brand">
                 <p class="m-0 fw-bold brand-text">
-                    <img src="img/icon.png" alt="Junayed Academy Logo" height="45px">
+                    <img src="img/icon.png" alt="Junayed Academy Logo">
                     Junayed<span style="color: #fb873f;">Academy</span>
                 </p>
             </a>
@@ -442,7 +470,7 @@
                 </div>
             </div>
         </div>
-    
+        
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
@@ -509,7 +537,9 @@
             });
         }
 
-        // Modern Hamburger Logic
+        // =========================================
+        // MODERN HAMBURGER LOGIC
+        // =========================================
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.modern-hamburger');
             const overlay = document.querySelector('.mobile-menu-overlay');
