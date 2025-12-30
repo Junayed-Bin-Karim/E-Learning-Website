@@ -320,6 +320,91 @@
         .footer-btn-sub { background: #fb873f; color: white; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
         .footer-btn-sub:hover { background: #e67e39; box-shadow: 0 4px 12px rgba(251, 135, 63, 0.3); }
         .footer-bottom { background-color: #f3f4f6 !important; padding: 25px 0; margin-top: 60px; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
+   
+    /* =========================================
+   UPDATED BRANDING (Larger & User Friendly)
+   ========================================= */
+
+/* 1. Navbar Container */
+.navbar .container-fluid {
+    display: flex;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.98) !important; /* Slightly more solid for better contrast */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px 0; /* More breathing room top/bottom */
+    transition: all 0.3s ease;
+}
+
+/* 2. Brand Link Area */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    max-width: 85%;
+    margin-right: 0 !important;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* 3. Logo Image - Larger */
+.navbar-brand img {
+    height: 52px; /* Increased from 45px for better visibility */
+    width: auto;
+    margin-right: 12px; /* More space between icon and text */
+    transition: all 0.3s ease;
+}
+
+/* 4. Brand Text - BIGGER & BOLDER */
+.navbar-brand p {
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 30px !important; /* Much larger for Desktop */
+    font-weight: 800 !important; /* Extra Bold */
+    color: #0f172a; /* High contrast dark blue/black */
+    letter-spacing: -0.5px; /* Tighter, modern spacing */
+}
+
+/* 5. Mobile Responsiveness (The Fix) */
+@media (max-width: 991px) {
+    .navbar-brand img { height: 42px; }
+    .navbar-brand p { font-size: 26px !important; }
+}
+
+@media (max-width: 576px) {
+    .container-fluid.px-3 { 
+        padding-left: 15px !important; 
+        padding-right: 15px !important; 
+    }
+    
+    /* Mobile: Readable & Touch Friendly */
+    .navbar-brand img { 
+        height: 38px !important; 
+        margin-right: 8px;
+    }
+    
+    .navbar-brand p { 
+        font-size: 22px !important; /* Big enough to read easily on phone */
+    }
+}
+
+@media (max-width: 380px) {
+    /* Tiny screens (Fold/SE) */
+    .navbar-brand img { height: 32px !important; }
+    .navbar-brand p { font-size: 20px !important; } 
+}
+    
+    
+    
     </style>
 </head>
 
