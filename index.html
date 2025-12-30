@@ -325,73 +325,37 @@
             border-radius: 10px;
         }
 
+  
 /* =========================================
-   MOBILE FOOTER OPTIMIZATION (Stay Updated Section)
+   MOBILE OPTIMIZATION: Subscribe Section
    ========================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. Center alignment for the 3rd column */
-    .footer-premium .col-lg-4:last-child {
-        text-align: center;
-        background: #ffffff; /* White card background to make it pop */
-        padding: 30px 20px;
-        border-radius: 20px;
-        margin-top: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        border: 1px solid #e5e7eb;
+    /* 1. Target the specific white card container */
+    /* We use the specific classes to ensure we override the default Bootstrap styles */
+    .bg-white.rounded-3.shadow-lg.p-5.border-start {
+        padding: 25px 20px !important; /* Overrides the large p-5 padding */
+        text-align: center;            /* Centers the heading and text */
     }
 
-    /* 2. Fix Input Group (Newsletter) */
-    .footer-input-group {
+    /* 2. Add spacing below the text column */
+    .bg-white.rounded-3.shadow-lg.p-5.border-start .col-lg-6:first-child {
+        margin-bottom: 20px;
+    }
+
+    /* 3. Stack the Form Elements (Input & Button) */
+    .bg-white.rounded-3.shadow-lg.p-5.border-start form {
+        flex-direction: column; /* Stacks them vertically instead of side-by-side */
+    }
+
+    /* 4. Make Input and Button Full Width */
+    .bg-white.rounded-3.shadow-lg.p-5.border-start input,
+    .bg-white.rounded-3.shadow-lg.p-5.border-start button {
         width: 100%;
-        max-width: 100%; /* Full width */
-        margin: 0 auto 20px auto;
-        padding: 6px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Subtle shadow */
-    }
-
-    /* 3. Input Text Size (Prevents Zoom on iPhone) */
-    .footer-input {
-        font-size: 16px !important; 
-        padding-left: 15px;
-        text-align: left; /* Keep typing left-aligned */
-    }
-
-    /* 4. Join Button - Larger Touch Target */
-    .footer-btn-sub {
-        padding: 12px 30px;
-        width: auto; /* Let button size itself or use 100% if you prefer stacked */
-        font-size: 16px;
-    }
-
-    /* 5. Contact Info (Phone & Email) Spacing */
-    .footer-premium .mt-4 p {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Center icons with text */
-        background: #f8f9fa;
-        padding: 12px;
-        border-radius: 10px;
-        margin-bottom: 10px !important; /* Space between phone and email */
-        font-weight: 600;
-        border: 1px solid #eee;
-    }
-
-    /* 6. Icon Adjustment */
-    .footer-premium .mt-4 i {
-        font-size: 18px;
-        background: rgba(251, 135, 63, 0.1);
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        margin-right: 12px !important;
+        height: 50px; /* Ensures a good touch target size */
     }
 }
-
 
 
         /* =========================================
